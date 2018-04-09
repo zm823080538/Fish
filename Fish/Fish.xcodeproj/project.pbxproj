@@ -8,24 +8,56 @@
 
 /* Begin PBXBuildFile section */
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
-		5DC5CBB020784FA700F3C0D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAF20784FA700F3C0D6 /* ViewController.m */; };
 		5DC5CBB320784FA700F3C0D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB120784FA700F3C0D6 /* Main.storyboard */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
 		5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBBA20784FA700F3C0D6 /* main.m */; };
+		5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC32078523000F3C0D6 /* LLHomeViewController.m */; };
+		5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC52078523000F3C0D6 /* LLHomeViewController.xib */; };
+		5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC72078523000F3C0D6 /* LLSameCityViewController.m */; };
+		5DC5CBDE2078523000F3C0D6 /* LLSameCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC82078523000F3C0D6 /* LLSameCityViewController.xib */; };
+		5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBCB2078523000F3C0D6 /* LLMessageViewController.m */; };
+		5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBCC2078523000F3C0D6 /* LLMessageViewController.xib */; };
+		5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD02078523000F3C0D6 /* LLMineViewController.xib */; };
+		5DC5CBE22078523000F3C0D6 /* LLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD12078523000F3C0D6 /* LLMineViewController.m */; };
+		5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD32078523000F3C0D6 /* LLBaseViewController.m */; };
+		5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD92078523000F3C0D6 /* LLTabBarItem.m */; };
+		5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBDA2078523000F3C0D6 /* LLTabBar.m */; };
+		5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBE92078752800F3C0D6 /* LoginViewController.m */; };
+		5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5DC5CBAE20784FA700F3C0D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5DC5CBAF20784FA700F3C0D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5DC5CBB220784FA700F3C0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DC5CBB720784FA700F3C0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DC5CBB920784FA700F3C0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DC5CBBA20784FA700F3C0D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DC5CBC32078523000F3C0D6 /* LLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLHomeViewController.m; sourceTree = "<group>"; };
+		5DC5CBC42078523000F3C0D6 /* LLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLHomeViewController.h; sourceTree = "<group>"; };
+		5DC5CBC52078523000F3C0D6 /* LLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLHomeViewController.xib; sourceTree = "<group>"; };
+		5DC5CBC72078523000F3C0D6 /* LLSameCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSameCityViewController.m; sourceTree = "<group>"; };
+		5DC5CBC82078523000F3C0D6 /* LLSameCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSameCityViewController.xib; sourceTree = "<group>"; };
+		5DC5CBC92078523000F3C0D6 /* LLSameCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSameCityViewController.h; sourceTree = "<group>"; };
+		5DC5CBCB2078523000F3C0D6 /* LLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMessageViewController.m; sourceTree = "<group>"; };
+		5DC5CBCC2078523000F3C0D6 /* LLMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLMessageViewController.xib; sourceTree = "<group>"; };
+		5DC5CBCD2078523000F3C0D6 /* LLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMessageViewController.h; sourceTree = "<group>"; };
+		5DC5CBCF2078523000F3C0D6 /* LLMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMineViewController.h; sourceTree = "<group>"; };
+		5DC5CBD02078523000F3C0D6 /* LLMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLMineViewController.xib; sourceTree = "<group>"; };
+		5DC5CBD12078523000F3C0D6 /* LLMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMineViewController.m; sourceTree = "<group>"; };
+		5DC5CBD32078523000F3C0D6 /* LLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBaseViewController.m; sourceTree = "<group>"; };
+		5DC5CBD42078523000F3C0D6 /* LLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBaseViewController.h; sourceTree = "<group>"; };
+		5DC5CBD72078523000F3C0D6 /* LLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTabBar.h; sourceTree = "<group>"; };
+		5DC5CBD82078523000F3C0D6 /* LLTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTabBarItem.h; sourceTree = "<group>"; };
+		5DC5CBD92078523000F3C0D6 /* LLTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTabBarItem.m; sourceTree = "<group>"; };
+		5DC5CBDA2078523000F3C0D6 /* LLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTabBar.m; sourceTree = "<group>"; };
+		5DC5CBE6207871AF00F3C0D6 /* LLRiseTabBarDemo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLRiseTabBarDemo.pch; sourceTree = "<group>"; };
+		5DC5CBE82078752800F3C0D6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5DC5CBE92078752800F3C0D6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +90,109 @@
 		5DC5CBAA20784FA600F3C0D6 /* Fish */ = {
 			isa = PBXGroup;
 			children = (
+				5DC5CBD52078523000F3C0D6 /* CustomView */,
+				5DC5CBC12078522F00F3C0D6 /* ViewController */,
 				5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */,
 				5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */,
-				5DC5CBAE20784FA700F3C0D6 /* ViewController.h */,
-				5DC5CBAF20784FA700F3C0D6 /* ViewController.m */,
 				5DC5CBB120784FA700F3C0D6 /* Main.storyboard */,
 				5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */,
 				5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */,
 				5DC5CBB920784FA700F3C0D6 /* Info.plist */,
 				5DC5CBBA20784FA700F3C0D6 /* main.m */,
+				5DC5CBE6207871AF00F3C0D6 /* LLRiseTabBarDemo.pch */,
 			);
 			path = Fish;
+			sourceTree = "<group>";
+		};
+		5DC5CBC12078522F00F3C0D6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBE72078750700F3C0D6 /* Login */,
+				5DC5CBC22078523000F3C0D6 /* Home */,
+				5DC5CBC62078523000F3C0D6 /* Coach */,
+				5DC5CBCA2078523000F3C0D6 /* Course */,
+				5DC5CBCE2078523000F3C0D6 /* Mine */,
+				5DC5CBD22078523000F3C0D6 /* Base */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5DC5CBC22078523000F3C0D6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBC32078523000F3C0D6 /* LLHomeViewController.m */,
+				5DC5CBC42078523000F3C0D6 /* LLHomeViewController.h */,
+				5DC5CBC52078523000F3C0D6 /* LLHomeViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5DC5CBC62078523000F3C0D6 /* Coach */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBC72078523000F3C0D6 /* LLSameCityViewController.m */,
+				5DC5CBC82078523000F3C0D6 /* LLSameCityViewController.xib */,
+				5DC5CBC92078523000F3C0D6 /* LLSameCityViewController.h */,
+			);
+			path = Coach;
+			sourceTree = "<group>";
+		};
+		5DC5CBCA2078523000F3C0D6 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBCB2078523000F3C0D6 /* LLMessageViewController.m */,
+				5DC5CBCC2078523000F3C0D6 /* LLMessageViewController.xib */,
+				5DC5CBCD2078523000F3C0D6 /* LLMessageViewController.h */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		5DC5CBCE2078523000F3C0D6 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBCF2078523000F3C0D6 /* LLMineViewController.h */,
+				5DC5CBD02078523000F3C0D6 /* LLMineViewController.xib */,
+				5DC5CBD12078523000F3C0D6 /* LLMineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		5DC5CBD22078523000F3C0D6 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBD32078523000F3C0D6 /* LLBaseViewController.m */,
+				5DC5CBD42078523000F3C0D6 /* LLBaseViewController.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		5DC5CBD52078523000F3C0D6 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBD62078523000F3C0D6 /* LLTabBar */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		5DC5CBD62078523000F3C0D6 /* LLTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBD72078523000F3C0D6 /* LLTabBar.h */,
+				5DC5CBD82078523000F3C0D6 /* LLTabBarItem.h */,
+				5DC5CBD92078523000F3C0D6 /* LLTabBarItem.m */,
+				5DC5CBDA2078523000F3C0D6 /* LLTabBar.m */,
+			);
+			path = LLTabBar;
+			sourceTree = "<group>";
+		};
+		5DC5CBE72078750700F3C0D6 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5DC5CBE82078752800F3C0D6 /* LoginViewController.h */,
+				5DC5CBE92078752800F3C0D6 /* LoginViewController.m */,
+				5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +253,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */,
+				5DC5CBDE2078523000F3C0D6 /* LLSameCityViewController.xib in Resources */,
+				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
 				5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */,
+				5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */,
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
+				5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */,
 				5DC5CBB320784FA700F3C0D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,7 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DC5CBB020784FA700F3C0D6 /* ViewController.m in Sources */,
+				5DC5CBE22078523000F3C0D6 /* LLMineViewController.m in Sources */,
+				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
+				5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */,
+				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
+				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,
+				5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */,
+				5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */,
+				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
 			);
@@ -280,6 +416,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XK86J33PN9;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MG.Fish;
@@ -294,6 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XK86J33PN9;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MG.Fish;
