@@ -1,29 +1,23 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  Fish
 //
-//  Created by zhaoming on 07/04/2018.
-//  Copyright © 2018 zhaoming. All rights reserved.
+//  Created by sunny on 2018/4/9.
+//  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "LoginViewController.h"
-#import "UIColor+Hex.h"
 #import "RegisterViewController.h"
-#import "ChooseRoleViewController.h"
-#import "ForgetPasswordViewController.h"
-@interface LoginViewController ()
+#import "UIColor+Hex.h"
+@interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *showPassword;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPassword;
 @property (weak, nonatomic) IBOutlet UIButton *registerUser;
-@property (weak, nonatomic) IBOutlet UILabel *otherChannelLoginLabel;
-
-
 @end
 
-@implementation LoginViewController
+@implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,24 +26,12 @@
     self.registerUser.layer.borderColor = [UIColor colorWithHexString:@"#FFCD00" alpha:0.4].CGColor;
     self.registerUser.layer.borderWidth = 1.0f;
     self.backgroundView.backgroundColor = [UIColor colorWithRed:31/255.0 green:31/255.0 blue:31/255.0 alpha:0.95];
-    [self.registerUser setTitleColor:[UIColor colorWithHexString:@"#FFCD00" alpha:0.4] forState:UIControlStateNormal];
-    self.otherChannelLoginLabel.textColor = [UIColor colorWithWhite:1 alpha:0.5f];
+    [self.registerUser setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
 }
 
-
-- (IBAction)showPwd:(UIButton *)sender {
-    ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
-    [self.navigationController pushViewController:chooseRoleVC animated:YES];
-}
-- (IBAction)forgetPwd {
-    ForgetPasswordViewController *forgetPasswordVC = [ForgetPasswordViewController new];
-    [self.navigationController pushViewController:forgetPasswordVC animated:YES];
-}
-- (IBAction)loginClick {
-}
-- (IBAction)registerButtonClick {
-    RegisterViewController *registerVC = [RegisterViewController new];
-    [self.navigationController pushViewController:registerVC animated:YES];
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

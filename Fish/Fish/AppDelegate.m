@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LLTabBar.h"
+#import "LoginViewController.h"
 #import "LLHomeViewController.h"
 #import "LLSameCityViewController.h"
 #import "LLMessageViewController.h"
@@ -21,9 +22,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    return YES;
     
     LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
     LLSameCityViewController *sameCityViewController = [[LLSameCityViewController alloc] init];

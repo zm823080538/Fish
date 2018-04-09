@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F77207BB62E006F8616 /* UIColor+Hex.m */; };
+		5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F7B207BB93F006F8616 /* RegisterViewController.m */; };
+		5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D343F7C207BB93F006F8616 /* RegisterViewController.xib */; };
+		5D343F83207BC21F006F8616 /* ForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D343F81207BC21F006F8616 /* ForgetPasswordViewController.xib */; };
+		5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F82207BC21F006F8616 /* ForgetPasswordViewController.m */; };
+		5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F87207BC345006F8616 /* ChooseRoleViewController.m */; };
+		5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D343F88207BC345006F8616 /* ChooseRoleViewController.xib */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB320784FA700F3C0D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB120784FA700F3C0D6 /* Main.storyboard */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
@@ -28,6 +35,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D343F76207BB62E006F8616 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		5D343F77207BB62E006F8616 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		5D343F7A207BB93F006F8616 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		5D343F7B207BB93F006F8616 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		5D343F7C207BB93F006F8616 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		5D343F80207BC21F006F8616 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		5D343F81207BC21F006F8616 /* ForgetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		5D343F82207BC21F006F8616 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		5D343F86207BC345006F8616 /* ChooseRoleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseRoleViewController.h; sourceTree = "<group>"; };
+		5D343F87207BC345006F8616 /* ChooseRoleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseRoleViewController.m; sourceTree = "<group>"; };
+		5D343F88207BC345006F8616 /* ChooseRoleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseRoleViewController.xib; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -71,6 +89,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D343F75207BB617006F8616 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5D343F76207BB62E006F8616 /* UIColor+Hex.h */,
+				5D343F77207BB62E006F8616 /* UIColor+Hex.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5D343F79207BB922006F8616 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5D343F7A207BB93F006F8616 /* RegisterViewController.h */,
+				5D343F7B207BB93F006F8616 /* RegisterViewController.m */,
+				5D343F7C207BB93F006F8616 /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		5D343F7F207BC1F4006F8616 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				5D343F80207BC21F006F8616 /* ForgetPasswordViewController.h */,
+				5D343F82207BC21F006F8616 /* ForgetPasswordViewController.m */,
+				5D343F81207BC21F006F8616 /* ForgetPasswordViewController.xib */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		5D343F85207BC330006F8616 /* ChooseRole */ = {
+			isa = PBXGroup;
+			children = (
+				5D343F86207BC345006F8616 /* ChooseRoleViewController.h */,
+				5D343F87207BC345006F8616 /* ChooseRoleViewController.m */,
+				5D343F88207BC345006F8616 /* ChooseRoleViewController.xib */,
+			);
+			path = ChooseRole;
+			sourceTree = "<group>";
+		};
 		5DC5CB9F20784FA600F3C0D6 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +147,7 @@
 		5DC5CBAA20784FA600F3C0D6 /* Fish */ = {
 			isa = PBXGroup;
 			children = (
+				5D343F75207BB617006F8616 /* Category */,
 				5DC5CBD52078523000F3C0D6 /* CustomView */,
 				5DC5CBC12078522F00F3C0D6 /* ViewController */,
 				5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */,
@@ -107,6 +165,9 @@
 		5DC5CBC12078522F00F3C0D6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5D343F85207BC330006F8616 /* ChooseRole */,
+				5D343F7F207BC1F4006F8616 /* ForgetPassword */,
+				5D343F79207BB922006F8616 /* Register */,
 				5DC5CBE72078750700F3C0D6 /* Login */,
 				5DC5CBC22078523000F3C0D6 /* Home */,
 				5DC5CBC62078523000F3C0D6 /* Coach */,
@@ -254,10 +315,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */,
+				5D343F83207BC21F006F8616 /* ForgetPasswordViewController.xib in Resources */,
 				5DC5CBDE2078523000F3C0D6 /* LLSameCityViewController.xib in Resources */,
 				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
 				5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */,
 				5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */,
+				5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */,
+				5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */,
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
 				5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */,
 				5DC5CBB320784FA700F3C0D6 /* Main.storyboard in Resources */,
@@ -278,7 +342,11 @@
 				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,
 				5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */,
 				5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */,
+				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
+				5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */,
+				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
+				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
 			);
