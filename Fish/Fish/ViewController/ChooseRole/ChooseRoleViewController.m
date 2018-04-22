@@ -7,8 +7,11 @@
 //
 
 #import "ChooseRoleViewController.h"
+#import "UIAlertController+Set.h"
 
 @interface ChooseRoleViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *coachButton;
+@property (weak, nonatomic) IBOutlet UIButton *learnerButton;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @end
 
@@ -16,12 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.backgroundView.backgroundColor = [UIColor colorWithRed:31/255.0 green:31/255.0 blue:31/255.0 alpha:0.95];    // Do any additional setup after loading the view from its nib.
+     self.backgroundView.backgroundColor = [UIColor colorWithRed:31/255.0 green:31/255.0 blue:31/255.0 alpha:0.95];  
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)chooseRole:(UIButton *)sender {
+    [UIAlertController alertWithTitle:@"提示" message:@"是否选择身份为“学员”？确认后将无法切换身份，请三思而后行哦～" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
+        
+    }];
 }
 
 /*

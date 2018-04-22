@@ -13,6 +13,8 @@
 #import "LLSameCityViewController.h"
 #import "LLMessageViewController.h"
 #import "LLMineViewController.h"
+#import "LLBaseNavViewController.h"
+#import <YTKNetworkConfig.h>
 
 @interface AppDelegate () <LLTabBarDelegate, UIActionSheetDelegate>
 
@@ -22,33 +24,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
+    config.baseUrl = @"https://www.bjwork.xyz";
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[LoginViewController new]];
+    LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
     self.window.rootViewController = nav;
+//    [self changeRootVC];
     [self.window makeKeyAndVisible];
-    return YES;
+//    return YES;
     
-    LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
-    LLSameCityViewController *sameCityViewController = [[LLSameCityViewController alloc] init];
-    LLMessageViewController *messageViewController = [[LLMessageViewController alloc] init];
-    LLMineViewController *mineViewController = [[LLMineViewController alloc] init];
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[homeViewController, sameCityViewController, messageViewController, mineViewController];
-    
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
-    LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
-    
-    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                    @{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                    @{kLLTabBarItemAttributeTitle : @"教练", kLLTabBarItemAttributeNormalImageName : @"post_normal", kLLTabBarItemAttributeSelectedImageName : @"post_normal", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
-                                    @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"message_normal", kLLTabBarItemAttributeSelectedImageName : @"message_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                    @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"account_normal", kLLTabBarItemAttributeSelectedImageName : @"account_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
-    
+ 
+   
     //    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
     //                                    @{kLLTabBarItemAttributeTitle : @"发布", kLLTabBarItemAttributeNormalImageName : @"post_normal", kLLTabBarItemAttributeSelectedImageName : @"post_normal", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
     //                                    @{kLLTabBarItemAttributeTitle : @"消息", kLLTabBarItemAttributeNormalImageName : @"message_normal", kLLTabBarItemAttributeSelectedImageName : @"message_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
@@ -56,12 +43,38 @@
     //    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
     //                                    @{kLLTabBarItemAttributeTitle : @"同城", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
     
-    tabBar.delegate = self;
-    [tabBarController.tabBar addSubview:tabBar];
-    
-    self.window.rootViewController = tabBarController;
+   
     
     return YES;
+}
+
+- (void)changeRootVC {
+    LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
+    LLSameCityViewController *sameCityViewController = [[LLSameCityViewController alloc] init];
+    LLMessageViewController *messageViewController = [[LLMessageViewController alloc] init];
+    LLMineViewController *mineViewController = [[LLMineViewController alloc] init];
+    LLBaseNavViewController *nav1 = [[LLBaseNavViewController  alloc] initWithRootViewController:homeViewController];
+    LLBaseNavViewController  *nav2 = [[LLBaseNavViewController  alloc] initWithRootViewController:sameCityViewController];
+    LLBaseNavViewController  *nav3 = [[LLBaseNavViewController  alloc] initWithRootViewController:messageViewController];
+    LLBaseNavViewController  *nav4 = [[LLBaseNavViewController  alloc] initWithRootViewController:mineViewController];
+   
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[nav1, nav2, nav3, nav4];
+    
+    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+    
+    LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
+    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                    @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                    @{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
+                                    @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                    @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
+    tabBar.delegate = self;
+    [tabBarController.tabBar addSubview:tabBar];
+    self.window.rootViewController = tabBarController;
+    
 }
 
 #pragma mark - LLTabBarDelegate

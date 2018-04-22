@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseRoleViewController">
             <connections>
                 <outlet property="backgroundView" destination="o5e-dm-Wsy" id="8nM-Ho-kw9"/>
+                <outlet property="coachButton" destination="bM0-nD-kjJ" id="eqZ-lc-mXX"/>
+                <outlet property="learnerButton" destination="F7W-JC-eJh" id="uNt-CK-ino"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,28 +28,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5e-dm-Wsy">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1aX-Ai-qbQ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gp3-t3-zAG">
-                                    <rect key="frame" x="20" y="20" width="24" height="23"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="31d-7h-mD6"/>
-                                        <constraint firstAttribute="height" constant="23" id="FSg-yy-fOf"/>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="Yoe-lL-iiK"/>
-                                        <constraint firstAttribute="width" constant="24" id="Zq9-e8-MhJ"/>
-                                    </constraints>
-                                    <state key="normal" image="back"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="gp3-t3-zAG" firstAttribute="centerY" secondItem="1aX-Ai-qbQ" secondAttribute="centerY" id="HQd-oi-39X"/>
-                                <constraint firstAttribute="height" constant="64" id="LpC-2M-ApQ"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Tyl-we-PdB"/>
-                                <constraint firstItem="gp3-t3-zAG" firstAttribute="leading" secondItem="1aX-Ai-qbQ" secondAttribute="leading" constant="20" id="dya-Cx-dGx"/>
-                            </constraints>
-                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7W-JC-eJh">
                             <rect key="frame" x="60" y="144" width="255" height="130"/>
                             <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,6 +40,9 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="chooseRole:" destination="-1" eventType="touchUpInside" id="Tkr-yQ-0qh"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="learner" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-Y3-CBK">
                             <rect key="frame" x="163.5" y="172" width="48" height="42"/>
@@ -86,6 +69,9 @@
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="chooseRole:" destination="-1" eventType="touchUpInside" id="dXV-2g-baI"/>
+                            </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coach" translatesAutoresizingMaskIntoConstraints="NO" id="dHb-0W-oWU">
                             <rect key="frame" x="163" y="430" width="48" height="42"/>
@@ -110,12 +96,12 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="F7W-JC-eJh" firstAttribute="top" secondItem="o5e-dm-Wsy" secondAttribute="top" constant="144" id="FQV-Sp-HFZ"/>
                         <constraint firstItem="eFN-GT-dUU" firstAttribute="centerX" secondItem="o5e-dm-Wsy" secondAttribute="centerX" id="Fjk-ta-9dd"/>
                         <constraint firstItem="3Jc-Y3-CBK" firstAttribute="centerX" secondItem="o5e-dm-Wsy" secondAttribute="centerX" id="Iq0-h6-uNz"/>
                         <constraint firstItem="dHb-0W-oWU" firstAttribute="centerX" secondItem="o5e-dm-Wsy" secondAttribute="centerX" id="KqV-1T-Dqs"/>
                         <constraint firstItem="51K-W1-d5k" firstAttribute="top" secondItem="dHb-0W-oWU" secondAttribute="bottom" constant="10" id="NM8-L7-sEV"/>
                         <constraint firstItem="F7W-JC-eJh" firstAttribute="leading" secondItem="o5e-dm-Wsy" secondAttribute="leading" constant="60" id="NbN-Gv-ytM"/>
-                        <constraint firstItem="1aX-Ai-qbQ" firstAttribute="top" secondItem="o5e-dm-Wsy" secondAttribute="top" id="NkD-0f-sGf"/>
                         <constraint firstItem="51K-W1-d5k" firstAttribute="centerX" secondItem="dHb-0W-oWU" secondAttribute="centerX" id="POf-1G-G1K"/>
                         <constraint firstItem="eFN-GT-dUU" firstAttribute="centerY" secondItem="o5e-dm-Wsy" secondAttribute="centerY" id="Raf-uq-yfC"/>
                         <constraint firstItem="Dtd-xr-oDe" firstAttribute="top" secondItem="3Jc-Y3-CBK" secondAttribute="bottom" constant="10" id="Rtj-Nq-Ey5"/>
@@ -123,11 +109,8 @@
                         <constraint firstAttribute="trailing" secondItem="F7W-JC-eJh" secondAttribute="trailing" constant="60" id="ZN6-q7-IJh"/>
                         <constraint firstItem="Dtd-xr-oDe" firstAttribute="centerX" secondItem="3Jc-Y3-CBK" secondAttribute="centerX" id="a2p-ax-0gx"/>
                         <constraint firstItem="3Jc-Y3-CBK" firstAttribute="top" secondItem="F7W-JC-eJh" secondAttribute="top" constant="28" id="bHh-hz-pPX"/>
-                        <constraint firstItem="1aX-Ai-qbQ" firstAttribute="leading" secondItem="o5e-dm-Wsy" secondAttribute="leading" id="c1U-qZ-BrV"/>
-                        <constraint firstAttribute="trailing" secondItem="1aX-Ai-qbQ" secondAttribute="trailing" id="ehf-tc-q2m"/>
                         <constraint firstItem="bM0-nD-kjJ" firstAttribute="width" secondItem="F7W-JC-eJh" secondAttribute="width" id="g5B-hb-lXj"/>
                         <constraint firstItem="bM0-nD-kjJ" firstAttribute="top" secondItem="F7W-JC-eJh" secondAttribute="bottom" constant="128" id="j9v-tV-nHB"/>
-                        <constraint firstItem="F7W-JC-eJh" firstAttribute="top" secondItem="1aX-Ai-qbQ" secondAttribute="bottom" constant="80" id="kyS-Nq-6iw"/>
                         <constraint firstItem="bM0-nD-kjJ" firstAttribute="height" secondItem="F7W-JC-eJh" secondAttribute="height" id="rVN-jD-jbS"/>
                         <constraint firstItem="dHb-0W-oWU" firstAttribute="top" secondItem="bM0-nD-kjJ" secondAttribute="top" constant="28" id="xqd-3i-7hc"/>
                     </constraints>
@@ -149,7 +132,6 @@
     </objects>
     <resources>
         <image name="Bitmap" width="375" height="667"/>
-        <image name="back" width="24" height="23"/>
         <image name="coach" width="50" height="52"/>
         <image name="learner" width="48" height="42"/>
         <image name="link" width="24" height="28"/>

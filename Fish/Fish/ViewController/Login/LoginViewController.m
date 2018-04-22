@@ -7,10 +7,14 @@
 //
 
 #import "LoginViewController.h"
+#import "UIView+AddBackView.h"
 #import "UIColor+Hex.h"
+#import "AppDelegate.h"
 #import "RegisterViewController.h"
 #import "ChooseRoleViewController.h"
 #import "ForgetPasswordViewController.h"
+
+#import "ZMLoginRequest.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -27,8 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.usernameTextField.textColor = [UIColor colorWithWhite:1 alpha:0.5f];
-    self.passwordTextField.textColor = [UIColor colorWithWhite:1 alpha:0.5f];
+    [self.usernameTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.passwordTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    self.usernameTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
+    self.passwordTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
+    self.otherChannelLoginLabel.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
     self.registerUser.layer.borderColor = [UIColor colorWithHexString:@"#FFCD00" alpha:0.4].CGColor;
     self.registerUser.layer.borderWidth = 1.0f;
     self.backgroundView.backgroundColor = [UIColor colorWithRed:31/255.0 green:31/255.0 blue:31/255.0 alpha:0.95];
@@ -38,14 +45,24 @@
 
 
 - (IBAction)showPwd:(UIButton *)sender {
-    ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
-    [self.navigationController pushViewController:chooseRoleVC animated:YES];
+    self.passwordTextField.secureTextEntry = sender.selected;
+//    ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
+//    [self.navigationController pushViewController:chooseRoleVC animated:YES];
 }
 - (IBAction)forgetPwd {
     ForgetPasswordViewController *forgetPasswordVC = [ForgetPasswordViewController new];
     [self.navigationController pushViewController:forgetPasswordVC animated:YES];
 }
 - (IBAction)loginClick {
+    ZMLoginRequest *loginRequest = [[ZMLoginRequest alloc] initWithMobile:self.usernameTextField.text password:self.passwordTextField.text version:@"i1.0"];
+    [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        [appDelegate changeRootVC];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
+    
 }
 - (IBAction)registerButtonClick {
     RegisterViewController *registerVC = [RegisterViewController new];

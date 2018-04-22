@@ -7,7 +7,7 @@
 //
 
 #import "LLBaseViewController.h"
-
+#import "UIView+AddBackView.h"
 @interface LLBaseViewController ()
 
 @end
@@ -40,13 +40,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if (@available(iOS 11.0, *)) {
+//        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 	self.navigationController.navigationBarHidden = YES;
+    [self.view addbackButton:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

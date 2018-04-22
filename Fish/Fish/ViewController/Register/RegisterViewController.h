@@ -6,8 +6,7 @@
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface RegisterViewController : UIViewController
+#import "LLBaseViewController.h"
+@interface RegisterViewController : LLBaseViewController
 
 @end

@@ -6,8 +6,6 @@
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface ChooseRoleViewController : UIViewController
-
+#import "LLBaseViewController.h"
+@interface ChooseRoleViewController : LLBaseViewController
 @end

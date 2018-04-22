@@ -14,8 +14,22 @@
 		5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F82207BC21F006F8616 /* ForgetPasswordViewController.m */; };
 		5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F87207BC345006F8616 /* ChooseRoleViewController.m */; };
 		5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D343F88207BC345006F8616 /* ChooseRoleViewController.xib */; };
+		5D5BB21B2084EC980067709B /* LoginTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB21A2084EC980067709B /* LoginTopView.m */; };
+		5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB21D2084ECC70067709B /* UIView+AddBackView.m */; };
+		5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2202084F3B30067709B /* UIAlertController+Set.m */; };
+		5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2232084F7090067709B /* UIViewController+CurrentViewController.m */; };
+		5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2272088E7910067709B /* PersonalInfoViewController.m */; };
+		5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB22B2088E7E70067709B /* PersonalInfoCell.m */; };
+		5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB22F2088EEAF0067709B /* ZMMineModel.m */; };
+		5D5BB2332088EEE50067709B /* ZMPersonalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2322088EEE50067709B /* ZMPersonalModel.m */; };
+		5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB235208AEB1D0067709B /* LLBaseNavViewController.m */; };
+		5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB239208AF8B90067709B /* ZMCertificationViewController.m */; };
+		5D5BB23C208AF8B90067709B /* ZMCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BB23A208AF8B90067709B /* ZMCertificationViewController.xib */; };
+		5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB23F208B13D50067709B /* TeachQAViewController.m */; };
+		5D5BB244208B21F30067709B /* ZMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB243208B21F30067709B /* ZMBaseViewController.m */; };
+		5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB247208B8ADA0067709B /* ZMLoginRequest.m */; };
+		5D5BB24B208B8CD50067709B /* ZMRegistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB24A208B8CD50067709B /* ZMRegistRequest.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
-		5DC5CBB320784FA700F3C0D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB120784FA700F3C0D6 /* Main.storyboard */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
 		5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBBA20784FA700F3C0D6 /* main.m */; };
@@ -32,9 +46,11 @@
 		5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBDA2078523000F3C0D6 /* LLTabBar.m */; };
 		5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBE92078752800F3C0D6 /* LoginViewController.m */; };
 		5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */; };
+		D299471F8F727A23C67FD4F8 /* libPods-Fish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3F3E2A8D4D43225781DFE1 /* libPods-Fish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		484F65B6951CFF90B1D21650 /* Pods-Fish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fish/Pods-Fish.debug.xcconfig"; sourceTree = "<group>"; };
 		5D343F76207BB62E006F8616 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		5D343F77207BB62E006F8616 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		5D343F7A207BB93F006F8616 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -46,10 +62,39 @@
 		5D343F86207BC345006F8616 /* ChooseRoleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseRoleViewController.h; sourceTree = "<group>"; };
 		5D343F87207BC345006F8616 /* ChooseRoleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseRoleViewController.m; sourceTree = "<group>"; };
 		5D343F88207BC345006F8616 /* ChooseRoleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseRoleViewController.xib; sourceTree = "<group>"; };
+		5D5BB2192084EC980067709B /* LoginTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginTopView.h; sourceTree = "<group>"; };
+		5D5BB21A2084EC980067709B /* LoginTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTopView.m; sourceTree = "<group>"; };
+		5D5BB21C2084ECC70067709B /* UIView+AddBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+AddBackView.h"; sourceTree = "<group>"; };
+		5D5BB21D2084ECC70067709B /* UIView+AddBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+AddBackView.m"; sourceTree = "<group>"; };
+		5D5BB21F2084F3B30067709B /* UIAlertController+Set.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Set.h"; sourceTree = "<group>"; };
+		5D5BB2202084F3B30067709B /* UIAlertController+Set.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Set.m"; sourceTree = "<group>"; };
+		5D5BB2222084F7090067709B /* UIViewController+CurrentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CurrentViewController.h"; sourceTree = "<group>"; };
+		5D5BB2232084F7090067709B /* UIViewController+CurrentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CurrentViewController.m"; sourceTree = "<group>"; };
+		5D5BB2262088E7910067709B /* PersonalInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		5D5BB2272088E7910067709B /* PersonalInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
+		5D5BB22A2088E7E70067709B /* PersonalInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoCell.h; sourceTree = "<group>"; };
+		5D5BB22B2088E7E70067709B /* PersonalInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoCell.m; sourceTree = "<group>"; };
+		5D5BB22E2088EEAF0067709B /* ZMMineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMineModel.h; sourceTree = "<group>"; };
+		5D5BB22F2088EEAF0067709B /* ZMMineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMineModel.m; sourceTree = "<group>"; };
+		5D5BB2312088EEE50067709B /* ZMPersonalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMPersonalModel.h; sourceTree = "<group>"; };
+		5D5BB2322088EEE50067709B /* ZMPersonalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMPersonalModel.m; sourceTree = "<group>"; };
+		5D5BB234208AEB1D0067709B /* LLBaseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLBaseNavViewController.h; sourceTree = "<group>"; };
+		5D5BB235208AEB1D0067709B /* LLBaseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLBaseNavViewController.m; sourceTree = "<group>"; };
+		5D5BB238208AF8B90067709B /* ZMCertificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCertificationViewController.h; sourceTree = "<group>"; };
+		5D5BB239208AF8B90067709B /* ZMCertificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCertificationViewController.m; sourceTree = "<group>"; };
+		5D5BB23A208AF8B90067709B /* ZMCertificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMCertificationViewController.xib; sourceTree = "<group>"; };
+		5D5BB23E208B13D50067709B /* TeachQAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeachQAViewController.h; sourceTree = "<group>"; };
+		5D5BB23F208B13D50067709B /* TeachQAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeachQAViewController.m; sourceTree = "<group>"; };
+		5D5BB241208B189A0067709B /* ZMMineDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMineDefine.h; sourceTree = "<group>"; };
+		5D5BB242208B21F30067709B /* ZMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBaseViewController.h; sourceTree = "<group>"; };
+		5D5BB243208B21F30067709B /* ZMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBaseViewController.m; sourceTree = "<group>"; };
+		5D5BB246208B8ADA0067709B /* ZMLoginRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMLoginRequest.h; sourceTree = "<group>"; };
+		5D5BB247208B8ADA0067709B /* ZMLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMLoginRequest.m; sourceTree = "<group>"; };
+		5D5BB249208B8CD50067709B /* ZMRegistRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRegistRequest.h; sourceTree = "<group>"; };
+		5D5BB24A208B8CD50067709B /* ZMRegistRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRegistRequest.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5DC5CBB220784FA700F3C0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DC5CBB720784FA700F3C0D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DC5CBB920784FA700F3C0D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +121,8 @@
 		5DC5CBE82078752800F3C0D6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5DC5CBE92078752800F3C0D6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		6D3F3E2A8D4D43225781DFE1 /* libPods-Fish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A015B05C9C378E7E66C2D7 /* Pods-Fish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fish/Pods-Fish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,17 +130,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D299471F8F727A23C67FD4F8 /* libPods-Fish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FAE98CC5555CDFD299A279A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D3F3E2A8D4D43225781DFE1 /* libPods-Fish.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4933B79F5248B059B0BB93A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				484F65B6951CFF90B1D21650 /* Pods-Fish.debug.xcconfig */,
+				93A015B05C9C378E7E66C2D7 /* Pods-Fish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5D343F75207BB617006F8616 /* Category */ = {
 			isa = PBXGroup;
 			children = (
 				5D343F76207BB62E006F8616 /* UIColor+Hex.h */,
 				5D343F77207BB62E006F8616 /* UIColor+Hex.m */,
+				5D5BB21C2084ECC70067709B /* UIView+AddBackView.h */,
+				5D5BB21D2084ECC70067709B /* UIView+AddBackView.m */,
+				5D5BB21F2084F3B30067709B /* UIAlertController+Set.h */,
+				5D5BB2202084F3B30067709B /* UIAlertController+Set.m */,
+				5D5BB2222084F7090067709B /* UIViewController+CurrentViewController.h */,
+				5D5BB2232084F7090067709B /* UIViewController+CurrentViewController.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -128,11 +199,83 @@
 			path = ChooseRole;
 			sourceTree = "<group>";
 		};
+		5D5BB2182084EC6B0067709B /* LoginTopView */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB2192084EC980067709B /* LoginTopView.h */,
+				5D5BB21A2084EC980067709B /* LoginTopView.m */,
+			);
+			path = LoginTopView;
+			sourceTree = "<group>";
+		};
+		5D5BB2252088E0E60067709B /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB2292088E7CD0067709B /* cell */,
+				5D5BB2262088E7910067709B /* PersonalInfoViewController.h */,
+				5D5BB2272088E7910067709B /* PersonalInfoViewController.m */,
+			);
+			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
+		5D5BB2292088E7CD0067709B /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB22A2088E7E70067709B /* PersonalInfoCell.h */,
+				5D5BB22B2088E7E70067709B /* PersonalInfoCell.m */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		5D5BB22D2088EE9A0067709B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB22E2088EEAF0067709B /* ZMMineModel.h */,
+				5D5BB22F2088EEAF0067709B /* ZMMineModel.m */,
+				5D5BB2312088EEE50067709B /* ZMPersonalModel.h */,
+				5D5BB2322088EEE50067709B /* ZMPersonalModel.m */,
+				5D5BB241208B189A0067709B /* ZMMineDefine.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D5BB237208AF8820067709B /* Certification */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB238208AF8B90067709B /* ZMCertificationViewController.h */,
+				5D5BB239208AF8B90067709B /* ZMCertificationViewController.m */,
+				5D5BB23A208AF8B90067709B /* ZMCertificationViewController.xib */,
+			);
+			path = Certification;
+			sourceTree = "<group>";
+		};
+		5D5BB23D208B13B00067709B /* TeachingQualification  */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB23E208B13D50067709B /* TeachQAViewController.h */,
+				5D5BB23F208B13D50067709B /* TeachQAViewController.m */,
+			);
+			path = "TeachingQualification ";
+			sourceTree = "<group>";
+		};
+		5D5BB245208B8A8F0067709B /* NetWorkDAO */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB246208B8ADA0067709B /* ZMLoginRequest.h */,
+				5D5BB247208B8ADA0067709B /* ZMLoginRequest.m */,
+				5D5BB249208B8CD50067709B /* ZMRegistRequest.h */,
+				5D5BB24A208B8CD50067709B /* ZMRegistRequest.m */,
+			);
+			path = NetWorkDAO;
+			sourceTree = "<group>";
+		};
 		5DC5CB9F20784FA600F3C0D6 = {
 			isa = PBXGroup;
 			children = (
 				5DC5CBAA20784FA600F3C0D6 /* Fish */,
 				5DC5CBA920784FA600F3C0D6 /* Products */,
+				4933B79F5248B059B0BB93A8 /* Pods */,
+				2FAE98CC5555CDFD299A279A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,7 +295,6 @@
 				5DC5CBC12078522F00F3C0D6 /* ViewController */,
 				5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */,
 				5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */,
-				5DC5CBB120784FA700F3C0D6 /* Main.storyboard */,
 				5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */,
 				5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */,
 				5DC5CBB920784FA700F3C0D6 /* Info.plist */,
@@ -165,6 +307,7 @@
 		5DC5CBC12078522F00F3C0D6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BB245208B8A8F0067709B /* NetWorkDAO */,
 				5D343F85207BC330006F8616 /* ChooseRole */,
 				5D343F7F207BC1F4006F8616 /* ForgetPassword */,
 				5D343F79207BB922006F8616 /* Register */,
@@ -211,6 +354,10 @@
 		5DC5CBCE2078523000F3C0D6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BB23D208B13B00067709B /* TeachingQualification  */,
+				5D5BB237208AF8820067709B /* Certification */,
+				5D5BB22D2088EE9A0067709B /* Model */,
+				5D5BB2252088E0E60067709B /* PersonalInfo */,
 				5DC5CBCF2078523000F3C0D6 /* LLMineViewController.h */,
 				5DC5CBD02078523000F3C0D6 /* LLMineViewController.xib */,
 				5DC5CBD12078523000F3C0D6 /* LLMineViewController.m */,
@@ -223,6 +370,10 @@
 			children = (
 				5DC5CBD32078523000F3C0D6 /* LLBaseViewController.m */,
 				5DC5CBD42078523000F3C0D6 /* LLBaseViewController.h */,
+				5D5BB234208AEB1D0067709B /* LLBaseNavViewController.h */,
+				5D5BB235208AEB1D0067709B /* LLBaseNavViewController.m */,
+				5D5BB242208B21F30067709B /* ZMBaseViewController.h */,
+				5D5BB243208B21F30067709B /* ZMBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -230,6 +381,7 @@
 		5DC5CBD52078523000F3C0D6 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BB2182084EC6B0067709B /* LoginTopView */,
 				5DC5CBD62078523000F3C0D6 /* LLTabBar */,
 			);
 			path = CustomView;
@@ -263,6 +415,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DC5CBBE20784FA700F3C0D6 /* Build configuration list for PBXNativeTarget "Fish" */;
 			buildPhases = (
+				9F6D3F2C3D26A54989EE9680 /* [CP] Check Pods Manifest.lock */,
 				5DC5CBA420784FA600F3C0D6 /* Sources */,
 				5DC5CBA520784FA600F3C0D6 /* Frameworks */,
 				5DC5CBA620784FA600F3C0D6 /* Resources */,
@@ -282,6 +435,7 @@
 		5DC5CBA020784FA600F3C0D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZM;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = zhaoming;
 				TargetAttributes = {
@@ -324,11 +478,32 @@
 				5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */,
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
 				5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */,
-				5DC5CBB320784FA700F3C0D6 /* Main.storyboard in Resources */,
+				5D5BB23C208AF8B90067709B /* ZMCertificationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9F6D3F2C3D26A54989EE9680 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fish-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5DC5CBA420784FA600F3C0D6 /* Sources */ = {
@@ -339,30 +514,36 @@
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
 				5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */,
 				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
+				5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */,
 				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,
+				5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */,
+				5D5BB2332088EEE50067709B /* ZMPersonalModel.m in Sources */,
 				5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */,
+				5D5BB21B2084EC980067709B /* LoginTopView.m in Sources */,
 				5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */,
+				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
 				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
+				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
+				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
+				5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */,
+				5D5BB244208B21F30067709B /* ZMBaseViewController.m in Sources */,
+				5D5BB24B208B8CD50067709B /* ZMRegistRequest.m in Sources */,
 				5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */,
+				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
+				5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
+				5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
+				5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5DC5CBB120784FA700F3C0D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5DC5CBB220784FA700F3C0D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -480,10 +661,11 @@
 		};
 		5DC5CBBF20784FA700F3C0D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484F65B6951CFF90B1D21650 /* Pods-Fish.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XK86J33PN9;
+				DEVELOPMENT_TEAM = 8MM5DDTWR5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,10 +677,11 @@
 		};
 		5DC5CBC020784FA700F3C0D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93A015B05C9C378E7E66C2D7 /* Pods-Fish.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XK86J33PN9;
+				DEVELOPMENT_TEAM = 8MM5DDTWR5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

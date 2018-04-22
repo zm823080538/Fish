@@ -6,8 +6,8 @@
 //  Copyright © 2015 meilbn. All rights reserved.
 //
 
-#import "LLBaseViewController.h"
+#import "ZMBaseViewController.h"
 
-@interface LLSameCityViewController : LLBaseViewController
+@interface LLSameCityViewController : UIViewController
 
 @end
