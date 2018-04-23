@@ -10,6 +10,8 @@
 #import "ChooseRoleViewController.h"
 #import "UIColor+Hex.h"
 #import "ZMRegistRequest.h"
+#import "ZMVerfiyCodeRequest.h"
+#import "ZMAccount.h"
 
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
@@ -40,15 +42,31 @@
 - (IBAction)registerClick:(UIButton *)sender {
     ZMRegistRequest *registRequest = [[ZMRegistRequest alloc] init];
     registRequest.mobile = self.usernameTextField.text;
+    registRequest.role = [NSString stringWithFormat:@"%ld",self.type];
+    registRequest.password = self.passwordTextField.text;
+    registRequest.code = self.verfiyTextField.text;
+    registRequest.regtype = @"0";
     [registRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-//        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//        [appDelegate changeRootVC];
+        NSLog(@"注册成功...");
+        [self.navigationController popToRootViewControllerAnimated:YES];
+//        ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
+//        [self.navigationController pushViewController:chooseRoleVC animated:YES];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
     
-    ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
-    [self.navigationController pushViewController:chooseRoleVC animated:YES];
+   
+}
+- (IBAction)sendVerfiyCode:(UIButton *)sender {
+    ZMVerfiyCodeRequest *verfiyCodeRequest = [[ZMVerfiyCodeRequest alloc] init];
+    verfiyCodeRequest.mobile = self.usernameTextField.text;
+    verfiyCodeRequest.type = @"1";
+    [verfiyCodeRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
 }
 
 @end

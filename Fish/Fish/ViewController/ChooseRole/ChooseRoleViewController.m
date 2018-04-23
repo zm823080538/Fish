@@ -7,6 +7,7 @@
 //
 
 #import "ChooseRoleViewController.h"
+#import "RegisterViewController.h"
 #import "UIAlertController+Set.h"
 
 @interface ChooseRoleViewController ()
@@ -28,7 +29,9 @@
 }
 - (IBAction)chooseRole:(UIButton *)sender {
     [UIAlertController alertWithTitle:@"提示" message:@"是否选择身份为“学员”？确认后将无法切换身份，请三思而后行哦～" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
-        
+        RegisterViewController *registVC = [[RegisterViewController alloc] init];
+        registVC.type = index;
+        [self.navigationController pushViewController:registVC animated:YES];
     }];
 }
 

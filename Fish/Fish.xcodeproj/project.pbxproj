@@ -29,6 +29,12 @@
 		5D5BB244208B21F30067709B /* ZMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB243208B21F30067709B /* ZMBaseViewController.m */; };
 		5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB247208B8ADA0067709B /* ZMLoginRequest.m */; };
 		5D5BB24B208B8CD50067709B /* ZMRegistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB24A208B8CD50067709B /* ZMRegistRequest.m */; };
+		5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB24D208E26930067709B /* ZMVerfiyCodeRequest.m */; };
+		5D5BB252208E2D0F0067709B /* ZMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB251208E2D0F0067709B /* ZMAccount.m */; };
+		5D5BB255208E2D3A0067709B /* ZMAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB254208E2D3A0067709B /* ZMAccountManager.m */; };
+		5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB257208E2FCB0067709B /* ZMForgetPwdRequest.m */; };
+		5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25B208E35590067709B /* ZMRealNameRequest.m */; };
+		5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -92,6 +98,18 @@
 		5D5BB247208B8ADA0067709B /* ZMLoginRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMLoginRequest.m; sourceTree = "<group>"; };
 		5D5BB249208B8CD50067709B /* ZMRegistRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRegistRequest.h; sourceTree = "<group>"; };
 		5D5BB24A208B8CD50067709B /* ZMRegistRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRegistRequest.m; sourceTree = "<group>"; };
+		5D5BB24C208E26930067709B /* ZMVerfiyCodeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMVerfiyCodeRequest.h; sourceTree = "<group>"; };
+		5D5BB24D208E26930067709B /* ZMVerfiyCodeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMVerfiyCodeRequest.m; sourceTree = "<group>"; };
+		5D5BB250208E2D0F0067709B /* ZMAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAccount.h; sourceTree = "<group>"; };
+		5D5BB251208E2D0F0067709B /* ZMAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMAccount.m; sourceTree = "<group>"; };
+		5D5BB253208E2D3A0067709B /* ZMAccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAccountManager.h; sourceTree = "<group>"; };
+		5D5BB254208E2D3A0067709B /* ZMAccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMAccountManager.m; sourceTree = "<group>"; };
+		5D5BB256208E2FCB0067709B /* ZMForgetPwdRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMForgetPwdRequest.h; sourceTree = "<group>"; };
+		5D5BB257208E2FCB0067709B /* ZMForgetPwdRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMForgetPwdRequest.m; sourceTree = "<group>"; };
+		5D5BB25A208E35590067709B /* ZMRealNameRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRealNameRequest.h; sourceTree = "<group>"; };
+		5D5BB25B208E35590067709B /* ZMRealNameRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRealNameRequest.m; sourceTree = "<group>"; };
+		5D5BB25D208E39400067709B /* ZMUpLoadRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMUpLoadRequest.h; sourceTree = "<group>"; };
+		5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMUpLoadRequest.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -265,6 +283,32 @@
 				5D5BB247208B8ADA0067709B /* ZMLoginRequest.m */,
 				5D5BB249208B8CD50067709B /* ZMRegistRequest.h */,
 				5D5BB24A208B8CD50067709B /* ZMRegistRequest.m */,
+				5D5BB24C208E26930067709B /* ZMVerfiyCodeRequest.h */,
+				5D5BB24D208E26930067709B /* ZMVerfiyCodeRequest.m */,
+				5D5BB256208E2FCB0067709B /* ZMForgetPwdRequest.h */,
+				5D5BB257208E2FCB0067709B /* ZMForgetPwdRequest.m */,
+				5D5BB25D208E39400067709B /* ZMUpLoadRequest.h */,
+				5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */,
+			);
+			path = NetWorkDAO;
+			sourceTree = "<group>";
+		};
+		5D5BB24F208E2CFE0067709B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB250208E2D0F0067709B /* ZMAccount.h */,
+				5D5BB251208E2D0F0067709B /* ZMAccount.m */,
+				5D5BB253208E2D3A0067709B /* ZMAccountManager.h */,
+				5D5BB254208E2D3A0067709B /* ZMAccountManager.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D5BB259208E35370067709B /* NetWorkDAO */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB25A208E35590067709B /* ZMRealNameRequest.h */,
+				5D5BB25B208E35590067709B /* ZMRealNameRequest.m */,
 			);
 			path = NetWorkDAO;
 			sourceTree = "<group>";
@@ -307,6 +351,7 @@
 		5DC5CBC12078522F00F3C0D6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BB24F208E2CFE0067709B /* Model */,
 				5D5BB245208B8A8F0067709B /* NetWorkDAO */,
 				5D343F85207BC330006F8616 /* ChooseRole */,
 				5D343F7F207BC1F4006F8616 /* ForgetPassword */,
@@ -354,6 +399,7 @@
 		5DC5CBCE2078523000F3C0D6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BB259208E35370067709B /* NetWorkDAO */,
 				5D5BB23D208B13B00067709B /* TeachingQualification  */,
 				5D5BB237208AF8820067709B /* Certification */,
 				5D5BB22D2088EE9A0067709B /* Model */,
@@ -524,20 +570,26 @@
 				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
 				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
+				5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */,
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
 				5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */,
+				5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */,
 				5D5BB244208B21F30067709B /* ZMBaseViewController.m in Sources */,
+				5D5BB252208E2D0F0067709B /* ZMAccount.m in Sources */,
 				5D5BB24B208B8CD50067709B /* ZMRegistRequest.m in Sources */,
+				5D5BB255208E2D3A0067709B /* ZMAccountManager.m in Sources */,
 				5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */,
 				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
 				5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
+				5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
 				5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
 				5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */,
+				5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

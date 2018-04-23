@@ -8,5 +8,6 @@
 
 #import "LLBaseViewController.h"
 @interface RegisterViewController : LLBaseViewController
+@property (nonatomic, assign) NSInteger type;
 
 @end

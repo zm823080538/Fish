@@ -8,12 +8,16 @@
 
 #import "ForgetPasswordViewController.h"
 #import "UIColor+Hex.h"
+#import "ZMVerfiyCodeRequest.h"
+#import "ZMForgetPwdRequest.h"
+
 @interface ForgetPasswordViewController ()
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *showPassword;
 @property (weak, nonatomic) IBOutlet UIButton *forgetPassword;
+@property (weak, nonatomic) IBOutlet UITextField *verfiyCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *registerUser;
 @end
 
@@ -31,19 +35,29 @@
     [self.registerUser setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)sendVerfiyCode:(UIButton *)sender {
+    ZMVerfiyCodeRequest *verfiyCodeRequest = [[ZMVerfiyCodeRequest alloc] init];
+    verfiyCodeRequest.mobile = self.usernameTextField.text;
+    verfiyCodeRequest.type = @"2";
+    [verfiyCodeRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)commit:(UIButton *)sender {
+    ZMForgetPwdRequest *commitRequest = [[ZMForgetPwdRequest alloc] init];
+    commitRequest.mobile = self.usernameTextField.text;
+    commitRequest.password = self.passwordTextField.text;
+    commitRequest.code = self.verfiyCodeTextField.text;
+    [commitRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSLog(@"%@",request.responseString);
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
-*/
 
 @end

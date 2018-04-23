@@ -10,10 +10,13 @@
 #import "UIView+AddBackView.h"
 #import "UIColor+Hex.h"
 #import "AppDelegate.h"
-#import "RegisterViewController.h"
+#import "ChooseRoleViewController.h"
 #import "ChooseRoleViewController.h"
 #import "ForgetPasswordViewController.h"
+#import "ZMAccount.h"
+#import <NSObject+YYModel.h>
 
+#import "ZMAccountManager.h"
 #import "ZMLoginRequest.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
@@ -56,6 +59,8 @@
 - (IBAction)loginClick {
     ZMLoginRequest *loginRequest = [[ZMLoginRequest alloc] initWithMobile:self.usernameTextField.text password:self.passwordTextField.text version:@"i1.0"];
     [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        ZMAccount *account = [ZMAccount modelWithJSON:request.responseString];
+        [ZMAccountManager shareManager].account = account;
         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [appDelegate changeRootVC];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -65,8 +70,8 @@
     
 }
 - (IBAction)registerButtonClick {
-    RegisterViewController *registerVC = [RegisterViewController new];
-    [self.navigationController pushViewController:registerVC animated:YES];
+    ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
+    [self.navigationController pushViewController:chooseRoleVC animated:YES];
 }
 
 /*

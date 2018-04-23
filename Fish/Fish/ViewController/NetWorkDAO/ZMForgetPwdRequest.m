@@ -1,22 +1,20 @@
 //
-//  ZMRegistRequest.m
+//  ZMForgetPwdRequest.m
 //  Fish
 //
-//  Created by sunny on 2018/4/21.
+//  Created by sunny on 2018/4/23.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "ZMRegistRequest.h"
+#import "ZMForgetPwdRequest.h"
 
-@implementation ZMRegistRequest {
-    NSString *_regtype;
+@implementation ZMForgetPwdRequest {
     NSString *_password;
     NSString *_mobile;
     NSString *_code;
-    NSString *_role;
 }
 - (NSString *)requestUrl {
-    return @"/api/user/reg";
+    return @"/api/user/changepsw";
 }
 
 - (YTKRequestMethod)requestMethod {
@@ -24,13 +22,10 @@
 }
 
 - (id)requestArgument {
-    return @{
-             @"regtype": _regtype,
+    return @{            
              @"password": _password,
              @"mobile": _mobile,
              @"code": _code,
-             @"role": _role,
              };
 }
-
 @end
