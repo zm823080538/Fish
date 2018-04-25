@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "ZMAccount.h"
 @interface ZMAccountManager : NSObject
+
 + (instancetype)shareManager;
-@property (nonatomic, strong) ZMAccount * account;
+@property (nonatomic, readonly, getter=isLogin) BOOL login;
+// 登陆后获取用户信息，如果未登录，则返回nil
+@property (nonatomic, strong) ZMAccount *loginUser;
+
 
 @end

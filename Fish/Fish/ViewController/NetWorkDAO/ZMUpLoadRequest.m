@@ -31,10 +31,14 @@
 - (AFConstructingBlock)constructingBodyBlock {
     return ^(id<AFMultipartFormData> formData) {
         NSData *data = UIImagePNGRepresentation(_image);
-        NSString *name = @"image";
-        NSString *formKey = @"image";
-        NSString *type = @"image/jpeg";
-        [formData appendPartWithFileData:data name:formKey fileName:name mimeType:type];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        formatter.dateFormat =@"yyyyMMddHHmmss";
+        NSString *str = [formatter stringFromDate:[NSDate date]];
+        NSString *fileName = [NSString stringWithFormat:@"%@.jpg", str];
+        [formData appendPartWithFileData:data
+                                    name:@"file"
+                                fileName:fileName
+                                mimeType:@"image/jpeg"];
     };
 }
 

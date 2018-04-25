@@ -35,6 +35,12 @@
 		5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB257208E2FCB0067709B /* ZMForgetPwdRequest.m */; };
 		5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25B208E35590067709B /* ZMRealNameRequest.m */; };
 		5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */; };
+		5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */; };
+		5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46D92090298D00CE2723 /* ZMAnimatingRequestAccessory.m */; };
+		5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */; };
+		5D8A46E5209078B300CE2723 /* YPImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46E3209078B200CE2723 /* YPImagePicker.m */; };
+		5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A470D20907D5100CE2723 /* UIAlertController+YPKit.m */; };
+		5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A47112090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -52,8 +58,21 @@
 		5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBDA2078523000F3C0D6 /* LLTabBar.m */; };
 		5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBE92078752800F3C0D6 /* LoginViewController.m */; };
 		5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */; };
+		5DDCBE16208F0FA900B012B0 /* FishUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDCBE15208F0FA900B012B0 /* FishUITests.m */; };
+		5DDCBE1E208F105600B012B0 /* ZMNetworkRequestTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDCBE1D208F105600B012B0 /* ZMNetworkRequestTestCase.m */; };
+		5DDCBE21208F1AA400B012B0 /* ZMTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDCBE20208F1AA400B012B0 /* ZMTestModel.m */; };
 		D299471F8F727A23C67FD4F8 /* libPods-Fish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3F3E2A8D4D43225781DFE1 /* libPods-Fish.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DDCBE18208F0FA900B012B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DC5CBA020784FA600F3C0D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DC5CBA720784FA600F3C0D6;
+			remoteInfo = Fish;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		484F65B6951CFF90B1D21650 /* Pods-Fish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fish/Pods-Fish.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +129,19 @@
 		5D5BB25B208E35590067709B /* ZMRealNameRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRealNameRequest.m; sourceTree = "<group>"; };
 		5D5BB25D208E39400067709B /* ZMUpLoadRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMUpLoadRequest.h; sourceTree = "<group>"; };
 		5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMUpLoadRequest.m; sourceTree = "<group>"; };
+		5D8A46C5209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+ZMAnimatingAccessory.h"; sourceTree = "<group>"; };
+		5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YTKBaseRequest+ZMAnimatingAccessory.m"; sourceTree = "<group>"; };
+		5D8A46D82090298D00CE2723 /* ZMAnimatingRequestAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAnimatingRequestAccessory.h; sourceTree = "<group>"; };
+		5D8A46D92090298D00CE2723 /* ZMAnimatingRequestAccessory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMAnimatingRequestAccessory.m; sourceTree = "<group>"; };
+		5D8A46DF2090698C00CE2723 /* ZMConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMConfig.h; sourceTree = "<group>"; };
+		5D8A46E02090755B00CE2723 /* NSDictionary+ZMSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZMSet.h"; sourceTree = "<group>"; };
+		5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZMSet.m"; sourceTree = "<group>"; };
+		5D8A46E3209078B200CE2723 /* YPImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPImagePicker.m; sourceTree = "<group>"; };
+		5D8A46E4209078B200CE2723 /* YPImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPImagePicker.h; sourceTree = "<group>"; };
+		5D8A470C20907D5100CE2723 /* UIAlertController+YPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+YPKit.h"; sourceTree = "<group>"; };
+		5D8A470D20907D5100CE2723 /* UIAlertController+YPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+YPKit.m"; sourceTree = "<group>"; };
+		5D8A47102090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		5D8A47112090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -139,6 +171,12 @@
 		5DC5CBE82078752800F3C0D6 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5DC5CBE92078752800F3C0D6 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5DC5CBEA2078752800F3C0D6 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5DDCBE13208F0FA800B012B0 /* FishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDCBE15208F0FA900B012B0 /* FishUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FishUITests.m; sourceTree = "<group>"; };
+		5DDCBE17208F0FA900B012B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DDCBE1D208F105600B012B0 /* ZMNetworkRequestTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNetworkRequestTestCase.m; sourceTree = "<group>"; };
+		5DDCBE1F208F1AA400B012B0 /* ZMTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMTestModel.h; sourceTree = "<group>"; };
+		5DDCBE20208F1AA400B012B0 /* ZMTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMTestModel.m; sourceTree = "<group>"; };
 		6D3F3E2A8D4D43225781DFE1 /* libPods-Fish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A015B05C9C378E7E66C2D7 /* Pods-Fish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fish/Pods-Fish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +187,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D299471F8F727A23C67FD4F8 /* libPods-Fish.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDCBE10208F0FA800B012B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +228,10 @@
 				5D5BB2202084F3B30067709B /* UIAlertController+Set.m */,
 				5D5BB2222084F7090067709B /* UIViewController+CurrentViewController.h */,
 				5D5BB2232084F7090067709B /* UIViewController+CurrentViewController.m */,
+				5D8A46C5209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.h */,
+				5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */,
+				5D8A46E02090755B00CE2723 /* NSDictionary+ZMSet.h */,
+				5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -313,10 +362,45 @@
 			path = NetWorkDAO;
 			sourceTree = "<group>";
 		};
+		5D8A46D72090297400CE2723 /* Accessory */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A46D82090298D00CE2723 /* ZMAnimatingRequestAccessory.h */,
+				5D8A46D92090298D00CE2723 /* ZMAnimatingRequestAccessory.m */,
+			);
+			path = Accessory;
+			sourceTree = "<group>";
+		};
+		5D8A46DE2090697300CE2723 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A46DF2090698C00CE2723 /* ZMConfig.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		5D8A46E62090797900CE2723 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A470F2090845A00CE2723 /* FDFullscreenPopGesture */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		5D8A470F2090845A00CE2723 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A47102090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.h */,
+				5D8A47112090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		5DC5CB9F20784FA600F3C0D6 = {
 			isa = PBXGroup;
 			children = (
 				5DC5CBAA20784FA600F3C0D6 /* Fish */,
+				5DDCBE14208F0FA900B012B0 /* FishUITests */,
 				5DC5CBA920784FA600F3C0D6 /* Products */,
 				4933B79F5248B059B0BB93A8 /* Pods */,
 				2FAE98CC5555CDFD299A279A /* Frameworks */,
@@ -327,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				5DC5CBA820784FA600F3C0D6 /* Fish.app */,
+				5DDCBE13208F0FA800B012B0 /* FishUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +419,9 @@
 		5DC5CBAA20784FA600F3C0D6 /* Fish */ = {
 			isa = PBXGroup;
 			children = (
+				5D8A46E62090797900CE2723 /* Tool */,
+				5D8A46DE2090697300CE2723 /* Macro */,
+				5D8A46D72090297400CE2723 /* Accessory */,
 				5D343F75207BB617006F8616 /* Category */,
 				5DC5CBD52078523000F3C0D6 /* CustomView */,
 				5DC5CBC12078522F00F3C0D6 /* ViewController */,
@@ -427,6 +515,10 @@
 		5DC5CBD52078523000F3C0D6 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				5D8A470C20907D5100CE2723 /* UIAlertController+YPKit.h */,
+				5D8A470D20907D5100CE2723 /* UIAlertController+YPKit.m */,
+				5D8A46E4209078B200CE2723 /* YPImagePicker.h */,
+				5D8A46E3209078B200CE2723 /* YPImagePicker.m */,
 				5D5BB2182084EC6B0067709B /* LoginTopView */,
 				5DC5CBD62078523000F3C0D6 /* LLTabBar */,
 			);
@@ -454,6 +546,18 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		5DDCBE14208F0FA900B012B0 /* FishUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5DDCBE1D208F105600B012B0 /* ZMNetworkRequestTestCase.m */,
+				5DDCBE15208F0FA900B012B0 /* FishUITests.m */,
+				5DDCBE17208F0FA900B012B0 /* Info.plist */,
+				5DDCBE1F208F1AA400B012B0 /* ZMTestModel.h */,
+				5DDCBE20208F1AA400B012B0 /* ZMTestModel.m */,
+			);
+			path = FishUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +579,24 @@
 			productReference = 5DC5CBA820784FA600F3C0D6 /* Fish.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5DDCBE12208F0FA800B012B0 /* FishUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DDCBE1C208F0FA900B012B0 /* Build configuration list for PBXNativeTarget "FishUITests" */;
+			buildPhases = (
+				5DDCBE0F208F0FA800B012B0 /* Sources */,
+				5DDCBE10208F0FA800B012B0 /* Frameworks */,
+				5DDCBE11208F0FA800B012B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DDCBE19208F0FA900B012B0 /* PBXTargetDependency */,
+			);
+			name = FishUITests;
+			productName = FishUITests;
+			productReference = 5DDCBE13208F0FA800B012B0 /* FishUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -489,6 +611,11 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					5DDCBE12208F0FA800B012B0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5DC5CBA720784FA600F3C0D6;
+					};
 				};
 			};
 			buildConfigurationList = 5DC5CBA320784FA600F3C0D6 /* Build configuration list for PBXProject "Fish" */;
@@ -498,6 +625,10 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				"zh-Hans",
+				ja,
+				es,
 			);
 			mainGroup = 5DC5CB9F20784FA600F3C0D6;
 			productRefGroup = 5DC5CBA920784FA600F3C0D6 /* Products */;
@@ -505,6 +636,7 @@
 			projectRoot = "";
 			targets = (
 				5DC5CBA720784FA600F3C0D6 /* Fish */,
+				5DDCBE12208F0FA800B012B0 /* FishUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -525,6 +657,13 @@
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
 				5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */,
 				5D5BB23C208AF8B90067709B /* ZMCertificationViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DDCBE11208F0FA800B012B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +711,10 @@
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
 				5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */,
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
+				5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
+				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
 				5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */,
 				5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */,
 				5D5BB244208B21F30067709B /* ZMBaseViewController.m in Sources */,
@@ -585,7 +727,10 @@
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */,
+				5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
+				5D8A46E5209078B300CE2723 /* YPImagePicker.m in Sources */,
+				5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */,
 				5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
 				5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */,
@@ -593,7 +738,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5DDCBE0F208F0FA800B012B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DDCBE21208F1AA400B012B0 /* ZMTestModel.m in Sources */,
+				5DDCBE16208F0FA900B012B0 /* FishUITests.m in Sources */,
+				5DDCBE1E208F105600B012B0 /* ZMNetworkRequestTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DDCBE19208F0FA900B012B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DC5CBA720784FA600F3C0D6 /* Fish */;
+			targetProxy = 5DDCBE18208F0FA900B012B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */ = {
@@ -743,6 +906,34 @@
 			};
 			name = Release;
 		};
+		5DDCBE1A208F0FA900B012B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XK86J33PN9;
+				INFOPLIST_FILE = FishUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MG.FishUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fish;
+			};
+			name = Debug;
+		};
+		5DDCBE1B208F0FA900B012B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XK86J33PN9;
+				INFOPLIST_FILE = FishUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MG.FishUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Fish;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -760,6 +951,15 @@
 			buildConfigurations = (
 				5DC5CBBF20784FA700F3C0D6 /* Debug */,
 				5DC5CBC020784FA700F3C0D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DDCBE1C208F0FA900B012B0 /* Build configuration list for PBXNativeTarget "FishUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DDCBE1A208F0FA900B012B0 /* Debug */,
+				5DDCBE1B208F0FA900B012B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -28,6 +28,18 @@
     return @"/api/user/login";
 }
 
+- (NSTimeInterval)requestTimeoutInterval {
+    return 30.0f;
+}
+
+- (void)requestFailedFilter {
+    
+}
+
+- (void)requestCompletePreprocessor {
+    
+}
+
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
 }

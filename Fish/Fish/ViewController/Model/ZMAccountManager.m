@@ -7,6 +7,8 @@
 //
 
 #import "ZMAccountManager.h"
+#import "ZMConfig.h"
+#import <NSObject+YYModel.h>
 
 @implementation ZMAccountManager
 + (instancetype)shareManager {
@@ -16,5 +18,17 @@
         accountManager = [[ZMAccountManager alloc] init];
     });
     return accountManager;
+}
+
+- (ZMAccount *)loginUser {
+    if (!_loginUser) {
+        NSDictionary *userInfoDict = [[NSUserDefaults standardUserDefaults] objectForKey:kZMUserInfo];
+        _loginUser = [ZMAccount modelWithJSON:userInfoDict];
+    }
+    return _loginUser;
+}
+
+- (BOOL)isLogin {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:kZMUserInfo] == nil ? NO : YES;
 }
 @end

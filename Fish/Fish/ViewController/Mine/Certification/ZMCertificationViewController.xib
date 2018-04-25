@@ -99,6 +99,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73u-jK-2nk">
                                                     <rect key="frame" x="30" y="52" width="315" height="174.5"/>
                                                     <state key="normal" image="Group 7"/>
+                                                    <connections>
+                                                        <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="w4y-Em-3Nz"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,6 +126,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-zS-F8l">
                                                     <rect key="frame" x="30" y="52" width="315" height="174.5"/>
                                                     <state key="normal" image="Group 10"/>
+                                                    <connections>
+                                                        <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="VJU-Fr-e6O"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -179,6 +185,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gek-2x-HEb">
                                                     <rect key="frame" x="30" y="71" width="315" height="172.5"/>
                                                     <state key="normal" image="Rectangle 2"/>
+                                                    <connections>
+                                                        <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="eks-sK-ysC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,6 +208,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-7s-8VZ">
                                                     <rect key="frame" x="30" y="66.5" width="315" height="177"/>
                                                     <state key="normal" image="Rectangle 2 Copy 2"/>
+                                                    <connections>
+                                                        <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="HzW-XG-Rpm"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相关证书" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-qn-9Y3">
                                                     <rect key="frame" x="158.5" y="20" width="58" height="17"/>

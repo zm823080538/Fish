@@ -7,6 +7,9 @@
 //
 
 #import "LLMineViewController.h"
+#import <UIImageView+YYWebImage.h>
+
+#import "ZMAccountManager.h"
 #import "ZMMineModel.h"
 #import "PersonalInfoCell.h"
 #import "PersonalInfoViewController.h"
@@ -19,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 @property (weak, nonatomic) IBOutlet UIButton *addUserBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *portrait;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *verfiyStatusLabel;
 
 @end
 
@@ -26,9 +32,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.tableHeaderView = self.tableHeaderView1;
+    
     [self loadData];
     [self adapterUIForIOS11:self.tableView];
+}
+
+- (void)updateTableHeaderView {
+    if ([ZMAccountManager shareManager].isLogin) {
+        self.tableView.tableHeaderView = self.tableHeaderView2;
+        [self.portrait setImageWithURL:[NSURL URLWithString:[ZMAccountManager shareManager].loginUser.nickname] placeholder:nil];
+        
+        [self.portrait setImageWithURL:[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1711569,1878578975&fm=27&gp=0.jpg"] placeholder:nil];
+        self.userNameLabel.text = [ZMAccountManager shareManager].loginUser.nickname;
+        self.userNameLabel.text = @"张三";
+    } else {
+        self.tableView.tableHeaderView = self.tableHeaderView1;
+    }
 }
 
 - (void)loadData {
@@ -61,6 +80,8 @@
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     self.navigationController.navigationBarHidden = YES;
+    [self updateTableHeaderView];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
