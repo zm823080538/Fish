@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="backgroundView" destination="dhm-Cp-S6Z" id="wVf-p7-CaI"/>
                 <outlet property="forgetPassword" destination="ik1-XO-PtY" id="BCi-IQ-rmI"/>
+                <outlet property="getCodeButton" destination="fhC-rh-cR6" id="e5L-7n-LvE"/>
                 <outlet property="passwordTextField" destination="FuE-Gz-Shd" id="tIE-tb-yB9"/>
                 <outlet property="registerUser" destination="ik1-XO-PtY" id="Sbp-Kv-Co8"/>
                 <outlet property="showPassword" destination="nUo-ra-q5s" id="OTM-yP-1Gi"/>
@@ -84,7 +85,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhC-rh-cR6">
-                            <rect key="frame" x="259" y="225.5" width="77" height="21"/>
+                            <rect key="frame" x="259" y="225.5" width="86" height="21"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="8mS-TP-r2r"/>
@@ -158,6 +159,7 @@
                         <constraint firstItem="omO-Xq-qO0" firstAttribute="leading" secondItem="zia-BC-zTf" secondAttribute="leading" id="Bqg-6u-5oL"/>
                         <constraint firstItem="onk-Ca-UAG" firstAttribute="trailing" secondItem="FUY-pm-RcH" secondAttribute="trailing" id="CXk-X9-M0g"/>
                         <constraint firstItem="rHK-yD-GoJ" firstAttribute="centerY" secondItem="omO-Xq-qO0" secondAttribute="centerY" id="Eud-Wf-DQr"/>
+                        <constraint firstItem="fhC-rh-cR6" firstAttribute="trailing" secondItem="onk-Ca-UAG" secondAttribute="trailing" id="Gui-dX-0dm"/>
                         <constraint firstItem="onk-Ca-UAG" firstAttribute="centerY" secondItem="rHK-yD-GoJ" secondAttribute="centerY" id="JyC-M9-x0l"/>
                         <constraint firstItem="FuE-Gz-Shd" firstAttribute="leading" secondItem="tmt-YH-tvu" secondAttribute="leading" id="KLd-sD-yt9"/>
                         <constraint firstItem="ik1-XO-PtY" firstAttribute="top" secondItem="tmt-YH-tvu" secondAttribute="bottom" constant="50" id="LYK-HA-ErW"/>

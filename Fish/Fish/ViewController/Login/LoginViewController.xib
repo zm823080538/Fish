@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="backgroundView" destination="O7b-JA-lVW" id="Atw-xG-Dn0"/>
                 <outlet property="forgetPassword" destination="Ouh-FB-MJM" id="lGD-wU-61E"/>
+                <outlet property="otherChannelLoginLabel" destination="a4U-nG-YPI" id="pIJ-3v-G3x"/>
                 <outlet property="passwordTextField" destination="oKI-zb-3IQ" id="d1X-Ci-AOt"/>
                 <outlet property="registerUser" destination="6oG-Zt-SyU" id="TK9-1m-gyy"/>
                 <outlet property="showPassword" destination="YZC-zk-FTp" id="5kl-Cs-Fn4"/>

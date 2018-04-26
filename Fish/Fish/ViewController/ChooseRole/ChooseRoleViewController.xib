@@ -29,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7W-JC-eJh">
-                            <rect key="frame" x="60" y="144" width="255" height="130"/>
+                            <rect key="frame" x="60" y="138.5" width="255" height="130"/>
                             <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="130" id="c2w-Be-zCw"/>
@@ -45,20 +45,20 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="learner" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-Y3-CBK">
-                            <rect key="frame" x="163.5" y="172" width="48" height="42"/>
+                            <rect key="frame" x="163.5" y="166.5" width="48" height="42"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="48" id="ZLR-fE-KG1"/>
                                 <constraint firstAttribute="height" constant="42" id="j3c-Xn-Qr7"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是学员" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtd-xr-oDe">
-                            <rect key="frame" x="153" y="224" width="69.5" height="20.5"/>
+                            <rect key="frame" x="153" y="218.5" width="69.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bM0-nD-kjJ">
-                            <rect key="frame" x="60" y="402" width="255" height="130"/>
+                            <rect key="frame" x="60" y="396.5" width="255" height="130"/>
                             <color key="backgroundColor" red="1" green="0.80392156859999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="130" id="Jh0-oj-wbB"/>
@@ -74,14 +74,14 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coach" translatesAutoresizingMaskIntoConstraints="NO" id="dHb-0W-oWU">
-                            <rect key="frame" x="163" y="430" width="48" height="42"/>
+                            <rect key="frame" x="163" y="424.5" width="48" height="42"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="42" id="1AI-wt-QrM"/>
                                 <constraint firstAttribute="width" constant="48" id="Wan-xn-PnZ"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是教练" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51K-W1-d5k">
-                            <rect key="frame" x="153" y="482" width="69.5" height="20.5"/>
+                            <rect key="frame" x="153" y="476.5" width="69.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="F7W-JC-eJh" firstAttribute="top" secondItem="o5e-dm-Wsy" secondAttribute="top" constant="144" id="FQV-Sp-HFZ"/>
+                        <constraint firstItem="F7W-JC-eJh" firstAttribute="centerY" secondItem="o5e-dm-Wsy" secondAttribute="centerY" constant="-130" id="9gM-Fh-DHl"/>
                         <constraint firstItem="eFN-GT-dUU" firstAttribute="centerX" secondItem="o5e-dm-Wsy" secondAttribute="centerX" id="Fjk-ta-9dd"/>
                         <constraint firstItem="3Jc-Y3-CBK" firstAttribute="centerX" secondItem="o5e-dm-Wsy" secondAttribute="centerX" id="Iq0-h6-uNz"/>
                         <constraint firstItem="dHb-0W-oWU" firstAttribute="centerX" secondItem="o5e-dm-Wsy" secondAttribute="centerX" id="KqV-1T-Dqs"/>
