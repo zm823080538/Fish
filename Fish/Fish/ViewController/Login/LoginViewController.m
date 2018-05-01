@@ -10,15 +10,17 @@
 #import "UIView+AddBackView.h"
 #import "UIColor+Hex.h"
 #import "AppDelegate.h"
+#import "YTKBaseRequest+ZMAnimatingAccessory.h"
 #import "ChooseRoleViewController.h"
 #import "ChooseRoleViewController.h"
 #import "ForgetPasswordViewController.h"
 #import "ZMAccount.h"
 #import <NSObject+YYModel.h>
-
+#import "ZMConfig.h"
 #import "ZMAccountManager.h"
 #import "ZMLoginRequest.h"
-@interface LoginViewController ()
+
+@interface LoginViewController () <YTKRequestAccessory>
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -33,11 +35,11 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+    [super viewDidLoad];    
     [self.usernameTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
+    self.usernameTextField.text = @"18280074372";
     [self.passwordTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    
+    self.passwordTextField.text = @"111111";
     self.usernameTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
     self.passwordTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
     self.otherChannelLoginLabel.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
@@ -50,40 +52,43 @@
 
 
 - (IBAction)showPwd:(UIButton *)sender {
+    sender.selected = !sender.selected;
     self.passwordTextField.secureTextEntry = sender.selected;
-//    ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
-//    [self.navigationController pushViewController:chooseRoleVC animated:YES];
 }
+
 - (IBAction)forgetPwd {
     ForgetPasswordViewController *forgetPasswordVC = [ForgetPasswordViewController new];
     [self.navigationController pushViewController:forgetPasswordVC animated:YES];
 }
+
 - (IBAction)loginClick {
     ZMLoginRequest *loginRequest = [[ZMLoginRequest alloc] initWithMobile:self.usernameTextField.text password:self.passwordTextField.text version:@"i1.0"];
+    loginRequest.animatingText = @"正在登录";
+    loginRequest.animatingView = self.view;
     [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        ZMAccount *account = [ZMAccount modelWithJSON:request.responseString];
-        [ZMAccountManager shareManager].account = account;
-        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        [appDelegate changeRootVC];
+        if ([request.responseJSONObject isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *requestInfo = (NSDictionary *)request.responseJSONObject;
+            NSLog(@"---%@",requestInfo[@"msg"]);
+            NSString *code = requestInfo[@"code"];
+            if (code.integerValue == 100) {
+                
+            } else if (code.integerValue == 0) {
+                ZMAccount *account = [ZMAccount modelWithJSON:requestInfo[@"data"]];
+                NSDictionary *dict = [account modelToJSONObject];
+                [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kZMUserInfo];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                [appDelegate changeRootVC];
+            }
+        }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
-    
-    
 }
+
 - (IBAction)registerButtonClick {
     ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
     [self.navigationController pushViewController:chooseRoleVC animated:YES];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

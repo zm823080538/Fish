@@ -7,7 +7,6 @@
 //
 
 #import "LLBaseNavViewController.h"
-
 @interface LLBaseNavViewController ()
 
 @end
@@ -16,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.fd_prefersNavigationBarHidden = YES;
     // Do any additional setup after loading the view.
 }
 

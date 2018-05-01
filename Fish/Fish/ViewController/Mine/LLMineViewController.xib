@@ -13,10 +13,13 @@
             <connections>
                 <outlet property="addUserBtn" destination="XkX-EY-23V" id="yYq-Gn-uJ2"/>
                 <outlet property="messageBtn" destination="Emb-id-6dx" id="yvX-BR-pSa"/>
+                <outlet property="portrait" destination="ru3-m6-YOY" id="fav-yH-v1g"/>
                 <outlet property="settingButton" destination="VxY-xw-Cvr" id="0aG-00-cdf"/>
                 <outlet property="tableHeaderView1" destination="Fav-DR-vnA" id="bMX-sC-hLM"/>
                 <outlet property="tableHeaderView2" destination="tgv-T0-SIA" id="jAA-kl-qai"/>
                 <outlet property="tableView" destination="Q0z-jq-QMD" id="ncE-Go-xy4"/>
+                <outlet property="userNameLabel" destination="1sj-Ok-4GC" id="nVL-O1-9XS"/>
+                <outlet property="verfiyStatusLabel" destination="e4C-xj-hIJ" id="eYH-m4-iIi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -7,6 +7,7 @@
 //
 
 #import "ZMRealNameRequest.h"
+#import "ZMUpLoadRequest.h"
 
 @implementation ZMRealNameRequest {
     NSString *_mobile;

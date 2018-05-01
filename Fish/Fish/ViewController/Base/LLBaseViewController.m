@@ -8,6 +8,7 @@
 
 #import "LLBaseViewController.h"
 #import "UIView+AddBackView.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 @interface LLBaseViewController ()
 
 @end
@@ -42,6 +43,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
     if (@available(iOS 11.0, *)) {
 //        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }else {
