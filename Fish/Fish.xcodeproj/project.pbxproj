@@ -43,6 +43,15 @@
 		5D8A46E5209078B300CE2723 /* YPImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46E3209078B200CE2723 /* YPImagePicker.m */; };
 		5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A470D20907D5100CE2723 /* UIAlertController+YPKit.m */; };
 		5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A47112090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		5D8A47152092B35400CE2723 /* ZMUserEditRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A47142092B35400CE2723 /* ZMUserEditRequest.m */; };
+		5D8A47182092B78400CE2723 /* ZMGetPromotionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A47172092B78400CE2723 /* ZMGetPromotionRequest.m */; };
+		5D8A471B2092B7DD00CE2723 /* ZMRecFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A471A2092B7DD00CE2723 /* ZMRecFriendRequest.m */; };
+		5D8A471E2092B8BE00CE2723 /* ZMSaveAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A471D2092B8BE00CE2723 /* ZMSaveAuthRequest.m */; };
+		5D8A47212092B9CD00CE2723 /* ZMGetAuthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A47202092B9CD00CE2723 /* ZMGetAuthRequest.m */; };
+		5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4727209301E900CE2723 /* ZMFeedbackViewController.m */; };
+		5D8A472A209301E900CE2723 /* ZMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8A4728209301E900CE2723 /* ZMFeedbackViewController.xib */; };
+		5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */; };
+		5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -148,6 +157,22 @@
 		5D8A470D20907D5100CE2723 /* UIAlertController+YPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+YPKit.m"; sourceTree = "<group>"; };
 		5D8A47102090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		5D8A47112090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		5D8A47132092B35400CE2723 /* ZMUserEditRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMUserEditRequest.h; sourceTree = "<group>"; };
+		5D8A47142092B35400CE2723 /* ZMUserEditRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMUserEditRequest.m; sourceTree = "<group>"; };
+		5D8A47162092B78400CE2723 /* ZMGetPromotionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMGetPromotionRequest.h; sourceTree = "<group>"; };
+		5D8A47172092B78400CE2723 /* ZMGetPromotionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMGetPromotionRequest.m; sourceTree = "<group>"; };
+		5D8A47192092B7DD00CE2723 /* ZMRecFriendRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRecFriendRequest.h; sourceTree = "<group>"; };
+		5D8A471A2092B7DD00CE2723 /* ZMRecFriendRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRecFriendRequest.m; sourceTree = "<group>"; };
+		5D8A471C2092B8BE00CE2723 /* ZMSaveAuthRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMSaveAuthRequest.h; sourceTree = "<group>"; };
+		5D8A471D2092B8BE00CE2723 /* ZMSaveAuthRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMSaveAuthRequest.m; sourceTree = "<group>"; };
+		5D8A471F2092B9CD00CE2723 /* ZMGetAuthRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMGetAuthRequest.h; sourceTree = "<group>"; };
+		5D8A47202092B9CD00CE2723 /* ZMGetAuthRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMGetAuthRequest.m; sourceTree = "<group>"; };
+		5D8A4726209301E900CE2723 /* ZMFeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMFeedbackViewController.h; sourceTree = "<group>"; };
+		5D8A4727209301E900CE2723 /* ZMFeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMFeedbackViewController.m; sourceTree = "<group>"; };
+		5D8A4728209301E900CE2723 /* ZMFeedbackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMFeedbackViewController.xib; sourceTree = "<group>"; };
+		5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGSearchFeedbackCell.xib; sourceTree = "<group>"; };
+		5D8A472C209306BC00CE2723 /* MGSearchFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSearchFeedbackCell.h; sourceTree = "<group>"; };
+		5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSearchFeedbackCell.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -364,6 +389,16 @@
 			children = (
 				5D5BB25A208E35590067709B /* ZMRealNameRequest.h */,
 				5D5BB25B208E35590067709B /* ZMRealNameRequest.m */,
+				5D8A47132092B35400CE2723 /* ZMUserEditRequest.h */,
+				5D8A47142092B35400CE2723 /* ZMUserEditRequest.m */,
+				5D8A47162092B78400CE2723 /* ZMGetPromotionRequest.h */,
+				5D8A47172092B78400CE2723 /* ZMGetPromotionRequest.m */,
+				5D8A47192092B7DD00CE2723 /* ZMRecFriendRequest.h */,
+				5D8A471A2092B7DD00CE2723 /* ZMRecFriendRequest.m */,
+				5D8A471C2092B8BE00CE2723 /* ZMSaveAuthRequest.h */,
+				5D8A471D2092B8BE00CE2723 /* ZMSaveAuthRequest.m */,
+				5D8A471F2092B9CD00CE2723 /* ZMGetAuthRequest.h */,
+				5D8A47202092B9CD00CE2723 /* ZMGetAuthRequest.m */,
 			);
 			path = NetWorkDAO;
 			sourceTree = "<group>";
@@ -409,6 +444,19 @@
 				5D8A47112090845A00CE2723 /* UINavigationController+FDFullscreenPopGesture.m */,
 			);
 			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
+		5D8A4725209301D300CE2723 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A472C209306BC00CE2723 /* MGSearchFeedbackCell.h */,
+				5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */,
+				5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */,
+				5D8A4726209301E900CE2723 /* ZMFeedbackViewController.h */,
+				5D8A4727209301E900CE2723 /* ZMFeedbackViewController.m */,
+				5D8A4728209301E900CE2723 /* ZMFeedbackViewController.xib */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		5DC5CB9F20784FA600F3C0D6 = {
@@ -503,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5BB260209219ED0067709B /* RecFriends */,
+				5D8A4725209301D300CE2723 /* Feedback */,
 				5D5BB259208E35370067709B /* NetWorkDAO */,
 				5D5BB23D208B13B00067709B /* TeachingQualification  */,
 				5D5BB237208AF8820067709B /* Certification */,
@@ -668,6 +717,8 @@
 				5D343F83207BC21F006F8616 /* ForgetPasswordViewController.xib in Resources */,
 				5DC5CBDE2078523000F3C0D6 /* LLSameCityViewController.xib in Resources */,
 				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
+				5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */,
+				5D8A472A209301E900CE2723 /* ZMFeedbackViewController.xib in Resources */,
 				5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */,
 				5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */,
 				5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */,
@@ -715,6 +766,8 @@
 			files = (
 				5DC5CBE22078523000F3C0D6 /* LLMineViewController.m in Sources */,
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
+				5D8A471B2092B7DD00CE2723 /* ZMRecFriendRequest.m in Sources */,
+				5D8A471E2092B8BE00CE2723 /* ZMSaveAuthRequest.m in Sources */,
 				5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */,
 				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
 				5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */,
@@ -722,18 +775,22 @@
 				5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */,
 				5D5BB2332088EEE50067709B /* ZMPersonalModel.m in Sources */,
 				5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */,
+				5D8A47182092B78400CE2723 /* ZMGetPromotionRequest.m in Sources */,
 				5D5BB21B2084EC980067709B /* LoginTopView.m in Sources */,
 				5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */,
 				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
 				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
 				5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */,
+				5D8A47212092B9CD00CE2723 /* ZMGetAuthRequest.m in Sources */,
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
+				5D8A47152092B35400CE2723 /* ZMUserEditRequest.m in Sources */,
 				5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */,
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
 				5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
+				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
 				5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */,
 				5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */,
@@ -743,6 +800,7 @@
 				5D5BB255208E2D3A0067709B /* ZMAccountManager.m in Sources */,
 				5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */,
 				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
+				5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */,
 				5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,

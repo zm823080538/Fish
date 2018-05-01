@@ -54,13 +54,14 @@
     ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"PersonalInfoViewController"];
     ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMCertificationViewController"];
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"TeachQAViewController"];
-    ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"" title:@"统计" destinClassName:@""];
-    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"customService" title:@"我的客服" destinClassName:@""];
+    ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@""];
+    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"押金" destinClassName:@""];
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@""];
     
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"" title:@"关于我们" destinClassName:@""];
-    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
+    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];
     
-    self.dataSource = @[@[item01,item02,item03,item04,item05],@[item06,item07]];
+    self.dataSource = @[@[item01,item02,item03,item04,item05,item06],@[item07,item08]];
     [self.tableView reloadData];
 }
 - (IBAction)setting:(UIButton *)sender {
