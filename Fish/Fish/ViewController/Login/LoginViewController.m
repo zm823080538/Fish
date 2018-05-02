@@ -35,7 +35,7 @@
 @implementation LoginViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];    
     [self.usernameTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
     self.usernameTextField.text = @"18280074372";
     [self.passwordTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
@@ -68,6 +68,7 @@
     [loginRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         if ([request.responseJSONObject isKindOfClass:[NSDictionary class]]) {
             NSDictionary *requestInfo = (NSDictionary *)request.responseJSONObject;
+            NSLog(@"---%@",requestInfo[@"msg"]);
             NSString *code = requestInfo[@"code"];
             if (code.integerValue == 100) {
                 

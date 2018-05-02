@@ -36,6 +36,8 @@
 		5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB257208E2FCB0067709B /* ZMForgetPwdRequest.m */; };
 		5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25B208E35590067709B /* ZMRealNameRequest.m */; };
 		5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */; };
+		5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB26220921A100067709B /* ZMRecFriendViewController.m */; };
+		5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB26520921AA70067709B /* ZMInputTextField.m */; };
 		5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */; };
 		5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46D92090298D00CE2723 /* ZMAnimatingRequestAccessory.m */; };
 		5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */; };
@@ -143,6 +145,10 @@
 		5D5BB25B208E35590067709B /* ZMRealNameRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRealNameRequest.m; sourceTree = "<group>"; };
 		5D5BB25D208E39400067709B /* ZMUpLoadRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMUpLoadRequest.h; sourceTree = "<group>"; };
 		5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMUpLoadRequest.m; sourceTree = "<group>"; };
+		5D5BB26120921A100067709B /* ZMRecFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRecFriendViewController.h; sourceTree = "<group>"; };
+		5D5BB26220921A100067709B /* ZMRecFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRecFriendViewController.m; sourceTree = "<group>"; };
+		5D5BB26420921AA70067709B /* ZMInputTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMInputTextField.h; sourceTree = "<group>"; };
+		5D5BB26520921AA70067709B /* ZMInputTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMInputTextField.m; sourceTree = "<group>"; };
 		5D8A46C5209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+ZMAnimatingAccessory.h"; sourceTree = "<group>"; };
 		5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YTKBaseRequest+ZMAnimatingAccessory.m"; sourceTree = "<group>"; };
 		5D8A46D82090298D00CE2723 /* ZMAnimatingRequestAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAnimatingRequestAccessory.h; sourceTree = "<group>"; };
@@ -410,6 +416,15 @@
 			path = NetWorkDAO;
 			sourceTree = "<group>";
 		};
+		5D5BB260209219ED0067709B /* RecFriends */ = {
+			isa = PBXGroup;
+			children = (
+				5D5BB26120921A100067709B /* ZMRecFriendViewController.h */,
+				5D5BB26220921A100067709B /* ZMRecFriendViewController.m */,
+			);
+			path = RecFriends;
+			sourceTree = "<group>";
+		};
 		5D8A46D72090297400CE2723 /* Accessory */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,6 +573,7 @@
 		5DC5CBCE2078523000F3C0D6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				5D5BB260209219ED0067709B /* RecFriends */,
 				5D8A4725209301D300CE2723 /* Feedback */,
 				5D5BB259208E35370067709B /* NetWorkDAO */,
 				5D5BB23D208B13B00067709B /* TeachingQualification  */,
@@ -593,6 +609,8 @@
 				5D8A46E3209078B200CE2723 /* YPImagePicker.m */,
 				5D5BB2182084EC6B0067709B /* LoginTopView */,
 				5DC5CBD62078523000F3C0D6 /* LLTabBar */,
+				5D5BB26420921AA70067709B /* ZMInputTextField.h */,
+				5D5BB26520921AA70067709B /* ZMInputTextField.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -786,6 +804,7 @@
 				5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */,
 				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
 				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
+				5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */,
 				5D8A47212092B9CD00CE2723 /* ZMGetAuthRequest.m in Sources */,
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
 				5D8A47152092B35400CE2723 /* ZMUserEditRequest.m in Sources */,
@@ -793,6 +812,7 @@
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
+				5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,

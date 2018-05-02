@@ -13,13 +13,14 @@
 #import <YTKBatchRequest.h>
 #import <YTKChainRequest.h>
 #import "YPImagePicker.h"
+#import "ZMInputTextField.h"
 #import "ZMSaveAuthRequest.h"
 
 @interface ZMCertificationViewController () <YTKChainRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *firstView;
-@property (weak, nonatomic) IBOutlet UITextField *real_name_textField;
-@property (weak, nonatomic) IBOutlet UITextField *ID_num_textField;
+@property (weak, nonatomic) IBOutlet ZMInputTextField *real_name_textField;
+@property (weak, nonatomic) IBOutlet ZMInputTextField *ID_num_textField;
 @property (weak, nonatomic) IBOutlet UIButton *IDCardForwardBtn;
 @property (weak, nonatomic) IBOutlet UIButton *IDCardBackBtn;
 
@@ -40,6 +41,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"实名认证";
+//    self.ID_num_textField.leftLabelText = @"123123";
+    UIImage *image = [UIImage imageNamed:@"back24"];
+    ZMUpLoadRequest *uploadRequest = [[ZMUpLoadRequest alloc] initWithImage:image];
     self.imageDict = [NSMutableDictionary dictionary];
     self.imageUrlDict = [NSMutableDictionary dictionary];
 }
