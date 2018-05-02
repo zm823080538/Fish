@@ -28,9 +28,9 @@
     config.baseUrl = @"https://www.bjwork.xyz";
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-//    LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
-//    self.window.rootViewController = nav;
-    [self changeRootVC];
+    LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
+    self.window.rootViewController = nav;
+//    [self changeRootVC];
     [self.window makeKeyAndVisible];
 //    return YES;
     
