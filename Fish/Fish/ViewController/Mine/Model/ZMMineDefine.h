@@ -15,4 +15,6 @@ typedef NS_ENUM(NSUInteger, PersonalInfoCellStyle) {
     PersonalInfoCellStyleArrow = 3
 };
 
+#define PlaceholderImage [UIImage imageNamed:@"timg"]
+
 #endif /* ZMMineDefine_h */

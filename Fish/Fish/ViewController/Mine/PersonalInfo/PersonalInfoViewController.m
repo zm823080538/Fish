@@ -8,10 +8,17 @@
 
 #import "PersonalInfoViewController.h"
 #import "PersonalInfoCell.h"
+#import <NSObject+YYModel.h>
 #import "ZMPersonalModel.h"
-@interface PersonalInfoViewController ()  <UITableViewDelegate, UITableViewDataSource>
+#import "ZMAccountManager.h"
+#import "UIAlertController+Set.h"
+#import "UIViewController+BackButtonHandler.h"
+
+@interface PersonalInfoViewController ()  <UINavigationControllerDelegate, UIGestureRecognizerDelegate,UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tableView;
 @property (strong, nonatomic)  NSArray *dataSource;
+@property (nonatomic, strong) ZMAccount *originAccountInfo;
+
 
 @end
 
@@ -32,6 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人资料";
+    self.originAccountInfo = [ZMAccountManager shareManager].loginUser;
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
     [self loadData];
@@ -39,15 +47,55 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)[self.navigationController topViewController];
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer == self.navigationController.interactivePopGestureRecognizer) {
+        if ([self.originAccountInfo modelHash] != [[ZMAccountManager shareManager].loginUser modelHash]) {
+            [self showAlert];
+            return NO;
+        }
+        return YES;
+    }
+    return YES;
+}
+
+- (void)showAlert {
+    [UIAlertController alertWithTitle:@"提示" message:@"是否保存修改" cancelTitle:@"取消" otherTitles:@[@"保存"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
+- (BOOL)navigationShouldPopOnBackButton {
+    if ([self.originAccountInfo modelHash] != [[ZMAccountManager shareManager].loginUser modelHash]) {
+        [self showAlert];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)loadData {
-    ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:@"result" title:@"头像" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:@""];
+    ZMAccount *account = [ZMAccountManager shareManager].loginUser;
+    ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:account.img title:@"头像" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:@""];
     
-    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:@"member_addUser" title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"女"];
-    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"四川-成都"];
-    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"customService" title:@"我的二维码" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
+    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.nickname];
+    NSString *sex;
+    if ([account.sex isEqualToString:@"1"]) {
+        sex = @"男";
+    } else if ([account.sex isEqualToString:@"2"]) {
+        sex = @"女";
+    } else {
+        sex = @"未知";
+    }
+    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.sex];
+    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.address];
+    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"customService" title:@"我的二维码" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:nil];
     
     ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
     ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
@@ -79,9 +127,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
-//    Class class = NSClassFromString(item.destinClassName);
-//    [self.navigationController pushViewController:[class new] animated:YES];
+    ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
+    Class class = NSClassFromString(item.destinClassName);
+    [self.navigationController pushViewController:[class new] animated:YES];
 }
 
 

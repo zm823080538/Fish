@@ -8,10 +8,11 @@
 
 #import "LLMineViewController.h"
 #import <UIImageView+YYWebImage.h>
-
+#import "UIAlertController+Set.h"
 #import "ZMAccountManager.h"
 #import "ZMMineModel.h"
 #import "PersonalInfoCell.h"
+#import "ZMGetAuthRequest.h"
 #import "PersonalInfoViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -42,18 +43,36 @@
         self.tableView.tableHeaderView = self.tableHeaderView2;
         [self.portrait setImageWithURL:[NSURL URLWithString:[ZMAccountManager shareManager].loginUser.nickname] placeholder:nil];
         
-        [self.portrait setImageWithURL:[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1711569,1878578975&fm=27&gp=0.jpg"] placeholder:nil];
+        [self.portrait setImageWithURL:[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1711569,1878578975&fm=27&gp=0.jpg"] placeholder:PlaceholderImage];
         self.userNameLabel.text = [ZMAccountManager shareManager].loginUser.nickname;
-        self.userNameLabel.text = @"张三";
+        [self getAuthStatus];
     } else {
         self.tableView.tableHeaderView = self.tableHeaderView1;
     }
 }
 
+- (void)getAuthStatus {
+    ZMGetAuthRequest *authRequest = [[ZMGetAuthRequest alloc] init];
+    authRequest.userid = [ZMAccountManager shareManager].loginUser.id;
+    [authRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *dict = request.responseObject[@"data"];
+        if ([dict[@"status"] isEqualToString:@"0"]) {
+            self.verfiyStatusLabel.text = @"未审核";
+        } else if ([dict[@"status"] isEqualToString:@"1"]) {
+            self.verfiyStatusLabel.text = @"审核通过";
+        } else {
+            self.verfiyStatusLabel.text = @"不通过";
+        }
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+}
+
 - (void)loadData {
-    ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"PersonalInfoViewController"];
+    ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
     ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMCertificationViewController"];
-    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"TeachQAViewController"];
+    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@""];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"押金" destinClassName:@""];
     ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@""];
@@ -106,8 +125,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZMMineModel  *item = self.dataSource[indexPath.section][indexPath.row];
-    Class class = NSClassFromString(item.destinClassName);
-    [self.navigationController pushViewController:[class new] animated:YES];
+    if ([item.title isEqualToString:@"押金"]) {
+        [UIAlertController alertWithTitle:@"提示" message:@"您暂未交押金！" cancelTitle:@"取消" otherTitles:@[@"交押金"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
+            NSLog(@"---");
+        }];
+    } else {
+        Class class = NSClassFromString(item.destinClassName);
+        [self.navigationController pushViewController:[class new] animated:YES];
+    }
 }
 
 

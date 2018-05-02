@@ -147,14 +147,10 @@ UINavigationControllerDelegate
     picker.sourceType = sourceType;
     picker.delegate = self;
     picker.allowsEditing = allowEditing;
-    [controller presentViewController:picker animated:YES completion:^{
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    }];
+    [controller presentViewController:picker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    @autoreleasepool {
-        
         UIImage *image;
         if (picker.allowsEditing) {
             image = info[UIImagePickerControllerEditedImage];
@@ -172,7 +168,6 @@ UINavigationControllerDelegate
 //        [[MGSkinManager instance] updateStatusBarStyle];
         self.singleBlock = nil;
         self.multiBlock = nil;
-    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

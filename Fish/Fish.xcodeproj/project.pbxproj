@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */; };
 		5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F77207BB62E006F8616 /* UIColor+Hex.m */; };
 		5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F7B207BB93F006F8616 /* RegisterViewController.m */; };
 		5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D343F7C207BB93F006F8616 /* RegisterViewController.xib */; };
@@ -50,6 +51,8 @@
 		5D8A472A209301E900CE2723 /* ZMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8A4728209301E900CE2723 /* ZMFeedbackViewController.xib */; };
 		5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */; };
 		5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */; };
+		5D8A4732209408D800CE2723 /* UITextView+MGPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4731209408D700CE2723 /* UITextView+MGPlaceholder.m */; };
+		5D8A4736209419FB00CE2723 /* ZMPickPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4735209419FB00CE2723 /* ZMPickPhotoCollectionView.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -85,6 +88,8 @@
 
 /* Begin PBXFileReference section */
 		484F65B6951CFF90B1D21650 /* Pods-Fish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fish/Pods-Fish.debug.xcconfig"; sourceTree = "<group>"; };
+		5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
+		5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		5D343F76207BB62E006F8616 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		5D343F77207BB62E006F8616 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		5D343F7A207BB93F006F8616 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -167,6 +172,10 @@
 		5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGSearchFeedbackCell.xib; sourceTree = "<group>"; };
 		5D8A472C209306BC00CE2723 /* MGSearchFeedbackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSearchFeedbackCell.h; sourceTree = "<group>"; };
 		5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSearchFeedbackCell.m; sourceTree = "<group>"; };
+		5D8A4730209408D700CE2723 /* UITextView+MGPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+MGPlaceholder.h"; sourceTree = "<group>"; };
+		5D8A4731209408D700CE2723 /* UITextView+MGPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+MGPlaceholder.m"; sourceTree = "<group>"; };
+		5D8A4734209419FB00CE2723 /* ZMPickPhotoCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMPickPhotoCollectionView.h; sourceTree = "<group>"; };
+		5D8A4735209419FB00CE2723 /* ZMPickPhotoCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMPickPhotoCollectionView.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -245,6 +254,10 @@
 		5D343F75207BB617006F8616 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */,
+				5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */,
+				5D8A4730209408D700CE2723 /* UITextView+MGPlaceholder.h */,
+				5D8A4731209408D700CE2723 /* UITextView+MGPlaceholder.m */,
 				5D343F76207BB62E006F8616 /* UIColor+Hex.h */,
 				5D343F77207BB62E006F8616 /* UIColor+Hex.m */,
 				5D5BB21C2084ECC70067709B /* UIView+AddBackView.h */,
@@ -434,14 +447,24 @@
 		5D8A4725209301D300CE2723 /* Feedback */ = {
 			isa = PBXGroup;
 			children = (
-				5D8A472C209306BC00CE2723 /* MGSearchFeedbackCell.h */,
-				5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */,
-				5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */,
+				5D8A4733209419C900CE2723 /* View */,
 				5D8A4726209301E900CE2723 /* ZMFeedbackViewController.h */,
 				5D8A4727209301E900CE2723 /* ZMFeedbackViewController.m */,
 				5D8A4728209301E900CE2723 /* ZMFeedbackViewController.xib */,
 			);
 			path = Feedback;
+			sourceTree = "<group>";
+		};
+		5D8A4733209419C900CE2723 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A472C209306BC00CE2723 /* MGSearchFeedbackCell.h */,
+				5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */,
+				5D8A472B209306BB00CE2723 /* MGSearchFeedbackCell.xib */,
+				5D8A4734209419FB00CE2723 /* ZMPickPhotoCollectionView.h */,
+				5D8A4735209419FB00CE2723 /* ZMPickPhotoCollectionView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5DC5CB9F20784FA600F3C0D6 = {
@@ -751,6 +774,7 @@
 				5D8A471B2092B7DD00CE2723 /* ZMRecFriendRequest.m in Sources */,
 				5D8A471E2092B8BE00CE2723 /* ZMSaveAuthRequest.m in Sources */,
 				5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */,
+				5D8A4732209408D800CE2723 /* UITextView+MGPlaceholder.m in Sources */,
 				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
 				5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */,
 				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,
@@ -773,7 +797,9 @@
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
 				5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */,
+				5D8A4736209419FB00CE2723 /* ZMPickPhotoCollectionView.m in Sources */,
 				5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */,
+				5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */,
 				5D5BB244208B21F30067709B /* ZMBaseViewController.m in Sources */,
 				5D5BB252208E2D0F0067709B /* ZMAccount.m in Sources */,
 				5D5BB24B208B8CD50067709B /* ZMRegistRequest.m in Sources */,
