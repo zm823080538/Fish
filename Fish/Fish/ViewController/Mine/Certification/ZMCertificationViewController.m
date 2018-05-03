@@ -15,6 +15,7 @@
 #import "YPImagePicker.h"
 #import "ZMInputTextField.h"
 #import "ZMSaveAuthRequest.h"
+#import "UIView+AddBackView.h"
 
 @interface ZMCertificationViewController () <YTKChainRequestDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -42,8 +43,9 @@
     [super viewDidLoad];
     self.title = @"实名认证";
 //    self.ID_num_textField.leftLabelText = @"123123";
-    UIImage *image = [UIImage imageNamed:@"back24"];
-    ZMUpLoadRequest *uploadRequest = [[ZMUpLoadRequest alloc] initWithImage:image];
+    
+//    ZMUpLoadRequest *uploadRequest = [[ZMUpLoadRequest alloc] initWithImage:image];
+//    UIImageWriteToSavedPhotosAlbum(image, self, NULL, NULL);
     self.imageDict = [NSMutableDictionary dictionary];
     self.imageUrlDict = [NSMutableDictionary dictionary];
 }
@@ -52,43 +54,50 @@
     dispatch_group_t group = dispatch_group_create();
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_group_async(group, queue, ^{
-//        ZMUpLoadRequest *image01 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
-        ZMUpLoadRequest *image01 = [[ZMUpLoadRequest alloc] initWithImage:[UIImage imageNamed:@"customService"]];
+        ZMUpLoadRequest *image01 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
 
         
         [image01 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [self.imageUrlDict setObject:request forKey:@"idimgpath"];
+            NSLog(@"success");
+//            NSDictionary *dict = request.responseObject;
+            [self.imageUrlDict setValue:[image01 imageUrlString] forKey:@"idimgpath"];
             dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
         }];
     });
     dispatch_group_async(group, queue, ^{
-//        ZMUpLoadRequest *image02 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgbackpath"]];
-        ZMUpLoadRequest *image02 = [[ZMUpLoadRequest alloc] initWithImage:[UIImage imageNamed:@"customService"]];
+        ZMUpLoadRequest *image02 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
 
         [image02 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self.imageUrlDict setObject:request forKey:@"idimgbackpath"];            dispatch_semaphore_signal(semaphore);
+            NSLog(@"success");
+            NSDictionary *dict = request.responseObject;
+        [self.imageUrlDict setValue:[image02 imageUrlString] forKey:@"idimgbackpath"];            dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
         }];
     });
     dispatch_group_async(group, queue, ^{
-//        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"photopath"]];
-        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:[UIImage imageNamed:@"customService"]];
+//        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:image];
+        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"photopath"]];
 
         [image03 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [self.imageUrlDict setObject:request forKey:@"photopath"];
+            NSLog(@"success");
+            NSDictionary *dict = request.responseObject;
+            [self.imageUrlDict setObject:[image03 imageUrlString] forKey:@"photopath"];
             dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
         }];
     });
     dispatch_group_async(group, queue, ^{
-//        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"certpath"]];
-        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:[UIImage imageNamed:@"customService"]];
+//        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:image];
+        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"certpath"]];
 
         [image04 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            NSLog(@"success");
+            NSDictionary *dict = request.responseObject;
+             [self.imageUrlDict setValue:[image04 imageUrlString] forKey:@"certpath"];
             dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
@@ -100,72 +109,30 @@
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        ZMSaveAuthRequest *saveAuthRequest = [[ZMSaveAuthRequest alloc] init];
-        saveAuthRequest.userid = [ZMAccountManager shareManager].loginUser.id;
-        saveAuthRequest.realname = self.real_name_textField.text;
-        saveAuthRequest.idnumber = self.ID_num_textField.text;
-        saveAuthRequest.idimgpath = self.imageUrlDict[@"idimgpath"];
-        saveAuthRequest.idimgbackpath = self.imageUrlDict[@"idimgbackpath"];
-        saveAuthRequest.certpath = self.imageUrlDict[@"photopath"];
-        saveAuthRequest.photopath = self.imageUrlDict[@"idimgpath"];
-        saveAuthRequest.workdate = @"";
-        saveAuthRequest.areaid = self.imageUrlDict[@"certpath"];
-        [saveAuthRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-    
-            });
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
-        }];
-
+        dispatch_async(dispatch_get_main_queue(), ^{
+            ZMSaveAuthRequest *saveAuthRequest = [[ZMSaveAuthRequest alloc] init];
+            saveAuthRequest.userid = [ZMAccountManager shareManager].loginUser.id;
+            saveAuthRequest.realname = self.real_name_textField.text;
+            saveAuthRequest.idnumber = self.ID_num_textField.text;
+            saveAuthRequest.idimgpath = self.imageUrlDict[@"idimgpath"];
+            saveAuthRequest.idimgbackpath = self.imageUrlDict[@"idimgbackpath"];
+            saveAuthRequest.certpath = self.imageUrlDict[@"photopath"];
+            saveAuthRequest.photopath = self.imageUrlDict[@"certpath"];
+            saveAuthRequest.areaid =  [ZMAccountManager shareManager].loginUser.areacode;
+            [saveAuthRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([request.responseObject[@"code"] isEqualToString:@"0"]) {
+                        [self.view showToastString:@"认证成功"];
+                        [self.navigationController popViewControllerAnimated:YES];
+                    } else {
+                        [self.view showToastString:@"认证失败"];
+                    }
+                });
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                
+            }];
+        });
     });
-   
-//    YTKChainRequest *chainRequest = [[YTKChainRequest alloc] init];
-//    [chainRequest addRequest:image01 callback:^(YTKChainRequest * _Nonnull chainRequest, YTKBaseRequest * _Nonnull baseRequest) {
-////        RegisterApi *result = (RegisterApi *)baseRequest;
-////        NSString *userId = [result userId];
-////        GetUserInfoApi *api = [[GetUserInfoApi alloc] initWithUserId:userId];
-////        [chainRequest addRequest:api callback:nil];
-//    }];
-//    chainRequest.delegate = self;
-    
-    
-
-//    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[image01,image02,image03,image04]];
-//    [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest * _Nonnull batchRequest) {
-//        NSArray *requests = batchRequest.requestArray;
-//        ZMUpLoadRequest *a = (ZMUpLoadRequest *)requests[0];
-//        ZMUpLoadRequest *b = (ZMUpLoadRequest *)requests[1];
-//        ZMUpLoadRequest *c = (ZMUpLoadRequest *)requests[2];
-//    } failure:^(YTKBatchRequest * _Nonnull batchRequest) {
-//
-//    }];
-//    ZMRealNameRequest *realNameRequest = [[ZMRealNameRequest alloc] init];
-//    realNameRequest.id = @"";
-//    realNameRequest.userid = [ZMAccountManager shareManager].account.id;
-//    realNameRequest.realname = self.real_name_textField.text;
-//    realNameRequest.idnumber = self.ID_num_textField.text;
-//    realNameRequest.idimgpath = @"0";
-//    realNameRequest.certpath = @"0";
-//    realNameRequest.photopath = @"0";
-//    realNameRequest.workdate = @"0";
-//    realNameRequest.areaid = @"0";
-//    [realNameRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-////        NSLog(@"注册成功...");
-//        [self.navigationController popToRootViewControllerAnimated:YES];
-//        //        ChooseRoleViewController *chooseRoleVC = [ChooseRoleViewController new];
-//        //        [self.navigationController pushViewController:chooseRoleVC animated:YES];
-//    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-//
-//    }];
-}
-
-- (void)chainRequestFinished:(YTKChainRequest *)chainRequest {
-    
-}
-
-- (void)chainRequestFailed:(YTKChainRequest *)chainRequest failedBaseRequest:(YTKBaseRequest *)request {
-    
 }
 
 - (void)viewWillLayoutSubviews {

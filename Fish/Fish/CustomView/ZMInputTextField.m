@@ -20,12 +20,7 @@
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
     CGRect newFrame;
-//    if (self.leftLabelText) {
-//        newFrame = CGRectInset(bounds, 20, 0);
-//    } else {
-        newFrame = CGRectInset(bounds, 20, 0);
-//    }
-    
+    newFrame = CGRectInset(bounds, 20, 0);
     return newFrame;
 }
 
@@ -45,7 +40,6 @@
 }
 
 - (void)setLeftLabelText:(NSString *)leftLabelText {
-    self.textAlignment = NSTextAlignmentRight;
     UILabel *leftLabel = [[UILabel alloc] init];
     leftLabel.backgroundColor = [UIColor whiteColor];
     leftLabel.left = 20;

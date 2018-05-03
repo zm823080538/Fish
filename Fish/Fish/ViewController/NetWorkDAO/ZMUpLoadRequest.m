@@ -42,13 +42,9 @@
     };
 }
 
-- (id)jsonValidator {
-    return @{ @"imageId": [NSString class] };
-}
-
-- (NSString *)responseImageId {
+- (NSString *)imageUrlString {
     NSDictionary *dict = self.responseJSONObject;
-    return dict[@"imageId"];
+    return dict[@"data"];
 }
 
 @end

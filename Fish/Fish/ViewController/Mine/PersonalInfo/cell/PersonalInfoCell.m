@@ -13,7 +13,7 @@
 
 @interface PersonalInfoCell ()
 @property (nonatomic, strong) UILabel *leftLabel;
-@property (nonatomic, strong) UIImageView *rightImageView;
+
 @property (nonatomic, strong) UIImageView *rightArrow;
 @property (nonatomic, strong) UILabel *rightLabel;
 @property (nonatomic, strong) UITextField *rightTextField;
@@ -132,8 +132,6 @@
 - (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] init];
-        _rightImageView.image = [UIImage imageNamed:@"timg"];
-        
     }
     return _rightImageView;
 }
@@ -142,7 +140,6 @@
     if (!_rightArrow) {
         _rightArrow = [[UIImageView alloc] init];
         _rightArrow.image = [UIImage imageNamed:@"back24"];
-        
     }
     return _rightArrow;
 }

@@ -55,15 +55,17 @@
     ZMGetAuthRequest *authRequest = [[ZMGetAuthRequest alloc] init];
     authRequest.userid = [ZMAccountManager shareManager].loginUser.id;
     [authRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSDictionary *dict = request.responseObject[@"data"];
-        if ([dict[@"status"] isEqualToString:@"0"]) {
-            self.verfiyStatusLabel.text = @"未审核";
-        } else if ([dict[@"status"] isEqualToString:@"1"]) {
-            self.verfiyStatusLabel.text = @"审核通过";
-        } else {
-            self.verfiyStatusLabel.text = @"不通过";
-        }
         
+        if ([request.responseObject[@"data"] isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *dict = request.responseObject[@"data"];
+            if ([dict[@"status"] isEqualToString:@"0"]) {
+                self.verfiyStatusLabel.text = @"未审核";
+            } else if ([dict[@"status"] isEqualToString:@"1"]) {
+                self.verfiyStatusLabel.text = @"审核通过";
+            } else {
+                self.verfiyStatusLabel.text = @"不通过";
+            }
+        }                
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];

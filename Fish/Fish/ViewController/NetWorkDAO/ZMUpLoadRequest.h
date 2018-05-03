@@ -10,5 +10,5 @@
 #import <UIKit/UIKit.h>
 @interface ZMUpLoadRequest : YTKBaseRequest
 - (id)initWithImage:(UIImage *)image;
-- (NSString *)responseImageId;
+- (NSString *)imageUrlString;
 @end

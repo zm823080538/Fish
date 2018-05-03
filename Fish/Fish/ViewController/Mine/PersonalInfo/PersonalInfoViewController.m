@@ -12,12 +12,15 @@
 #import "ZMPersonalModel.h"
 #import "ZMAccountManager.h"
 #import "UIAlertController+Set.h"
+#import "YPImagePicker.h"
 #import "UIViewController+BackButtonHandler.h"
 
 @interface PersonalInfoViewController ()  <UINavigationControllerDelegate, UIGestureRecognizerDelegate,UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tableView;
 @property (strong, nonatomic)  NSArray *dataSource;
 @property (nonatomic, strong) ZMAccount *originAccountInfo;
+@property (nonatomic, strong) UIImage *headerImage;
+
 
 
 @end
@@ -47,6 +50,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+        });
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
@@ -83,7 +89,6 @@
 - (void)loadData {
     ZMAccount *account = [ZMAccountManager shareManager].loginUser;
     ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:account.img title:@"头像" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:@""];
-    
     ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.nickname];
     NSString *sex;
     if ([account.sex isEqualToString:@"1"]) {
@@ -93,14 +98,14 @@
     } else {
         sex = @"未知";
     }
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.sex];
+    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:sex];
     ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.address];
-    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"customService" title:@"我的二维码" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:nil];
+    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"我的二维码" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:nil];
     
-    ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
-    ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
+    ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-     ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"哈哈"];
+     ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
     self.dataSource = @[@[item01,item02,item03,item04,item05],@[item06,item07,item08]];
     [self.tableView reloadData];
 }
@@ -127,9 +132,18 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    PersonalInfoCell *cell = (PersonalInfoCell *)[tableView cellForRowAtIndexPath:indexPath];
     ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
-    Class class = NSClassFromString(item.destinClassName);
-    [self.navigationController pushViewController:[class new] animated:YES];
+    if (indexPath.row == 0) {
+        [YPImagePicker pickSingleImageWithTitle:@"修改头像" allowEditing:YES inViewController:self completionBlock:^(UIImage *image) {
+            cell.rightImageView.image = image;
+            self.headerImage = image;
+        }];
+    }
+    if (NSClassFromString(item.destinClassName)) {
+        Class class = NSClassFromString(item.destinClassName);
+        [self.navigationController pushViewController:[class new] animated:YES];
+    }
 }
 
 

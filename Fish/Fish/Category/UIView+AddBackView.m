@@ -7,6 +7,7 @@
 //
 
 #import "UIView+AddBackView.h"
+#import <MBProgressHUD.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @implementation UIView (AddBackView)
@@ -23,5 +24,16 @@
     }];
     [self addSubview:topView];
     [topView addSubview:backButton];
+}
+
+- (void)showToastString:(NSString *)string {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+    hud.label.text = string;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hideAnimated:YES afterDelay:2.0f];
+}
+
+- (void)showError:(NSString *)errorDesc {
+    
 }
 @end

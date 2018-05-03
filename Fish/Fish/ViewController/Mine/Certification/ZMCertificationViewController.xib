@@ -57,9 +57,6 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="leftLabelText" value="1231"/>
-                                            </userDefinedRuntimeAttributes>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入身份证号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU4-4V-uZV" customClass="ZMInputTextField">
                                             <rect key="frame" x="0.0" y="53" width="375" height="53"/>
@@ -102,6 +99,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73u-jK-2nk">
                                                     <rect key="frame" x="30" y="52" width="315" height="174.5"/>
                                                     <state key="normal" image="Group 7"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="w4y-Em-3Nz"/>
                                                     </connections>
@@ -129,6 +129,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-zS-F8l">
                                                     <rect key="frame" x="30" y="52" width="315" height="174.5"/>
                                                     <state key="normal" image="Group 10"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="VJU-Fr-e6O"/>
                                                     </connections>
@@ -188,6 +191,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gek-2x-HEb">
                                                     <rect key="frame" x="30" y="71" width="315" height="172.5"/>
                                                     <state key="normal" image="Rectangle 2"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="eks-sK-ysC"/>
                                                     </connections>
@@ -211,6 +217,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-7s-8VZ">
                                                     <rect key="frame" x="30" y="66.5" width="315" height="177"/>
                                                     <state key="normal" image="Rectangle 2 Copy 2"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="takePhotoWithBtn:" destination="-1" eventType="touchUpInside" id="HzW-XG-Rpm"/>
                                                     </connections>

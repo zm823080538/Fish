@@ -11,6 +11,7 @@
 @class ZMPersonalModel;
 
 @interface PersonalInfoCell : UITableViewCell
+@property (nonatomic, strong) UIImageView *rightImageView;
 @property (nonatomic, assign) PersonalInfoCellStyle style;
 @property (nonatomic, strong) ZMPersonalModel *personalModel;
 @end
