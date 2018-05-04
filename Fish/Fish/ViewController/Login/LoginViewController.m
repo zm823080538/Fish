@@ -37,9 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];    
     [self.usernameTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    self.usernameTextField.text = @"18280074372";
+    self.usernameTextField.text = @"18202820092";
     [self.passwordTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    self.passwordTextField.text = @"111111";
+    self.passwordTextField.text = @"123456";
     self.usernameTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
     self.passwordTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];
     self.otherChannelLoginLabel.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];

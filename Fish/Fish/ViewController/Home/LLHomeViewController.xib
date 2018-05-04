@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,12 +23,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8n-CV-DKc">
-                            <rect key="frame" x="0.0" y="20" width="45" height="44"/>
+                            <rect key="frame" x="20" y="20" width="45" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="9aJ-vg-URy"/>
                                 <constraint firstAttribute="height" constant="44" id="Cep-oO-bVa"/>
                             </constraints>
-                            <state key="normal" image="home_bar_scan"/>
+                            <state key="normal" title="健身">
+                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njW-Wi-ClT">
                             <rect key="frame" x="330" y="20" width="45" height="44"/>
@@ -36,7 +38,7 @@
                                 <constraint firstAttribute="width" constant="45" id="5bK-3a-pon"/>
                                 <constraint firstAttribute="height" constant="44" id="aQF-nP-XGa"/>
                             </constraints>
-                            <state key="normal" image="icon_search"/>
+                            <state key="normal" image="message"/>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_title_slogan" translatesAutoresizingMaskIntoConstraints="NO" id="kZP-lq-2gs">
                             <rect key="frame" x="60" y="20" width="255" height="44"/>
@@ -45,7 +47,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.99215686274509807" green="0.83921568627450982" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="kZP-lq-2gs" firstAttribute="leading" secondItem="RgT-D6-Msz" secondAttribute="leading" constant="60" id="3mU-YH-0Kn"/>
                         <constraint firstAttribute="trailing" secondItem="kZP-lq-2gs" secondAttribute="trailing" constant="60" id="4gB-oU-CVe"/>
@@ -56,7 +58,7 @@
                         <constraint firstAttribute="bottom" secondItem="K8n-CV-DKc" secondAttribute="bottom" id="aZH-I1-vXp"/>
                         <constraint firstAttribute="bottom" secondItem="njW-Wi-ClT" secondAttribute="bottom" id="abK-bw-jTN"/>
                         <constraint firstItem="kZP-lq-2gs" firstAttribute="leading" secondItem="K8n-CV-DKc" secondAttribute="trailing" constant="15" id="g5x-Jm-kPA"/>
-                        <constraint firstItem="K8n-CV-DKc" firstAttribute="leading" secondItem="RgT-D6-Msz" secondAttribute="leading" id="tit-o6-Olq"/>
+                        <constraint firstItem="K8n-CV-DKc" firstAttribute="leading" secondItem="RgT-D6-Msz" secondAttribute="leading" constant="20" id="tit-o6-Olq"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -95,8 +97,7 @@
         </view>
     </objects>
     <resources>
-        <image name="home_bar_scan" width="24" height="24"/>
         <image name="home_title_slogan" width="59" height="28"/>
-        <image name="icon_search" width="24" height="24"/>
+        <image name="message" width="16" height="16"/>
     </resources>
 </document>
