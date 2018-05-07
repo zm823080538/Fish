@@ -15,13 +15,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.fd_prefersNavigationBarHidden = YES;
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0x4A576A)];
+    self.navigationBar.translucent = NO;
+//   #4A576A 100% self.fd_prefersNavigationBarHidden = YES;
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationBarHidden = YES;
+//    self.navigationBarHidden = YES;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {

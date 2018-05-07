@@ -12,7 +12,9 @@
 #import "ZMAccountManager.h"
 #import "ZMMineModel.h"
 #import "PersonalInfoCell.h"
+#import <UIImage+YYAdd.h>
 #import "ZMGetAuthRequest.h"
+#import "ZMMessageViewController.h"
 #import "PersonalInfoViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -34,16 +36,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"member_addUser"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
+    
+    UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
+    UIBarButtonItem *rightBarbuttonItem1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting3"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItem1Click)];
+    self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
     [self loadData];
-    [self adapterUIForIOS11:self.tableView];
+//    [self adapterUIForIOS11:self.tableView];
+}
+
+- (void)rightBarItem1Click {
+    
+}
+
+- (void)leftBarItemClick {
+    
+}
+
+- (void)rightBarItemClick {
+    ZMMessageViewController *messageVC = [ZMMessageViewController new];
+    messageVC.title = @"消息";
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
 
 - (void)updateTableHeaderView {
     if ([ZMAccountManager shareManager].isLogin) {
         self.tableView.tableHeaderView = self.tableHeaderView2;
-        [self.portrait setImageWithURL:[NSURL URLWithString:[ZMAccountManager shareManager].loginUser.nickname] placeholder:nil];
-        
-        [self.portrait setImageWithURL:[NSURL URLWithString:@"http://img2.imgtn.bdimg.com/it/u=1711569,1878578975&fm=27&gp=0.jpg"] placeholder:PlaceholderImage];
+        [self.portrait setImageWithURL:[NSURL URLWithString:[ZMAccountManager shareManager].loginUser.img] placeholder:PlaceholderImage];
         self.userNameLabel.text = [ZMAccountManager shareManager].loginUser.nickname;
         [self getAuthStatus];
     } else {
@@ -98,10 +117,23 @@
     [self.navigationController pushViewController:personalInfoVC animated:YES];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    //设置导航栏背景图片为一个空的image，这样就透明了
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    
+    
+    //去掉透明后导航栏下边的黑边
+    [self.navigationController.navigationBar setShadowImage:nil];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
     [self updateTableHeaderView];
     
 }

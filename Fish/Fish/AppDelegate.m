@@ -10,8 +10,8 @@
 #import "LLTabBar.h"
 #import "LoginViewController.h"
 #import "LLHomeViewController.h"
-#import "LLSameCityViewController.h"
-#import "LLMessageViewController.h"
+#import "ZMMemberViewController.h"
+#import "ZMCourseViewController.h"
 #import "LLMineViewController.h"
 #import "LLBaseNavViewController.h"
 #import <YTKNetworkConfig.h>
@@ -50,8 +50,8 @@
 
 - (void)changeRootVC {
     LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
-    LLSameCityViewController *sameCityViewController = [[LLSameCityViewController alloc] init];
-    LLMessageViewController *messageViewController = [[LLMessageViewController alloc] init];
+    ZMMemberViewController *sameCityViewController = [[ZMMemberViewController alloc] init];
+    ZMCourseViewController *messageViewController = [[ZMCourseViewController alloc] init];
     LLMineViewController *mineViewController = [[LLMineViewController alloc] init];
     LLBaseNavViewController *nav1 = [[LLBaseNavViewController  alloc] initWithRootViewController:homeViewController];
     LLBaseNavViewController  *nav2 = [[LLBaseNavViewController  alloc] initWithRootViewController:sameCityViewController];
@@ -68,7 +68,7 @@
     LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
     tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
                                     @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                    @{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
+//                                    @{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
                                     @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
                                     @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
     tabBar.delegate = self;

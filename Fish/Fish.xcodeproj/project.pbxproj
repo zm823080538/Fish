@@ -8,6 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */; };
+		5D2F7CA9209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CA7209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m */; };
+		5D2F7CAA209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7CA8209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib */; };
+		5D2F7CAE209C3079007B3812 /* ZMExerciseResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CAC209C3079007B3812 /* ZMExerciseResultCell.m */; };
+		5D2F7CAF209C3079007B3812 /* ZMExerciseResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7CAD209C3079007B3812 /* ZMExerciseResultCell.xib */; };
+		5D2F7CB3209C30C3007B3812 /* ZMMemberResultItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CB1209C30C3007B3812 /* ZMMemberResultItemCell.m */; };
+		5D2F7CB4209C30C3007B3812 /* ZMMemberResultItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7CB2209C30C3007B3812 /* ZMMemberResultItemCell.xib */; };
+		5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CB6209C30DF007B3812 /* ZMMemberResultCell.m */; };
+		5D2F7CBC209D6FE4007B3812 /* ZMHomeSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CBB209D6FE4007B3812 /* ZMHomeSectionView.m */; };
+		5D2F7CC0209D7CDE007B3812 /* ZMPreferentialActivityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CBF209D7CDE007B3812 /* ZMPreferentialActivityController.m */; };
+		5D2F7CC4209D7E91007B3812 /* ZMMarketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CC3209D7E91007B3812 /* ZMMarketTableViewController.m */; };
+		5D2F7CD7209D841D007B3812 /* XCDropdownSegmentConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CCE209D841C007B3812 /* XCDropdownSegmentConfigure.m */; };
+		5D2F7CD8209D841D007B3812 /* XCDropdownSegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CD0209D841C007B3812 /* XCDropdownSegmentCell.m */; };
+		5D2F7CD9209D841D007B3812 /* XCDropdownSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CD1209D841C007B3812 /* XCDropdownSegment.m */; };
+		5D2F7CDA209D841D007B3812 /* XCDropdownSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CD2209D841C007B3812 /* XCDropdownSegmentBar.m */; };
+		5D2F7CDB209D841D007B3812 /* XCDropdownSegment.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7CD3209D841C007B3812 /* XCDropdownSegment.bundle */; };
+		5D2F7CDC209D841D007B3812 /* UIView+XCDropdownSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CD5209D841C007B3812 /* UIView+XCDropdownSegment.m */; };
+		5D2F7CDD209D841D007B3812 /* XCDropdownSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7CD6209D841C007B3812 /* XCDropdownSegmentCell.xib */; };
+		5D2F7CE0209D845A007B3812 /* ZMNearMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CDF209D845A007B3812 /* ZMNearMemberViewController.m */; };
+		5D2F7CE5209D8556007B3812 /* ZMNearMememberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CE3209D8556007B3812 /* ZMNearMememberCell.m */; };
+		5D2F7CE6209D8556007B3812 /* ZMNearMememberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7CE4209D8556007B3812 /* ZMNearMememberCell.xib */; };
+		5D2F7CF6209D9411007B3812 /* YPTabItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CF1209D9411007B3812 /* YPTabItem.m */; };
+		5D2F7CF7209D9411007B3812 /* UIScrollView+YPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CF2209D9411007B3812 /* UIScrollView+YPTabBarController.m */; };
+		5D2F7CF8209D9411007B3812 /* YPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CF3209D9411007B3812 /* YPTabBarController.m */; };
+		5D2F7CF9209D9411007B3812 /* YPTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CF4209D9411007B3812 /* YPTabBar.m */; };
+		5D2F7CFA209D9411007B3812 /* UIViewController+YPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CF5209D9411007B3812 /* UIViewController+YPTabBarController.m */; };
+		5D2F7CFD209D9482007B3812 /* ZMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CFC209D9482007B3812 /* ZMMessageViewController.m */; };
+		5D2F7D03209D9503007B3812 /* ZMMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7D02209D9503007B3812 /* ZMMessageListController.m */; };
+		5D2F7D06209E9035007B3812 /* UIButton+YPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7D05209E9035007B3812 /* UIButton+YPKit.m */; };
+		5D2F7D09209E91EA007B3812 /* NSString+YPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7D08209E91EA007B3812 /* NSString+YPKit.m */; };
+		5D2F7D0C209E976C007B3812 /* ZMMemberListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7D0B209E976C007B3812 /* ZMMemberListController.m */; };
+		5D2F7D0F209E9E31007B3812 /* ZMSearchButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D2F7D0E209E9E31007B3812 /* ZMSearchButton.xib */; };
+		5D2F7D12209EA3EC007B3812 /* ZMCourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7D11209EA3EC007B3812 /* ZMCourseListViewController.m */; };
 		5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F77207BB62E006F8616 /* UIColor+Hex.m */; };
 		5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D343F7B207BB93F006F8616 /* RegisterViewController.m */; };
 		5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D343F7C207BB93F006F8616 /* RegisterViewController.xib */; };
@@ -61,10 +93,8 @@
 		5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBBA20784FA700F3C0D6 /* main.m */; };
 		5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC32078523000F3C0D6 /* LLHomeViewController.m */; };
 		5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC52078523000F3C0D6 /* LLHomeViewController.xib */; };
-		5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC72078523000F3C0D6 /* LLSameCityViewController.m */; };
-		5DC5CBDE2078523000F3C0D6 /* LLSameCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC82078523000F3C0D6 /* LLSameCityViewController.xib */; };
-		5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBCB2078523000F3C0D6 /* LLMessageViewController.m */; };
-		5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBCC2078523000F3C0D6 /* LLMessageViewController.xib */; };
+		5DC5CBDD2078523000F3C0D6 /* ZMMemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBC72078523000F3C0D6 /* ZMMemberViewController.m */; };
+		5DC5CBDF2078523000F3C0D6 /* ZMCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBCB2078523000F3C0D6 /* ZMCourseViewController.m */; };
 		5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD02078523000F3C0D6 /* LLMineViewController.xib */; };
 		5DC5CBE22078523000F3C0D6 /* LLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD12078523000F3C0D6 /* LLMineViewController.m */; };
 		5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBD32078523000F3C0D6 /* LLBaseViewController.m */; };
@@ -92,6 +122,64 @@
 		484F65B6951CFF90B1D21650 /* Pods-Fish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fish/Pods-Fish.debug.xcconfig"; sourceTree = "<group>"; };
 		5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
+		5D2F7CA6209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMHomeBodyBuildingKnowledageCell.h; sourceTree = "<group>"; };
+		5D2F7CA7209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMHomeBodyBuildingKnowledageCell.m; sourceTree = "<group>"; };
+		5D2F7CA8209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMHomeBodyBuildingKnowledageCell.xib; sourceTree = "<group>"; };
+		5D2F7CAB209C3079007B3812 /* ZMExerciseResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMExerciseResultCell.h; sourceTree = "<group>"; };
+		5D2F7CAC209C3079007B3812 /* ZMExerciseResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMExerciseResultCell.m; sourceTree = "<group>"; };
+		5D2F7CAD209C3079007B3812 /* ZMExerciseResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMExerciseResultCell.xib; sourceTree = "<group>"; };
+		5D2F7CB0209C30C3007B3812 /* ZMMemberResultItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMemberResultItemCell.h; sourceTree = "<group>"; };
+		5D2F7CB1209C30C3007B3812 /* ZMMemberResultItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberResultItemCell.m; sourceTree = "<group>"; };
+		5D2F7CB2209C30C3007B3812 /* ZMMemberResultItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMMemberResultItemCell.xib; sourceTree = "<group>"; };
+		5D2F7CB5209C30DF007B3812 /* ZMMemberResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMemberResultCell.h; sourceTree = "<group>"; };
+		5D2F7CB6209C30DF007B3812 /* ZMMemberResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberResultCell.m; sourceTree = "<group>"; };
+		5D2F7CBA209D6FE4007B3812 /* ZMHomeSectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMHomeSectionView.h; sourceTree = "<group>"; };
+		5D2F7CBB209D6FE4007B3812 /* ZMHomeSectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMHomeSectionView.m; sourceTree = "<group>"; };
+		5D2F7CBE209D7CDE007B3812 /* ZMPreferentialActivityController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMPreferentialActivityController.h; sourceTree = "<group>"; };
+		5D2F7CBF209D7CDE007B3812 /* ZMPreferentialActivityController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMPreferentialActivityController.m; sourceTree = "<group>"; };
+		5D2F7CC2209D7E91007B3812 /* ZMMarketTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMarketTableViewController.h; sourceTree = "<group>"; };
+		5D2F7CC3209D7E91007B3812 /* ZMMarketTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMarketTableViewController.m; sourceTree = "<group>"; };
+		5D2F7CCA209D841C007B3812 /* XCDropdownSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDropdownSegment.h; sourceTree = "<group>"; };
+		5D2F7CCB209D841C007B3812 /* XCDropdownSegmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDropdownSegmentCell.h; sourceTree = "<group>"; };
+		5D2F7CCC209D841C007B3812 /* XCDropdownSegmentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDropdownSegmentHeader.h; sourceTree = "<group>"; };
+		5D2F7CCD209D841C007B3812 /* XCDropdownSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDropdownSegmentBar.h; sourceTree = "<group>"; };
+		5D2F7CCE209D841C007B3812 /* XCDropdownSegmentConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDropdownSegmentConfigure.m; sourceTree = "<group>"; };
+		5D2F7CCF209D841C007B3812 /* UIView+XCDropdownSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XCDropdownSegment.h"; sourceTree = "<group>"; };
+		5D2F7CD0209D841C007B3812 /* XCDropdownSegmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDropdownSegmentCell.m; sourceTree = "<group>"; };
+		5D2F7CD1209D841C007B3812 /* XCDropdownSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDropdownSegment.m; sourceTree = "<group>"; };
+		5D2F7CD2209D841C007B3812 /* XCDropdownSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDropdownSegmentBar.m; sourceTree = "<group>"; };
+		5D2F7CD3209D841C007B3812 /* XCDropdownSegment.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XCDropdownSegment.bundle; sourceTree = "<group>"; };
+		5D2F7CD4209D841C007B3812 /* XCDropdownSegmentConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDropdownSegmentConfigure.h; sourceTree = "<group>"; };
+		5D2F7CD5209D841C007B3812 /* UIView+XCDropdownSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XCDropdownSegment.m"; sourceTree = "<group>"; };
+		5D2F7CD6209D841C007B3812 /* XCDropdownSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XCDropdownSegmentCell.xib; sourceTree = "<group>"; };
+		5D2F7CDE209D845A007B3812 /* ZMNearMemberViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNearMemberViewController.h; sourceTree = "<group>"; };
+		5D2F7CDF209D845A007B3812 /* ZMNearMemberViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNearMemberViewController.m; sourceTree = "<group>"; };
+		5D2F7CE2209D8556007B3812 /* ZMNearMememberCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNearMememberCell.h; sourceTree = "<group>"; };
+		5D2F7CE3209D8556007B3812 /* ZMNearMememberCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNearMememberCell.m; sourceTree = "<group>"; };
+		5D2F7CE4209D8556007B3812 /* ZMNearMememberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMNearMememberCell.xib; sourceTree = "<group>"; };
+		5D2F7CEC209D9411007B3812 /* YPTabItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabItem.h; sourceTree = "<group>"; };
+		5D2F7CED209D9411007B3812 /* UIScrollView+YPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YPTabBarController.h"; sourceTree = "<group>"; };
+		5D2F7CEE209D9411007B3812 /* YPTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabBar.h; sourceTree = "<group>"; };
+		5D2F7CEF209D9411007B3812 /* YPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPTabBarController.h; sourceTree = "<group>"; };
+		5D2F7CF0209D9411007B3812 /* UIViewController+YPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YPTabBarController.h"; sourceTree = "<group>"; };
+		5D2F7CF1209D9411007B3812 /* YPTabItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTabItem.m; sourceTree = "<group>"; };
+		5D2F7CF2209D9411007B3812 /* UIScrollView+YPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YPTabBarController.m"; sourceTree = "<group>"; };
+		5D2F7CF3209D9411007B3812 /* YPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTabBarController.m; sourceTree = "<group>"; };
+		5D2F7CF4209D9411007B3812 /* YPTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPTabBar.m; sourceTree = "<group>"; };
+		5D2F7CF5209D9411007B3812 /* UIViewController+YPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YPTabBarController.m"; sourceTree = "<group>"; };
+		5D2F7CFB209D9482007B3812 /* ZMMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMessageViewController.h; sourceTree = "<group>"; };
+		5D2F7CFC209D9482007B3812 /* ZMMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMessageViewController.m; sourceTree = "<group>"; };
+		5D2F7D01209D9503007B3812 /* ZMMessageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMessageListController.h; sourceTree = "<group>"; };
+		5D2F7D02209D9503007B3812 /* ZMMessageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMessageListController.m; sourceTree = "<group>"; };
+		5D2F7D04209E9034007B3812 /* UIButton+YPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+YPKit.h"; sourceTree = "<group>"; };
+		5D2F7D05209E9035007B3812 /* UIButton+YPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+YPKit.m"; sourceTree = "<group>"; };
+		5D2F7D07209E91EA007B3812 /* NSString+YPKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+YPKit.h"; sourceTree = "<group>"; };
+		5D2F7D08209E91EA007B3812 /* NSString+YPKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+YPKit.m"; sourceTree = "<group>"; };
+		5D2F7D0A209E976C007B3812 /* ZMMemberListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMemberListController.h; sourceTree = "<group>"; };
+		5D2F7D0B209E976C007B3812 /* ZMMemberListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberListController.m; sourceTree = "<group>"; };
+		5D2F7D0E209E9E31007B3812 /* ZMSearchButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMSearchButton.xib; sourceTree = "<group>"; };
+		5D2F7D10209EA3EC007B3812 /* ZMCourseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseListViewController.h; sourceTree = "<group>"; };
+		5D2F7D11209EA3EC007B3812 /* ZMCourseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseListViewController.m; sourceTree = "<group>"; };
 		5D343F76207BB62E006F8616 /* UIColor+Hex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		5D343F77207BB62E006F8616 /* UIColor+Hex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		5D343F7A207BB93F006F8616 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -192,12 +280,10 @@
 		5DC5CBC32078523000F3C0D6 /* LLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLHomeViewController.m; sourceTree = "<group>"; };
 		5DC5CBC42078523000F3C0D6 /* LLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLHomeViewController.h; sourceTree = "<group>"; };
 		5DC5CBC52078523000F3C0D6 /* LLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLHomeViewController.xib; sourceTree = "<group>"; };
-		5DC5CBC72078523000F3C0D6 /* LLSameCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSameCityViewController.m; sourceTree = "<group>"; };
-		5DC5CBC82078523000F3C0D6 /* LLSameCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLSameCityViewController.xib; sourceTree = "<group>"; };
-		5DC5CBC92078523000F3C0D6 /* LLSameCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSameCityViewController.h; sourceTree = "<group>"; };
-		5DC5CBCB2078523000F3C0D6 /* LLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMessageViewController.m; sourceTree = "<group>"; };
-		5DC5CBCC2078523000F3C0D6 /* LLMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLMessageViewController.xib; sourceTree = "<group>"; };
-		5DC5CBCD2078523000F3C0D6 /* LLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMessageViewController.h; sourceTree = "<group>"; };
+		5DC5CBC72078523000F3C0D6 /* ZMMemberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMMemberViewController.m; sourceTree = "<group>"; };
+		5DC5CBC92078523000F3C0D6 /* ZMMemberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMMemberViewController.h; sourceTree = "<group>"; };
+		5DC5CBCB2078523000F3C0D6 /* ZMCourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMCourseViewController.m; sourceTree = "<group>"; };
+		5DC5CBCD2078523000F3C0D6 /* ZMCourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMCourseViewController.h; sourceTree = "<group>"; };
 		5DC5CBCF2078523000F3C0D6 /* LLMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMineViewController.h; sourceTree = "<group>"; };
 		5DC5CBD02078523000F3C0D6 /* LLMineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LLMineViewController.xib; sourceTree = "<group>"; };
 		5DC5CBD12078523000F3C0D6 /* LLMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMineViewController.m; sourceTree = "<group>"; };
@@ -257,9 +343,125 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5D2F7CA5209C2FA1007B3812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CA6209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.h */,
+				5D2F7CA7209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m */,
+				5D2F7CA8209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib */,
+				5D2F7CAB209C3079007B3812 /* ZMExerciseResultCell.h */,
+				5D2F7CAC209C3079007B3812 /* ZMExerciseResultCell.m */,
+				5D2F7CAD209C3079007B3812 /* ZMExerciseResultCell.xib */,
+				5D2F7CB0209C30C3007B3812 /* ZMMemberResultItemCell.h */,
+				5D2F7CB1209C30C3007B3812 /* ZMMemberResultItemCell.m */,
+				5D2F7CB2209C30C3007B3812 /* ZMMemberResultItemCell.xib */,
+				5D2F7CB5209C30DF007B3812 /* ZMMemberResultCell.h */,
+				5D2F7CB6209C30DF007B3812 /* ZMMemberResultCell.m */,
+				5D2F7CBA209D6FE4007B3812 /* ZMHomeSectionView.h */,
+				5D2F7CBB209D6FE4007B3812 /* ZMHomeSectionView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D2F7CBD209D7CA0007B3812 /* youhuihuodong */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CBE209D7CDE007B3812 /* ZMPreferentialActivityController.h */,
+				5D2F7CBF209D7CDE007B3812 /* ZMPreferentialActivityController.m */,
+			);
+			path = youhuihuodong;
+			sourceTree = "<group>";
+		};
+		5D2F7CC1209D7E7F007B3812 /* market */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CC2209D7E91007B3812 /* ZMMarketTableViewController.h */,
+				5D2F7CC3209D7E91007B3812 /* ZMMarketTableViewController.m */,
+			);
+			path = market;
+			sourceTree = "<group>";
+		};
+		5D2F7CC5209D812D007B3812 /* NearMember */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CE1209D853F007B3812 /* View */,
+				5D2F7CDE209D845A007B3812 /* ZMNearMemberViewController.h */,
+				5D2F7CDF209D845A007B3812 /* ZMNearMemberViewController.m */,
+			);
+			path = NearMember;
+			sourceTree = "<group>";
+		};
+		5D2F7CC9209D841C007B3812 /* XCDropdownSegment */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CCA209D841C007B3812 /* XCDropdownSegment.h */,
+				5D2F7CCB209D841C007B3812 /* XCDropdownSegmentCell.h */,
+				5D2F7CCC209D841C007B3812 /* XCDropdownSegmentHeader.h */,
+				5D2F7CCD209D841C007B3812 /* XCDropdownSegmentBar.h */,
+				5D2F7CCE209D841C007B3812 /* XCDropdownSegmentConfigure.m */,
+				5D2F7CCF209D841C007B3812 /* UIView+XCDropdownSegment.h */,
+				5D2F7CD0209D841C007B3812 /* XCDropdownSegmentCell.m */,
+				5D2F7CD1209D841C007B3812 /* XCDropdownSegment.m */,
+				5D2F7CD2209D841C007B3812 /* XCDropdownSegmentBar.m */,
+				5D2F7CD3209D841C007B3812 /* XCDropdownSegment.bundle */,
+				5D2F7CD4209D841C007B3812 /* XCDropdownSegmentConfigure.h */,
+				5D2F7CD5209D841C007B3812 /* UIView+XCDropdownSegment.m */,
+				5D2F7CD6209D841C007B3812 /* XCDropdownSegmentCell.xib */,
+			);
+			path = XCDropdownSegment;
+			sourceTree = "<group>";
+		};
+		5D2F7CE1209D853F007B3812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CE2209D8556007B3812 /* ZMNearMememberCell.h */,
+				5D2F7CE3209D8556007B3812 /* ZMNearMememberCell.m */,
+				5D2F7CE4209D8556007B3812 /* ZMNearMememberCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D2F7CE7209D939A007B3812 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CFB209D9482007B3812 /* ZMMessageViewController.h */,
+				5D2F7CFC209D9482007B3812 /* ZMMessageViewController.m */,
+				5D2F7D01209D9503007B3812 /* ZMMessageListController.h */,
+				5D2F7D02209D9503007B3812 /* ZMMessageListController.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		5D2F7CEB209D9411007B3812 /* YPTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7CEC209D9411007B3812 /* YPTabItem.h */,
+				5D2F7CED209D9411007B3812 /* UIScrollView+YPTabBarController.h */,
+				5D2F7CEE209D9411007B3812 /* YPTabBar.h */,
+				5D2F7CEF209D9411007B3812 /* YPTabBarController.h */,
+				5D2F7CF0209D9411007B3812 /* UIViewController+YPTabBarController.h */,
+				5D2F7CF1209D9411007B3812 /* YPTabItem.m */,
+				5D2F7CF2209D9411007B3812 /* UIScrollView+YPTabBarController.m */,
+				5D2F7CF3209D9411007B3812 /* YPTabBarController.m */,
+				5D2F7CF4209D9411007B3812 /* YPTabBar.m */,
+				5D2F7CF5209D9411007B3812 /* UIViewController+YPTabBarController.m */,
+			);
+			path = YPTabBarController;
+			sourceTree = "<group>";
+		};
+		5D2F7D0D209E9E1F007B3812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D2F7D0E209E9E31007B3812 /* ZMSearchButton.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5D343F75207BB617006F8616 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F7D04209E9034007B3812 /* UIButton+YPKit.h */,
+				5D2F7D05209E9035007B3812 /* UIButton+YPKit.m */,
 				5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */,
 				5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */,
 				5D8A4730209408D700CE2723 /* UITextView+MGPlaceholder.h */,
@@ -276,6 +478,8 @@
 				5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */,
 				5D8A46E02090755B00CE2723 /* NSDictionary+ZMSet.h */,
 				5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */,
+				5D2F7D07209E91EA007B3812 /* NSString+YPKit.h */,
+				5D2F7D08209E91EA007B3812 /* NSString+YPKit.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -445,6 +649,7 @@
 		5D8A46E62090797900CE2723 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F7CEB209D9411007B3812 /* YPTabBarController */,
 				5D8A470F2090845A00CE2723 /* FDFullscreenPopGesture */,
 			);
 			path = Tool;
@@ -543,6 +748,11 @@
 		5DC5CBC22078523000F3C0D6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F7CE7209D939A007B3812 /* Message */,
+				5D2F7CC5209D812D007B3812 /* NearMember */,
+				5D2F7CC1209D7E7F007B3812 /* market */,
+				5D2F7CBD209D7CA0007B3812 /* youhuihuodong */,
+				5D2F7CA5209C2FA1007B3812 /* View */,
 				5DC5CBC32078523000F3C0D6 /* LLHomeViewController.m */,
 				5DC5CBC42078523000F3C0D6 /* LLHomeViewController.h */,
 				5DC5CBC52078523000F3C0D6 /* LLHomeViewController.xib */,
@@ -553,9 +763,11 @@
 		5DC5CBC62078523000F3C0D6 /* Coach */ = {
 			isa = PBXGroup;
 			children = (
-				5DC5CBC72078523000F3C0D6 /* LLSameCityViewController.m */,
-				5DC5CBC82078523000F3C0D6 /* LLSameCityViewController.xib */,
-				5DC5CBC92078523000F3C0D6 /* LLSameCityViewController.h */,
+				5D2F7D0D209E9E1F007B3812 /* View */,
+				5DC5CBC72078523000F3C0D6 /* ZMMemberViewController.m */,
+				5DC5CBC92078523000F3C0D6 /* ZMMemberViewController.h */,
+				5D2F7D0A209E976C007B3812 /* ZMMemberListController.h */,
+				5D2F7D0B209E976C007B3812 /* ZMMemberListController.m */,
 			);
 			path = Coach;
 			sourceTree = "<group>";
@@ -563,9 +775,10 @@
 		5DC5CBCA2078523000F3C0D6 /* Course */ = {
 			isa = PBXGroup;
 			children = (
-				5DC5CBCB2078523000F3C0D6 /* LLMessageViewController.m */,
-				5DC5CBCC2078523000F3C0D6 /* LLMessageViewController.xib */,
-				5DC5CBCD2078523000F3C0D6 /* LLMessageViewController.h */,
+				5DC5CBCB2078523000F3C0D6 /* ZMCourseViewController.m */,
+				5DC5CBCD2078523000F3C0D6 /* ZMCourseViewController.h */,
+				5D2F7D10209EA3EC007B3812 /* ZMCourseListViewController.h */,
+				5D2F7D11209EA3EC007B3812 /* ZMCourseListViewController.m */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -603,6 +816,7 @@
 		5DC5CBD52078523000F3C0D6 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				5D2F7CC9209D841C007B3812 /* XCDropdownSegment */,
 				5D8A470C20907D5100CE2723 /* UIAlertController+YPKit.h */,
 				5D8A470D20907D5100CE2723 /* UIAlertController+YPKit.m */,
 				5D8A46E4209078B200CE2723 /* YPImagePicker.h */,
@@ -737,18 +951,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */,
+				5D2F7D0F209E9E31007B3812 /* ZMSearchButton.xib in Resources */,
 				5D343F83207BC21F006F8616 /* ForgetPasswordViewController.xib in Resources */,
-				5DC5CBDE2078523000F3C0D6 /* LLSameCityViewController.xib in Resources */,
 				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
+				5D2F7CAA209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib in Resources */,
 				5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */,
 				5D8A472A209301E900CE2723 /* ZMFeedbackViewController.xib in Resources */,
 				5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */,
+				5D2F7CB4209C30C3007B3812 /* ZMMemberResultItemCell.xib in Resources */,
 				5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */,
 				5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */,
 				5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */,
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
-				5DC5CBE02078523000F3C0D6 /* LLMessageViewController.xib in Resources */,
+				5D2F7CE6209D8556007B3812 /* ZMNearMememberCell.xib in Resources */,
+				5D2F7CAF209C3079007B3812 /* ZMExerciseResultCell.xib in Resources */,
+				5D2F7CDD209D841D007B3812 /* XCDropdownSegmentCell.xib in Resources */,
 				5D5BB23C208AF8B90067709B /* ZMCertificationViewController.xib in Resources */,
+				5D2F7CDB209D841D007B3812 /* XCDropdownSegment.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,32 +1010,49 @@
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
 				5D8A471B2092B7DD00CE2723 /* ZMRecFriendRequest.m in Sources */,
 				5D8A471E2092B8BE00CE2723 /* ZMSaveAuthRequest.m in Sources */,
-				5DC5CBDD2078523000F3C0D6 /* LLSameCityViewController.m in Sources */,
+				5DC5CBDD2078523000F3C0D6 /* ZMMemberViewController.m in Sources */,
 				5D8A4732209408D800CE2723 /* UITextView+MGPlaceholder.m in Sources */,
+				5D2F7CDA209D841D007B3812 /* XCDropdownSegmentBar.m in Sources */,
 				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
 				5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */,
+				5D2F7CA9209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m in Sources */,
 				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,
 				5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */,
+				5D2F7CBC209D6FE4007B3812 /* ZMHomeSectionView.m in Sources */,
+				5D2F7CFA209D9411007B3812 /* UIViewController+YPTabBarController.m in Sources */,
 				5D5BB2332088EEE50067709B /* ZMPersonalModel.m in Sources */,
 				5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */,
 				5D8A47182092B78400CE2723 /* ZMGetPromotionRequest.m in Sources */,
+				5D2F7CD9209D841D007B3812 /* XCDropdownSegment.m in Sources */,
 				5D5BB21B2084EC980067709B /* LoginTopView.m in Sources */,
-				5DC5CBDF2078523000F3C0D6 /* LLMessageViewController.m in Sources */,
+				5D2F7CE5209D8556007B3812 /* ZMNearMememberCell.m in Sources */,
+				5DC5CBDF2078523000F3C0D6 /* ZMCourseViewController.m in Sources */,
 				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
+				5D2F7CDC209D841D007B3812 /* UIView+XCDropdownSegment.m in Sources */,
 				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
 				5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */,
 				5D8A47212092B9CD00CE2723 /* ZMGetAuthRequest.m in Sources */,
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
+				5D2F7D06209E9035007B3812 /* UIButton+YPKit.m in Sources */,
+				5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */,
+				5D2F7CAE209C3079007B3812 /* ZMExerciseResultCell.m in Sources */,
+				5D2F7D03209D9503007B3812 /* ZMMessageListController.m in Sources */,
 				5D8A47152092B35400CE2723 /* ZMUserEditRequest.m in Sources */,
+				5D2F7CF6209D9411007B3812 /* YPTabItem.m in Sources */,
+				5D2F7CFD209D9482007B3812 /* ZMMessageViewController.m in Sources */,
 				5D5BB25C208E35590067709B /* ZMRealNameRequest.m in Sources */,
+				5D2F7CC0209D7CDE007B3812 /* ZMPreferentialActivityController.m in Sources */,
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
 				5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
+				5D2F7CC4209D7E91007B3812 /* ZMMarketTableViewController.m in Sources */,
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
+				5D2F7CD8209D841D007B3812 /* XCDropdownSegmentCell.m in Sources */,
 				5D5BB240208B13D50067709B /* TeachQAViewController.m in Sources */,
+				5D2F7D0C209E976C007B3812 /* ZMMemberListController.m in Sources */,
 				5D8A4736209419FB00CE2723 /* ZMPickPhotoCollectionView.m in Sources */,
 				5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */,
 				5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */,
@@ -827,15 +1063,23 @@
 				5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */,
 				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
 				5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */,
+				5D2F7D12209EA3EC007B3812 /* ZMCourseListViewController.m in Sources */,
+				5D2F7CF7209D9411007B3812 /* UIScrollView+YPTabBarController.m in Sources */,
+				5D2F7D09209E91EA007B3812 /* NSString+YPKit.m in Sources */,
 				5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */,
+				5D2F7CE0209D845A007B3812 /* ZMNearMemberViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
+				5D2F7CF9209D9411007B3812 /* YPTabBar.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */,
+				5D2F7CF8209D9411007B3812 /* YPTabBarController.m in Sources */,
 				5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
+				5D2F7CB3209C30C3007B3812 /* ZMMemberResultItemCell.m in Sources */,
 				5D8A46E5209078B300CE2723 /* YPImagePicker.m in Sources */,
 				5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */,
 				5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */,
+				5D2F7CD7209D841D007B3812 /* XCDropdownSegmentConfigure.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
 				5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */,
 				5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */,
