@@ -96,7 +96,7 @@
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@""];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"押金" destinClassName:@""];
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@""];
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
     
     ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
     ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];

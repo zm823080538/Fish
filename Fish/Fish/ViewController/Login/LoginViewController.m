@@ -77,8 +77,16 @@
                 NSDictionary *dict = [account modelToJSONObject];
                 [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kZMUserInfo];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-                [appDelegate changeRootVC];
+                // options是动画选项
+                [UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                    BOOL oldState = [UIView areAnimationsEnabled];
+                    [UIView setAnimationsEnabled:NO];
+                    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                    [appDelegate changeRootVC];
+                    [UIView setAnimationsEnabled:oldState];
+                } completion:^(BOOL finished) {
+                }];
+//
             }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {

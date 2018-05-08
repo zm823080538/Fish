@@ -74,7 +74,6 @@
     self.leftLabel.text = personalModel.title;
     if ([personalModel isMemberOfClass:[ZMPersonalModel class]]) {
         self.rightLabel.text = personalModel.subTitle;
-        
     }
 }
 
