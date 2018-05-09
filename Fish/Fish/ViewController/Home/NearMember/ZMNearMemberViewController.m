@@ -7,12 +7,18 @@
 //
 
 #import "ZMNearMemberViewController.h"
-#import "XCDropdownSegment.h"
+#import "ZspMenu.h"
 #import "ZMNearMememberCell.h"
 #import <Masonry.h>
 
-@interface ZMNearMemberViewController () <XCDropdownSegmentDataSource, XCDropdownSegmentDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ZMNearMemberViewController () <ZspMenuDataSource, ZspMenuDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) ZspMenu *menu;
+
+@property (nonatomic, strong) NSArray *location;
+@property (nonatomic, strong) NSArray *sort;
+@property (nonatomic, strong) NSArray *choose;
+
 @end
 
 @implementation ZMNearMemberViewController
@@ -30,41 +36,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.location = @[@"综合", @"推荐商圈", @"越秀区", @"天河区", @"番禺区", @"海珠区", @"白云区", @"荔湾区", @"黄埔区"];
+    self.sort = @[@"距离", @"离我最近", @"好评优先", @"人气最高"];
+    self.choose = @[@"筛选", @"折扣商品", @"进店领券", @"下单返券"];
+
+    
     [self setupUI];
 }
 
 - (void)setupUI
 {
     
-    
+    _menu = [[ZspMenu alloc] initWithOrigin:CGPointMake(0, 0) andHeight:44];
+    _menu.delegate = self;
+    _menu.dataSource = self;
+    [self.view addSubview:_menu];
     
     [self.view addSubview:self.tableView];
-    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-//        make.left.right.bottom.equalTo(self.view);
-//        make.top.equalTo(self.mas_bottom).mas_offset(10);
+        make.left.bottom.right.equalTo(self.view);
+        make.top.equalTo(_menu.mas_bottom);
+        
     }];
-    
-   
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 64;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    XCDropdownSegment *segment = [[XCDropdownSegment alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.view.height - 64)];
-    segment.dataSource = self;
-    segment.delegate   = self;
-    return segment;
-}
-
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ZMNearMememberCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMNearMememberCell class])];
@@ -74,46 +72,39 @@
     return cell;
 }
 
-#pragma mark - 📕 👀 XCDropdownSegmentDataSource 👀
-
-- (NSArray<NSString *> *)titlesOfHeaderInDropdownSegment:(XCDropdownSegment *)dropdownSegment
-{
-    return @[@"综合", @"距离", @"筛选"];
+- (NSInteger)numberOfColumnsInMenu:(ZspMenu *)menu {
+    return 3;
 }
 
-- (NSArray<NSString *> *)dropdownSegment:(XCDropdownSegment *)dropdownSegment titlesInSection:(NSInteger)section
-{
-    if (0 == section)   return @[@"一：001", @"一：002", @"一：003"];
-    
-    if (1 == section)   return @[
-                                 @"二：001",
-                                 @"二：002",
-                                 @"二：003",
-                                 @"二：004",
-                                 @"二：005",
-                                 @"二：006",
-                                 @"二：007"
-                                 ];
-    return @[
-             @"三：001",
-             @"三：002",
-             @"三：003",
-             @"三：004",
-             @"三：005"
-             ];
+//每个column有多少行
+- (NSInteger)menu:(ZspMenu *)menu numberOfRowsInColumn:(NSInteger)column {
+    if (column == 0) {
+        return self.location.count;
+    }else if(column == 1) {
+        return self.sort.count;
+    }else {
+        return self.choose.count;
+    }
 }
 
-#pragma mark - 💉 👀 XCDropdownSegmentDelegate 👀
 
-- (void)dropdownSegment:(XCDropdownSegment *)dropdownSegment didSelectHeaderInSection:(NSInteger)section
-{
-    NSLog(@"点击了第 %zi 段", section);
+//每个column中每行的title
+- (NSString *)menu:(ZspMenu *)menu titleForRowAtIndexPath:(ZspIndexPath *)indexPath {
+    if (indexPath.column == 0) {
+        return self.location[indexPath.row];
+    }else if(indexPath.column == 1) {
+        return self.sort[indexPath.row];
+    }else {
+        return self.choose[indexPath.row];
+    }
 }
 
-- (void)dropdownSegment:(XCDropdownSegment *)dropdownSegment didSelectRow:(NSInteger)row inSection:(NSInteger)section
-{
-    NSLog(@"点击了第 %zi 段的第 %zi 行", section, row);
+- (void)menu:(ZspMenu *)menu didSelectRowAtIndexPath:(ZspIndexPath *)indexPath {
+    if (indexPath.item >= 0) {
+        NSLog(@"点击了 %ld - %ld - %ld",indexPath.column,indexPath.row,indexPath.item);
+    }else {
+        NSLog(@"点击了 %ld - %ld",indexPath.column,indexPath.row);
+    }
 }
-
 
 @end

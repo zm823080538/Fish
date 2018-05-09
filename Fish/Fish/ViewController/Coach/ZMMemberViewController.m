@@ -9,7 +9,7 @@
 #import "ZMMemberViewController.h"
 #import "ZMMessageViewController.h"
 #import "ZMMemberListController.h"
-@interface ZMMemberViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ZMMemberViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) UIView *bannerView;

@@ -15,6 +15,7 @@
 #import "LLMineViewController.h"
 #import "LLBaseNavViewController.h"
 #import <YTKNetworkConfig.h>
+#import <IQKeyboardManager.h>
 
 @interface AppDelegate () <LLTabBarDelegate, UIActionSheetDelegate>
 
@@ -26,6 +27,7 @@
     // Override point for customization after application launch.
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://www.bjwork.xyz";
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
@@ -44,7 +46,7 @@
     //                                    @{kLLTabBarItemAttributeTitle : @"同城", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
     
    
-    
+    [[IQKeyboardManager sharedManager] setEnable:YES];
     return YES;
 }
 

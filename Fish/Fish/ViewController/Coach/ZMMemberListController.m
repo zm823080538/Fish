@@ -9,8 +9,9 @@
 #import "ZMMemberListController.h"
 #import "ZMNearMememberCell.h"
 #import <ReactiveObjC.h>
+#import "SSSearchBar.h"
 #import <UIView+YYAdd.h>
-@interface ZMMemberListController ()
+@interface ZMMemberListController () <UISearchBarDelegate>
 
 @end
 
@@ -18,19 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//    searchButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
-//    searchButton.backgroundColor
-    UIView *searchView = [[NSBundle mainBundle] loadNibNamed:@"ZMSearchButton" owner:nil options:nil].firstObject;
-    searchView.height = 50;
-    searchView.userInteractionEnabled = YES;
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchViewClick)];
-    [searchView addGestureRecognizer:tapGesture];
+    SSSearchBar *searchBar = [[SSSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    searchBar.delegate = self;
     self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.tableHeaderView = searchView;
+    self.tableView.tableHeaderView = searchBar;
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
 }
+
+
 
 - (void)searchViewClick {
     
@@ -52,6 +49,11 @@
         cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMNearMememberCell class]) owner:nil options:nil].firstObject;
     }
     return cell;
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
+    NSLog(@"+++++");
+    return NO;
 }
 
 @end
