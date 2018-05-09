@@ -15,6 +15,7 @@
 #import <UIImage+YYAdd.h>
 #import "ZMGetAuthRequest.h"
 #import "ZMMessageViewController.h"
+#import "UINavigationBar+Awesome.h"
 #import "PersonalInfoViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -35,14 +36,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = YES;
+    UIImage *memberAdd = [[UIImage imageNamed:@"member_addUser"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:memberAdd style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
+    leftBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"member_addUser"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
+    UIImage *xiaoxi = [[UIImage imageNamed:@"xiaoxi"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:xiaoxi style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
+    rightBarbuttonItem.tintColor = [UIColor whiteColor];
     
-    UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
-    UIBarButtonItem *rightBarbuttonItem1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting3"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItem1Click)];
+    UIImage *setting3 = [UIImage imageNamed:@"setting3"];
+    UIBarButtonItem *rightBarbuttonItem1 = [[UIBarButtonItem alloc] initWithImage:setting3 style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItem1Click)];
+    rightBarbuttonItem1.tintColor = [UIColor whiteColor];
+    
     self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
     [self loadData];
-//    [self adapterUIForIOS11:self.tableView];
+    [self adapterUIForIOS11:self.tableView];
 }
 
 - (void)rightBarItem1Click {
@@ -68,6 +78,8 @@
     } else {
         self.tableView.tableHeaderView = self.tableHeaderView1;
     }
+    self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
 }
 
 - (void)getAuthStatus {
@@ -119,21 +131,25 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar lt_reset];
     //设置导航栏背景图片为一个空的image，这样就透明了
-    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-    
-    
-    //去掉透明后导航栏下边的黑边
-    [self.navigationController.navigationBar setShadowImage:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+//    self.navigationController.navigationBar.translucent = YES;
+//    self.navigationController.navigationBar.translucent = NO;
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]]
+//
+//forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
+    //去掉透明后导航栏下边的黑边
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+
     [self updateTableHeaderView];
     
 }

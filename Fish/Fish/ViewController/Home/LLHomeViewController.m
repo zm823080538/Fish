@@ -37,9 +37,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"健身" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     self.tableView.tableHeaderView = self.headerView;
-//    self.tableView.estimatedRowHeight = 0;
-//    self.tableView.estimatedSectionHeaderHeight = 0;
-//    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 }
 
 - (void)leftBarItemClick {

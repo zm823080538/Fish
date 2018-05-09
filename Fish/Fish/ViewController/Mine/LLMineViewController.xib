@@ -56,30 +56,30 @@
             </constraints>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Fav-DR-vnA">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-GI-4go" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-km-gke">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timg" translatesAutoresizingMaskIntoConstraints="NO" id="0vx-pH-NQK">
-                                    <rect key="frame" x="20" y="32" width="70" height="70"/>
+                                    <rect key="frame" x="20" y="96" width="70" height="70"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="70" id="P36-iM-MVb"/>
                                         <constraint firstAttribute="height" constant="70" id="pxH-Os-mQe"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录/注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsz-hg-ShX">
-                                    <rect key="frame" x="105" y="37" width="88.5" height="24"/>
+                                    <rect key="frame" x="105" y="101" width="88.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击进行登录/注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laH-ot-kcU">
-                                    <rect key="frame" x="105" y="69" width="110.5" height="16"/>
+                                    <rect key="frame" x="105" y="133" width="110.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -116,17 +116,17 @@
             <point key="canvasLocation" x="-119" y="398"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tgv-T0-SIA">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmv-Pe-97T" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbs-gu-ggo">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="152"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timg" translatesAutoresizingMaskIntoConstraints="NO" id="ru3-m6-YOY">
-                                    <rect key="frame" x="20" y="32" width="70" height="70"/>
+                                    <rect key="frame" x="20" y="96" width="70" height="70"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="70" id="DSU-tU-Qup"/>
                                         <constraint firstAttribute="height" constant="70" id="nss-5T-5S4"/>
@@ -139,19 +139,19 @@
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录/注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sj-Ok-4GC">
-                                    <rect key="frame" x="105" y="37" width="88.5" height="24"/>
+                                    <rect key="frame" x="105" y="101" width="88.5" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击进行登录/注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzl-K1-uMX">
-                                    <rect key="frame" x="105" y="69" width="110.5" height="16"/>
+                                    <rect key="frame" x="105" y="133" width="110.5" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPx-Sr-v6e">
-                                    <rect key="frame" x="351" y="55" width="9" height="15"/>
+                                    <rect key="frame" x="351" y="119" width="9" height="15"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="9" id="Nzd-zd-peB"/>
                                         <constraint firstAttribute="height" constant="15" id="qCi-Kz-rD1"/>
@@ -159,14 +159,14 @@
                                     <state key="normal" image="back22"/>
                                 </button>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QR_Code" translatesAutoresizingMaskIntoConstraints="NO" id="9ro-aV-3gk">
-                                    <rect key="frame" x="310" y="52" width="21" height="21"/>
+                                    <rect key="frame" x="310" y="116" width="21" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="8xo-Ug-Q2R"/>
                                         <constraint firstAttribute="width" constant="21" id="B09-S9-BJs"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="未认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4C-xj-hIJ">
-                                    <rect key="frame" x="201" y="40" width="42" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4C-xj-hIJ">
+                                    <rect key="frame" x="201" y="105" width="40" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>

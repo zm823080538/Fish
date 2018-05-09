@@ -76,6 +76,7 @@
 		5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB25E208E39400067709B /* ZMUpLoadRequest.m */; };
 		5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB26220921A100067709B /* ZMRecFriendViewController.m */; };
 		5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB26520921AA70067709B /* ZMInputTextField.m */; };
+		5D5C197520A2D5B3005422E5 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C197320A2D5B2005422E5 /* UINavigationBar+Awesome.m */; };
 		5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */; };
 		5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46D92090298D00CE2723 /* ZMAnimatingRequestAccessory.m */; };
 		5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */; };
@@ -253,6 +254,8 @@
 		5D5BB26220921A100067709B /* ZMRecFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRecFriendViewController.m; sourceTree = "<group>"; };
 		5D5BB26420921AA70067709B /* ZMInputTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMInputTextField.h; sourceTree = "<group>"; };
 		5D5BB26520921AA70067709B /* ZMInputTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMInputTextField.m; sourceTree = "<group>"; };
+		5D5C197320A2D5B2005422E5 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		5D5C197420A2D5B2005422E5 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		5D8A46C5209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+ZMAnimatingAccessory.h"; sourceTree = "<group>"; };
 		5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YTKBaseRequest+ZMAnimatingAccessory.m"; sourceTree = "<group>"; };
 		5D8A46D82090298D00CE2723 /* ZMAnimatingRequestAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAnimatingRequestAccessory.h; sourceTree = "<group>"; };
@@ -476,6 +479,8 @@
 		5D343F75207BB617006F8616 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				5D5C197420A2D5B2005422E5 /* UINavigationBar+Awesome.h */,
+				5D5C197320A2D5B2005422E5 /* UINavigationBar+Awesome.m */,
 				5D2F7D04209E9034007B3812 /* UIButton+YPKit.h */,
 				5D2F7D05209E9035007B3812 /* UIButton+YPKit.m */,
 				5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */,
@@ -1066,6 +1071,7 @@
 				5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */,
 				5D2F7CBC209D6FE4007B3812 /* ZMHomeSectionView.m in Sources */,
 				5D2F7CFA209D9411007B3812 /* UIViewController+YPTabBarController.m in Sources */,
+				5D5C197520A2D5B3005422E5 /* UINavigationBar+Awesome.m in Sources */,
 				5D3BC35220A09CE300510004 /* TeachQAViewController.m in Sources */,
 				5D5BB2332088EEE50067709B /* ZMPersonalModel.m in Sources */,
 				5DC5CBE52078523000F3C0D6 /* LLTabBar.m in Sources */,
