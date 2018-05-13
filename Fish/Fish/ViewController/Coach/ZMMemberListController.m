@@ -11,6 +11,7 @@
 #import <ReactiveObjC.h>
 #import "SSSearchBar.h"
 #import <UIView+YYAdd.h>
+#import "ZMMemberDetailViewController.h"
 @interface ZMMemberListController () <UISearchBarDelegate>
 
 @end
@@ -49,6 +50,12 @@
         cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMNearMememberCell class]) owner:nil options:nil].firstObject;
     }
     return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMMemberDetailViewController *memberDetailVC = [ZMMemberDetailViewController new];
+    [self.navigationController pushViewController:memberDetailVC animated:YES];
 }
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
