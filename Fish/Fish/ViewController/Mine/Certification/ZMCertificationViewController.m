@@ -112,8 +112,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             ZMSaveAuthRequest *saveAuthRequest = [[ZMSaveAuthRequest alloc] init];
             saveAuthRequest.userid = [ZMAccountManager shareManager].loginUser.id;
-            saveAuthRequest.realname = self.real_name_textField.text;
-            saveAuthRequest.idnumber = self.ID_num_textField.text;
+            saveAuthRequest.realname = self.real_name_textField.textField.text;
+            saveAuthRequest.idnumber = self.ID_num_textField.textField.text;
             saveAuthRequest.idimgpath = self.imageUrlDict[@"idimgpath"];
             saveAuthRequest.idimgbackpath = self.imageUrlDict[@"idimgbackpath"];
             saveAuthRequest.certpath = self.imageUrlDict[@"photopath"];

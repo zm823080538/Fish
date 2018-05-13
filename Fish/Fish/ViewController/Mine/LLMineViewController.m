@@ -16,6 +16,7 @@
 #import "ZMGetAuthRequest.h"
 #import "ZMMessageViewController.h"
 #import "UINavigationBar+Awesome.h"
+#import "ZMSettingTableViewController.h"
 #import "PersonalInfoViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -56,7 +57,8 @@
 }
 
 - (void)rightBarItem1Click {
-    
+    ZMSettingTableViewController *settingVC = [[ZMSettingTableViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)leftBarItemClick {
@@ -104,26 +106,23 @@
 
 - (void)loadData {
     ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
-    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMCertificationViewController"];
+    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
-    ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@""];
-    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"押金" destinClassName:@""];
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+    ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
+    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"押金" destinClassName:@""];
+    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+//
     
-    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
-    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];
+    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];
     
-    self.dataSource = @[@[item01,item02,item03,item04,item05,item06],@[item07,item08]];
+    self.dataSource = @[@[item01,item02,item03,item04,item05,item06],@[item07,item08,item09]];
     [self.tableView reloadData];
 }
-- (IBAction)setting:(UIButton *)sender {
-    PersonalInfoViewController *personalInfoVC = [[PersonalInfoViewController alloc] init];
-    [self.navigationController pushViewController:personalInfoVC animated:YES];
-}
-- (IBAction)messageBtnClick:(UIButton *)sender {
-}
-- (IBAction)addUserBtnClick:(UIButton *)sender {
-}
+
+
 - (IBAction)PushToPersonalInfo:(UITapGestureRecognizer *)sender {
     PersonalInfoViewController *personalInfoVC = [[PersonalInfoViewController alloc] init];
     [self.navigationController pushViewController:personalInfoVC animated:YES];
@@ -132,21 +131,15 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar lt_reset];
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor whiteColor]];
     //设置导航栏背景图片为一个空的image，这样就透明了
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-//    self.navigationController.navigationBar.translucent = YES;
-//    self.navigationController.navigationBar.translucent = NO;
-//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]]
-//
-//forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.shadowImage = [UIImage new];
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.barTintColor = [UIColor clearColor];
     //去掉透明后导航栏下边的黑边
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 

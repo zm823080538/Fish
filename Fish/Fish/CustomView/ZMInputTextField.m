@@ -13,9 +13,28 @@
 
 @interface ZMInputTextField ()
 @property (nonatomic, strong) UIView *lineView;
+
+
 @end
 
 @implementation ZMInputTextField
+
+- (UITextField *)textField {
+    if (!_textField) {
+        _textField = [[UITextField alloc] init];
+        _textField.borderStyle = UITextBorderStyleNone;
+        _textField.clearButtonMode = UITextFieldViewModeAlways;
+    }
+    return _textField;
+}
+
+- (UIView *)lineView {
+    if (!_lineView) {
+        _lineView = [[UIView alloc] init];
+        
+    }
+    return _lineView;
+}
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -25,8 +44,12 @@
 }
 
 - (void)config {
-    [self setValue:[UIColor colorWithHexString:@"#BABABA" alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
-    self.lineView = [[UIView alloc] init];
+    [self addSubview:self.textField];
+    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self).insets(UIEdgeInsetsMake(0, 20, 0, 0));
+    }];
+    [self.textField setValue:[UIColor colorWithHexString:@"#BABABA" alpha:1] forKeyPath:@"_placeholderLabel.textColor"];
+    
     self.lineView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:self.lineView];
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -42,38 +65,17 @@
     return self;
 }
 
-- (CGRect)textRectForBounds:(CGRect)bounds {
-    CGRect newFrame;
-    newFrame = CGRectInset(bounds, 20, 0);
-    return newFrame;
-}
-
-- (CGRect)placeholderRectForBounds:(CGRect)bounds {
-    CGRect newFrame = CGRectInset(bounds, 20, 0);
-    return newFrame;
-}
-
-- (CGRect)leftViewRectForBounds:(CGRect)bounds {
-    CGRect newFrame = CGRectInset(bounds, 20, 0);
-    return newFrame;
-}
-
-//- (CGRect)editingRectForBounds:(CGRect)bounds {
-//    CGRect newFrame = CGRectInset(bounds, 20, 0);
-//    return newFrame;
-//}
 
 - (void)setLeftLabelText:(NSString *)leftLabelText {
     UILabel *leftLabel = [[UILabel alloc] init];
-    leftLabel.backgroundColor = [UIColor redColor];
     leftLabel.left = 20;
     leftLabel.centerY = self.height / 2;
-    leftLabel.size = CGSizeMake(84, self.height);
+    leftLabel.size = CGSizeMake(100, self.height);
     leftLabel.text = leftLabelText;
     leftLabel.font = [UIFont systemFontOfSize:14];
     leftLabel.textColor = [UIColor colorWithHexString:@"#999999"];
-    self.leftView = leftLabel;
-    self.leftViewMode = UITextFieldViewModeAlways;
+    self.textField.leftView = leftLabel;
+    self.textField.leftViewMode = UITextFieldViewModeAlways;
     
 }
 

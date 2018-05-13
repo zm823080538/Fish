@@ -8,6 +8,7 @@
 
 #import "PersonalInfoCell.h"
 #import "UIColor+Hex.h"
+#import <UIImageView+YYWebImage.h>
 #import <Masonry.h>
 #import "ZMPersonalModel.h"
 
@@ -67,11 +68,13 @@
         make.size.mas_equalTo(CGSizeMake(34, 34));
         make.centerY.equalTo(self);
     }];
+
 }
 
 - (void)setPersonalModel:(ZMPersonalModel *)personalModel {
     _personalModel = personalModel;
     self.leftLabel.text = personalModel.title;
+    [self.rightImageView setImageWithURL:[NSURL URLWithString:personalModel.image] placeholder:PlaceholderImage];
     if ([personalModel isMemberOfClass:[ZMPersonalModel class]]) {
         self.rightLabel.text = personalModel.subTitle;
     }
@@ -79,29 +82,33 @@
 
 - (void)setStyle:(PersonalInfoCellStyle)style {
     _style = style;
-    switch (style) {
-        case PersonalInfoCellStyleLabel:
-            self.rightImageView.hidden = YES;
-            self.rightTextField.hidden = YES;
-            self.rightLabel.hidden = NO;
-            break;
-        case PersonalInfoCellStyleImage:
-            self.rightImageView.hidden = NO;
-            self.rightTextField.hidden = YES;
-            self.rightLabel.hidden = YES;
-            break;
-        case PersonalInfoCellStyleTextField:
-            self.rightImageView.hidden = YES;
-            self.rightTextField.hidden = NO;
-            self.rightLabel.hidden = YES;
-            break;
-        case PersonalInfoCellStyleArrow:
-            self.rightImageView.hidden = YES;
-            self.rightTextField.hidden = YES;
-            self.rightLabel.hidden = YES;
-            break;
-        default:
-            break;
+    if (style == PersonalInfoCellStyleLabel) {
+        self.rightImageView.hidden = YES;
+        self.rightTextField.hidden = YES;
+        self.rightLabel.hidden = NO;
+        self.rightArrow.hidden = YES;
+        [self.rightLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self).mas_equalTo(-15);
+            make.centerY.equalTo(self);
+            
+        }];
+    } else if (style == PersonalInfoCellStyleImage) {
+        self.rightImageView.hidden = NO;
+        self.rightTextField.hidden = YES;
+        self.rightLabel.hidden = YES;
+    } else if (style == PersonalInfoCellStyleTextField) {
+        self.rightImageView.hidden = YES;
+        self.rightTextField.hidden = NO;
+        self.rightLabel.hidden = YES;
+    } else if (style == PersonalInfoCellStyleArrow) {
+        self.rightImageView.hidden = YES;
+        self.rightTextField.hidden = YES;
+        self.rightLabel.hidden = YES;
+    } else if (style == PersonalInfoCellStyleLabelArrow) {
+        self.rightImageView.hidden = YES;
+        self.rightTextField.hidden = YES;
+        self.rightLabel.hidden = NO;
+        self.rightArrow.hidden = NO;
     }
 }
 
@@ -121,7 +128,7 @@
 - (UILabel *)rightLabel {
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc] init];
-        _leftLabel.font = [UIFont systemFontOfSize:14];
+        _leftLabel.font = [UIFont systemFontOfSize:13];
         _leftLabel.text = @"rightLabel";
         _leftLabel.textColor = [UIColor colorWithHexString:@"#8996AA"];        
     }
@@ -131,6 +138,8 @@
 - (UIImageView *)rightImageView {
     if (!_rightImageView) {
         _rightImageView = [[UIImageView alloc] init];
+        _rightImageView.layer.cornerRadius = 17;
+        _rightImageView.layer.masksToBounds = YES;
     }
     return _rightImageView;
 }

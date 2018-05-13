@@ -12,5 +12,4 @@ target 'Fish' do
 	pod 'MBProgressHUD', '~> 1.0.0'
 	pod 'YYKit', '~> 1.0.9'
     pod 'YTKNetwork'
-pod 'IQKeyboardManager', '~> 5.0.6'	
 end

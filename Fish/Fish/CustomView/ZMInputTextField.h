@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZMInputTextField : UITextField
+@interface ZMInputTextField : UIView
 @property (nonatomic, copy) NSString * leftLabelText;
-
-//@property (nonatomic, copy) IBInspectable NSString * inputPlaceholder;
+@property (nonatomic, strong) UITextField * textField;
 @end

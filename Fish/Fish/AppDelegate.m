@@ -15,7 +15,7 @@
 #import "LLMineViewController.h"
 #import "LLBaseNavViewController.h"
 #import <YTKNetworkConfig.h>
-#import <IQKeyboardManager.h>
+//#import <IQKeyboardManager.h>
 
 @interface AppDelegate () <LLTabBarDelegate, UIActionSheetDelegate>
 
@@ -46,7 +46,7 @@
     //                                    @{kLLTabBarItemAttributeTitle : @"同城", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
     
    
-    [[IQKeyboardManager sharedManager] setEnable:YES];
+//    [[IQKeyboardManager sharedManager] setEnable:YES];
     return YES;
 }
 

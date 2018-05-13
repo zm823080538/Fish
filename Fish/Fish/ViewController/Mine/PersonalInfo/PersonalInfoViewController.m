@@ -89,7 +89,7 @@
 - (void)loadData {
     ZMAccount *account = [ZMAccountManager shareManager].loginUser;
     ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:account.img title:@"头像" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:@""];
-    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.nickname];
+    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.nickname];
     NSString *sex;
     if ([account.sex isEqualToString:@"1"]) {
         sex = @"男";
@@ -98,8 +98,8 @@
     } else {
         sex = @"未知";
     }
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:sex];
-    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:account.address];
+    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:sex];
+    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.address];
     ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"我的二维码" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:nil];
     
     ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
