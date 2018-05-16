@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLMineViewController">
             <connections>
+                <outlet property="ID_number_label" destination="jzl-K1-uMX" id="eFi-lO-HQh"/>
+                <outlet property="ageButton" destination="FCB-Lk-fHg" id="dPO-wY-OnZ"/>
                 <outlet property="portrait" destination="ru3-m6-YOY" id="fav-yH-v1g"/>
                 <outlet property="tableHeaderView1" destination="Fav-DR-vnA" id="bMX-sC-hLM"/>
                 <outlet property="tableHeaderView2" destination="tgv-T0-SIA" id="jAA-kl-qai"/>
@@ -166,11 +168,27 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4C-xj-hIJ">
-                                    <rect key="frame" x="201" y="105" width="40" height="16"/>
+                                    <rect key="frame" x="238.5" y="105" width="40" height="16"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCB-Lk-fHg">
+                                    <rect key="frame" x="198.5" y="106.5" width="35" height="13"/>
+                                    <color key="backgroundColor" red="0.95686274510000002" green="0.59215686270000001" blue="0.71372549019999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="DTr-nd-Kx5"/>
+                                        <constraint firstAttribute="height" constant="13" id="pUB-OS-34A"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <state key="normal" title="22" image="nv"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -178,12 +196,14 @@
                                 <constraint firstItem="1sj-Ok-4GC" firstAttribute="leading" secondItem="ru3-m6-YOY" secondAttribute="trailing" constant="15" id="61m-qx-Nae"/>
                                 <constraint firstItem="jzl-K1-uMX" firstAttribute="leading" secondItem="1sj-Ok-4GC" secondAttribute="leading" id="BFU-xC-ael"/>
                                 <constraint firstAttribute="trailing" secondItem="GPx-Sr-v6e" secondAttribute="trailing" constant="15" id="CTw-dj-ffx"/>
-                                <constraint firstItem="e4C-xj-hIJ" firstAttribute="leading" secondItem="1sj-Ok-4GC" secondAttribute="trailing" constant="7.5" id="XJJ-gi-991"/>
+                                <constraint firstItem="FCB-Lk-fHg" firstAttribute="centerY" secondItem="1sj-Ok-4GC" secondAttribute="centerY" id="CYN-NW-5Jr"/>
                                 <constraint firstAttribute="bottom" secondItem="ru3-m6-YOY" secondAttribute="bottom" constant="50" id="du7-yg-rNT"/>
                                 <constraint firstItem="GPx-Sr-v6e" firstAttribute="leading" secondItem="9ro-aV-3gk" secondAttribute="trailing" constant="20" id="in4-Rm-OBu"/>
                                 <constraint firstItem="jzl-K1-uMX" firstAttribute="top" secondItem="1sj-Ok-4GC" secondAttribute="bottom" constant="8" id="jUi-4x-v0J"/>
+                                <constraint firstItem="e4C-xj-hIJ" firstAttribute="leading" secondItem="FCB-Lk-fHg" secondAttribute="trailing" constant="5" id="jvV-7h-tTs"/>
                                 <constraint firstItem="ru3-m6-YOY" firstAttribute="leading" secondItem="Zbs-gu-ggo" secondAttribute="leading" constant="20" id="ls8-UI-dpc"/>
                                 <constraint firstItem="1sj-Ok-4GC" firstAttribute="top" secondItem="ru3-m6-YOY" secondAttribute="top" constant="5" id="n6E-1R-APS"/>
+                                <constraint firstItem="FCB-Lk-fHg" firstAttribute="leading" secondItem="1sj-Ok-4GC" secondAttribute="trailing" constant="5" id="oKs-8g-G5r"/>
                                 <constraint firstItem="e4C-xj-hIJ" firstAttribute="centerY" secondItem="1sj-Ok-4GC" secondAttribute="centerY" id="uEz-7a-49D"/>
                                 <constraint firstItem="GPx-Sr-v6e" firstAttribute="top" secondItem="ru3-m6-YOY" secondAttribute="bottom" constant="-47" id="wZs-DW-pRM"/>
                             </constraints>
@@ -221,6 +241,7 @@
     <resources>
         <image name="QR_Code" width="18" height="18"/>
         <image name="back22" width="9" height="15"/>
+        <image name="nv" width="9" height="9"/>
         <image name="timg" width="70" height="70"/>
     </resources>
 </document>

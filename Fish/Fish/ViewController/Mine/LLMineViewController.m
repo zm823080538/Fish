@@ -11,7 +11,7 @@
 #import "UIAlertController+Set.h"
 #import "ZMAccountManager.h"
 #import "ZMMineModel.h"
-#import "PersonalInfoCell.h"
+#import "ZMMineTableViewCell.h"
 #import <UIImage+YYAdd.h>
 #import "ZMGetAuthRequest.h"
 #import "ZMMessageViewController.h"
@@ -27,9 +27,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
 @property (weak, nonatomic) IBOutlet UIButton *messageBtn;
 @property (weak, nonatomic) IBOutlet UIButton *addUserBtn;
+@property (weak, nonatomic) IBOutlet UIButton *ageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *portrait;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *verfiyStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ID_number_label;
 
 @end
 
@@ -76,6 +78,8 @@
         self.tableView.tableHeaderView = self.tableHeaderView2;
         [self.portrait setImageWithURL:[NSURL URLWithString:[ZMAccountManager shareManager].loginUser.img] placeholder:PlaceholderImage];
         self.userNameLabel.text = [ZMAccountManager shareManager].loginUser.nickname;
+        self.ID_number_label.text = [NSString stringWithFormat:@"ID:%@",[ZMAccountManager shareManager].loginUser.no];
+        [self.ageButton setTitle:[ZMAccountManager shareManager].loginUser.age forState:UIControlStateNormal];
         [self getAuthStatus];
     } else {
         self.tableView.tableHeaderView = self.tableHeaderView1;
@@ -109,16 +113,17 @@
     ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
-    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"押金" destinClassName:@""];
-    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"customService" title:@"我的客服" destinClassName:@"ZMRecFriendViewController"];
+    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
+    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+    
 //
     
-    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
-    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];
+    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+    ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];
     
-    self.dataSource = @[@[item01,item02,item03,item04,item05,item06],@[item07,item08,item09]];
+    self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09,item10]];
     [self.tableView reloadData];
 }
 
@@ -157,12 +162,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"cell";
-    PersonalInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    ZMMineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[PersonalInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
     }
-    ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
-    [cell setPersonalModel:item];
+    ZMMineModel  *item = self.dataSource[indexPath.section][indexPath.row];
+    [cell setModel:item];
     return cell;
 }
 

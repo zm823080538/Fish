@@ -11,7 +11,7 @@
 #import "PersonalInfoCell.h"
 
 @interface ZMSettingTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
-@property (strong, nonatomic)  NSArray *dataSource;
+//@property (strong, nonatomic)  NSArray *dataSource;
 @end
 
 @implementation ZMSettingTableViewController
@@ -23,15 +23,15 @@
 }
 
 - (void)loadData {
-    ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"个人资料" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+//    ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"个人资料" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+//
+//    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"语言设置" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"语言设置" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"课程时间设置" destinClassName:@"ZMGiveLessonController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"上课提醒" destinClassName:@"ZMGiveLessonController" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"课程提醒设置" destinClassName:@"ZMLessonTimeSettingController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"隐私设置" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
-    
-    self.dataSource = @[item01,item02,item03,item04];
+    self.dataSource = @[item03,item04];
     [self.tableView reloadData];
 }
 

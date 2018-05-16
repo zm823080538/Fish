@@ -13,4 +13,5 @@ target 'Fish' do
 	pod 'YYKit', '~> 1.0.9'
     pod 'YTKNetwork'
     pod 'PNChart'
+     pod 'DZNEmptyDataSet', '~> 1.8.1'
 end
