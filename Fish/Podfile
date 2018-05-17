@@ -14,4 +14,5 @@ target 'Fish' do
     pod 'YTKNetwork'
     pod 'PNChart'
      pod 'DZNEmptyDataSet', '~> 1.8.1'
+     pod 'RongCloudIMKit', '~> 2.7.3.1'
 end

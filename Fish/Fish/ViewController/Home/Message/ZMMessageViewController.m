@@ -8,7 +8,7 @@
 
 #import "ZMMessageViewController.h"
 #import "ZMMessageListController.h"
-
+#import "ZMPrivacyListViewController.h"
 
 
 @interface ZMMessageViewController ()
@@ -45,14 +45,16 @@
 - (void)initViewControllers {
     NSMutableArray *viewControllers = @[].mutableCopy;
     for (int i = 0; i < 2; i ++) {
-        ZMMessageListController *listVC = [[ZMMessageListController alloc] init];
-        listVC.view.backgroundColor = [UIColor whiteColor];
         if (i == 0) {
-            listVC.yp_tabItemTitle =@"私信";
+            ZMPrivacyListViewController *chatListVC = [[ZMPrivacyListViewController alloc] init];
+             chatListVC.yp_tabItemTitle =@"私信";
+            [viewControllers addObject:chatListVC];
         } else {
+             ZMMessageListController *listVC = [[ZMMessageListController alloc] init];
             listVC.yp_tabItemTitle =@"系统";
+             listVC.view.backgroundColor = [UIColor whiteColor];
+            [viewControllers addObject:listVC];
         }
-        [viewControllers addObject:listVC];
     }
     self.viewControllers = viewControllers;
 }

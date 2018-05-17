@@ -11,8 +11,10 @@
 #import <ReactiveObjC.h>
 #import "SSSearchBar.h"
 #import <UIView+YYAdd.h>
+#import "ZMMemberSearchViewController.h"
 #import "ZMMemberDetailViewController.h"
 @interface ZMMemberListController () <UISearchBarDelegate>
+@property (nonatomic, strong) SSSearchBar *searchBar;
 
 @end
 
@@ -20,10 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SSSearchBar *searchBar = [[SSSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
-    searchBar.delegate = self;
+    self.searchBar = [[SSSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    self.searchBar.delegate = self;
     self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.tableHeaderView = searchBar;
+    self.tableView.tableHeaderView = self.searchBar;
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
 }
@@ -32,6 +34,11 @@
 
 - (void)searchViewClick {
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.searchBar resignFirstResponder];
 }
 
 
@@ -58,9 +65,11 @@
     [self.navigationController pushViewController:memberDetailVC animated:YES];
 }
 
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    NSLog(@"+++++");
-    return NO;
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    ZMMemberSearchViewController *memberSearchVC = [[ZMMemberSearchViewController alloc] init];
+    [self.navigationController pushViewController:memberSearchVC animated:YES];
 }
+
 
 @end

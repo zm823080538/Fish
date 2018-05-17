@@ -20,6 +20,7 @@ PODS:
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
   - ReactiveObjC (3.0.0)
+  - RongCloudIMKit (2.7.3.1)
   - UICountingLabel (1.2.0)
   - YTKNetwork (2.0.3):
     - AFNetworking (~> 3.0)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - PNChart
   - ReactiveObjC (~> 3.0.0)
+  - RongCloudIMKit (~> 2.7.3.1)
   - YTKNetwork
   - YYKit (~> 1.0.9)
 
@@ -45,6 +47,7 @@ SPEC REPOS:
     - MBProgressHUD
     - PNChart
     - ReactiveObjC
+    - RongCloudIMKit
     - UICountingLabel
     - YTKNetwork
     - YYKit
@@ -56,10 +59,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  RongCloudIMKit: bc83889f5b7fbb82c104d778ca6633b3681e81d5
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: aab8947583b6e866515b1c52e15188dede670472
+PODFILE CHECKSUM: cbb5d12fc5294e573e976c2adabc50620183cdc2
 
 COCOAPODS: 1.5.0

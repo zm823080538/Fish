@@ -96,6 +96,8 @@
 		5D5BB2E620AC7CFA0067709B /* ZMSuccessDemoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2E520AC7CFA0067709B /* ZMSuccessDemoCollectionViewController.m */; };
 		5D5BB2E820AC7D840067709B /* ZMSuccessDemoSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BB2E720AC7D840067709B /* ZMSuccessDemoSectionHeaderView.xib */; };
 		5D5BB2EA20AC7E0C0067709B /* ZMSuccessDemoSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5BB2E920AC7E0C0067709B /* ZMSuccessDemoSectionFooterView.xib */; };
+		5D5BB2ED20ADA9020067709B /* ZMPrivacyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2EC20ADA9020067709B /* ZMPrivacyListViewController.m */; };
+		5D5BB2F020ADB3470067709B /* ZMMemberSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5BB2EF20ADB3470067709B /* ZMMemberSearchViewController.m */; };
 		5D5C197520A2D5B3005422E5 /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C197320A2D5B2005422E5 /* UINavigationBar+Awesome.m */; };
 		5D5C197D20A2E019005422E5 /* SSSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C197920A2E019005422E5 /* SSSearchBar.m */; };
 		5D5C197E20A2E019005422E5 /* UIImage+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5C197A20A2E019005422E5 /* UIImage+Tool.m */; };
@@ -311,6 +313,10 @@
 		5D5BB2E520AC7CFA0067709B /* ZMSuccessDemoCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMSuccessDemoCollectionViewController.m; sourceTree = "<group>"; };
 		5D5BB2E720AC7D840067709B /* ZMSuccessDemoSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMSuccessDemoSectionHeaderView.xib; sourceTree = "<group>"; };
 		5D5BB2E920AC7E0C0067709B /* ZMSuccessDemoSectionFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMSuccessDemoSectionFooterView.xib; sourceTree = "<group>"; };
+		5D5BB2EB20ADA9020067709B /* ZMPrivacyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMPrivacyListViewController.h; sourceTree = "<group>"; };
+		5D5BB2EC20ADA9020067709B /* ZMPrivacyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMPrivacyListViewController.m; sourceTree = "<group>"; };
+		5D5BB2EE20ADB3470067709B /* ZMMemberSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMemberSearchViewController.h; sourceTree = "<group>"; };
+		5D5BB2EF20ADB3470067709B /* ZMMemberSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberSearchViewController.m; sourceTree = "<group>"; };
 		5D5C197320A2D5B2005422E5 /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		5D5C197420A2D5B2005422E5 /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		5D5C197920A2E019005422E5 /* SSSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSearchBar.m; sourceTree = "<group>"; };
@@ -492,6 +498,8 @@
 				5D2F7CFC209D9482007B3812 /* ZMMessageViewController.m */,
 				5D2F7D01209D9503007B3812 /* ZMMessageListController.h */,
 				5D2F7D02209D9503007B3812 /* ZMMessageListController.m */,
+				5D5BB2EB20ADA9020067709B /* ZMPrivacyListViewController.h */,
+				5D5BB2EC20ADA9020067709B /* ZMPrivacyListViewController.m */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -957,6 +965,8 @@
 				5D5BB2C720A847880067709B /* ZMMemberDetailViewController.h */,
 				5D5BB2C820A847880067709B /* ZMMemberDetailViewController.m */,
 				5D5BB2C920A847880067709B /* ZMMemberDetailViewController.xib */,
+				5D5BB2EE20ADB3470067709B /* ZMMemberSearchViewController.h */,
+				5D5BB2EF20ADB3470067709B /* ZMMemberSearchViewController.m */,
 			);
 			path = Coach;
 			sourceTree = "<group>";
@@ -1067,6 +1077,7 @@
 				5DC5CBA420784FA600F3C0D6 /* Sources */,
 				5DC5CBA520784FA600F3C0D6 /* Frameworks */,
 				5DC5CBA620784FA600F3C0D6 /* Resources */,
+				307D5B9C9EE4992B95D13AAF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1183,6 +1194,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		307D5B9C9EE4992B95D13AAF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Fish/Pods-Fish-resources.sh",
+				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/en.lproj",
+				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RCConfig.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fish/Pods-Fish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9F6D3F2C3D26A54989EE9680 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1240,6 +1277,7 @@
 				5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */,
 				5D8A47212092B9CD00CE2723 /* ZMGetAuthRequest.m in Sources */,
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
+				5D5BB2ED20ADA9020067709B /* ZMPrivacyListViewController.m in Sources */,
 				5D5C198120A2E140005422E5 /* ZMSearchButton.m in Sources */,
 				5D2F7D06209E9035007B3812 /* UIButton+YPKit.m in Sources */,
 				5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */,
@@ -1262,6 +1300,7 @@
 				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
 				5D5BB2C020A7EA710067709B /* ZMBaseTableViewController.m in Sources */,
 				5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */,
+				5D5BB2F020ADB3470067709B /* ZMMemberSearchViewController.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
 				5D2F7CC4209D7E91007B3812 /* ZMMarketTableViewController.m in Sources */,
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
@@ -1453,11 +1492,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8MM5DDTWR5;
+				DEVELOPMENT_TEAM = 86AQ2856TX;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MG.Fish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongdongkeji.wangwangsocial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1469,11 +1508,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8MM5DDTWR5;
+				DEVELOPMENT_TEAM = 86AQ2856TX;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = MG.Fish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dongdongkeji.wangwangsocial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

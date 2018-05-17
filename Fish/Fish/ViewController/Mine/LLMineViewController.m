@@ -16,6 +16,7 @@
 #import "ZMGetAuthRequest.h"
 #import "ZMMessageViewController.h"
 #import "UINavigationBar+Awesome.h"
+#import <RongIMKit/RongIMKit.h>
 #import "ZMSettingTableViewController.h"
 #import "PersonalInfoViewController.h"
 
@@ -114,7 +115,7 @@
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"customService" title:@"我的客服" destinClassName:@"ZMRecFriendViewController"];
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"customService" title:@"我的客服" destinClassName:@""];
     ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
     ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
     
@@ -178,8 +179,17 @@
             NSLog(@"---");
         }];
     } else {
-        Class class = NSClassFromString(item.destinClassName);
-        [self.navigationController pushViewController:[class new] animated:YES];
+        if ([item.title isEqualToString:@"我的客服"]) {
+            RCConversationViewController *chatVC = [[RCConversationViewController alloc] init];
+            chatVC.conversationType = ConversationType_CUSTOMERSERVICE;
+            //如果是单聊，不显示发送方昵称
+            chatVC.targetId = @"001";
+            chatVC.title = @"我的客服";
+            [self.navigationController pushViewController:chatVC animated:YES];
+        } else {
+            Class class = NSClassFromString(item.destinClassName);
+            [self.navigationController pushViewController:[class new] animated:YES];
+        }
     }
 }
 

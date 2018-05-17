@@ -15,6 +15,7 @@
 #import "LLMineViewController.h"
 #import "LLBaseNavViewController.h"
 #import <YTKNetworkConfig.h>
+#import <RongCloudIMKit/RongIMKit/RongIMKit.h>
 //#import <IQKeyboardManager.h>
 
 @interface AppDelegate () <LLTabBarDelegate, UIActionSheetDelegate>
@@ -27,12 +28,37 @@
     // Override point for customization after application launch.
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://www.bjwork.xyz";
-    
+     [[RCIM sharedRCIM] initWithAppKey:@"kj7swf8ok1mu2"];
+//    [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_CYCLE;
+//    [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_CYCLE;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
     self.window.rootViewController = nav;
 //    [self changeRootVC];
+    
+    
+//
+//    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
+   
+//    [RCIM sharedRCIM].enableTypingStatus = YES;
+//    //开启输入状态监听
+//    [RCIM sharedRCIM].enableTypingStatus = YES;
+//    //群成员数据源
+    
+   
+//    //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
+//    [RCIM sharedRCIM].enableMessageMentioned = YES;
+//
+//    //开启消息撤回功能
+//    [RCIM sharedRCIM].enableMessageRecall = YES;
+//
+//    //群成员数据源
+//    //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
+//    [RCIM sharedRCIM].enableMessageMentioned = YES;
+//
+//    //开启消息撤回功能
+//    [RCIM sharedRCIM].enableMessageRecall = YES;
     [self.window makeKeyAndVisible];
 //    return YES;
     
