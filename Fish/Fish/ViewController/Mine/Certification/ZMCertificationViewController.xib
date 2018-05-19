@@ -98,7 +98,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73u-jK-2nk">
                                                     <rect key="frame" x="30" y="52" width="315" height="174.5"/>
-                                                    <state key="normal" image="Group 7"/>
+                                                    <state key="normal" image="ID_Card_forward"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
@@ -128,7 +128,7 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyn-zS-F8l">
                                                     <rect key="frame" x="30" y="52" width="315" height="174.5"/>
-                                                    <state key="normal" image="Group 10"/>
+                                                    <state key="normal" image="ID_Card_back"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
@@ -321,8 +321,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Group 10" width="315" height="170"/>
-        <image name="Group 7" width="315" height="170"/>
+        <image name="ID_Card_back" width="315" height="170"/>
+        <image name="ID_Card_forward" width="315" height="170"/>
         <image name="Rectangle 2" width="315" height="170"/>
         <image name="Rectangle 2 Copy 2" width="315" height="170"/>
     </resources>

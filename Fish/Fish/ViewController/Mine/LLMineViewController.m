@@ -8,16 +8,18 @@
 
 #import "LLMineViewController.h"
 #import <UIImageView+YYWebImage.h>
+#import "ZMCertificationViewController.h"
 #import "UIAlertController+Set.h"
 #import "ZMAccountManager.h"
 #import "ZMMineModel.h"
+#import "ZMMineDefine.h"
 #import "ZMMineTableViewCell.h"
 #import <UIImage+YYAdd.h>
 #import "ZMGetAuthRequest.h"
 #import "ZMMessageViewController.h"
 #import "UINavigationBar+Awesome.h"
 #import <RongIMKit/RongIMKit.h>
-#import "ZMSettingTableViewController.h"
+#import "ZMCalendarViewController.h"
 #import "PersonalInfoViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -41,10 +43,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = YES;
-    UIImage *memberAdd = [[UIImage imageNamed:@"member_addUser"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:memberAdd style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
-    leftBarButtonItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = leftBarButtonItem;
     
     UIImage *xiaoxi = [[UIImage imageNamed:@"xiaoxi"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:xiaoxi style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
@@ -60,13 +58,11 @@
 }
 
 - (void)rightBarItem1Click {
-    ZMSettingTableViewController *settingVC = [[ZMSettingTableViewController alloc] init];
-    [self.navigationController pushViewController:settingVC animated:YES];
+    ZMCalendarViewController *scheduleVC = [[ZMCalendarViewController alloc] init];
+    [self.navigationController pushViewController:scheduleVC animated:YES];
 }
 
-- (void)leftBarItemClick {
-    
-}
+
 
 - (void)rightBarItemClick {
     ZMMessageViewController *messageVC = [ZMMessageViewController new];
@@ -82,11 +78,20 @@
         self.ID_number_label.text = [NSString stringWithFormat:@"ID:%@",[ZMAccountManager shareManager].loginUser.no];
         [self.ageButton setTitle:[ZMAccountManager shareManager].loginUser.age forState:UIControlStateNormal];
         [self getAuthStatus];
+        self.verfiyStatusLabel.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToCer)];
+        [self.verfiyStatusLabel addGestureRecognizer:tapGesture];
+        
     } else {
         self.tableView.tableHeaderView = self.tableHeaderView1;
     }
     self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
+}
+
+- (void)pushToCer {
+    ZMCertificationViewController *cerficationVc = [[ZMCertificationViewController alloc] init];
+    [self.navigationController pushViewController:cerficationVc animated:YES];
 }
 
 - (void)getAuthStatus {

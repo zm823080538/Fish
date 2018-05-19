@@ -25,7 +25,6 @@
     UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     UIBarButtonItem *rightBarbuttonItem1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"saoyisao"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItem1Click)];
     self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
-//    self.dataSource = @[@"附近教练",@"接单教练",@"我关注的",@"黑名单",@"如何选择好教练?"];
     [self initViewControllers];
     [self configTabbar];
 }

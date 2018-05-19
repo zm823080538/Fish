@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LLHomeViewController">
             <connections>
+                <outlet property="bannerView" destination="B5J-ky-Uua" id="d5G-M7-w6l"/>
                 <outlet property="headerView" destination="5Ed-kf-svV" id="gRy-cG-nqc"/>
                 <outlet property="tableView" destination="yDc-qo-fUD" id="ADI-Kt-jEk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -48,12 +49,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQB-CI-Ce0" userLabel="Content View">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitmap22" translatesAutoresizingMaskIntoConstraints="NO" id="tue-af-Uad">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5J-ky-Uua" customClass="SDCycleScrollView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="160" id="Qs2-av-K36"/>
-                            </constraints>
-                        </imageView>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RNW-aQ-jHb">
                             <rect key="frame" x="0.0" y="160" width="375" height="86"/>
                             <subviews>
@@ -120,13 +119,13 @@
                         <constraint firstItem="RNW-aQ-jHb" firstAttribute="leading" secondItem="NQB-CI-Ce0" secondAttribute="leading" id="0pB-Tk-Bqc"/>
                         <constraint firstAttribute="bottom" secondItem="UPE-KQ-xgq" secondAttribute="bottom" id="74M-dg-sOG"/>
                         <constraint firstAttribute="height" constant="256" id="BKe-Jv-UFi"/>
+                        <constraint firstItem="RNW-aQ-jHb" firstAttribute="top" secondItem="B5J-ky-Uua" secondAttribute="bottom" id="J2D-uN-KTY"/>
+                        <constraint firstAttribute="trailing" secondItem="B5J-ky-Uua" secondAttribute="trailing" id="JNb-fC-Vjj"/>
                         <constraint firstAttribute="trailing" secondItem="RNW-aQ-jHb" secondAttribute="trailing" id="MYB-TZ-cW2"/>
-                        <constraint firstItem="tue-af-Uad" firstAttribute="leading" secondItem="NQB-CI-Ce0" secondAttribute="leading" id="Z5o-t8-jfb"/>
+                        <constraint firstItem="B5J-ky-Uua" firstAttribute="top" secondItem="NQB-CI-Ce0" secondAttribute="top" id="a3s-ND-yzb"/>
+                        <constraint firstItem="B5J-ky-Uua" firstAttribute="leading" secondItem="NQB-CI-Ce0" secondAttribute="leading" id="fRU-1v-3hJ"/>
                         <constraint firstAttribute="trailing" secondItem="UPE-KQ-xgq" secondAttribute="trailing" id="ofT-la-yUJ"/>
-                        <constraint firstItem="RNW-aQ-jHb" firstAttribute="top" secondItem="tue-af-Uad" secondAttribute="bottom" id="qG1-L8-WLN"/>
                         <constraint firstItem="UPE-KQ-xgq" firstAttribute="leading" secondItem="NQB-CI-Ce0" secondAttribute="leading" id="rOX-fh-LZI"/>
-                        <constraint firstItem="tue-af-Uad" firstAttribute="top" secondItem="NQB-CI-Ce0" secondAttribute="top" id="ubz-lr-5Y4"/>
-                        <constraint firstAttribute="trailing" secondItem="tue-af-Uad" secondAttribute="trailing" id="x2B-Tz-Ndr"/>
                     </constraints>
                 </view>
             </subviews>
@@ -142,7 +141,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Bitmap22" width="375" height="160"/>
         <image name="Group 12" width="32" height="32"/>
         <image name="Group 9" width="32" height="32"/>
         <image name="market" width="32" height="32"/>

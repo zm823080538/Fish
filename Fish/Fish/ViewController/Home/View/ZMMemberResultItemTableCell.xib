@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="287" id="KGk-i7-Jjw" customClass="ZMMemberResultItemTableCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="286.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitmap Copy 6" translatesAutoresizingMaskIntoConstraints="NO" id="upH-16-BHi">
+                        <rect key="frame" x="10" y="34" width="145" height="222.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="145" id="AlX-U0-wrf"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitmap Copy 6" translatesAutoresizingMaskIntoConstraints="NO" id="iPs-fu-lcE">
+                        <rect key="frame" x="177" y="214.5" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="22" id="60N-6K-nhO"/>
+                            <constraint firstAttribute="height" constant="22" id="ThJ-2k-fnm"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天给大家带来六个朋友一起健身" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3z-xJ-faz">
+                        <rect key="frame" x="177" y="34" width="121" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#为了开学能瘦一圈，挑战自己" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHe-DV-rLw">
+                        <rect key="frame" x="177" y="62" width="121" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOs-zL-kuC">
+                        <rect key="frame" x="204" y="215" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVb-2F-glb">
+                        <rect key="frame" x="256" y="215" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018年5月6日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXY-u6-Xoi">
+                        <rect key="frame" x="177" y="170" width="121" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.73725490196078436" green="0.78431372549019607" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZHe-DV-rLw" firstAttribute="leading" secondItem="e3z-xJ-faz" secondAttribute="leading" id="91H-6d-Aey"/>
+                    <constraint firstItem="BXY-u6-Xoi" firstAttribute="trailing" secondItem="tVb-2F-glb" secondAttribute="trailing" id="9bE-Pj-mQP"/>
+                    <constraint firstItem="ZHe-DV-rLw" firstAttribute="trailing" secondItem="e3z-xJ-faz" secondAttribute="trailing" id="D2F-Ee-VWP"/>
+                    <constraint firstItem="iPs-fu-lcE" firstAttribute="leading" secondItem="upH-16-BHi" secondAttribute="trailing" constant="22" id="GbV-Ag-twA"/>
+                    <constraint firstItem="upH-16-BHi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="KDF-yU-K08"/>
+                    <constraint firstAttribute="trailing" secondItem="tVb-2F-glb" secondAttribute="trailing" constant="22" id="YZ9-EJ-HLI"/>
+                    <constraint firstItem="upH-16-BHi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="34" id="apD-JA-Z00"/>
+                    <constraint firstItem="tVb-2F-glb" firstAttribute="centerY" secondItem="fOs-zL-kuC" secondAttribute="centerY" id="bZ2-U8-mRm"/>
+                    <constraint firstAttribute="bottom" secondItem="upH-16-BHi" secondAttribute="bottom" constant="30" id="cyq-zq-1m9"/>
+                    <constraint firstItem="tVb-2F-glb" firstAttribute="top" secondItem="BXY-u6-Xoi" secondAttribute="bottom" constant="33" id="fpc-7K-bH5"/>
+                    <constraint firstItem="e3z-xJ-faz" firstAttribute="trailing" secondItem="BXY-u6-Xoi" secondAttribute="trailing" id="guX-rG-jGn"/>
+                    <constraint firstItem="ZHe-DV-rLw" firstAttribute="leading" secondItem="BXY-u6-Xoi" secondAttribute="leading" id="i4s-ey-Kc6"/>
+                    <constraint firstItem="e3z-xJ-faz" firstAttribute="leading" secondItem="upH-16-BHi" secondAttribute="trailing" constant="22" id="jJ8-Tp-QNO"/>
+                    <constraint firstItem="fOs-zL-kuC" firstAttribute="leading" secondItem="iPs-fu-lcE" secondAttribute="trailing" constant="5" id="mlW-2i-n3X"/>
+                    <constraint firstItem="iPs-fu-lcE" firstAttribute="bottom" secondItem="upH-16-BHi" secondAttribute="bottom" constant="-20" id="osd-nE-8ZO"/>
+                    <constraint firstItem="fOs-zL-kuC" firstAttribute="centerY" secondItem="iPs-fu-lcE" secondAttribute="centerY" id="s6a-IM-Bfv"/>
+                    <constraint firstItem="ZHe-DV-rLw" firstAttribute="top" secondItem="e3z-xJ-faz" secondAttribute="bottom" constant="12" id="ttL-ul-hLV"/>
+                    <constraint firstItem="e3z-xJ-faz" firstAttribute="top" secondItem="upH-16-BHi" secondAttribute="top" id="ybY-DE-ahw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <point key="canvasLocation" x="99" y="175.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Bitmap Copy 6" width="89" height="120"/>
+    </resources>
+</document>

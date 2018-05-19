@@ -17,5 +17,7 @@ typedef NS_ENUM(NSUInteger, PersonalInfoCellStyle) {
 };
 
 #define PlaceholderImage [UIImage imageNamed:@"timg"]
+#import "UIView+AddBackView.h"
+
 
 #endif /* ZMMineDefine_h */

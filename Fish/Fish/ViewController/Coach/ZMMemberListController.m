@@ -38,6 +38,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     [self.searchBar resignFirstResponder];
 }
 
@@ -65,11 +69,12 @@
     [self.navigationController pushViewController:memberDetailVC animated:YES];
 }
 
-
-- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
     ZMMemberSearchViewController *memberSearchVC = [[ZMMemberSearchViewController alloc] init];
     [self.navigationController pushViewController:memberSearchVC animated:YES];
+    return NO;
 }
+
 
 
 @end

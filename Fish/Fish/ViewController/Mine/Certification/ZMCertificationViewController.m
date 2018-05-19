@@ -42,10 +42,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"实名认证";
-//    self.ID_num_textField.leftLabelText = @"123123";
     
-//    ZMUpLoadRequest *uploadRequest = [[ZMUpLoadRequest alloc] initWithImage:image];
-//    UIImageWriteToSavedPhotosAlbum(image, self, NULL, NULL);
+    self.ID_num_textField.leftLabelText = @"请输入身份证号";
+    self.ID_num_textField.textField.textAlignment = NSTextAlignmentRight;
+    self.ID_num_textField.textField.keyboardType = UIKeyboardTypePhonePad;
+    self.real_name_textField.leftLabelText = @"请输入真实姓名";
+    self.real_name_textField.textField.textAlignment = NSTextAlignmentRight;
     self.imageDict = [NSMutableDictionary dictionary];
     self.imageUrlDict = [NSMutableDictionary dictionary];
 }
@@ -59,11 +61,10 @@
         
         [image01 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSLog(@"success");
-//            NSDictionary *dict = request.responseObject;
             [self.imageUrlDict setValue:[image01 imageUrlString] forKey:@"idimgpath"];
             dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
+            [self.view showError:@"图片上传失败"];
         }];
     });
     dispatch_group_async(group, queue, ^{
@@ -74,7 +75,7 @@
             NSDictionary *dict = request.responseObject;
         [self.imageUrlDict setValue:[image02 imageUrlString] forKey:@"idimgbackpath"];            dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
+            [self.view showError:@"图片上传失败"];
         }];
     });
     dispatch_group_async(group, queue, ^{
@@ -87,11 +88,10 @@
             [self.imageUrlDict setObject:[image03 imageUrlString] forKey:@"photopath"];
             dispatch_semaphore_signal(semaphore);
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
+            [self.view showError:@"图片上传失败"];
         }];
     });
     dispatch_group_async(group, queue, ^{
-//        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:image];
         ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"certpath"]];
 
         [image04 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {

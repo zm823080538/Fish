@@ -7,6 +7,7 @@
 //
 
 #import "LLHomeViewController.h"
+#import <SDCycleScrollView.h>
 #import "ZMHomeBodyBuildingKnowledageCell.h"
 #import "ZMMemberResultCell.h"
 #import "ZMExerciseResultCell.h"
@@ -20,9 +21,14 @@
 #import "ZMNearMemberViewController.h"
 #import "ZMMessageViewController.h"
 
+#import "ZMExerciseResultListController.h"
+#import "ZMMemberResultListController.h"
+#import "ZMBodyBuildingKnowledageListController.h"
+
 @interface LLHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 
 @end
@@ -38,6 +44,9 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     self.tableView.tableHeaderView = self.headerView;
     self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    
+    
+    self.bannerView.imageURLStringsGroup = @[@"http://img05.tooopen.com/images/20140328/sy_57865838889.jpg",@"http://img05.tooopen.com/images/20140328/sy_57865838889.jpg",@"http://img05.tooopen.com/images/20140328/sy_57865838889.jpg"];
 }
 
 - (void)leftBarItemClick {
@@ -85,10 +94,32 @@
     ZMHomeSectionView *sectionView = [[ZMHomeSectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
     if (section == 0) {
         sectionView.title = @"健身知识";
+        @weakify(self)
+        sectionView.arrowClick = ^{
+            @strongify(self)
+            ZMBodyBuildingKnowledageListController *bodyBuildingKnowledageListVC = [[ZMBodyBuildingKnowledageListController alloc] init];
+            bodyBuildingKnowledageListVC.title = @"健身知识";
+            [self.navigationController pushViewController:bodyBuildingKnowledageListVC animated:YES];
+        };
     } else if (section == 1) {
         sectionView.title = @"会员成果";
+        @weakify(self)
+        sectionView.arrowClick = ^{
+            @strongify(self)
+            ZMMemberResultListController *memberResultListVC = [[ZMMemberResultListController alloc] init];
+            memberResultListVC.title = @"会员成果";
+            [self.navigationController pushViewController:memberResultListVC animated:YES];
+        };        
     } else {
         sectionView.title = @"训练技巧";
+        @weakify(self)
+        sectionView.arrowClick = ^{
+            @strongify(self)
+            ZMExerciseResultListController *exciseResultListVC = [[ZMExerciseResultListController alloc] init];
+             exciseResultListVC.title = @"训练技巧";
+            [self.navigationController pushViewController:exciseResultListVC animated:YES];
+        };
+      
     }
     return sectionView;
 }

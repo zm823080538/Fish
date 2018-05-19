@@ -16,7 +16,6 @@
 @property (nonatomic, strong) UILabel *leftLabel;
 
 @property (nonatomic, strong) UIImageView *rightArrow;
-@property (nonatomic, strong) UILabel *rightLabel;
 @property (nonatomic, strong) UITextField *rightTextField;
 @end
 

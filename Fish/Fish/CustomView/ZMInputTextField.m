@@ -65,6 +65,13 @@
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self config];
+    }
+    return self;
+}
+
 
 - (void)setLeftLabelText:(NSString *)leftLabelText {
     UILabel *leftLabel = [[UILabel alloc] init];

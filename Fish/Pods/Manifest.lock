@@ -15,12 +15,22 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
+  - JCore (1.1.3)
+  - JPush (3.0.2):
+    - JCore (~> 1.1.1)
+  - JTCalendar (2.1.9)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MJRefresh (3.1.12)
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
   - ReactiveObjC (3.0.0)
   - RongCloudIMKit (2.7.3.1)
+  - SDCycleScrollView (1.66):
+    - SDWebImage (~> 4.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - UICountingLabel (1.2.0)
   - YTKNetwork (2.0.3):
     - AFNetworking (~> 3.0)
@@ -31,11 +41,15 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - DZNEmptyDataSet (~> 1.8.1)
+  - JPush (= 3.0.2)
+  - JTCalendar (~> 2.0)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
+  - MJRefresh (~> 3.1.12)
   - PNChart
   - ReactiveObjC (~> 3.0.0)
   - RongCloudIMKit (~> 2.7.3.1)
+  - SDCycleScrollView (~> 1.66)
   - YTKNetwork
   - YYKit (~> 1.0.9)
 
@@ -43,11 +57,17 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - DZNEmptyDataSet
+    - JCore
+    - JPush
+    - JTCalendar
     - Masonry
     - MBProgressHUD
+    - MJRefresh
     - PNChart
     - ReactiveObjC
     - RongCloudIMKit
+    - SDCycleScrollView
+    - SDWebImage
     - UICountingLabel
     - YTKNetwork
     - YYKit
@@ -55,15 +75,21 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  JCore: dff3c50e9a7522a508cd9096ca79165968e1aed3
+  JPush: 01a693fafe51b93eafc2e368bbc7a7cc07e12ce4
+  JTCalendar: beb2f4c1b639bf6880f680b4858227acf83a049c
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   RongCloudIMKit: bc83889f5b7fbb82c104d778ca6633b3681e81d5
+  SDCycleScrollView: e3ade90e9b3159bec04330b208fbfd81c3f3b671
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: cbb5d12fc5294e573e976c2adabc50620183cdc2
+PODFILE CHECKSUM: cff2ccb077e8970cfcc65baf6042f42267e04b2a
 
 COCOAPODS: 1.5.0

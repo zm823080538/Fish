@@ -39,7 +39,7 @@
     if (!_arrowButton) {
         _arrowButton = [[UIButton alloc] init];
         [_arrowButton setImage:[UIImage imageNamed:@"bz"] forState:UIControlStateNormal];
-        [_arrowButton addTarget:self action:@selector(arrowButtonClick) forControlEvents:UIControlEventTouchUpOutside];
+        [_arrowButton addTarget:self action:@selector(arrowButtonClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _arrowButton;
 }

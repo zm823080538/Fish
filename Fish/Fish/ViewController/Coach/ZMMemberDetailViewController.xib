@@ -94,7 +94,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bitmap2" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-p8-vzN">
-                                            <rect key="frame" x="281" y="-3.5" width="64" height="64"/>
+                                            <rect key="frame" x="281" y="16" width="64" height="64.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="64" id="dKE-uI-SBK"/>
                                                 <constraint firstAttribute="width" constant="64" id="h8e-HA-4PX"/>
@@ -132,7 +132,7 @@
                                         <constraint firstItem="Qhe-fO-g9a" firstAttribute="centerY" secondItem="7Qc-Ue-1cT" secondAttribute="centerY" id="fsE-jw-pME"/>
                                         <constraint firstItem="AEi-hh-bPr" firstAttribute="top" secondItem="2VY-hE-V1k" secondAttribute="top" constant="15" id="gfz-nM-9fr"/>
                                         <constraint firstItem="oIi-el-Zkf" firstAttribute="top" secondItem="glL-Fw-Xos" secondAttribute="bottom" constant="10" id="rc2-C2-4aR"/>
-                                        <constraint firstItem="QEb-p8-vzN" firstAttribute="centerY" secondItem="AEi-hh-bPr" secondAttribute="centerY" id="rrP-wW-aHY"/>
+                                        <constraint firstItem="QEb-p8-vzN" firstAttribute="centerY" secondItem="AEi-hh-bPr" secondAttribute="centerY" constant="20" id="rrP-wW-aHY"/>
                                         <constraint firstItem="SEz-N4-3TB" firstAttribute="leading" secondItem="glL-Fw-Xos" secondAttribute="trailing" constant="5" id="yw8-kJ-uln"/>
                                     </constraints>
                                 </view>
