@@ -8,6 +8,8 @@
 
 #import "ZMCourseListViewController.h"
 #import "ZMNearMememberCell.h"
+#import "ZMCourseDetailViewController.h"
+#import "UIViewController+YPTabBarController.h"
 @interface ZMCourseListViewController ()
 
 @end
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 10)];
+    headerView.backgroundColor = UIColorFromRGB(0xF3F3F3);
+    self.tableView.tableHeaderView = headerView;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
@@ -25,8 +30,6 @@
 - (void)searchViewClick {
     
 }
-
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
@@ -43,4 +46,11 @@
     }
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMCourseDetailViewController *courseDetailVC = [[ZMCourseDetailViewController alloc] init];
+    courseDetailVC.type =  [self.yp_tabItemTitle isEqualToString:@"进行中"] ? 0 : 1;
+    [self.navigationController pushViewController:courseDetailVC animated:YES];
+}
+
 @end

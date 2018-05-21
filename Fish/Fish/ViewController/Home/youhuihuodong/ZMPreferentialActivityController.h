@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMPreferentialActivityController : UITableViewController
+@property (nonatomic, strong) NSArray *list;
 
 @end

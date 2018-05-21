@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="ID_number_label" destination="jzl-K1-uMX" id="eFi-lO-HQh"/>
                 <outlet property="ageButton" destination="FCB-Lk-fHg" id="dPO-wY-OnZ"/>
+                <outlet property="levelBtn" destination="9KP-Zo-cfx" id="HlJ-UW-PZT"/>
                 <outlet property="portrait" destination="ru3-m6-YOY" id="fav-yH-v1g"/>
                 <outlet property="tableHeaderView1" destination="Fav-DR-vnA" id="bMX-sC-hLM"/>
                 <outlet property="tableHeaderView2" destination="tgv-T0-SIA" id="jAA-kl-qai"/>
@@ -189,11 +190,21 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KP-Zo-cfx">
+                                    <rect key="frame" x="220.5" y="131" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="20" id="6QV-vw-3vq"/>
+                                        <constraint firstAttribute="height" constant="20" id="dyo-Jd-t03"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="v2" backgroundImage="Grade-bg"/>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="9ro-aV-3gk" firstAttribute="centerY" secondItem="GPx-Sr-v6e" secondAttribute="centerY" id="4hH-t8-A6M"/>
                                 <constraint firstItem="1sj-Ok-4GC" firstAttribute="leading" secondItem="ru3-m6-YOY" secondAttribute="trailing" constant="15" id="61m-qx-Nae"/>
+                                <constraint firstItem="9KP-Zo-cfx" firstAttribute="leading" secondItem="jzl-K1-uMX" secondAttribute="trailing" constant="5" id="954-U9-dLt"/>
                                 <constraint firstItem="jzl-K1-uMX" firstAttribute="leading" secondItem="1sj-Ok-4GC" secondAttribute="leading" id="BFU-xC-ael"/>
                                 <constraint firstAttribute="trailing" secondItem="GPx-Sr-v6e" secondAttribute="trailing" constant="15" id="CTw-dj-ffx"/>
                                 <constraint firstItem="FCB-Lk-fHg" firstAttribute="centerY" secondItem="1sj-Ok-4GC" secondAttribute="centerY" id="CYN-NW-5Jr"/>
@@ -205,6 +216,7 @@
                                 <constraint firstItem="1sj-Ok-4GC" firstAttribute="top" secondItem="ru3-m6-YOY" secondAttribute="top" constant="5" id="n6E-1R-APS"/>
                                 <constraint firstItem="FCB-Lk-fHg" firstAttribute="leading" secondItem="1sj-Ok-4GC" secondAttribute="trailing" constant="5" id="oKs-8g-G5r"/>
                                 <constraint firstItem="e4C-xj-hIJ" firstAttribute="centerY" secondItem="1sj-Ok-4GC" secondAttribute="centerY" id="uEz-7a-49D"/>
+                                <constraint firstItem="9KP-Zo-cfx" firstAttribute="centerY" secondItem="jzl-K1-uMX" secondAttribute="centerY" id="vWF-Om-3vO"/>
                                 <constraint firstItem="GPx-Sr-v6e" firstAttribute="top" secondItem="ru3-m6-YOY" secondAttribute="bottom" constant="-47" id="wZs-DW-pRM"/>
                             </constraints>
                             <connections>
@@ -239,6 +251,7 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="Grade-bg" width="13" height="13"/>
         <image name="QR_Code" width="18" height="18"/>
         <image name="back22" width="9" height="15"/>
         <image name="nv" width="9" height="9"/>

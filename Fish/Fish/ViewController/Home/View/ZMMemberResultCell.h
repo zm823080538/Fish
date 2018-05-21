@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMMemberResultCell : UITableViewCell
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSArray *arrayList;
 
 @end

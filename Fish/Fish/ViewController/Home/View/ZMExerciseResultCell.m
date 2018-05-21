@@ -7,18 +7,22 @@
 //
 
 #import "ZMExerciseResultCell.h"
+#import <UIImageView+YYWebImage.h>
+@interface ZMExerciseResultCell ()
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *detailTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *contentImageView;
+@end
 
 @implementation ZMExerciseResultCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setItem:(ZMNewListItem *)item {
+    [self.contentImageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
+    self.titleLabel.text = item.title;
+    self.subTitleLabel.text = item.summary;
+    self.detailTextLabel.text = [NSString stringWithFormat:@"%@阅读",item.remarks];
+    
 }
 
 @end

@@ -129,6 +129,25 @@
 		5DA07E5420B00D22007C94C8 /* ZMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E5220B00D22007C94C8 /* ZMCalendarViewController.m */; };
 		5DA07E5520B00D22007C94C8 /* ZMCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA07E5320B00D22007C94C8 /* ZMCalendarViewController.xib */; };
 		5DA07EA620B01C8B007C94C8 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07EA520B01C8A007C94C8 /* LTHMonthYearPickerView.m */; };
+		5DAD856420B172CB00622DF4 /* ZMMustReadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD856320B172CB00622DF4 /* ZMMustReadTableViewController.m */; };
+		5DAD856820B1786300622DF4 /* ZMCourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD856620B1786300622DF4 /* ZMCourseDetailViewController.m */; };
+		5DAD856920B1786300622DF4 /* ZMCourseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD856720B1786300622DF4 /* ZMCourseDetailViewController.xib */; };
+		5DAD856C20B19A1700622DF4 /* ZMScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD856B20B19A1700622DF4 /* ZMScanViewController.m */; };
+		5DAD857520B1B56E00622DF4 /* Address.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD856E20B1B56E00622DF4 /* Address.plist */; };
+		5DAD857620B1B56E00622DF4 /* LZCityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD857020B1B56E00622DF4 /* LZCityPickerController.m */; };
+		5DAD857720B1B56E00622DF4 /* LZCityPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD857220B1B56E00622DF4 /* LZCityPickerView.m */; };
+		5DAD857820B1B56E00622DF4 /* LZPickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD857420B1B56E00622DF4 /* LZPickerModel.m */; };
+		5DAD857C20B1C82B00622DF4 /* ZMBindAliPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD857A20B1C82B00622DF4 /* ZMBindAliPayViewController.m */; };
+		5DAD857D20B1C82B00622DF4 /* ZMBindAliPayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD857B20B1C82B00622DF4 /* ZMBindAliPayViewController.xib */; };
+		5DAD858120B2F42600622DF4 /* ZMChangePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD857F20B2F42600622DF4 /* ZMChangePwdViewController.m */; };
+		5DAD858220B2F42600622DF4 /* ZMChangePwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD858020B2F42600622DF4 /* ZMChangePwdViewController.xib */; };
+		5DAD858620B2F65500622DF4 /* ZMMyQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD858420B2F65500622DF4 /* ZMMyQRCodeViewController.m */; };
+		5DAD858720B2F65500622DF4 /* ZMMyQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD858520B2F65500622DF4 /* ZMMyQRCodeViewController.xib */; };
+		5DAD858B20B2F9F900622DF4 /* ZMNewsListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD858A20B2F9F900622DF4 /* ZMNewsListRequest.m */; };
+		5DAD858F20B2FE6E00622DF4 /* ZMNewList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD858E20B2FE6E00622DF4 /* ZMNewList.m */; };
+		5DAD859220B3130800622DF4 /* ZMNewDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859120B3130700622DF4 /* ZMNewDetailRequest.m */; };
+		5DAD859520B3136E00622DF4 /* ZMUserActionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859420B3136E00622DF4 /* ZMUserActionRequest.m */; };
+		5DAD859820B319EC00622DF4 /* ZMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859720B319EC00622DF4 /* ZMWebViewController.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -385,6 +404,39 @@
 		5DA07E5320B00D22007C94C8 /* ZMCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMCalendarViewController.xib; sourceTree = "<group>"; };
 		5DA07EA420B01C8A007C94C8 /* LTHMonthYearPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHMonthYearPickerView.h; sourceTree = "<group>"; };
 		5DA07EA520B01C8A007C94C8 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHMonthYearPickerView.m; sourceTree = "<group>"; };
+		5DAD856220B172CB00622DF4 /* ZMMustReadTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMustReadTableViewController.h; sourceTree = "<group>"; };
+		5DAD856320B172CB00622DF4 /* ZMMustReadTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMustReadTableViewController.m; sourceTree = "<group>"; };
+		5DAD856520B1786300622DF4 /* ZMCourseDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseDetailViewController.h; sourceTree = "<group>"; };
+		5DAD856620B1786300622DF4 /* ZMCourseDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseDetailViewController.m; sourceTree = "<group>"; };
+		5DAD856720B1786300622DF4 /* ZMCourseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMCourseDetailViewController.xib; sourceTree = "<group>"; };
+		5DAD856A20B19A1700622DF4 /* ZMScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMScanViewController.h; sourceTree = "<group>"; };
+		5DAD856B20B19A1700622DF4 /* ZMScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMScanViewController.m; sourceTree = "<group>"; };
+		5DAD856E20B1B56E00622DF4 /* Address.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Address.plist; sourceTree = "<group>"; };
+		5DAD856F20B1B56E00622DF4 /* LZCityPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCityPickerController.h; sourceTree = "<group>"; };
+		5DAD857020B1B56E00622DF4 /* LZCityPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCityPickerController.m; sourceTree = "<group>"; };
+		5DAD857120B1B56E00622DF4 /* LZCityPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCityPickerView.h; sourceTree = "<group>"; };
+		5DAD857220B1B56E00622DF4 /* LZCityPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCityPickerView.m; sourceTree = "<group>"; };
+		5DAD857320B1B56E00622DF4 /* LZPickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPickerModel.h; sourceTree = "<group>"; };
+		5DAD857420B1B56E00622DF4 /* LZPickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPickerModel.m; sourceTree = "<group>"; };
+		5DAD857920B1C82B00622DF4 /* ZMBindAliPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBindAliPayViewController.h; sourceTree = "<group>"; };
+		5DAD857A20B1C82B00622DF4 /* ZMBindAliPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBindAliPayViewController.m; sourceTree = "<group>"; };
+		5DAD857B20B1C82B00622DF4 /* ZMBindAliPayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMBindAliPayViewController.xib; sourceTree = "<group>"; };
+		5DAD857E20B2F42600622DF4 /* ZMChangePwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMChangePwdViewController.h; sourceTree = "<group>"; };
+		5DAD857F20B2F42600622DF4 /* ZMChangePwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMChangePwdViewController.m; sourceTree = "<group>"; };
+		5DAD858020B2F42600622DF4 /* ZMChangePwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMChangePwdViewController.xib; sourceTree = "<group>"; };
+		5DAD858320B2F65500622DF4 /* ZMMyQRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMyQRCodeViewController.h; sourceTree = "<group>"; };
+		5DAD858420B2F65500622DF4 /* ZMMyQRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMyQRCodeViewController.m; sourceTree = "<group>"; };
+		5DAD858520B2F65500622DF4 /* ZMMyQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMMyQRCodeViewController.xib; sourceTree = "<group>"; };
+		5DAD858920B2F9F900622DF4 /* ZMNewsListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNewsListRequest.h; sourceTree = "<group>"; };
+		5DAD858A20B2F9F900622DF4 /* ZMNewsListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNewsListRequest.m; sourceTree = "<group>"; };
+		5DAD858D20B2FE6E00622DF4 /* ZMNewList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNewList.h; sourceTree = "<group>"; };
+		5DAD858E20B2FE6E00622DF4 /* ZMNewList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNewList.m; sourceTree = "<group>"; };
+		5DAD859020B3130700622DF4 /* ZMNewDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMNewDetailRequest.h; sourceTree = "<group>"; };
+		5DAD859120B3130700622DF4 /* ZMNewDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMNewDetailRequest.m; sourceTree = "<group>"; };
+		5DAD859320B3136E00622DF4 /* ZMUserActionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMUserActionRequest.h; sourceTree = "<group>"; };
+		5DAD859420B3136E00622DF4 /* ZMUserActionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMUserActionRequest.m; sourceTree = "<group>"; };
+		5DAD859620B319EC00622DF4 /* ZMWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMWebViewController.h; sourceTree = "<group>"; };
+		5DAD859720B319EC00622DF4 /* ZMWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMWebViewController.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -637,6 +689,15 @@
 				5D5BB2292088E7CD0067709B /* cell */,
 				5D5BB2262088E7910067709B /* PersonalInfoViewController.h */,
 				5D5BB2272088E7910067709B /* PersonalInfoViewController.m */,
+				5DAD857920B1C82B00622DF4 /* ZMBindAliPayViewController.h */,
+				5DAD857A20B1C82B00622DF4 /* ZMBindAliPayViewController.m */,
+				5DAD857B20B1C82B00622DF4 /* ZMBindAliPayViewController.xib */,
+				5DAD857E20B2F42600622DF4 /* ZMChangePwdViewController.h */,
+				5DAD857F20B2F42600622DF4 /* ZMChangePwdViewController.m */,
+				5DAD858020B2F42600622DF4 /* ZMChangePwdViewController.xib */,
+				5DAD858320B2F65500622DF4 /* ZMMyQRCodeViewController.h */,
+				5DAD858420B2F65500622DF4 /* ZMMyQRCodeViewController.m */,
+				5DAD858520B2F65500622DF4 /* ZMMyQRCodeViewController.xib */,
 			);
 			path = PersonalInfo;
 			sourceTree = "<group>";
@@ -873,6 +934,7 @@
 		5D8A46E62090797900CE2723 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5DAD856D20B1B56E00622DF4 /* LZCityPickerClass */,
 				5DA07EA320B01C8A007C94C8 /* LTHMonthYearPickerView */,
 				5D2F7CEB209D9411007B3812 /* YPTabBarController */,
 				5D8A470F2090845A00CE2723 /* FDFullscreenPopGesture */,
@@ -919,6 +981,51 @@
 				5DA07EA520B01C8A007C94C8 /* LTHMonthYearPickerView.m */,
 			);
 			path = LTHMonthYearPickerView;
+			sourceTree = "<group>";
+		};
+		5DAD856120B172AE00622DF4 /* MustRead */ = {
+			isa = PBXGroup;
+			children = (
+				5DAD856220B172CB00622DF4 /* ZMMustReadTableViewController.h */,
+				5DAD856320B172CB00622DF4 /* ZMMustReadTableViewController.m */,
+			);
+			path = MustRead;
+			sourceTree = "<group>";
+		};
+		5DAD856D20B1B56E00622DF4 /* LZCityPickerClass */ = {
+			isa = PBXGroup;
+			children = (
+				5DAD856E20B1B56E00622DF4 /* Address.plist */,
+				5DAD856F20B1B56E00622DF4 /* LZCityPickerController.h */,
+				5DAD857020B1B56E00622DF4 /* LZCityPickerController.m */,
+				5DAD857120B1B56E00622DF4 /* LZCityPickerView.h */,
+				5DAD857220B1B56E00622DF4 /* LZCityPickerView.m */,
+				5DAD857320B1B56E00622DF4 /* LZPickerModel.h */,
+				5DAD857420B1B56E00622DF4 /* LZPickerModel.m */,
+			);
+			path = LZCityPickerClass;
+			sourceTree = "<group>";
+		};
+		5DAD858820B2F9DD00622DF4 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				5DAD858920B2F9F900622DF4 /* ZMNewsListRequest.h */,
+				5DAD858A20B2F9F900622DF4 /* ZMNewsListRequest.m */,
+				5DAD859020B3130700622DF4 /* ZMNewDetailRequest.h */,
+				5DAD859120B3130700622DF4 /* ZMNewDetailRequest.m */,
+				5DAD859320B3136E00622DF4 /* ZMUserActionRequest.h */,
+				5DAD859420B3136E00622DF4 /* ZMUserActionRequest.m */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		5DAD858C20B2FE5300622DF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DAD858D20B2FE6E00622DF4 /* ZMNewList.h */,
+				5DAD858E20B2FE6E00622DF4 /* ZMNewList.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5DC5CB9F20784FA600F3C0D6 = {
@@ -982,6 +1089,8 @@
 		5DC5CBC22078523000F3C0D6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5DAD858C20B2FE5300622DF4 /* Model */,
+				5DAD858820B2F9DD00622DF4 /* DAO */,
 				5D2F7CE7209D939A007B3812 /* Message */,
 				5D2F7CC5209D812D007B3812 /* NearMember */,
 				5D2F7CC1209D7E7F007B3812 /* market */,
@@ -996,6 +1105,8 @@
 				5DA07E4420AFE7F8007C94C8 /* ZMExerciseResultListController.m */,
 				5DA07E4620AFE808007C94C8 /* ZMMemberResultListController.h */,
 				5DA07E4720AFE808007C94C8 /* ZMMemberResultListController.m */,
+				5DAD859620B319EC00622DF4 /* ZMWebViewController.h */,
+				5DAD859720B319EC00622DF4 /* ZMWebViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1013,6 +1124,8 @@
 				5D5BB2C920A847880067709B /* ZMMemberDetailViewController.xib */,
 				5D5BB2EE20ADB3470067709B /* ZMMemberSearchViewController.h */,
 				5D5BB2EF20ADB3470067709B /* ZMMemberSearchViewController.m */,
+				5DAD856A20B19A1700622DF4 /* ZMScanViewController.h */,
+				5DAD856B20B19A1700622DF4 /* ZMScanViewController.m */,
 			);
 			path = Coach;
 			sourceTree = "<group>";
@@ -1027,6 +1140,9 @@
 				5DA07E5120B00D22007C94C8 /* ZMCalendarViewController.h */,
 				5DA07E5220B00D22007C94C8 /* ZMCalendarViewController.m */,
 				5DA07E5320B00D22007C94C8 /* ZMCalendarViewController.xib */,
+				5DAD856520B1786300622DF4 /* ZMCourseDetailViewController.h */,
+				5DAD856620B1786300622DF4 /* ZMCourseDetailViewController.m */,
+				5DAD856720B1786300622DF4 /* ZMCourseDetailViewController.xib */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -1034,6 +1150,7 @@
 		5DC5CBCE2078523000F3C0D6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				5DAD856120B172AE00622DF4 /* MustRead */,
 				5D5BB2BA20A7E9C50067709B /* Setting */,
 				5D5BB2B620A7E7820067709B /* Statistics */,
 				5D5BB2A120A7051A0067709B /* MemberApply */,
@@ -1208,11 +1325,14 @@
 				5DA07E2920AF0623007C94C8 /* ZMSuccessDemoSectionHeaderView.xib in Resources */,
 				5DA07E2220AF0601007C94C8 /* ZMExerciseMaximViewController.xib in Resources */,
 				5DA07E4D20AFEF06007C94C8 /* ZMMemberResultItemTableCell.xib in Resources */,
+				5DAD857D20B1C82B00622DF4 /* ZMBindAliPayViewController.xib in Resources */,
+				5DAD858220B2F42600622DF4 /* ZMChangePwdViewController.xib in Resources */,
 				5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */,
 				5D2F7D0F209E9E31007B3812 /* ZMSearchButton.xib in Resources */,
 				5D343F83207BC21F006F8616 /* ForgetPasswordViewController.xib in Resources */,
 				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
 				5D2F7CAA209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib in Resources */,
+				5DAD857520B1B56E00622DF4 /* Address.plist in Resources */,
 				5DA07E5520B00D22007C94C8 /* ZMCalendarViewController.xib in Resources */,
 				5D5BB2DA20AC6EEF0067709B /* ZMLessTimeSettingCell.xib in Resources */,
 				5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */,
@@ -1222,10 +1342,12 @@
 				5D5BB2D020AC5BDB0067709B /* ZMMineTableViewCell.xib in Resources */,
 				5DA07E3920AF065D007C94C8 /* ZMExercisePhotosViewController.xib in Resources */,
 				5DA07E2A20AF0623007C94C8 /* ZMSuccessDemoSectionFooterView.xib in Resources */,
+				5DAD858720B2F65500622DF4 /* ZMMyQRCodeViewController.xib in Resources */,
 				5D5BB2AD20A705D60067709B /* ZMMemberApplyCell.xib in Resources */,
 				5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */,
 				5D343F7E207BB93F006F8616 /* RegisterViewController.xib in Resources */,
 				5D5BB2B520A7E6440067709B /* ZMCollectionCell.xib in Resources */,
+				5DAD856920B1786300622DF4 /* ZMCourseDetailViewController.xib in Resources */,
 				5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */,
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
 				5D2F7CE6209D8556007B3812 /* ZMNearMememberCell.xib in Resources */,
@@ -1302,10 +1424,13 @@
 				5D5BB2B020A7E62E0067709B /* ZMMyCollectListController.m in Sources */,
 				5D5BB2B920A7E7CE0067709B /* ZMCountTableViewController.m in Sources */,
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
+				5DAD856820B1786300622DF4 /* ZMCourseDetailViewController.m in Sources */,
 				5D5BB2BD20A7E9D20067709B /* ZMSettingTableViewController.m in Sources */,
 				5D8A471B2092B7DD00CE2723 /* ZMRecFriendRequest.m in Sources */,
 				5D8A471E2092B8BE00CE2723 /* ZMSaveAuthRequest.m in Sources */,
+				5DAD858B20B2F9F900622DF4 /* ZMNewsListRequest.m in Sources */,
 				5DC5CBDD2078523000F3C0D6 /* ZMMemberViewController.m in Sources */,
+				5DAD859820B319EC00622DF4 /* ZMWebViewController.m in Sources */,
 				5D8A4732209408D800CE2723 /* UITextView+MGPlaceholder.m in Sources */,
 				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
 				5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */,
@@ -1323,7 +1448,9 @@
 				5D5BB2A720A7059C0067709B /* ZMApplyListTableViewController.m in Sources */,
 				5DA07E2B20AF0623007C94C8 /* ZMFieldCollectionViewCell.m in Sources */,
 				5D5BB21B2084EC980067709B /* LoginTopView.m in Sources */,
+				5DAD859520B3136E00622DF4 /* ZMUserActionRequest.m in Sources */,
 				5D2F7CE5209D8556007B3812 /* ZMNearMememberCell.m in Sources */,
+				5DAD858620B2F65500622DF4 /* ZMMyQRCodeViewController.m in Sources */,
 				5DA07E1D20AF05EC007C94C8 /* TeachQAViewController.m in Sources */,
 				5DC5CBDF2078523000F3C0D6 /* ZMCourseViewController.m in Sources */,
 				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
@@ -1338,8 +1465,10 @@
 				5D5C198120A2E140005422E5 /* ZMSearchButton.m in Sources */,
 				5D2F7D06209E9035007B3812 /* UIButton+YPKit.m in Sources */,
 				5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */,
+				5DAD857720B1B56E00622DF4 /* LZCityPickerView.m in Sources */,
 				5D2F7CAE209C3079007B3812 /* ZMExerciseResultCell.m in Sources */,
 				5D2F7D03209D9503007B3812 /* ZMMessageListController.m in Sources */,
+				5DAD858120B2F42600622DF4 /* ZMChangePwdViewController.m in Sources */,
 				5D5BB2AC20A705D60067709B /* ZMMemberApplyCell.m in Sources */,
 				5D8A47152092B35400CE2723 /* ZMUserEditRequest.m in Sources */,
 				5D5BB2D320AC6E3A0067709B /* ZMLessonTimeSettingController.m in Sources */,
@@ -1353,16 +1482,19 @@
 				5D5BB2B420A7E6440067709B /* ZMCollectionCell.m in Sources */,
 				5D5BB2E320AC79A00067709B /* ZMLessonDetailSetController.m in Sources */,
 				5D2F7CC0209D7CDE007B3812 /* ZMPreferentialActivityController.m in Sources */,
+				5DAD856420B172CB00622DF4 /* ZMMustReadTableViewController.m in Sources */,
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5DA07E3820AF065D007C94C8 /* ZMExercisePhotosViewController.m in Sources */,
 				5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
 				5D5BB2C020A7EA710067709B /* ZMBaseTableViewController.m in Sources */,
 				5DA07E3C20AF0669007C94C8 /* ZMSuccessDemoCollectionViewController.m in Sources */,
+				5DAD857820B1B56E00622DF4 /* LZPickerModel.m in Sources */,
 				5D5BB26620921AA70067709B /* ZMInputTextField.m in Sources */,
 				5D5BB2F020ADB3470067709B /* ZMMemberSearchViewController.m in Sources */,
 				5DC5CBDB2078523000F3C0D6 /* LLHomeViewController.m in Sources */,
 				5D2F7CC4209D7E91007B3812 /* ZMMarketTableViewController.m in Sources */,
+				5DAD857620B1B56E00622DF4 /* LZCityPickerController.m in Sources */,
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
 				5D5C197E20A2E019005422E5 /* UIImage+Tool.m in Sources */,
@@ -1389,12 +1521,14 @@
 				5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */,
 				5D2F7CE0209D845A007B3812 /* ZMNearMemberViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
+				5DAD858F20B2FE6E00622DF4 /* ZMNewList.m in Sources */,
 				5D2F7CF9209D9411007B3812 /* YPTabBar.m in Sources */,
 				5DA07E2120AF0601007C94C8 /* ZMExerciseMaximViewController.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5D5C198520A2F199005422E5 /* ZspMenu.m in Sources */,
 				5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */,
 				5D2F7CF8209D9411007B3812 /* YPTabBarController.m in Sources */,
+				5DAD857C20B1C82B00622DF4 /* ZMBindAliPayViewController.m in Sources */,
 				5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
 				5D2F7CB3209C30C3007B3812 /* ZMMemberResultItemCell.m in Sources */,
@@ -1402,8 +1536,10 @@
 				5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */,
 				5DA07E4C20AFEF06007C94C8 /* ZMMemberResultItemTableCell.m in Sources */,
 				5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */,
+				5DAD859220B3130800622DF4 /* ZMNewDetailRequest.m in Sources */,
 				5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */,
 				5D5C197D20A2E019005422E5 /* SSSearchBar.m in Sources */,
+				5DAD856C20B19A1700622DF4 /* ZMScanViewController.m in Sources */,
 				5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */,
 				5D5BB2CF20AC5BDB0067709B /* ZMMineTableViewCell.m in Sources */,
 				5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */,

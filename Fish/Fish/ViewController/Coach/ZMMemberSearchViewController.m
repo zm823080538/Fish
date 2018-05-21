@@ -14,15 +14,10 @@
 #import "SSSearchBar.h"
 #import <Masonry.h>
 #import <UIView+YYAdd.h>
-@interface ZMMemberSearchViewController () <ZspMenuDataSource, ZspMenuDelegate, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate>
+@interface ZMMemberSearchViewController () <UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate>
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) ZspMenu *menu;
+@property (nonatomic, strong) SSSearchBar *searchBar;
 
-@property (nonatomic, strong) NSArray *location;
-@property (nonatomic, strong) NSArray *sort;
-@property (nonatomic, strong) NSArray *choose;
-@property (nonatomic, strong) NSArray *sex;
-@property (nonatomic, strong) NSArray *types;
 
 @end
 
@@ -34,13 +29,26 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
+        
     }
     return _tableView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.searchBar = [[SSSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    self.searchBar.placeholder = @"搜索会员名称及id";
+    self.searchBar.delegate = self;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.tableHeaderView = self.searchBar;
+    self.tableView.rowHeight = 82;
+    self.tableView.tableFooterView = [UIView new];
     [self setupUI];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.searchBar becomeFirstResponder];
 }
 
 - (void)setupUI

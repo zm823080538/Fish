@@ -8,7 +8,9 @@
 
 #import "ZMMemberResultCell.h"
 #import "ZMMemberResultItemCell.h"
+#import <UIImageView+YYWebImage.h>
 #import <Masonry.h>
+#import "ZMNewList.h"
 
 @interface ZMMemberResultCell() <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -52,13 +54,23 @@
     }];
 }
 
+- (void)setArrayList:(NSArray *)arrayList {
+    _arrayList = arrayList;
+    [self.collectionView reloadData];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return self.arrayList.count;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     ZMMemberResultItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ZMMemberResultItemCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor lightGrayColor];    
+    cell.backgroundColor = [UIColor lightGrayColor];
+    ZMNewListItem *item = self.arrayList[indexPath.item];
+    [cell.imageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
+    [cell.iconImageView setImageWithURL:[NSURL URLWithString:item.userimg] placeholder:PlaceholderImage];
+    cell.nameLabel.text = item.nickname;
+    cell.titleLabel.text = item.title;
     return cell;
 }
 

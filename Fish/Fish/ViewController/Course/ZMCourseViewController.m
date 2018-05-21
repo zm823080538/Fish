@@ -9,6 +9,7 @@
 #import "ZMCourseViewController.h"
 #import "ZMCourseListViewController.h"
 #import "ZMMessageViewController.h"
+#import "ZMScanViewController.h"
 @interface ZMCourseViewController ()
 
 @end
@@ -66,6 +67,9 @@
 
 - (void)rightBarItem1Click {
     
+    ZMScanViewController *scanVC = [ZMScanViewController new];
+    scanVC.title = @"扫一扫";
+    [self.navigationController pushViewController:scanVC animated:YES];
 }
 
 - (void)leftBarItemClick {

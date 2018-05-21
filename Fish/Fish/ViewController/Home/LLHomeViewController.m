@@ -8,6 +8,7 @@
 
 #import "LLHomeViewController.h"
 #import <SDCycleScrollView.h>
+#import <YTKBatchRequest.h>
 #import "ZMHomeBodyBuildingKnowledageCell.h"
 #import "ZMMemberResultCell.h"
 #import "ZMExerciseResultCell.h"
@@ -20,16 +21,28 @@
 #import "ZMMarketTableViewController.h"
 #import "ZMNearMemberViewController.h"
 #import "ZMMessageViewController.h"
+#import <NSObject+YYModel.h>
 
 #import "ZMExerciseResultListController.h"
 #import "ZMMemberResultListController.h"
 #import "ZMBodyBuildingKnowledageListController.h"
 
-@interface LLHomeViewController () <UITableViewDelegate, UITableViewDataSource>
+#import "ZMNewsListRequest.h"
+
+#import "ZMNewList.h"
+
+@interface LLHomeViewController () <UITableViewDelegate, UITableViewDataSource,SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet SDCycleScrollView *bannerView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+
+@property (nonatomic, strong) ZMNewList *activityNewList;
+@property (nonatomic, strong) ZMNewList *bannberNewList;
+@property (nonatomic, strong) ZMNewList *knowledgeNewList;
+@property (nonatomic, strong) ZMNewList *resultNewList;
+@property (nonatomic, strong) ZMNewList *teachNewList;
+
 
 @end
 
@@ -43,10 +56,57 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"健身" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     self.tableView.tableHeaderView = self.headerView;
+    self.bannerView.delegate = self;
     self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
+
     
-    self.bannerView.imageURLStringsGroup = @[@"http://img05.tooopen.com/images/20140328/sy_57865838889.jpg",@"http://img05.tooopen.com/images/20140328/sy_57865838889.jpg",@"http://img05.tooopen.com/images/20140328/sy_57865838889.jpg"];
+    [self request];
+    
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    
+}
+
+- (void)request {
+    ZMNewsListRequest *newsListRequest = [[ZMNewsListRequest alloc] init];
+    newsListRequest.type = @"1";
+    
+    ZMNewsListRequest *newsListRequest1 = [[ZMNewsListRequest alloc] init];
+    newsListRequest.type = @"2";
+    
+    ZMNewsListRequest *newsListRequest2 = [[ZMNewsListRequest alloc] init];
+    newsListRequest.type = @"3";
+    
+    ZMNewsListRequest *newsListRequest3 = [[ZMNewsListRequest alloc] init];
+    newsListRequest.type = @"4";
+    
+    ZMNewsListRequest *newsListRequest4 = [[ZMNewsListRequest alloc] init];
+    newsListRequest.type = @"5";
+    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[newsListRequest,newsListRequest1,newsListRequest2,newsListRequest3,newsListRequest4]];
+    [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest * _Nonnull batchRequest) {
+        NSArray *requests = batchRequest.requestArray;
+        ZMNewsListRequest *request = requests[0];
+        self.activityNewList = [ZMNewList modelWithJSON:request.responseObject[@"data"]];
+//        1:活动,2:广告,3:健身知识，4训练成果，5 训练技巧
+        ZMNewsListRequest *request1 = requests[1];
+        self.bannberNewList = [ZMNewList modelWithJSON:request1.responseObject[@"data"]];
+        ZMNewsListRequest *request2 = requests[2];
+        self.knowledgeNewList = [ZMNewList modelWithJSON:request2.responseObject[@"data"]];
+        ZMNewsListRequest *request3 = requests[3];
+        self.teachNewList = [ZMNewList modelWithJSON:request3.responseObject[@"data"]];
+        ZMNewsListRequest *request4 = requests[4];
+        self.resultNewList = [ZMNewList modelWithJSON:request4.responseObject[@"data"]];
+        [self.tableView reloadData];
+        NSMutableArray *muArr = [NSMutableArray arrayWithCapacity:5];
+        for (ZMNewListItem *item in self.activityNewList.list) {
+            [muArr addObject:item.image];
+        }
+        self.bannerView.imageURLStringsGroup = muArr;
+    } failure:^(YTKBatchRequest * _Nonnull batchRequest) {
+        NSLog(@"failed");
+    }];
 }
 
 - (void)leftBarItemClick {
@@ -60,6 +120,7 @@
 }
 - (IBAction)preferentialActivity:(UIButton *)sender {
     ZMPreferentialActivityController *perferentialActivityVC = [ZMPreferentialActivityController new];
+    perferentialActivityVC.list = self.activityNewList.list;
     perferentialActivityVC.title = @"优惠活动";
     [self.navigationController pushViewController:perferentialActivityVC animated:YES];
 }
@@ -141,18 +202,21 @@
         if (!knowledageCell) {
             knowledageCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMHomeBodyBuildingKnowledageCell class]) owner:nil options:nil].firstObject;
         }
+        knowledageCell.item = self.knowledgeNewList.list[indexPath.row];
         return knowledageCell;
     } else if (indexPath.section == 1) {
         ZMMemberResultCell *memberResultCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMMemberResultCell class])];;
         if (!memberResultCell) {
             memberResultCell = [[ZMMemberResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([ZMMemberResultCell class])];
         }
+        memberResultCell.arrayList = self.resultNewList.list;
         return memberResultCell;
     } else {
         ZMExerciseResultCell *exerciseResultCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMExerciseResultCell class])];;
         if (!exerciseResultCell) {
             exerciseResultCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMExerciseResultCell class]) owner:nil options:nil].firstObject;
         }
+        exerciseResultCell.item = self.teachNewList.list[indexPath.row];
         return exerciseResultCell;
     }
 }

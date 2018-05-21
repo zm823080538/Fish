@@ -85,6 +85,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bigImageView" destination="upH-16-BHi" id="DkB-8S-MlG"/>
+                <outlet property="dateLabel" destination="BXY-u6-Xoi" id="5bd-ee-ZYe"/>
+                <outlet property="detaiLabel" destination="ZHe-DV-rLw" id="Hg2-N7-TMG"/>
+                <outlet property="iconImageView" destination="iPs-fu-lcE" id="3EO-ON-e4N"/>
+                <outlet property="leftLabel" destination="fOs-zL-kuC" id="abC-xB-gLD"/>
+                <outlet property="rightLabel" destination="tVb-2F-glb" id="Mrc-7o-DlB"/>
+                <outlet property="titleLabel" destination="e3z-xJ-faz" id="XtM-IA-pAi"/>
+            </connections>
             <point key="canvasLocation" x="99" y="175.5"/>
         </tableViewCell>
     </objects>

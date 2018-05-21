@@ -7,18 +7,18 @@
 //
 
 #import "ZMHomeBodyBuildingKnowledageCell.h"
+#import <UIImageView+YYWebImage.h>
+@interface ZMHomeBodyBuildingKnowledageCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+
+@end
 
 @implementation ZMHomeBodyBuildingKnowledageCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+- (void)setItem:(ZMNewListItem *)item {
+    [self.bgImageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
 }
 
 @end

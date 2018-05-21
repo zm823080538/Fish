@@ -52,87 +52,90 @@
     self.imageUrlDict = [NSMutableDictionary dictionary];
 }
 - (IBAction)commit:(UIButton *)sender {
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    dispatch_group_t group = dispatch_group_create();
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_group_async(group, queue, ^{
-        ZMUpLoadRequest *image01 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
-
-        
-        [image01 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSLog(@"success");
-            [self.imageUrlDict setValue:[image01 imageUrlString] forKey:@"idimgpath"];
-            dispatch_semaphore_signal(semaphore);
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [self.view showError:@"图片上传失败"];
-        }];
-    });
-    dispatch_group_async(group, queue, ^{
-        ZMUpLoadRequest *image02 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
-
-        [image02 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSLog(@"success");
-            NSDictionary *dict = request.responseObject;
-        [self.imageUrlDict setValue:[image02 imageUrlString] forKey:@"idimgbackpath"];            dispatch_semaphore_signal(semaphore);
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [self.view showError:@"图片上传失败"];
-        }];
-    });
-    dispatch_group_async(group, queue, ^{
-//        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:image];
-        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"photopath"]];
-
-        [image03 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSLog(@"success");
-            NSDictionary *dict = request.responseObject;
-            [self.imageUrlDict setObject:[image03 imageUrlString] forKey:@"photopath"];
-            dispatch_semaphore_signal(semaphore);
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            [self.view showError:@"图片上传失败"];
-        }];
-    });
-    dispatch_group_async(group, queue, ^{
-        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"certpath"]];
-
-        [image04 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            NSLog(@"success");
-            NSDictionary *dict = request.responseObject;
-             [self.imageUrlDict setValue:[image04 imageUrlString] forKey:@"certpath"];
-            dispatch_semaphore_signal(semaphore);
-        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
-        }];
-    });
-    
-    dispatch_group_notify(group, queue, ^{
-        // 三个请求对应三次信号等待
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            ZMSaveAuthRequest *saveAuthRequest = [[ZMSaveAuthRequest alloc] init];
-            saveAuthRequest.userid = [ZMAccountManager shareManager].loginUser.id;
-            saveAuthRequest.realname = self.real_name_textField.textField.text;
-            saveAuthRequest.idnumber = self.ID_num_textField.textField.text;
-            saveAuthRequest.idimgpath = self.imageUrlDict[@"idimgpath"];
-            saveAuthRequest.idimgbackpath = self.imageUrlDict[@"idimgbackpath"];
-            saveAuthRequest.certpath = self.imageUrlDict[@"photopath"];
-            saveAuthRequest.photopath = self.imageUrlDict[@"certpath"];
-            saveAuthRequest.areaid =  [ZMAccountManager shareManager].loginUser.areacode;
-            [saveAuthRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if ([request.responseObject[@"code"] isEqualToString:@"0"]) {
-                        [self.view showToastString:@"认证成功"];
-                        [self.navigationController popViewControllerAnimated:YES];
-                    } else {
-                        [self.view showToastString:@"认证失败"];
-                    }
-                });
-            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-                
-            }];
-        });
-    });
+//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+//    dispatch_group_t group = dispatch_group_create();
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_group_async(group, queue, ^{
+//        ZMUpLoadRequest *image01 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
+//
+//
+//        [image01 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            NSLog(@"success");
+//            [self.imageUrlDict setValue:[image01 imageUrlString] forKey:@"idimgpath"];
+//            dispatch_semaphore_signal(semaphore);
+//        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            [self.view showError:@"图片上传失败"];
+//        }];
+//    });
+//    dispatch_group_async(group, queue, ^{
+//        ZMUpLoadRequest *image02 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"idimgpath"]];
+//
+//        [image02 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            NSLog(@"success");
+//            NSDictionary *dict = request.responseObject;
+//        [self.imageUrlDict setValue:[image02 imageUrlString] forKey:@"idimgbackpath"];            dispatch_semaphore_signal(semaphore);
+//        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            [self.view showError:@"图片上传失败"];
+//        }];
+//    });
+//    dispatch_group_async(group, queue, ^{
+////        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:image];
+//        if (!self.imageDict[@"photopath"]) {
+//            [self.view showError:@"请选择图片"];
+//        }
+//        ZMUpLoadRequest *image03 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"photopath"]];
+//
+//        [image03 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            NSLog(@"success");
+//            NSDictionary *dict = request.responseObject;
+//            [self.imageUrlDict setObject:[image03 imageUrlString] forKey:@"photopath"];
+//            dispatch_semaphore_signal(semaphore);
+//        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            [self.view showError:@"图片上传失败"];
+//        }];
+//    });
+//    dispatch_group_async(group, queue, ^{
+//        ZMUpLoadRequest *image04 = [[ZMUpLoadRequest alloc] initWithImage:self.imageDict[@"certpath"]];
+//
+//        [image04 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            NSLog(@"success");
+//            NSDictionary *dict = request.responseObject;
+//             [self.imageUrlDict setValue:[image04 imageUrlString] forKey:@"certpath"];
+//            dispatch_semaphore_signal(semaphore);
+//        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//
+//        }];
+//    });
+//
+//    dispatch_group_notify(group, queue, ^{
+//        // 三个请求对应三次信号等待
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            ZMSaveAuthRequest *saveAuthRequest = [[ZMSaveAuthRequest alloc] init];
+//            saveAuthRequest.userid = [ZMAccountManager shareManager].loginUser.id;
+//            saveAuthRequest.realname = self.real_name_textField.textField.text;
+//            saveAuthRequest.idnumber = self.ID_num_textField.textField.text;
+//            saveAuthRequest.idimgpath = self.imageUrlDict[@"idimgpath"];
+//            saveAuthRequest.idimgbackpath = self.imageUrlDict[@"idimgbackpath"];
+//            saveAuthRequest.certpath = self.imageUrlDict[@"photopath"];
+//            saveAuthRequest.photopath = self.imageUrlDict[@"certpath"];
+//            saveAuthRequest.areaid =  [ZMAccountManager shareManager].loginUser.areacode;
+//            [saveAuthRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    if ([request.responseObject[@"code"] isEqualToString:@"0"]) {
+//                        [self.view showToastString:@"认证成功"];
+//                        [self.navigationController popViewControllerAnimated:YES];
+//                    } else {
+//                        [self.view showToastString:@"认证失败"];
+//                    }
+//                });
+//            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//
+//            }];
+//        });
+//    });
 }
 
 - (void)viewWillLayoutSubviews {

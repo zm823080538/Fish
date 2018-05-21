@@ -12,7 +12,9 @@
 #import "ZMPersonalModel.h"
 #import "ZMAccountManager.h"
 #import "UIAlertController+Set.h"
+#import "LZCityPickerController.h"
 #import "YPImagePicker.h"
+#import <Masonry.h>
 #import "UIViewController+BackButtonHandler.h"
 
 @interface PersonalInfoViewController ()  <UINavigationControllerDelegate, UIGestureRecognizerDelegate,UITableViewDelegate, UITableViewDataSource>
@@ -45,7 +47,25 @@
     self.originAccountInfo = [ZMAccountManager shareManager].loginUser;
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];
+    
+    UIButton *logoutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    logoutBtn.backgroundColor = UIColorFromRGB(0x4A576A);
+    [logoutBtn setTitle:@"退出登录" forState:UIControlStateNormal];
+    [logoutBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:logoutBtn];
+    [logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.equalTo(self.view);
+        make.height.mas_equalTo(50);
+    }];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.equalTo(self.view);
+        make.bottom.equalTo(logoutBtn.mas_bottom);
+    }];
     [self loadData];
+}
+
+- (void)logout {
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,13 +120,14 @@
     }
     ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:sex];
     ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.address];
-    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"我的二维码" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:nil];
+    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"QR_Code" title:@"我的二维码" destinClassName:@"ZMMyQRCodeViewController" style:PersonalInfoCellStyleImage subTitle:nil];
     
     ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
-    ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+     ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定支付宝帐号" destinClassName:@"ZMBindAliPayViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-     ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
-    self.dataSource = @[@[item01,item02,item03,item04,item05],@[item06,item07,item08]];
+     ZMPersonalModel   *item09 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"ZMChangePwdViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
+    self.dataSource = @[@[item01,item02,item03,item04,item05],@[item06,item07,item08,item09]];
     [self.tableView reloadData];
 }
 
@@ -134,10 +155,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PersonalInfoCell *cell = (PersonalInfoCell *)[tableView cellForRowAtIndexPath:indexPath];
     ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         [YPImagePicker pickSingleImageWithTitle:@"修改头像" allowEditing:YES inViewController:self completionBlock:^(UIImage *image) {
             cell.rightImageView.image = image;
             self.headerImage = image;
+        }];
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
+        
+    } else if (indexPath.section == 0 && indexPath.row == 2) {
+        [UIAlertController alertWithTitle:@"性别" message:nil cancelTitle:@"取消" otherTitles:@[@"男",@"女"] preferredStyle:UIAlertControllerStyleActionSheet completion:^(NSInteger index) {
+            if (index == 0) {
+                cell.rightLabel.text = @"男";
+            } else if (index == 1) {
+                cell.rightLabel.text = @"女";
+            }
+            item.subTitle = cell.rightLabel.text;
+        }];
+    } else if (indexPath.section == 0 && indexPath.row == 3) {
+        [LZCityPickerController showPickerInViewController:self selectBlock:^(NSString *address, NSString *province, NSString *city, NSString *area) {
+            // 选择结果回调
+            cell.rightLabel.text = address;
         }];
     }
     if (NSClassFromString(item.destinClassName)) {

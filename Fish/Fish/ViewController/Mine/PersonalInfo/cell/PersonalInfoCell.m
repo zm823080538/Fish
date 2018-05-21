@@ -73,7 +73,11 @@
 - (void)setPersonalModel:(ZMPersonalModel *)personalModel {
     _personalModel = personalModel;
     self.leftLabel.text = personalModel.title;
-    [self.rightImageView setImageWithURL:[NSURL URLWithString:personalModel.image] placeholder:PlaceholderImage];
+    if ([personalModel.image hasPrefix:@"http://"]) {
+        [self.rightImageView setImageWithURL:[NSURL URLWithString:personalModel.image] placeholder:PlaceholderImage];
+    } else {
+        self.rightImageView.image = [UIImage imageNamed:personalModel.image];
+    }
     if ([personalModel isMemberOfClass:[ZMPersonalModel class]]) {
         self.rightLabel.text = personalModel.subTitle;
     }

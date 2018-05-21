@@ -22,16 +22,16 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.arrayList.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZMMemberResultItemTableCell *knowledageCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMMemberResultItemTableCell class])];
-    if (!knowledageCell) {
-        knowledageCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMMemberResultItemTableCell class]) owner:nil options:nil].firstObject;
+    ZMMemberResultItemTableCell *memberResultItemCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMMemberResultItemTableCell class])];
+    if (!memberResultItemCell) {
+        memberResultItemCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMMemberResultItemTableCell class]) owner:nil options:nil].firstObject;
     }
-    return knowledageCell;
+    return memberResultItemCell;
     
 }
 @end

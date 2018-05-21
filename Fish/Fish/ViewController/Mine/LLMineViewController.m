@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *verfiyStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ID_number_label;
+@property (weak, nonatomic) IBOutlet UIButton *levelBtn;
 
 @end
 
@@ -120,16 +121,18 @@
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"customService" title:@"我的客服" destinClassName:@""];
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
     ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
-    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
-    
+
+  
+    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
+    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@"ZMRecFriendViewController"];
+
+
 //
-    
-    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
-    ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意思反馈" destinClassName:@"ZMFeedbackViewController"];
-    
-    self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09,item10]];
+     ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+    ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+    self.dataSource = @[@[item01,item02,item03,item04,item05,item06],@[item07,item08,item09],@[item10,item11]];
     [self.tableView reloadData];
 }
 

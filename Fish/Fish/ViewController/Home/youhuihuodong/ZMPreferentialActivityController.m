@@ -8,6 +8,8 @@
 
 #import "ZMPreferentialActivityController.h"
 #import <Masonry.h>
+#import "ZMNewList.h"
+#import <UIImageView+YYWebImage.h>
 @interface ZMPreferentialActivityController ()
 
 @end
@@ -29,7 +31,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.list.count;
 }
 
 
@@ -38,15 +40,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    UIImageView *imageView;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.image = [UIImage imageNamed:@"hd1"];
+        imageView = [[UIImageView alloc] init];
         [cell addSubview:imageView];
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(cell);
         }];
     }
+    ZMNewListItem *item = self.list[indexPath.row];
+    [imageView setImageURL:[NSURL URLWithString:item.image]];
     return cell;
 }
 @end

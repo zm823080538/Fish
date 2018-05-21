@@ -32,10 +32,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="bgImageView" destination="G53-UE-Rux" id="pR5-hV-uE0"/>
+            </connections>
             <point key="canvasLocation" x="34" y="89"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Group 7" width="315" height="170"/>
+        <image name="Group 7" width="355" height="117"/>
     </resources>
 </document>

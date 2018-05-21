@@ -7,7 +7,8 @@
 //
 
 #import "ZMBaseTableViewController.h"
-
+#import "ZMNewList.h"
 @interface ZMMemberResultListController : ZMBaseTableViewController
+@property (nonatomic, strong) ZMNewList *arrayList;
 
 @end

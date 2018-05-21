@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMNewList.h"
 @interface ZMExerciseResultCell : UITableViewCell
-
+@property (nonatomic, strong) ZMNewListItem *item;
 @end
