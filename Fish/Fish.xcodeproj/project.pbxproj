@@ -133,21 +133,21 @@
 		5DAD859220B3130800622DF4 /* ZMNewDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859120B3130700622DF4 /* ZMNewDetailRequest.m */; };
 		5DAD859520B3136E00622DF4 /* ZMUserActionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859420B3136E00622DF4 /* ZMUserActionRequest.m */; };
 		5DAD859820B319EC00622DF4 /* ZMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859720B319EC00622DF4 /* ZMWebViewController.m */; };
-		5DAD85B520B321D700622DF4 /* ZMFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859C20B321D700622DF4 /* ZMFieldModel.m */; };
-		5DAD85B620B321D700622DF4 /* TeachQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD859E20B321D700622DF4 /* TeachQAViewController.m */; };
-		5DAD85B720B321D700622DF4 /* ZMFieldCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85A120B321D700622DF4 /* ZMFieldCollectionViewCell.m */; };
-		5DAD85B820B321D700622DF4 /* ZMFieldCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85A220B321D700622DF4 /* ZMFieldCollectionViewCell.xib */; };
-		5DAD85B920B321D700622DF4 /* ZMSuccessDemoSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85A320B321D700622DF4 /* ZMSuccessDemoSectionFooterView.xib */; };
-		5DAD85BA20B321D700622DF4 /* ZMSuccessDemoSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85A420B321D700622DF4 /* ZMSuccessDemoSectionHeaderView.xib */; };
-		5DAD85BB20B321D700622DF4 /* ZMExciseLanguageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85A620B321D700622DF4 /* ZMExciseLanguageController.m */; };
-		5DAD85BC20B321D700622DF4 /* ZMExerciseMaximViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85A820B321D700622DF4 /* ZMExerciseMaximViewController.m */; };
-		5DAD85BD20B321D700622DF4 /* ZMExerciseMaximViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85A920B321D700622DF4 /* ZMExerciseMaximViewController.xib */; };
-		5DAD85BE20B321D700622DF4 /* ZMExercisePhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85AB20B321D700622DF4 /* ZMExercisePhotosViewController.m */; };
-		5DAD85BF20B321D700622DF4 /* ZMExercisePhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85AC20B321D700622DF4 /* ZMExercisePhotosViewController.xib */; };
-		5DAD85C020B321D700622DF4 /* ZMGiveLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85AE20B321D700622DF4 /* ZMGiveLessonViewController.m */; };
-		5DAD85C120B321D700622DF4 /* ZMGoodAtFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85B020B321D700622DF4 /* ZMGoodAtFieldViewController.m */; };
-		5DAD85C220B321D700622DF4 /* ZMSuccessDemoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85B220B321D700622DF4 /* ZMSuccessDemoCollectionViewController.m */; };
-		5DAD85C320B321D700622DF4 /* ZMTQCerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85B420B321D700622DF4 /* ZMTQCerViewController.m */; };
+		5DAD85E020B3247200622DF4 /* ZMFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85C720B3247200622DF4 /* ZMFieldModel.m */; };
+		5DAD85E120B3247200622DF4 /* TeachQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85C920B3247200622DF4 /* TeachQAViewController.m */; };
+		5DAD85E220B3247200622DF4 /* ZMFieldCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85CC20B3247200622DF4 /* ZMFieldCollectionViewCell.m */; };
+		5DAD85E320B3247200622DF4 /* ZMFieldCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85CD20B3247200622DF4 /* ZMFieldCollectionViewCell.xib */; };
+		5DAD85E420B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85CE20B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib */; };
+		5DAD85E520B3247200622DF4 /* ZMSuccessDemoSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85CF20B3247200622DF4 /* ZMSuccessDemoSectionHeaderView.xib */; };
+		5DAD85E620B3247200622DF4 /* ZMExciseLanguageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85D120B3247200622DF4 /* ZMExciseLanguageController.m */; };
+		5DAD85E720B3247200622DF4 /* ZMExerciseMaximViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85D320B3247200622DF4 /* ZMExerciseMaximViewController.m */; };
+		5DAD85E820B3247200622DF4 /* ZMExerciseMaximViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85D420B3247200622DF4 /* ZMExerciseMaximViewController.xib */; };
+		5DAD85E920B3247200622DF4 /* ZMExercisePhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85D620B3247200622DF4 /* ZMExercisePhotosViewController.m */; };
+		5DAD85EA20B3247200622DF4 /* ZMExercisePhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAD85D720B3247200622DF4 /* ZMExercisePhotosViewController.xib */; };
+		5DAD85EB20B3247200622DF4 /* ZMGiveLessonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85D920B3247200622DF4 /* ZMGiveLessonViewController.m */; };
+		5DAD85EC20B3247200622DF4 /* ZMGoodAtFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85DB20B3247200622DF4 /* ZMGoodAtFieldViewController.m */; };
+		5DAD85ED20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85DD20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m */; };
+		5DAD85EE20B3247200622DF4 /* ZMTQCerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85DF20B3247200622DF4 /* ZMTQCerViewController.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -412,31 +412,31 @@
 		5DAD859420B3136E00622DF4 /* ZMUserActionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMUserActionRequest.m; sourceTree = "<group>"; };
 		5DAD859620B319EC00622DF4 /* ZMWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMWebViewController.h; sourceTree = "<group>"; };
 		5DAD859720B319EC00622DF4 /* ZMWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMWebViewController.m; sourceTree = "<group>"; };
-		5DAD859B20B321D700622DF4 /* ZMFieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMFieldModel.h; sourceTree = "<group>"; };
-		5DAD859C20B321D700622DF4 /* ZMFieldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMFieldModel.m; sourceTree = "<group>"; };
-		5DAD859D20B321D700622DF4 /* TeachQAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachQAViewController.h; sourceTree = "<group>"; };
-		5DAD859E20B321D700622DF4 /* TeachQAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeachQAViewController.m; sourceTree = "<group>"; };
-		5DAD85A020B321D700622DF4 /* ZMFieldCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMFieldCollectionViewCell.h; sourceTree = "<group>"; };
-		5DAD85A120B321D700622DF4 /* ZMFieldCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMFieldCollectionViewCell.m; sourceTree = "<group>"; };
-		5DAD85A220B321D700622DF4 /* ZMFieldCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMFieldCollectionViewCell.xib; sourceTree = "<group>"; };
-		5DAD85A320B321D700622DF4 /* ZMSuccessDemoSectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMSuccessDemoSectionFooterView.xib; sourceTree = "<group>"; };
-		5DAD85A420B321D700622DF4 /* ZMSuccessDemoSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMSuccessDemoSectionHeaderView.xib; sourceTree = "<group>"; };
-		5DAD85A520B321D700622DF4 /* ZMExciseLanguageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMExciseLanguageController.h; sourceTree = "<group>"; };
-		5DAD85A620B321D700622DF4 /* ZMExciseLanguageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMExciseLanguageController.m; sourceTree = "<group>"; };
-		5DAD85A720B321D700622DF4 /* ZMExerciseMaximViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMExerciseMaximViewController.h; sourceTree = "<group>"; };
-		5DAD85A820B321D700622DF4 /* ZMExerciseMaximViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMExerciseMaximViewController.m; sourceTree = "<group>"; };
-		5DAD85A920B321D700622DF4 /* ZMExerciseMaximViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMExerciseMaximViewController.xib; sourceTree = "<group>"; };
-		5DAD85AA20B321D700622DF4 /* ZMExercisePhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMExercisePhotosViewController.h; sourceTree = "<group>"; };
-		5DAD85AB20B321D700622DF4 /* ZMExercisePhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMExercisePhotosViewController.m; sourceTree = "<group>"; };
-		5DAD85AC20B321D700622DF4 /* ZMExercisePhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMExercisePhotosViewController.xib; sourceTree = "<group>"; };
-		5DAD85AD20B321D700622DF4 /* ZMGiveLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGiveLessonViewController.h; sourceTree = "<group>"; };
-		5DAD85AE20B321D700622DF4 /* ZMGiveLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGiveLessonViewController.m; sourceTree = "<group>"; };
-		5DAD85AF20B321D700622DF4 /* ZMGoodAtFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGoodAtFieldViewController.h; sourceTree = "<group>"; };
-		5DAD85B020B321D700622DF4 /* ZMGoodAtFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGoodAtFieldViewController.m; sourceTree = "<group>"; };
-		5DAD85B120B321D700622DF4 /* ZMSuccessDemoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSuccessDemoCollectionViewController.h; sourceTree = "<group>"; };
-		5DAD85B220B321D700622DF4 /* ZMSuccessDemoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSuccessDemoCollectionViewController.m; sourceTree = "<group>"; };
-		5DAD85B320B321D700622DF4 /* ZMTQCerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTQCerViewController.h; sourceTree = "<group>"; };
-		5DAD85B420B321D700622DF4 /* ZMTQCerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTQCerViewController.m; sourceTree = "<group>"; };
+		5DAD85C620B3247200622DF4 /* ZMFieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMFieldModel.h; sourceTree = "<group>"; };
+		5DAD85C720B3247200622DF4 /* ZMFieldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMFieldModel.m; sourceTree = "<group>"; };
+		5DAD85C820B3247200622DF4 /* TeachQAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeachQAViewController.h; sourceTree = "<group>"; };
+		5DAD85C920B3247200622DF4 /* TeachQAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeachQAViewController.m; sourceTree = "<group>"; };
+		5DAD85CB20B3247200622DF4 /* ZMFieldCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMFieldCollectionViewCell.h; sourceTree = "<group>"; };
+		5DAD85CC20B3247200622DF4 /* ZMFieldCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMFieldCollectionViewCell.m; sourceTree = "<group>"; };
+		5DAD85CD20B3247200622DF4 /* ZMFieldCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMFieldCollectionViewCell.xib; sourceTree = "<group>"; };
+		5DAD85CE20B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMSuccessDemoSectionFooterView.xib; sourceTree = "<group>"; };
+		5DAD85CF20B3247200622DF4 /* ZMSuccessDemoSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMSuccessDemoSectionHeaderView.xib; sourceTree = "<group>"; };
+		5DAD85D020B3247200622DF4 /* ZMExciseLanguageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMExciseLanguageController.h; sourceTree = "<group>"; };
+		5DAD85D120B3247200622DF4 /* ZMExciseLanguageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMExciseLanguageController.m; sourceTree = "<group>"; };
+		5DAD85D220B3247200622DF4 /* ZMExerciseMaximViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMExerciseMaximViewController.h; sourceTree = "<group>"; };
+		5DAD85D320B3247200622DF4 /* ZMExerciseMaximViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMExerciseMaximViewController.m; sourceTree = "<group>"; };
+		5DAD85D420B3247200622DF4 /* ZMExerciseMaximViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMExerciseMaximViewController.xib; sourceTree = "<group>"; };
+		5DAD85D520B3247200622DF4 /* ZMExercisePhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMExercisePhotosViewController.h; sourceTree = "<group>"; };
+		5DAD85D620B3247200622DF4 /* ZMExercisePhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMExercisePhotosViewController.m; sourceTree = "<group>"; };
+		5DAD85D720B3247200622DF4 /* ZMExercisePhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMExercisePhotosViewController.xib; sourceTree = "<group>"; };
+		5DAD85D820B3247200622DF4 /* ZMGiveLessonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGiveLessonViewController.h; sourceTree = "<group>"; };
+		5DAD85D920B3247200622DF4 /* ZMGiveLessonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGiveLessonViewController.m; sourceTree = "<group>"; };
+		5DAD85DA20B3247200622DF4 /* ZMGoodAtFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMGoodAtFieldViewController.h; sourceTree = "<group>"; };
+		5DAD85DB20B3247200622DF4 /* ZMGoodAtFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMGoodAtFieldViewController.m; sourceTree = "<group>"; };
+		5DAD85DC20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMSuccessDemoCollectionViewController.h; sourceTree = "<group>"; };
+		5DAD85DD20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSuccessDemoCollectionViewController.m; sourceTree = "<group>"; };
+		5DAD85DE20B3247200622DF4 /* ZMTQCerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTQCerViewController.h; sourceTree = "<group>"; };
+		5DAD85DF20B3247200622DF4 /* ZMTQCerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTQCerViewController.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -979,51 +979,50 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5DAD859920B321D700622DF4 /* TeachingQualification  */ = {
+		5DAD85C420B3247200622DF4 /* TeachingQualification  */ = {
 			isa = PBXGroup;
 			children = (
-				5DAD859A20B321D700622DF4 /* Model */,
-				5DAD859D20B321D700622DF4 /* TeachQAViewController.h */,
-				5DAD859E20B321D700622DF4 /* TeachQAViewController.m */,
-				5DAD859F20B321D700622DF4 /* View */,
-				5DAD85A520B321D700622DF4 /* ZMExciseLanguageController.h */,
-				5DAD85A620B321D700622DF4 /* ZMExciseLanguageController.m */,
-				5DAD85A720B321D700622DF4 /* ZMExerciseMaximViewController.h */,
-				5DAD85A820B321D700622DF4 /* ZMExerciseMaximViewController.m */,
-				5DAD85A920B321D700622DF4 /* ZMExerciseMaximViewController.xib */,
-				5DAD85AA20B321D700622DF4 /* ZMExercisePhotosViewController.h */,
-				5DAD85AB20B321D700622DF4 /* ZMExercisePhotosViewController.m */,
-				5DAD85AC20B321D700622DF4 /* ZMExercisePhotosViewController.xib */,
-				5DAD85AD20B321D700622DF4 /* ZMGiveLessonViewController.h */,
-				5DAD85AE20B321D700622DF4 /* ZMGiveLessonViewController.m */,
-				5DAD85AF20B321D700622DF4 /* ZMGoodAtFieldViewController.h */,
-				5DAD85B020B321D700622DF4 /* ZMGoodAtFieldViewController.m */,
-				5DAD85B120B321D700622DF4 /* ZMSuccessDemoCollectionViewController.h */,
-				5DAD85B220B321D700622DF4 /* ZMSuccessDemoCollectionViewController.m */,
-				5DAD85B320B321D700622DF4 /* ZMTQCerViewController.h */,
-				5DAD85B420B321D700622DF4 /* ZMTQCerViewController.m */,
+				5DAD85C520B3247200622DF4 /* Model */,
+				5DAD85C820B3247200622DF4 /* TeachQAViewController.h */,
+				5DAD85C920B3247200622DF4 /* TeachQAViewController.m */,
+				5DAD85CA20B3247200622DF4 /* View */,
+				5DAD85D020B3247200622DF4 /* ZMExciseLanguageController.h */,
+				5DAD85D120B3247200622DF4 /* ZMExciseLanguageController.m */,
+				5DAD85D220B3247200622DF4 /* ZMExerciseMaximViewController.h */,
+				5DAD85D320B3247200622DF4 /* ZMExerciseMaximViewController.m */,
+				5DAD85D420B3247200622DF4 /* ZMExerciseMaximViewController.xib */,
+				5DAD85D520B3247200622DF4 /* ZMExercisePhotosViewController.h */,
+				5DAD85D620B3247200622DF4 /* ZMExercisePhotosViewController.m */,
+				5DAD85D720B3247200622DF4 /* ZMExercisePhotosViewController.xib */,
+				5DAD85D820B3247200622DF4 /* ZMGiveLessonViewController.h */,
+				5DAD85D920B3247200622DF4 /* ZMGiveLessonViewController.m */,
+				5DAD85DA20B3247200622DF4 /* ZMGoodAtFieldViewController.h */,
+				5DAD85DB20B3247200622DF4 /* ZMGoodAtFieldViewController.m */,
+				5DAD85DC20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.h */,
+				5DAD85DD20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m */,
+				5DAD85DE20B3247200622DF4 /* ZMTQCerViewController.h */,
+				5DAD85DF20B3247200622DF4 /* ZMTQCerViewController.m */,
 			);
-			name = "TeachingQualification ";
-			path = "../../../../../../Downloads/TeachingQualification ";
+			path = "TeachingQualification ";
 			sourceTree = "<group>";
 		};
-		5DAD859A20B321D700622DF4 /* Model */ = {
+		5DAD85C520B3247200622DF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5DAD859B20B321D700622DF4 /* ZMFieldModel.h */,
-				5DAD859C20B321D700622DF4 /* ZMFieldModel.m */,
+				5DAD85C620B3247200622DF4 /* ZMFieldModel.h */,
+				5DAD85C720B3247200622DF4 /* ZMFieldModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5DAD859F20B321D700622DF4 /* View */ = {
+		5DAD85CA20B3247200622DF4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5DAD85A020B321D700622DF4 /* ZMFieldCollectionViewCell.h */,
-				5DAD85A120B321D700622DF4 /* ZMFieldCollectionViewCell.m */,
-				5DAD85A220B321D700622DF4 /* ZMFieldCollectionViewCell.xib */,
-				5DAD85A320B321D700622DF4 /* ZMSuccessDemoSectionFooterView.xib */,
-				5DAD85A420B321D700622DF4 /* ZMSuccessDemoSectionHeaderView.xib */,
+				5DAD85CB20B3247200622DF4 /* ZMFieldCollectionViewCell.h */,
+				5DAD85CC20B3247200622DF4 /* ZMFieldCollectionViewCell.m */,
+				5DAD85CD20B3247200622DF4 /* ZMFieldCollectionViewCell.xib */,
+				5DAD85CE20B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib */,
+				5DAD85CF20B3247200622DF4 /* ZMSuccessDemoSectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1150,7 +1149,7 @@
 		5DC5CBCE2078523000F3C0D6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				5DAD859920B321D700622DF4 /* TeachingQualification  */,
+				5DAD85C420B3247200622DF4 /* TeachingQualification  */,
 				5DAD856120B172AE00622DF4 /* MustRead */,
 				5D5BB2BA20A7E9C50067709B /* Setting */,
 				5D5BB2B620A7E7820067709B /* Statistics */,
@@ -1323,10 +1322,10 @@
 			files = (
 				5DA07E4D20AFEF06007C94C8 /* ZMMemberResultItemTableCell.xib in Resources */,
 				5DAD857D20B1C82B00622DF4 /* ZMBindAliPayViewController.xib in Resources */,
-				5DAD85BA20B321D700622DF4 /* ZMSuccessDemoSectionHeaderView.xib in Resources */,
+				5DAD85E520B3247200622DF4 /* ZMSuccessDemoSectionHeaderView.xib in Resources */,
 				5DAD858220B2F42600622DF4 /* ZMChangePwdViewController.xib in Resources */,
-				5DAD85BD20B321D700622DF4 /* ZMExerciseMaximViewController.xib in Resources */,
-				5DAD85B820B321D700622DF4 /* ZMFieldCollectionViewCell.xib in Resources */,
+				5DAD85E820B3247200622DF4 /* ZMExerciseMaximViewController.xib in Resources */,
+				5DAD85E320B3247200622DF4 /* ZMFieldCollectionViewCell.xib in Resources */,
 				5DC5CBEC2078752800F3C0D6 /* LoginViewController.xib in Resources */,
 				5D2F7D0F209E9E31007B3812 /* ZMSearchButton.xib in Resources */,
 				5D343F83207BC21F006F8616 /* ForgetPasswordViewController.xib in Resources */,
@@ -1340,7 +1339,7 @@
 				5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */,
 				5D2F7CB4209C30C3007B3812 /* ZMMemberResultItemCell.xib in Resources */,
 				5D5BB2D020AC5BDB0067709B /* ZMMineTableViewCell.xib in Resources */,
-				5DAD85BF20B321D700622DF4 /* ZMExercisePhotosViewController.xib in Resources */,
+				5DAD85EA20B3247200622DF4 /* ZMExercisePhotosViewController.xib in Resources */,
 				5DAD858720B2F65500622DF4 /* ZMMyQRCodeViewController.xib in Resources */,
 				5D5BB2AD20A705D60067709B /* ZMMemberApplyCell.xib in Resources */,
 				5DC5CBDC2078523000F3C0D6 /* LLHomeViewController.xib in Resources */,
@@ -1351,7 +1350,7 @@
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
 				5D2F7CE6209D8556007B3812 /* ZMNearMememberCell.xib in Resources */,
 				5D2F7CAF209C3079007B3812 /* ZMExerciseResultCell.xib in Resources */,
-				5DAD85B920B321D700622DF4 /* ZMSuccessDemoSectionFooterView.xib in Resources */,
+				5DAD85E420B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib in Resources */,
 				5D5BB2CB20A847880067709B /* ZMMemberDetailViewController.xib in Resources */,
 				5D5BB23C208AF8B90067709B /* ZMCertificationViewController.xib in Resources */,
 			);
@@ -1421,7 +1420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC5CBE22078523000F3C0D6 /* LLMineViewController.m in Sources */,
-				5DAD85BE20B321D700622DF4 /* ZMExercisePhotosViewController.m in Sources */,
+				5DAD85E920B3247200622DF4 /* ZMExercisePhotosViewController.m in Sources */,
 				5D5BB2B020A7E62E0067709B /* ZMMyCollectListController.m in Sources */,
 				5D5BB2B920A7E7CE0067709B /* ZMCountTableViewController.m in Sources */,
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
@@ -1440,7 +1439,7 @@
 				5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */,
 				5D2F7CBC209D6FE4007B3812 /* ZMHomeSectionView.m in Sources */,
 				5D2F7CFA209D9411007B3812 /* UIViewController+YPTabBarController.m in Sources */,
-				5DAD85C020B321D700622DF4 /* ZMGiveLessonViewController.m in Sources */,
+				5DAD85EB20B3247200622DF4 /* ZMGiveLessonViewController.m in Sources */,
 				5D5C197520A2D5B3005422E5 /* UINavigationBar+Awesome.m in Sources */,
 				5D5BB2E020AC78E30067709B /* ZMLessonDaySettingController.m in Sources */,
 				5D5BB2332088EEE50067709B /* ZMPersonalModel.m in Sources */,
@@ -1458,12 +1457,12 @@
 				5D5BB26320921A100067709B /* ZMRecFriendViewController.m in Sources */,
 				5DA07E5420B00D22007C94C8 /* ZMCalendarViewController.m in Sources */,
 				5D8A47212092B9CD00CE2723 /* ZMGetAuthRequest.m in Sources */,
-				5DAD85C120B321D700622DF4 /* ZMGoodAtFieldViewController.m in Sources */,
+				5DAD85EC20B3247200622DF4 /* ZMGoodAtFieldViewController.m in Sources */,
 				5D5BB23B208AF8B90067709B /* ZMCertificationViewController.m in Sources */,
 				5D5BB2ED20ADA9020067709B /* ZMPrivacyListViewController.m in Sources */,
 				5D5C198120A2E140005422E5 /* ZMSearchButton.m in Sources */,
 				5D2F7D06209E9035007B3812 /* UIButton+YPKit.m in Sources */,
-				5DAD85B720B321D700622DF4 /* ZMFieldCollectionViewCell.m in Sources */,
+				5DAD85E220B3247200622DF4 /* ZMFieldCollectionViewCell.m in Sources */,
 				5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */,
 				5DAD857720B1B56E00622DF4 /* LZCityPickerView.m in Sources */,
 				5D2F7CAE209C3079007B3812 /* ZMExerciseResultCell.m in Sources */,
@@ -1494,10 +1493,10 @@
 				5DAD857620B1B56E00622DF4 /* LZCityPickerController.m in Sources */,
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
-				5DAD85BB20B321D700622DF4 /* ZMExciseLanguageController.m in Sources */,
+				5DAD85E620B3247200622DF4 /* ZMExciseLanguageController.m in Sources */,
 				5D5C197E20A2E019005422E5 /* UIImage+Tool.m in Sources */,
 				5D2F7D0C209E976C007B3812 /* ZMMemberListController.m in Sources */,
-				5DAD85C320B321D700622DF4 /* ZMTQCerViewController.m in Sources */,
+				5DAD85EE20B3247200622DF4 /* ZMTQCerViewController.m in Sources */,
 				5D8A4736209419FB00CE2723 /* ZMPickPhotoCollectionView.m in Sources */,
 				5D5BB258208E2FCB0067709B /* ZMForgetPwdRequest.m in Sources */,
 				5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */,
@@ -1512,23 +1511,23 @@
 				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
 				5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */,
 				5D2F7D12209EA3EC007B3812 /* ZMCourseListViewController.m in Sources */,
-				5DAD85BC20B321D700622DF4 /* ZMExerciseMaximViewController.m in Sources */,
+				5DAD85E720B3247200622DF4 /* ZMExerciseMaximViewController.m in Sources */,
 				5D5BB2A420A705380067709B /* ZMMemberApplyViewController.m in Sources */,
 				5D2F7CF7209D9411007B3812 /* UIScrollView+YPTabBarController.m in Sources */,
 				5D2F7D09209E91EA007B3812 /* NSString+YPKit.m in Sources */,
 				5D5BB236208AEB1D0067709B /* LLBaseNavViewController.m in Sources */,
-				5DAD85B620B321D700622DF4 /* TeachQAViewController.m in Sources */,
+				5DAD85E120B3247200622DF4 /* TeachQAViewController.m in Sources */,
 				5D2F7CE0209D845A007B3812 /* ZMNearMemberViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
 				5DAD858F20B2FE6E00622DF4 /* ZMNewList.m in Sources */,
-				5DAD85C220B321D700622DF4 /* ZMSuccessDemoCollectionViewController.m in Sources */,
+				5DAD85ED20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m in Sources */,
 				5D2F7CF9209D9411007B3812 /* YPTabBar.m in Sources */,
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5D5C198520A2F199005422E5 /* ZspMenu.m in Sources */,
 				5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */,
 				5D2F7CF8209D9411007B3812 /* YPTabBarController.m in Sources */,
 				5DAD857C20B1C82B00622DF4 /* ZMBindAliPayViewController.m in Sources */,
-				5DAD85B520B321D700622DF4 /* ZMFieldModel.m in Sources */,
+				5DAD85E020B3247200622DF4 /* ZMFieldModel.m in Sources */,
 				5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
 				5D2F7CB3209C30C3007B3812 /* ZMMemberResultItemCell.m in Sources */,

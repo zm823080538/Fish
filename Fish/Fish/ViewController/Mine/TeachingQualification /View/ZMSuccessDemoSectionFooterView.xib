@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里是成功案例描述这里是成功案例描述这里是成功案例描述这里是成功案例描述" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9L-Z9-9Nj">
+                    <rect key="frame" x="15" y="15" width="345" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.29019607843137252" green="0.3411764705882353" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-to-O1p">
+                    <rect key="frame" x="0.0" y="70" width="375" height="10"/>
+                    <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="ZFo-0S-1Cy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aUm-to-O1p" secondAttribute="bottom" id="Axv-1C-bb9"/>
+                <constraint firstItem="aUm-to-O1p" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="M5V-1H-KQc"/>
+                <constraint firstItem="N9L-Z9-9Nj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="V15-mt-Hdj"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="N9L-Z9-9Nj" secondAttribute="bottom" constant="25" id="f10-FW-nkn"/>
+                <constraint firstItem="N9L-Z9-9Nj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="sMK-5d-Mk0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aUm-to-O1p" secondAttribute="trailing" id="sty-FU-Mia"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="N9L-Z9-9Nj" secondAttribute="trailing" constant="15" id="zbn-J9-fF0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="35.5" y="60.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZMExercisePhotosViewController">
+            <connections>
+                <outlet property="photoView" destination="h9e-TV-rCc" id="7KK-1J-wbe"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IuX-dZ-04t">
+                    <rect key="frame" x="0.0" y="30" width="375" height="245"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2X-JA-dW5">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="177"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9e-TV-rCc" customClass="ZMPickPhotoCollectionView">
+                                    <rect key="frame" x="21" y="0.0" width="354" height="160"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="h9e-TV-rCc" secondAttribute="trailing" id="9xb-qp-NaT"/>
+                                <constraint firstAttribute="bottom" secondItem="h9e-TV-rCc" secondAttribute="bottom" constant="17" id="Eq2-Y5-wLe"/>
+                                <constraint firstAttribute="height" constant="177" id="RiZ-CM-O90"/>
+                                <constraint firstItem="h9e-TV-rCc" firstAttribute="leading" secondItem="y2X-JA-dW5" secondAttribute="leading" constant="21" id="d4V-I4-1Lq"/>
+                                <constraint firstItem="h9e-TV-rCc" firstAttribute="top" secondItem="y2X-JA-dW5" secondAttribute="top" id="wxY-gz-f0I"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="y2X-JA-dW5" secondAttribute="trailing" id="F8c-Al-gGN"/>
+                        <constraint firstItem="y2X-JA-dW5" firstAttribute="leading" secondItem="IuX-dZ-04t" secondAttribute="leading" id="Pj7-7E-2Fz"/>
+                        <constraint firstAttribute="height" constant="245" id="cSt-pJ-7zi"/>
+                        <constraint firstItem="y2X-JA-dW5" firstAttribute="top" secondItem="IuX-dZ-04t" secondAttribute="top" id="lb0-RO-YIh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IuX-dZ-04t" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="3TP-bN-OAN"/>
+                <constraint firstItem="IuX-dZ-04t" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="10" id="VjO-wD-TkE"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="IuX-dZ-04t" secondAttribute="trailing" id="ZMs-Ls-rdw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
