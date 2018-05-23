@@ -9,7 +9,7 @@
 #import "YTKRequest.h"
 
 @interface ZMMemberSearchRequest : YTKRequest
-@property (nonatomic, copy) NSString * id;
+@property (nonatomic, copy) NSString * requestId;
 @property (nonatomic, copy) NSString * distance;
 @property (nonatomic, copy) NSString * sex;
 @property (nonatomic, copy) NSString * no;

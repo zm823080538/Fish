@@ -9,10 +9,17 @@
 #import "ZMMemberViewController.h"
 #import "ZMMessageViewController.h"
 #import "ZMMemberListController.h"
-@interface ZMMemberViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+#import <SDCycleScrollView.h>
+#import "ZMNewsListRequest.h"
+#import "ZMNewList.h"
+#import <NSObject+YYModel.h>
+#import "ZMWebViewController.h"
+@interface ZMMemberViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
-@property (nonatomic, strong) UIView *bannerView;
+@property (nonatomic, strong) ZMNewList * bannerList;
+
+@property (nonatomic, strong) SDCycleScrollView *bannerView;
 
 
 @end
@@ -27,6 +34,22 @@
     self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
     [self initViewControllers];
     [self configTabbar];
+    [self request];
+}
+
+- (void)request {
+    ZMNewsListRequest *newsListRequest1 = [[ZMNewsListRequest alloc] init];
+    newsListRequest1.type = @"5";
+    [newsListRequest1 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+         self.bannerList = [ZMNewList modelWithJSON:request.responseObject[@"data"]];
+        NSMutableArray *muArr = [NSMutableArray arrayWithCapacity:5];
+        for (ZMNewListItem *item in self.bannerList.list) {
+            [muArr addObject:item.image];
+        }
+        self.bannerView.imageURLStringsGroup = muArr;
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (void)configTabbar {
@@ -99,13 +122,19 @@
     
 }
 
-- (UIView *)bannerView {
+- (SDCycleScrollView *)bannerView {
     if (!_bannerView) {
-        _bannerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 124)];
-        _bannerView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"Group 4"].CGImage);
-        _bannerView.backgroundColor = [UIColor orangeColor];
+        _bannerView = [[SDCycleScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 124)];
+        _bannerView.delegate = self;
     }
     return _bannerView;
+}
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
+    ZMNewListItem *item = self.bannerList.list[index];
+    ZMWebViewController *webVc = [[ZMWebViewController alloc] init];
+    webVc.item = item;
+    [self.navigationController pushViewController:webVc animated:YES];
 }
 
 @end
