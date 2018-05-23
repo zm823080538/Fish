@@ -21,7 +21,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.arrayList.list.count;
 }
 
 
@@ -30,6 +30,7 @@
     if (!exerciseResultCell) {
         exerciseResultCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMExerciseResultCell class]) owner:nil options:nil].firstObject;
     }
+    exerciseResultCell.item = self.arrayList.list[indexPath.row];
     return exerciseResultCell;
     
 }

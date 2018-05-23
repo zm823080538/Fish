@@ -22,7 +22,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayList.count;
+    return self.arrayList.list.count;
 }
 
 
@@ -31,6 +31,7 @@
     if (!memberResultItemCell) {
         memberResultItemCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMMemberResultItemTableCell class]) owner:nil options:nil].firstObject;
     }
+    memberResultItemCell.item = self.arrayList.list[indexPath.row];
     return memberResultItemCell;
     
 }

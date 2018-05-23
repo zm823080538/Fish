@@ -7,7 +7,7 @@
 //
 
 #import "ZMMemberResultItemTableCell.h"
-
+#import <UIImageView+YYWebImage.h>
 @interface ZMMemberResultItemTableCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *bigImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
@@ -22,6 +22,8 @@
 @implementation ZMMemberResultItemTableCell
 
 - (void)setItem:(ZMNewListItem *)item {
-    
+    [self.bigImageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
+    [self.iconImageView setImageWithURL:[NSURL URLWithString:item.userimg] placeholder:PlaceholderImage];
+    self.titleLabel.text = item.title;
 }
 @end

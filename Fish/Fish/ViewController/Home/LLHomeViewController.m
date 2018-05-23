@@ -26,6 +26,7 @@
 #import "ZMExerciseResultListController.h"
 #import "ZMMemberResultListController.h"
 #import "ZMBodyBuildingKnowledageListController.h"
+#import "ZMWebViewController.h"
 
 #import "ZMNewsListRequest.h"
 
@@ -66,7 +67,10 @@
 }
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index {
-    
+    ZMNewListItem *item = self.activityNewList.list[index];
+    ZMWebViewController *webVc = [[ZMWebViewController alloc] init];
+    webVc.item = item;
+    [self.navigationController pushViewController:webVc animated:YES];
 }
 
 - (void)request {
@@ -89,14 +93,14 @@
         NSArray *requests = batchRequest.requestArray;
         ZMNewsListRequest *request = requests[0];
         self.activityNewList = [ZMNewList modelWithJSON:request.responseObject[@"data"]];
-//        1:活动,2:广告,3:健身知识，4训练成果，5 训练技巧
-        ZMNewsListRequest *request1 = requests[1];
-        self.bannberNewList = [ZMNewList modelWithJSON:request1.responseObject[@"data"]];
-        ZMNewsListRequest *request2 = requests[2];
+//        1:活动2:健身知识，4训练成果，5 训练技巧
+//        ZMNewsListRequest *request1 = requests[1];
+//        self.bannberNewList = [ZMNewList modelWithJSON:request1.responseObject[@"data"]];
+        ZMNewsListRequest *request2 = requests[1];
         self.knowledgeNewList = [ZMNewList modelWithJSON:request2.responseObject[@"data"]];
-        ZMNewsListRequest *request3 = requests[3];
+        ZMNewsListRequest *request3 = requests[2];
         self.teachNewList = [ZMNewList modelWithJSON:request3.responseObject[@"data"]];
-        ZMNewsListRequest *request4 = requests[4];
+        ZMNewsListRequest *request4 = requests[3];
         self.resultNewList = [ZMNewList modelWithJSON:request4.responseObject[@"data"]];
         [self.tableView reloadData];
         NSMutableArray *muArr = [NSMutableArray arrayWithCapacity:5];
@@ -159,6 +163,7 @@
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMBodyBuildingKnowledageListController *bodyBuildingKnowledageListVC = [[ZMBodyBuildingKnowledageListController alloc] init];
+            bodyBuildingKnowledageListVC.arrayList = self.knowledgeNewList;
             bodyBuildingKnowledageListVC.title = @"健身知识";
             [self.navigationController pushViewController:bodyBuildingKnowledageListVC animated:YES];
         };
@@ -168,6 +173,7 @@
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMMemberResultListController *memberResultListVC = [[ZMMemberResultListController alloc] init];
+            memberResultListVC.arrayList = self.resultNewList;
             memberResultListVC.title = @"会员成果";
             [self.navigationController pushViewController:memberResultListVC animated:YES];
         };        
@@ -177,6 +183,7 @@
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMExerciseResultListController *exciseResultListVC = [[ZMExerciseResultListController alloc] init];
+            exciseResultListVC.arrayList = self.teachNewList;
              exciseResultListVC.title = @"训练技巧";
             [self.navigationController pushViewController:exciseResultListVC animated:YES];
         };

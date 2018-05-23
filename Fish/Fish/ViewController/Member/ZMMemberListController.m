@@ -13,8 +13,11 @@
 #import <UIView+YYAdd.h>
 #import "ZMMemberSearchViewController.h"
 #import "ZMMemberDetailViewController.h"
+#import "ZMMemberSearchRequest.h"
+#import "ZMAccountManager.h"
 @interface ZMMemberListController () <UISearchBarDelegate>
 @property (nonatomic, strong) SSSearchBar *searchBar;
+@property (nonatomic, strong) NSMutableArray * dataSource;
 
 @end
 
@@ -28,6 +31,18 @@
     self.tableView.tableHeaderView = self.searchBar;
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
+    [self request];
+}
+
+- (void)request {
+    ZMMemberSearchRequest *request = [[ZMMemberSearchRequest alloc] init];
+    request.id = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 
@@ -43,6 +58,10 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.searchBar resignFirstResponder];
+}
+
+- (void)loadData:(NSArray *)data {
+    
 }
 
 

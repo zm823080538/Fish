@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMNewList.h"
 @interface ZMWebViewController : UIViewController
-@property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, strong) ZMNewListItem *item;
 
 @end

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMMemberListController : UITableViewController
-
+- (void)loadData:(NSArray *)data;
 @end

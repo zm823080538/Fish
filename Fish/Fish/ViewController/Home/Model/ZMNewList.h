@@ -26,6 +26,7 @@
 @property (nonatomic , copy) NSString              * remarks;
 @property (nonatomic , copy) NSString              * status;
 @property (nonatomic , copy) NSString              * sort;
+@property (nonatomic , copy) NSString              * favorite;
 
 @end
 
