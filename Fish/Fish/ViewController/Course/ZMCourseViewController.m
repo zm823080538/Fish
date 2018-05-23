@@ -8,7 +8,6 @@
 
 #import "ZMCourseViewController.h"
 #import "ZMCourseListViewController.h"
-#import "ZMCalendarViewController.h"
 #import "ZMMessageViewController.h"
 #import "ZMScanViewController.h"
 @interface ZMCourseViewController ()
@@ -68,9 +67,9 @@
 
 - (void)rightBarItem1Click {
     
-    ZMCalendarViewController *calendarVC = [ZMCalendarViewController new];
-//    calendarVC.title = @"";
-    [self.navigationController pushViewController:calendarVC animated:YES];
+    ZMScanViewController *scanVC = [ZMScanViewController new];
+    scanVC.title = @"扫一扫";
+    [self.navigationController pushViewController:scanVC animated:YES];
 }
 
 - (void)leftBarItemClick {

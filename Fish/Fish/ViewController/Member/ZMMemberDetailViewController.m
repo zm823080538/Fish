@@ -8,9 +8,7 @@
 
 #import "ZMMemberDetailViewController.h"
 #import "UINavigationBar+Awesome.h"
-#import "ZMAccountManager.h"
 #import <RongIMKit/RongIMKit.h>
-#import "ZMMemberDetailRequest.h"
 
 @interface ZMMemberDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -44,7 +42,6 @@
     self.iconImageView.layer.borderWidth = 3;
     self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, CGRectGetMaxY(self.detailDescView.frame));
     [self configCollectionView];
-    [self request];
 }
 
 - (void)configCollectionView {
@@ -56,21 +53,6 @@
     [self.collectionView setCollectionViewLayout:flowLayout];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView reloadData];
-}
-
-- (void)request { 
-    ZMMemberDetailRequest *request = [[ZMMemberDetailRequest alloc] init];
-    request.tid = [ZMAccountManager shareManager].loginUser.id;
-    request.uid = self.member.id;
-    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self updateUI];
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-    }];
-}
-
-- (void)updateUI {
-    
 }
 
 - (void)rightBarItemClick {

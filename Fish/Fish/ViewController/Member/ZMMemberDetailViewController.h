@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZMMemberModel.h"
+
 @interface ZMMemberDetailViewController : UIViewController
-@property (nonatomic, strong) ZMMemberModel * member;
 
 @end
