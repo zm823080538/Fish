@@ -81,13 +81,6 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <connections>
-                <outlet property="ageButton" destination="FSK-cd-h3E" id="evi-rG-gVx"/>
-                <outlet property="distanceLabel" destination="Q2u-Gx-zmf" id="lXp-5o-HWf"/>
-                <outlet property="nameLabel" destination="svV-8P-0Rd" id="NMa-V7-da7"/>
-                <outlet property="statusLabel" destination="WDY-Af-vWg" id="G1B-Qu-oVR"/>
-                <outlet property="userIconImageView" destination="hLj-q4-XOT" id="n5j-dk-5fe"/>
-            </connections>
         </tableViewCell>
     </objects>
     <resources>

@@ -17,8 +17,4 @@
     return YTKRequestMethodPOST;
 }
 
-- (id)requestArgument {
-    return @{@"id": _requestId};
-}
-
 @end
