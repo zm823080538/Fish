@@ -8,6 +8,8 @@
 
 #import "ZMCourseListViewController.h"
 #import "ZMNearMememberCell.h"
+#import "ZMCourseListRequest.h"
+#import "ZMAccountManager.h"
 #import "ZMCourseDetailViewController.h"
 #import "UIViewController+YPTabBarController.h"
 @interface ZMCourseListViewController ()
@@ -24,7 +26,34 @@
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
+    
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self request];
+}
+
+- (void)request {
+        //        1关注2黑名单3已接单
+        NSString *status = @"";
+        if ([self.yp_tabItemTitle isEqualToString:@"进行中"]) {
+            status = @"1";
+        } else if ([self.yp_tabItemTitle isEqualToString:@"已结束"]) {
+            status = @"2";
+        }
+        ZMCourseListRequest *request = [[ZMCourseListRequest alloc] init];
+        request.tid = [ZMAccountManager shareManager].loginUser.id;
+        request.status = status;
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+//            self.dataSource = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"][@"list"]];
+            [self.tableView reloadData];
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            
+        }];
+}
+
+
 
 
 - (void)searchViewClick {

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMMemberModel.h"
 @interface ZMNearMememberCell : UITableViewCell
+@property (nonatomic, strong) ZMMemberModel * model;
 
 @end
