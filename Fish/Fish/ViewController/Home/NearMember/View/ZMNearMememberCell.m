@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *ageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *userIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *courseNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @end
 
 @implementation ZMNearMememberCell
@@ -27,8 +29,26 @@
     [self.ageButton setTitle:model.age forState:UIControlStateNormal];
     if ([model.sex isEqualToString:@"1"]) {
         [self.ageButton setImage:[UIImage imageNamed:@"nan"] forState:UIControlStateNormal];
+        [self.ageButton setBackgroundColor:UIColorFromRGB(0x82C9F9)];
     } else {
          [self.ageButton setImage:[UIImage imageNamed:@"nv"] forState:UIControlStateNormal];
+        [self.ageButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
+    }
+}
+
+- (void)setItem:(ZMCourseListItem *)item {
+    [self.userIconImageView setImageWithURL:[NSURL URLWithString:item.img] placeholder:PlaceholderImage];
+    self.distanceLabel.text = [NSString stringWithFormat:@"下次预约:%@",item.updateDate];
+    self.nameLabel.text = item.nickname;
+    self.statusLabel.text = item.coursetypenames;
+//    self.dateLabel.text = ;
+    [self.ageButton setTitle:item.ctype forState:UIControlStateNormal];
+    if ([item.sex isEqualToString:@"1"]) {
+        [self.ageButton setImage:[UIImage imageNamed:@"nan"] forState:UIControlStateNormal];
+        [self.ageButton setBackgroundColor:UIColorFromRGB(0x82C9F9)];
+    } else {
+        [self.ageButton setImage:[UIImage imageNamed:@"nv"] forState:UIControlStateNormal];
+        [self.ageButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
     }
 }
 

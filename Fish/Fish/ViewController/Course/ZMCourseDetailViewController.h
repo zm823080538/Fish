@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMCourseListModel.h"
 
 
 @interface ZMCourseDetailViewController : UIViewController
 @property (nonatomic, assign) NSInteger type; //0:进行中  1:已结束
+@property (nonatomic, strong) ZMCourseListItem * course;
+
 @end

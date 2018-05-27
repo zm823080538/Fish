@@ -8,6 +8,8 @@
 
 #import "ZMRecFriendViewController.h"
 #import "ZMInputTextField.h"
+#import "ZMRecFriendRequest.h"
+#import "ZMAccountManager.h"
 
 @interface ZMRecFriendViewController ()
 @property (nonatomic, strong) ZMInputTextField *nameTextField;
@@ -39,7 +41,16 @@
 }
 
 - (void)rightBarItemClick {
-    
+    ZMRecFriendRequest *recFriendRequest = [[ZMRecFriendRequest alloc] init];
+    recFriendRequest.userid = [ZMAccountManager shareManager].loginUser.id;
+    recFriendRequest.friendsname = self.nameTextField.textField.text;
+    recFriendRequest.friendsmoblie = self.phoneTextField.textField.text;
+    [recFriendRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 @end

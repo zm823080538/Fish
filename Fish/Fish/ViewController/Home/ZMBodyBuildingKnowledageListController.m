@@ -8,6 +8,8 @@
 
 #import "ZMBodyBuildingKnowledageListController.h"
 #import "ZMHomeBodyBuildingKnowledageCell.h"
+#import "ZMWebViewController.h"
+
 @interface ZMBodyBuildingKnowledageListController ()
 
 @end
@@ -32,6 +34,13 @@
     knowledageCell.item = self.arrayList.list[indexPath.row];
     return knowledageCell;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    ZMNewListItem *item = self.arrayList.list[indexPath.row];
+    webVC.item = item;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 @end

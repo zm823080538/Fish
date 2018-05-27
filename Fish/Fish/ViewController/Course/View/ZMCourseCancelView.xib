@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZMCourseDetailViewController">
+            <connections>
+                <outlet property="cancelTextView" destination="xXF-XE-JMQ" id="6bU-fU-PfL"/>
+                <outlet property="cancelView" destination="iN0-l3-epB" id="hMO-gN-xFa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Geb-cC-zgo">
+                    <rect key="frame" x="20" y="158.5" width="335" height="350"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="课程取消原因" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6h-nq-C0g">
+                            <rect key="frame" x="20" y="10" width="104" height="21"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8e-aY-V8X">
+                            <rect key="frame" x="304" y="5.5" width="16" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="JzO-EV-aCW"/>
+                            </constraints>
+                            <state key="normal" image="close">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="cancelCloseClick:" destination="-1" eventType="touchUpInside" id="sck-22-qNl"/>
+                            </connections>
+                        </button>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xXF-XE-JMQ">
+                            <rect key="frame" x="20" y="86" width="300" height="140"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="请输入取消原因"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                    <color key="value" red="0.73725490199999999" green="0.7843137255" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzt-t5-h1j">
+                            <rect key="frame" x="20" y="276" width="300" height="40"/>
+                            <color key="backgroundColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="COX-Qx-rJs"/>
+                            </constraints>
+                            <state key="normal" title="确定">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="cancelClick" destination="-1" eventType="touchUpInside" id="DsN-3g-ryr"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="D8e-aY-V8X" firstAttribute="centerY" secondItem="n6h-nq-C0g" secondAttribute="centerY" id="1R4-e8-Qz8"/>
+                        <constraint firstAttribute="trailing" secondItem="D8e-aY-V8X" secondAttribute="trailing" constant="15" id="Ffg-83-3MO"/>
+                        <constraint firstItem="n6h-nq-C0g" firstAttribute="leading" secondItem="Geb-cC-zgo" secondAttribute="leading" constant="20" id="Ijg-Nr-Jqi"/>
+                        <constraint firstItem="jzt-t5-h1j" firstAttribute="leading" secondItem="xXF-XE-JMQ" secondAttribute="leading" id="Zhf-Nv-uw1"/>
+                        <constraint firstItem="jzt-t5-h1j" firstAttribute="trailing" secondItem="xXF-XE-JMQ" secondAttribute="trailing" id="alm-A4-kpl"/>
+                        <constraint firstItem="jzt-t5-h1j" firstAttribute="top" secondItem="xXF-XE-JMQ" secondAttribute="bottom" constant="50" id="cbf-PI-Aas"/>
+                        <constraint firstAttribute="bottom" secondItem="jzt-t5-h1j" secondAttribute="bottom" constant="34" id="h1A-NT-il2"/>
+                        <constraint firstItem="n6h-nq-C0g" firstAttribute="top" secondItem="Geb-cC-zgo" secondAttribute="top" constant="10" id="l5b-gJ-AxM"/>
+                        <constraint firstItem="xXF-XE-JMQ" firstAttribute="leading" secondItem="n6h-nq-C0g" secondAttribute="leading" id="p9s-Cn-Us1"/>
+                        <constraint firstItem="xXF-XE-JMQ" firstAttribute="top" secondItem="n6h-nq-C0g" secondAttribute="bottom" constant="55" id="tCe-nO-yaJ"/>
+                        <constraint firstAttribute="height" constant="350" id="voy-lg-nQ0"/>
+                        <constraint firstItem="xXF-XE-JMQ" firstAttribute="trailing" secondItem="D8e-aY-V8X" secondAttribute="trailing" id="wDV-2K-Xe6"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Geb-cC-zgo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="JoU-ik-Wgk"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Geb-cC-zgo" secondAttribute="trailing" constant="20" id="Wlq-9E-y9G"/>
+                <constraint firstItem="Geb-cC-zgo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dfN-7R-OAH"/>
+                <constraint firstItem="Geb-cC-zgo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="sgd-eA-4Hi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="65.5" y="22.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="16" height="16"/>
+    </resources>
+</document>

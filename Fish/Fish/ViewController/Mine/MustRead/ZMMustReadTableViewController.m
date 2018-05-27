@@ -8,6 +8,7 @@
 
 #import "ZMMustReadTableViewController.h"
 #import "ZMPersonalModel.h"
+#import "ZMWebViewController.h"
 @interface ZMMustReadTableViewController ()
 
 @end
@@ -39,6 +40,28 @@
     [cell setPersonalModel:item];
     cell.style = item.style;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    教练必读-教练须知 - /h5/news/detail?id=xuzhi
+//    教练必读-岗位职责 /h5/news/detail?id=zhize
+//    教练必读-服务流程 - /h5/news/detail?id=liucheng
+//    教练必读-评价机制 - /h5/news/detail?id=jizhi
+    ZMPersonalModel *model = self.dataSource[indexPath.row];
+    ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    webVC.view.backgroundColor = [UIColor whiteColor];
+    webVC.title = model.title;
+    NSString *urlString;
+    if (indexPath.row == 0) {
+        
+        urlString = @"https://www.bjwork.xyz/h5/news/detail?id=zhize";
+    } else if (indexPath.row == 1) {
+        urlString = @"https://www.bjwork.xyz/h5/news/detail?id=liucheng";
+    } else if (indexPath.row == 2) {
+        urlString = @"https://www.bjwork.xyz/h5/news/detail?id=jizhi";
+    }
+    webVC.urlString = urlString;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 

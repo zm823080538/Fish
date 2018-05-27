@@ -21,7 +21,8 @@
     [self.contentImageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
     self.titleLabel.text = item.title;
     self.subTitleLabel.text = item.summary;
-    self.detailTextLabel.text = [NSString stringWithFormat:@"%@阅读",item.remarks];
+//    self.detailTextLabel.text = [NSString stringWithFormat:@"%@阅读",item.remarks];
+    self.detailTitleLabel.text = item.updateDate;
     
 }
 

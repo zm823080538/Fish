@@ -93,6 +93,19 @@
 		5D67B50B20B53E5600241F4E /* ZMMemberListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B50A20B53E5600241F4E /* ZMMemberListRequest.m */; };
 		5D67B50F20B54B5700241F4E /* ZMMemberDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B50E20B54B5700241F4E /* ZMMemberDetailRequest.m */; };
 		5D67B51420B5568D00241F4E /* ZMCourseListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B51320B5568D00241F4E /* ZMCourseListRequest.m */; };
+		5D67B54220B6E9D100241F4E /* ZMMemberDetailIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B54120B6E9D100241F4E /* ZMMemberDetailIModel.m */; };
+		5D67B56B20B8665A00241F4E /* ZMCourseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B56A20B8665A00241F4E /* ZMCourseListModel.m */; };
+		5D67B58220B963D400241F4E /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B56D20B963D300241F4E /* LTSCalendarDayItem.m */; };
+		5D67B58320B963D400241F4E /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B56F20B963D300241F4E /* LTSCalendarManager.m */; };
+		5D67B58420B963D400241F4E /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57120B963D300241F4E /* LTSCircleView.m */; };
+		5D67B58520B963D400241F4E /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57220B963D300241F4E /* LTSCalendarAppearance.m */; };
+		5D67B58620B963D400241F4E /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57520B963D300241F4E /* LTSCalendarContentView.m */; };
+		5D67B58720B963D400241F4E /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57620B963D300241F4E /* LTSCalendarViewController.m */; };
+		5D67B58820B963D400241F4E /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57720B963D300241F4E /* LTSCalendarCollectionCell.m */; };
+		5D67B58920B963D400241F4E /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57B20B963D300241F4E /* LTSCalendarScrollView.m */; };
+		5D67B58A20B963D400241F4E /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57E20B963D300241F4E /* LTSCalendarCollectionViewFlowLayout.m */; };
+		5D67B58B20B963D400241F4E /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B57F20B963D300241F4E /* LTSCalendarWeekDayView.m */; };
+		5D67B59620B9B4C900241F4E /* ZMCollectListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67B59520B9B4C900241F4E /* ZMCollectListRequest.m */; };
 		5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */; };
 		5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46D92090298D00CE2723 /* ZMAnimatingRequestAccessory.m */; };
 		5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A46E12090755B00CE2723 /* NSDictionary+ZMSet.m */; };
@@ -116,7 +129,6 @@
 		5DA07E4C20AFEF06007C94C8 /* ZMMemberResultItemTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4A20AFEF06007C94C8 /* ZMMemberResultItemTableCell.m */; };
 		5DA07E4D20AFEF06007C94C8 /* ZMMemberResultItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA07E4B20AFEF06007C94C8 /* ZMMemberResultItemTableCell.xib */; };
 		5DA07E5420B00D22007C94C8 /* ZMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E5220B00D22007C94C8 /* ZMCalendarViewController.m */; };
-		5DA07E5520B00D22007C94C8 /* ZMCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA07E5320B00D22007C94C8 /* ZMCalendarViewController.xib */; };
 		5DA07EA620B01C8B007C94C8 /* LTHMonthYearPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07EA520B01C8A007C94C8 /* LTHMonthYearPickerView.m */; };
 		5DA7D9DA20B456A900E0181B /* ZMCollectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7D9D920B456A900E0181B /* ZMCollectRequest.m */; };
 		5DA7D9DE20B45D1600E0181B /* ZMMemberSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7D9DD20B45D1600E0181B /* ZMMemberSearchRequest.m */; };
@@ -154,6 +166,10 @@
 		5DAD85EC20B3247200622DF4 /* ZMGoodAtFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85DB20B3247200622DF4 /* ZMGoodAtFieldViewController.m */; };
 		5DAD85ED20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85DD20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m */; };
 		5DAD85EE20B3247200622DF4 /* ZMTQCerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAD85DF20B3247200622DF4 /* ZMTQCerViewController.m */; };
+		5DAFBA2F20BA8DE500AA259F /* ZMMemberHandleRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFBA2E20BA8DE500AA259F /* ZMMemberHandleRequest.m */; };
+		5DAFBA3220BA9E8000AA259F /* ZMCourseDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFBA3120BA9E8000AA259F /* ZMCourseDetailRequest.m */; };
+		5DAFBA3520BAA42F00AA259F /* ZMCourseCancelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DAFBA3420BAA42F00AA259F /* ZMCourseCancelView.xib */; };
+		5DAFBA3820BAACB400AA259F /* ZMCourseCancelRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAFBA3720BAACB400AA259F /* ZMCourseCancelRequest.m */; };
 		5DC5CBAD20784FA700F3C0D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */; };
 		5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB420784FA700F3C0D6 /* Assets.xcassets */; };
 		5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC5CBB620784FA700F3C0D6 /* LaunchScreen.storyboard */; };
@@ -346,6 +362,33 @@
 		5D67B50E20B54B5700241F4E /* ZMMemberDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberDetailRequest.m; sourceTree = "<group>"; };
 		5D67B51220B5568D00241F4E /* ZMCourseListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseListRequest.h; sourceTree = "<group>"; };
 		5D67B51320B5568D00241F4E /* ZMCourseListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseListRequest.m; sourceTree = "<group>"; };
+		5D67B54020B6E9D100241F4E /* ZMMemberDetailIModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMemberDetailIModel.h; sourceTree = "<group>"; };
+		5D67B54120B6E9D100241F4E /* ZMMemberDetailIModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberDetailIModel.m; sourceTree = "<group>"; };
+		5D67B56920B8665A00241F4E /* ZMCourseListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseListModel.h; sourceTree = "<group>"; };
+		5D67B56A20B8665A00241F4E /* ZMCourseListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseListModel.m; sourceTree = "<group>"; };
+		5D67B56D20B963D300241F4E /* LTSCalendarDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarDayItem.m; sourceTree = "<group>"; };
+		5D67B56E20B963D300241F4E /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
+		5D67B56F20B963D300241F4E /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
+		5D67B57020B963D300241F4E /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
+		5D67B57120B963D300241F4E /* LTSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCircleView.m; sourceTree = "<group>"; };
+		5D67B57220B963D300241F4E /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
+		5D67B57320B963D300241F4E /* LTSCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarWeekDayView.h; sourceTree = "<group>"; };
+		5D67B57420B963D300241F4E /* LTSCalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		5D67B57520B963D300241F4E /* LTSCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarContentView.m; sourceTree = "<group>"; };
+		5D67B57620B963D300241F4E /* LTSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarViewController.m; sourceTree = "<group>"; };
+		5D67B57720B963D300241F4E /* LTSCalendarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionCell.m; sourceTree = "<group>"; };
+		5D67B57820B963D300241F4E /* LTSCalendarDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarDayItem.h; sourceTree = "<group>"; };
+		5D67B57920B963D300241F4E /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
+		5D67B57A20B963D300241F4E /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
+		5D67B57B20B963D300241F4E /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
+		5D67B57C20B963D300241F4E /* LTSCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarManager.h; sourceTree = "<group>"; };
+		5D67B57D20B963D300241F4E /* LTSCalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarContentView.h; sourceTree = "<group>"; };
+		5D67B57E20B963D300241F4E /* LTSCalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		5D67B57F20B963D300241F4E /* LTSCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarWeekDayView.m; sourceTree = "<group>"; };
+		5D67B58020B963D300241F4E /* LTSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarViewController.h; sourceTree = "<group>"; };
+		5D67B58120B963D300241F4E /* LTSCalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarEventSource.h; sourceTree = "<group>"; };
+		5D67B59420B9B4C900241F4E /* ZMCollectListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCollectListRequest.h; sourceTree = "<group>"; };
+		5D67B59520B9B4C900241F4E /* ZMCollectListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCollectListRequest.m; sourceTree = "<group>"; };
 		5D8A46C5209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTKBaseRequest+ZMAnimatingAccessory.h"; sourceTree = "<group>"; };
 		5D8A46C6209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "YTKBaseRequest+ZMAnimatingAccessory.m"; sourceTree = "<group>"; };
 		5D8A46D82090298D00CE2723 /* ZMAnimatingRequestAccessory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAnimatingRequestAccessory.h; sourceTree = "<group>"; };
@@ -390,7 +433,6 @@
 		5DA07E4B20AFEF06007C94C8 /* ZMMemberResultItemTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMMemberResultItemTableCell.xib; sourceTree = "<group>"; };
 		5DA07E5120B00D22007C94C8 /* ZMCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCalendarViewController.h; sourceTree = "<group>"; };
 		5DA07E5220B00D22007C94C8 /* ZMCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCalendarViewController.m; sourceTree = "<group>"; };
-		5DA07E5320B00D22007C94C8 /* ZMCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMCalendarViewController.xib; sourceTree = "<group>"; };
 		5DA07EA420B01C8A007C94C8 /* LTHMonthYearPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTHMonthYearPickerView.h; sourceTree = "<group>"; };
 		5DA07EA520B01C8A007C94C8 /* LTHMonthYearPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTHMonthYearPickerView.m; sourceTree = "<group>"; };
 		5DA7D9D820B456A900E0181B /* ZMCollectRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCollectRequest.h; sourceTree = "<group>"; };
@@ -455,6 +497,13 @@
 		5DAD85DD20B3247200622DF4 /* ZMSuccessDemoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMSuccessDemoCollectionViewController.m; sourceTree = "<group>"; };
 		5DAD85DE20B3247200622DF4 /* ZMTQCerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTQCerViewController.h; sourceTree = "<group>"; };
 		5DAD85DF20B3247200622DF4 /* ZMTQCerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTQCerViewController.m; sourceTree = "<group>"; };
+		5DAFBA2D20BA8DE500AA259F /* ZMMemberHandleRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMMemberHandleRequest.h; sourceTree = "<group>"; };
+		5DAFBA2E20BA8DE500AA259F /* ZMMemberHandleRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMMemberHandleRequest.m; sourceTree = "<group>"; };
+		5DAFBA3020BA9E8000AA259F /* ZMCourseDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseDetailRequest.h; sourceTree = "<group>"; };
+		5DAFBA3120BA9E8000AA259F /* ZMCourseDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseDetailRequest.m; sourceTree = "<group>"; };
+		5DAFBA3420BAA42F00AA259F /* ZMCourseCancelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMCourseCancelView.xib; sourceTree = "<group>"; };
+		5DAFBA3620BAACB400AA259F /* ZMCourseCancelRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseCancelRequest.h; sourceTree = "<group>"; };
+		5DAFBA3720BAACB400AA259F /* ZMCourseCancelRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseCancelRequest.m; sourceTree = "<group>"; };
 		5DC5CBA820784FA600F3C0D6 /* Fish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC5CBAB20784FA700F3C0D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DC5CBAC20784FA700F3C0D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -813,6 +862,8 @@
 		5D5BB2A120A7051A0067709B /* MemberApply */ = {
 			isa = PBXGroup;
 			children = (
+				5D67B59720B9B67B00241F4E /* New Group */,
+				5D67B59320B9B4B600241F4E /* DAO */,
 				5D5BB2A820A705BF0067709B /* View */,
 				5D5BB2A220A705380067709B /* ZMMemberApplyViewController.h */,
 				5D5BB2A320A705380067709B /* ZMMemberApplyViewController.m */,
@@ -888,6 +939,8 @@
 			children = (
 				5D67B50620B512E200241F4E /* ZMMemberModel.h */,
 				5D67B50720B512E200241F4E /* ZMMemberModel.m */,
+				5D67B54020B6E9D100241F4E /* ZMMemberDetailIModel.h */,
+				5D67B54120B6E9D100241F4E /* ZMMemberDetailIModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -895,6 +948,8 @@
 		5D67B51020B5566900241F4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5D67B56920B8665A00241F4E /* ZMCourseListModel.h */,
+				5D67B56A20B8665A00241F4E /* ZMCourseListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -904,8 +959,56 @@
 			children = (
 				5D67B51220B5568D00241F4E /* ZMCourseListRequest.h */,
 				5D67B51320B5568D00241F4E /* ZMCourseListRequest.m */,
+				5DAFBA3020BA9E8000AA259F /* ZMCourseDetailRequest.h */,
+				5DAFBA3120BA9E8000AA259F /* ZMCourseDetailRequest.m */,
+				5DAFBA3620BAACB400AA259F /* ZMCourseCancelRequest.h */,
+				5DAFBA3720BAACB400AA259F /* ZMCourseCancelRequest.m */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		5D67B56C20B963D300241F4E /* LTSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				5D67B56D20B963D300241F4E /* LTSCalendarDayItem.m */,
+				5D67B56E20B963D300241F4E /* LTSCalendarCollectionCell.h */,
+				5D67B56F20B963D300241F4E /* LTSCalendarManager.m */,
+				5D67B57020B963D300241F4E /* LTSCalendarScrollView.h */,
+				5D67B57120B963D300241F4E /* LTSCircleView.m */,
+				5D67B57220B963D300241F4E /* LTSCalendarAppearance.m */,
+				5D67B57320B963D300241F4E /* LTSCalendarWeekDayView.h */,
+				5D67B57420B963D300241F4E /* LTSCalendarCollectionViewFlowLayout.h */,
+				5D67B57520B963D300241F4E /* LTSCalendarContentView.m */,
+				5D67B57620B963D300241F4E /* LTSCalendarViewController.m */,
+				5D67B57720B963D300241F4E /* LTSCalendarCollectionCell.m */,
+				5D67B57820B963D300241F4E /* LTSCalendarDayItem.h */,
+				5D67B57920B963D300241F4E /* LTSCalendarAppearance.h */,
+				5D67B57A20B963D300241F4E /* LTSCircleView.h */,
+				5D67B57B20B963D300241F4E /* LTSCalendarScrollView.m */,
+				5D67B57C20B963D300241F4E /* LTSCalendarManager.h */,
+				5D67B57D20B963D300241F4E /* LTSCalendarContentView.h */,
+				5D67B57E20B963D300241F4E /* LTSCalendarCollectionViewFlowLayout.m */,
+				5D67B57F20B963D300241F4E /* LTSCalendarWeekDayView.m */,
+				5D67B58020B963D300241F4E /* LTSCalendarViewController.h */,
+				5D67B58120B963D300241F4E /* LTSCalendarEventSource.h */,
+			);
+			path = LTSCalendar;
+			sourceTree = "<group>";
+		};
+		5D67B59320B9B4B600241F4E /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				5D67B59420B9B4C900241F4E /* ZMCollectListRequest.h */,
+				5D67B59520B9B4C900241F4E /* ZMCollectListRequest.m */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		5D67B59720B9B67B00241F4E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		5D8A46D72090297400CE2723 /* Accessory */ = {
@@ -928,6 +1031,7 @@
 		5D8A46E62090797900CE2723 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				5D67B56C20B963D300241F4E /* LTSCalendar */,
 				5DAD856D20B1B56E00622DF4 /* LZCityPickerClass */,
 				5DA07EA320B01C8A007C94C8 /* LTHMonthYearPickerView */,
 				5D2F7CEB209D9411007B3812 /* YPTabBarController */,
@@ -986,6 +1090,8 @@
 				5D67B50A20B53E5600241F4E /* ZMMemberListRequest.m */,
 				5D67B50D20B54B5700241F4E /* ZMMemberDetailRequest.h */,
 				5D67B50E20B54B5700241F4E /* ZMMemberDetailRequest.m */,
+				5DAFBA2D20BA8DE500AA259F /* ZMMemberHandleRequest.h */,
+				5DAFBA2E20BA8DE500AA259F /* ZMMemberHandleRequest.m */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -1081,6 +1187,14 @@
 				5DAD85CD20B3247200622DF4 /* ZMFieldCollectionViewCell.xib */,
 				5DAD85CE20B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib */,
 				5DAD85CF20B3247200622DF4 /* ZMSuccessDemoSectionHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5DAFBA3320BAA41C00AA259F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5DAFBA3420BAA42F00AA259F /* ZMCourseCancelView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1192,6 +1306,7 @@
 		5DC5CBCA2078523000F3C0D6 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				5DAFBA3320BAA41C00AA259F /* View */,
 				5D67B51120B5566E00241F4E /* DAO */,
 				5D67B51020B5566900241F4E /* Model */,
 				5DC5CBCB2078523000F3C0D6 /* ZMCourseViewController.m */,
@@ -1200,7 +1315,6 @@
 				5D2F7D11209EA3EC007B3812 /* ZMCourseListViewController.m */,
 				5DA07E5120B00D22007C94C8 /* ZMCalendarViewController.h */,
 				5DA07E5220B00D22007C94C8 /* ZMCalendarViewController.m */,
-				5DA07E5320B00D22007C94C8 /* ZMCalendarViewController.xib */,
 				5DAD856520B1786300622DF4 /* ZMCourseDetailViewController.h */,
 				5DAD856620B1786300622DF4 /* ZMCourseDetailViewController.m */,
 				5DAD856720B1786300622DF4 /* ZMCourseDetailViewController.xib */,
@@ -1394,7 +1508,6 @@
 				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
 				5D2F7CAA209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib in Resources */,
 				5DAD857520B1B56E00622DF4 /* Address.plist in Resources */,
-				5DA07E5520B00D22007C94C8 /* ZMCalendarViewController.xib in Resources */,
 				5D5BB2DA20AC6EEF0067709B /* ZMLessTimeSettingCell.xib in Resources */,
 				5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */,
 				5D8A472A209301E900CE2723 /* ZMFeedbackViewController.xib in Resources */,
@@ -1411,6 +1524,7 @@
 				5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */,
 				5DC5CBB520784FA700F3C0D6 /* Assets.xcassets in Resources */,
 				5D2F7CE6209D8556007B3812 /* ZMNearMememberCell.xib in Resources */,
+				5DAFBA3520BAA42F00AA259F /* ZMCourseCancelView.xib in Resources */,
 				5D2F7CAF209C3079007B3812 /* ZMExerciseResultCell.xib in Resources */,
 				5DAD85E420B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib in Resources */,
 				5D5BB2CB20A847880067709B /* ZMMemberDetailViewController.xib in Resources */,
@@ -1435,6 +1549,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Fish/Pods-Fish-resources.sh",
+				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/RongCloud.bundle",
 				"${PODS_ROOT}/RongCloudIMKit/Rong_Cloud_iOS_IMKit_SDK_v2_7_3_stable/en.lproj",
@@ -1444,6 +1559,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
@@ -1488,6 +1604,7 @@
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
 				5DAD856820B1786300622DF4 /* ZMCourseDetailViewController.m in Sources */,
 				5D5BB2BD20A7E9D20067709B /* ZMSettingTableViewController.m in Sources */,
+				5D67B59620B9B4C900241F4E /* ZMCollectListRequest.m in Sources */,
 				5D8A471B2092B7DD00CE2723 /* ZMRecFriendRequest.m in Sources */,
 				5D8A471E2092B8BE00CE2723 /* ZMSaveAuthRequest.m in Sources */,
 				5DAD858B20B2F9F900622DF4 /* ZMNewsListRequest.m in Sources */,
@@ -1498,11 +1615,15 @@
 				5DC5CBE32078523000F3C0D6 /* LLBaseViewController.m in Sources */,
 				5D67B51420B5568D00241F4E /* ZMCourseListRequest.m in Sources */,
 				5D5BB248208B8ADA0067709B /* ZMLoginRequest.m in Sources */,
+				5D67B58B20B963D400241F4E /* LTSCalendarWeekDayView.m in Sources */,
 				5D2F7CA9209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m in Sources */,
+				5D67B58A20B963D400241F4E /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,
+				5DAFBA3220BA9E8000AA259F /* ZMCourseDetailRequest.m in Sources */,
 				5D5BB2302088EEAF0067709B /* ZMMineModel.m in Sources */,
 				5D2F7CBC209D6FE4007B3812 /* ZMHomeSectionView.m in Sources */,
 				5D2F7CFA209D9411007B3812 /* UIViewController+YPTabBarController.m in Sources */,
+				5D67B58620B963D400241F4E /* LTSCalendarContentView.m in Sources */,
 				5DAD85EB20B3247200622DF4 /* ZMGiveLessonViewController.m in Sources */,
 				5D5C197520A2D5B3005422E5 /* UINavigationBar+Awesome.m in Sources */,
 				5D5BB2E020AC78E30067709B /* ZMLessonDaySettingController.m in Sources */,
@@ -1526,14 +1647,19 @@
 				5D5BB2ED20ADA9020067709B /* ZMPrivacyListViewController.m in Sources */,
 				5D5C198120A2E140005422E5 /* ZMSearchButton.m in Sources */,
 				5D2F7D06209E9035007B3812 /* UIButton+YPKit.m in Sources */,
+				5D67B58220B963D400241F4E /* LTSCalendarDayItem.m in Sources */,
 				5DAD85E220B3247200622DF4 /* ZMFieldCollectionViewCell.m in Sources */,
 				5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */,
+				5D67B58320B963D400241F4E /* LTSCalendarManager.m in Sources */,
 				5DAD857720B1B56E00622DF4 /* LZCityPickerView.m in Sources */,
+				5DAFBA3820BAACB400AA259F /* ZMCourseCancelRequest.m in Sources */,
 				5D2F7CAE209C3079007B3812 /* ZMExerciseResultCell.m in Sources */,
+				5D67B54220B6E9D100241F4E /* ZMMemberDetailIModel.m in Sources */,
 				5D2F7D03209D9503007B3812 /* ZMMessageListController.m in Sources */,
 				5DAD858120B2F42600622DF4 /* ZMChangePwdViewController.m in Sources */,
 				5D5BB2AC20A705D60067709B /* ZMMemberApplyCell.m in Sources */,
 				5D8A47152092B35400CE2723 /* ZMUserEditRequest.m in Sources */,
+				5D67B58420B963D400241F4E /* LTSCircleView.m in Sources */,
 				5D5BB2D320AC6E3A0067709B /* ZMLessonTimeSettingController.m in Sources */,
 				5D2F7CF6209D9411007B3812 /* YPTabItem.m in Sources */,
 				5D2F7CFD209D9482007B3812 /* ZMMessageViewController.m in Sources */,
@@ -1575,9 +1701,11 @@
 				5D343F89207BC345006F8616 /* ChooseRoleViewController.m in Sources */,
 				5D5BB2D920AC6EEF0067709B /* ZMLessTimeSettingCell.m in Sources */,
 				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
+				5D67B58520B963D400241F4E /* LTSCalendarAppearance.m in Sources */,
 				5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */,
 				5D2F7D12209EA3EC007B3812 /* ZMCourseListViewController.m in Sources */,
 				5DAD85E720B3247200622DF4 /* ZMExerciseMaximViewController.m in Sources */,
+				5D67B56B20B8665A00241F4E /* ZMCourseListModel.m in Sources */,
 				5D5BB2A420A705380067709B /* ZMMemberApplyViewController.m in Sources */,
 				5D2F7CF7209D9411007B3812 /* UIScrollView+YPTabBarController.m in Sources */,
 				5D2F7D09209E91EA007B3812 /* NSString+YPKit.m in Sources */,
@@ -1591,15 +1719,18 @@
 				5D343F78207BB62E006F8616 /* UIColor+Hex.m in Sources */,
 				5D5C198520A2F199005422E5 /* ZspMenu.m in Sources */,
 				5D5BB24E208E26930067709B /* ZMVerfiyCodeRequest.m in Sources */,
+				5D67B58820B963D400241F4E /* LTSCalendarCollectionCell.m in Sources */,
 				5D67B50F20B54B5700241F4E /* ZMMemberDetailRequest.m in Sources */,
 				5D2F7CF8209D9411007B3812 /* YPTabBarController.m in Sources */,
 				5DAD857C20B1C82B00622DF4 /* ZMBindAliPayViewController.m in Sources */,
 				5DAD85E020B3247200622DF4 /* ZMFieldModel.m in Sources */,
 				5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */,
+				5D67B58720B963D400241F4E /* LTSCalendarViewController.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
 				5D2F7CB3209C30C3007B3812 /* ZMMemberResultItemCell.m in Sources */,
 				5D8A46E5209078B300CE2723 /* YPImagePicker.m in Sources */,
 				5D8A46C7209019C000CE2723 /* YTKBaseRequest+ZMAnimatingAccessory.m in Sources */,
+				5D67B58920B963D400241F4E /* LTSCalendarScrollView.m in Sources */,
 				5DA07E4C20AFEF06007C94C8 /* ZMMemberResultItemTableCell.m in Sources */,
 				5D5BB22C2088E7E70067709B /* PersonalInfoCell.m in Sources */,
 				5DAD859220B3130800622DF4 /* ZMNewDetailRequest.m in Sources */,
@@ -1608,6 +1739,7 @@
 				5DAD856C20B19A1700622DF4 /* ZMScanViewController.m in Sources */,
 				5D67B50820B512E200241F4E /* ZMMemberModel.m in Sources */,
 				5D5BB2282088E7910067709B /* PersonalInfoViewController.m in Sources */,
+				5DAFBA2F20BA8DE500AA259F /* ZMMemberHandleRequest.m in Sources */,
 				5D5BB2CF20AC5BDB0067709B /* ZMMineTableViewCell.m in Sources */,
 				5D5BB25F208E39400067709B /* ZMUpLoadRequest.m in Sources */,
 			);
@@ -1758,8 +1890,9 @@
 				DEVELOPMENT_TEAM = VZ89FJ7599;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongdongkeji.wangwangsocial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.bodyBuilding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1774,8 +1907,9 @@
 				DEVELOPMENT_TEAM = VZ89FJ7599;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Fish/LLRiseTabBarDemo.pch";
 				INFOPLIST_FILE = Fish/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dongdongkeji.wangwangsocial;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sunny.bodyBuilding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

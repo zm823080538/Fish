@@ -16,4 +16,11 @@
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
 }
+
+- (id)requestArgument {
+   return @{@"id":_id,
+      @"userid":_userid,
+      @"action":_action
+      };
+}
 @end

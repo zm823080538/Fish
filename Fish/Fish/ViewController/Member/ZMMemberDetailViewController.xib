@@ -13,9 +13,11 @@
             <connections>
                 <outlet property="addressLabel" destination="yL4-KB-nLU" id="UMn-ae-Hxu"/>
                 <outlet property="ageLabel" destination="Gsw-Qk-mBg" id="j3a-xr-f8t"/>
+                <outlet property="collectBtn" destination="lr7-Bt-hYA" id="LcY-7D-Z0h"/>
                 <outlet property="collectionView" destination="az3-Zx-FDf" id="Nni-dZ-LbS"/>
                 <outlet property="daixieLabel" destination="lGe-eE-mZq" id="ZYz-ws-4oB"/>
                 <outlet property="detailDescView" destination="6wv-PA-KhF" id="v7Z-yh-wDi"/>
+                <outlet property="detailDescriptionLabel" destination="6aU-ps-E42" id="erl-rc-ulq"/>
                 <outlet property="iconImageView" destination="QEb-p8-vzN" id="Rhl-zw-Wey"/>
                 <outlet property="nameLabel" destination="AEi-hh-bPr" id="ORQ-XR-JL7"/>
                 <outlet property="percentQualityLabel" destination="5Us-gc-bfY" id="laN-jJ-UxV"/>
@@ -25,6 +27,7 @@
                 <outlet property="tallLabel" destination="57g-rJ-58M" id="lxy-Ex-9rT"/>
                 <outlet property="tiziLabel" destination="boW-LB-sTT" id="LKW-Hh-Nyp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weiduLabel" destination="qfd-bo-t2C" id="Cp7-nw-2QU"/>
                 <outlet property="weightLabel" destination="eTf-tg-jyo" id="DVC-EL-3Jp"/>
             </connections>
         </placeholder>
@@ -348,6 +351,7 @@
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <state key="normal" title="关注"/>
+                            <state key="selected" title="已关注"/>
                             <connections>
                                 <action selector="concernClick:" destination="-1" eventType="touchUpInside" id="eXA-2a-Uzh"/>
                             </connections>

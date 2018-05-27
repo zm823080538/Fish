@@ -16,7 +16,10 @@
 #import "LLBaseNavViewController.h"
 #import <YTKNetworkConfig.h>
 #import <RongCloudIMKit/RongIMKit/RongIMKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
 //#import <IQKeyboardManager.h>
+
+//AMAP KEY
 
 @interface AppDelegate () <LLTabBarDelegate, UIActionSheetDelegate>
 
@@ -28,7 +31,9 @@
     // Override point for customization after application launch.
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://www.bjwork.xyz";
-     [[RCIM sharedRCIM] initWithAppKey:@"kj7swf8ok1mu2"];
+     [[RCIM sharedRCIM] initWithAppKey:@"c9kqb3rdcopfj"];
+    [AMapServices sharedServices].apiKey = @"6f3819137dfef01b9150fd93b3d35328";
+
 //    [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_CYCLE;
 //    [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_CYCLE;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

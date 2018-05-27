@@ -15,8 +15,9 @@ target 'Fish' do
     pod 'PNChart'
      pod 'DZNEmptyDataSet', '~> 1.8.1'
      pod 'RongCloudIMKit', '~> 2.7.3.1'
-     pod 'JTCalendar', '~> 2.0'
+     pod 'FSCalendar'
      pod 'JPush', '3.0.2'
      pod 'SDCycleScrollView', '~> 1.66'
      pod 'MJRefresh', '~> 3.1.12'
+     pod 'AMap3DMap'
 end

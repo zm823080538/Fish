@@ -11,7 +11,7 @@
 
 typedef void(^ClickBlock)(void);
 
-@interface ZMPersonalModel : ZMMineModel
+@interface ZMPersonalModel : ZMMineModel 
 @property (nonatomic, copy) NSString *subTitle;
 @property (nonatomic, assign) PersonalInfoCellStyle style;
 @property (nonatomic, copy) ClickBlock clickBlock;

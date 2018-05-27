@@ -8,6 +8,7 @@
 
 #import "ZMMemberResultListController.h"
 #import "ZMMemberResultItemTableCell.h"
+#import "ZMWebViewController.h"
 
 @interface ZMMemberResultListController ()
 
@@ -34,5 +35,12 @@
     memberResultItemCell.item = self.arrayList.list[indexPath.row];
     return memberResultItemCell;
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    ZMNewListItem *item = self.arrayList.list[indexPath.row];
+    webVC.item = item;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 @end

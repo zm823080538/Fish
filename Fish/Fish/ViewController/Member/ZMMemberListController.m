@@ -10,6 +10,7 @@
 #import "ZMNearMememberCell.h"
 #import "UIViewController+YPTabBarController.h"
 #import <ReactiveObjC.h>
+#import <MJRefresh.h>
 #import "SSSearchBar.h"
 #import <UIView+YYAdd.h>
 #import <NSObject+YYModel.h>
@@ -19,9 +20,11 @@
 #import "ZMAccountManager.h"
 #import "ZMMemberListRequest.h"
 #import "ZMMemberModel.h"
-@interface ZMMemberListController () <UISearchBarDelegate>
+@interface ZMMemberListController ()
 @property (nonatomic, strong) SSSearchBar *searchBar;
-@property (nonatomic, strong) NSArray * dataSource;
+@property (nonatomic, strong) NSMutableArray * dataSource;
+@property (nonatomic, assign) NSInteger currentPage;
+
 
 @end
 
@@ -29,13 +32,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.searchBar = [[SSSearchBar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
-    self.searchBar.delegate = self;
+    UIButton *searchBgButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    searchBgButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
+    [searchBgButton addTarget:self action:@selector(searchClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.searchBar = [[SSSearchBar alloc] initWithFrame:searchBgButton.bounds];
+    [searchBgButton addSubview:self.searchBar];
+    self.searchBar.userInteractionEnabled = NO;
     self.tableView.showsVerticalScrollIndicator = NO;
-    self.tableView.tableHeaderView = self.searchBar;
+    self.tableView.tableHeaderView = searchBgButton;
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
-    
+    self.dataSource = @[].mutableCopy;
+    self.currentPage = 1;
+    if ([self.yp_tabItemTitle isEqualToString:@"附近会员"]) {
+        self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(request)];
+    }
+}
+
+- (void)searchClick {
+    ZMMemberSearchViewController *memberSearchVC = [[ZMMemberSearchViewController alloc] init];
+    [self.navigationController pushViewController:memberSearchVC animated:YES];
+}
+
+
+
+- (void)btnClick {
+    ZMMemberSearchViewController *memberSearchVC = [[ZMMemberSearchViewController alloc] init];
+    [self.navigationController pushViewController:memberSearchVC animated:YES];
 }
 
 - (void)request {
@@ -43,8 +67,14 @@
         ZMMemberSearchRequest *request = [[ZMMemberSearchRequest alloc] init];
         request.requestId = [ZMAccountManager shareManager].loginUser.id;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            self.dataSource = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"][@"list"]];
-            [self.tableView reloadData];
+            NSArray *list = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"][@"list"]];
+            NSInteger totalPage = [request.responseObject[@"data"][@"totalPage"] intValue];
+                [self.dataSource addObjectsFromArray:list];
+                [self.tableView reloadData];
+            self.currentPage ++;
+            if (self.currentPage == totalPage) {
+                [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            }
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
         }];
@@ -62,8 +92,11 @@
         request.requestId = [ZMAccountManager shareManager].loginUser.id;
         request.status = status;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-            self.dataSource = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"][@"list"]];
-            [self.tableView reloadData];
+            if (request.responseObject[@"data"]) {
+                self.dataSource = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"]].mutableCopy;
+                [self.tableView reloadData];
+            }
+           
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
         }];
@@ -83,7 +116,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.searchBar resignFirstResponder];
+//    [self.searchBar resignFirstResponder];
 }
 
 - (void)loadData:(NSArray *)data {
@@ -115,13 +148,5 @@
     memberDetailVC.member = self.dataSource[indexPath.row];
     [self.navigationController pushViewController:memberDetailVC animated:YES];
 }
-
-- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar {
-    ZMMemberSearchViewController *memberSearchVC = [[ZMMemberSearchViewController alloc] init];
-    [self.navigationController pushViewController:memberSearchVC animated:YES];
-    return NO;
-}
-
-
 
 @end

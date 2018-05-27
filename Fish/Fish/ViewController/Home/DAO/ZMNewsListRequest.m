@@ -10,7 +10,9 @@
 
 @implementation ZMNewsListRequest
 
-
+- (NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary {
+    return @{@"Content-Type":@"application/x-www-form-urlencoded"};
+}
 
 - (NSString *)requestUrl {
     return @"/api/news/list";
@@ -18,6 +20,12 @@
 
 - (YTKRequestMethod)requestMethod {
     return YTKRequestMethodPOST;
+}
+
+- (id)requestArgument {
+    return @{@"type": _type,
+             @"userid":_userid
+             };
 }
 
 @end

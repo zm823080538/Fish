@@ -52,10 +52,15 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="leftImageView" destination="Cew-0w-eje" id="RKb-bV-CE2"/>
+                <outlet property="nameLabel" destination="VKk-LZ-gcA" id="JQd-Wf-bdN"/>
+                <outlet property="titleLabel" destination="GPs-9q-p2a" id="WMu-q9-nLS"/>
+            </connections>
             <point key="canvasLocation" x="-123" y="-13"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Bitmap" width="375" height="667"/>
+        <image name="Bitmap" width="145" height="195"/>
     </resources>
 </document>

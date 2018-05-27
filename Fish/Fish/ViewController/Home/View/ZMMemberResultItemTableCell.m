@@ -25,5 +25,7 @@
     [self.bigImageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
     [self.iconImageView setImageWithURL:[NSURL URLWithString:item.userimg] placeholder:PlaceholderImage];
     self.titleLabel.text = item.title;
+    self.dateLabel.text = item.updateDate;
+    self.leftLabel.text = item.nickname;
 }
 @end

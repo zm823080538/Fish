@@ -8,10 +8,12 @@
 
 #import "ZMMemberViewController.h"
 #import "ZMMessageViewController.h"
+#import "ZMScanViewController.h"
 #import "ZMMemberListController.h"
 #import <SDCycleScrollView.h>
 #import "ZMNewsListRequest.h"
 #import "ZMNewList.h"
+#import "ZMAccountManager.h"
 #import <NSObject+YYModel.h>
 #import "ZMWebViewController.h"
 @interface ZMMemberViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,SDCycleScrollViewDelegate>
@@ -39,6 +41,7 @@
 
 - (void)request {
     ZMNewsListRequest *newsListRequest1 = [[ZMNewsListRequest alloc] init];
+    newsListRequest1.userid = [ZMAccountManager shareManager].loginUser.id;
     newsListRequest1.type = @"5";
     [newsListRequest1 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
          self.bannerList = [ZMNewList modelWithJSON:request.responseObject[@"data"]];
@@ -75,7 +78,6 @@
     NSMutableArray *viewControllers = @[].mutableCopy;
     for (int i = 0; i < 4; i ++) {
         ZMMemberListController *listVC = [[ZMMemberListController alloc] init];
-        listVC.view.backgroundColor = [UIColor whiteColor];
         if (i == 0) {
             listVC.yp_tabItemTitle =@"附近会员";
         } else if (i == 1){
@@ -85,13 +87,16 @@
         } else {
             listVC.yp_tabItemTitle =@"黑名单";
         }
+        listVC.view.backgroundColor = [UIColor whiteColor];
         [viewControllers addObject:listVC];
     }
     self.viewControllers = viewControllers;
 }
 
 - (void)rightBarItem1Click {
-    
+    ZMScanViewController *scannerVC = [ZMScanViewController new];
+    scannerVC.title = @"扫一扫";
+    [self.navigationController pushViewController:scannerVC animated:YES];
 }
 
 - (void)leftBarItemClick {

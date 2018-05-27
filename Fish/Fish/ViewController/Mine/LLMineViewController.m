@@ -19,6 +19,7 @@
 #import "ZMMessageViewController.h"
 #import "UINavigationBar+Awesome.h"
 #import <RongIMKit/RongIMKit.h>
+#import "ZMSettingTableViewController.h"
 #import "ZMCalendarViewController.h"
 #import "PersonalInfoViewController.h"
 
@@ -59,8 +60,8 @@
 }
 
 - (void)rightBarItem1Click {
-    ZMCalendarViewController *scheduleVC = [[ZMCalendarViewController alloc] init];
-    [self.navigationController pushViewController:scheduleVC animated:YES];
+    ZMSettingTableViewController *settingVC = [[ZMSettingTableViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 
@@ -118,7 +119,7 @@
 - (void)loadData {
     ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
     ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
-    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@""];
+    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
     ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
@@ -126,7 +127,7 @@
 
   
     ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
-    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@"ZMRecFriendViewController"];
+    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
 
 
 //
@@ -196,7 +197,9 @@
             [self.navigationController pushViewController:chatVC animated:YES];
         } else {
             Class class = NSClassFromString(item.destinClassName);
-            [self.navigationController pushViewController:[class new] animated:YES];
+            UIViewController *vc = [class new];
+            vc.title = item.title;
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }
 }

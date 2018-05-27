@@ -7,18 +7,19 @@
 //
 
 #import "ZMCollectionCell.h"
+#import <UIImageView+YYWebImage.h>
+@interface ZMCollectionCell ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
+@end
 
 @implementation ZMCollectionCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setItem:(ZMNewListItem *)item {
+    [self.leftImageView setImageWithURL:[NSURL URLWithString:item.image] placeholder:PlaceholderImage];
+    self.nameLabel.text = item.nickname;
+    self.titleLabel.text = item.title;
 }
 
 @end

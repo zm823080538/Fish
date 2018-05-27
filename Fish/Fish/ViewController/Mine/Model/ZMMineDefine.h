@@ -18,6 +18,9 @@ typedef NS_ENUM(NSUInteger, PersonalInfoCellStyle) {
 
 #define PlaceholderImage [UIImage imageNamed:@"timg"]
 #import "UIView+AddBackView.h"
-
+#import <UIImageView+YYWebImage.h>
+#import <NSObject+YYModel.h>
+#import "ZMAccountManager.h"
+#import <Masonry.h>
 
 #endif /* ZMMineDefine_h */

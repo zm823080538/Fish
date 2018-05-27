@@ -14,10 +14,10 @@
             <connections>
                 <outlet property="addressLabel" destination="v3N-se-bT9" id="84U-hU-zrp"/>
                 <outlet property="bottomView" destination="9cg-yN-3R9" id="29v-m3-ibt"/>
+                <outlet property="contentView" destination="j4c-H5-TuN" id="nx7-Gg-qDM"/>
                 <outlet property="dateLabel" destination="V7V-rK-Mta" id="xbs-dm-ki5"/>
                 <outlet property="lessonStatusLabel" destination="2oj-eT-AzL" id="FZh-s8-rfS"/>
                 <outlet property="lessonTypeLabel" destination="x1M-Ic-Mpp" id="Yr8-ce-BNz"/>
-                <outlet property="mapView" destination="j4c-H5-TuN" id="Hjz-4W-aqp"/>
                 <outlet property="nameLabel" destination="pAC-j0-nzM" id="cKl-MG-tug"/>
                 <outlet property="userIconImageView" destination="bcn-IE-jmD" id="vSR-E2-u8z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -153,6 +153,7 @@
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="xJT-fq-i7a" firstAttribute="leading" secondItem="5dZ-gZ-ikR" secondAttribute="leading" constant="10" id="0IW-CZ-erc"/>
                         <constraint firstItem="xJT-fq-i7a" firstAttribute="centerY" secondItem="5dZ-gZ-ikR" secondAttribute="centerY" id="Wpu-Zg-3sM"/>
@@ -160,6 +161,9 @@
                         <constraint firstAttribute="height" constant="50" id="hEA-cE-eh2"/>
                         <constraint firstItem="v3N-se-bT9" firstAttribute="leading" secondItem="xJT-fq-i7a" secondAttribute="trailing" constant="10" id="j7i-1d-yiW"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="L2a-Kp-PBJ" appends="YES" id="lL1-DZ-vCR"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-H5-TuN">
                     <rect key="frame" x="0.0" y="290" width="375" height="150"/>
@@ -194,6 +198,11 @@
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
+        <tapGestureRecognizer id="L2a-Kp-PBJ">
+            <connections>
+                <action selector="poilt:" destination="-1" id="7wk-57-Rk2"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="Bitmap2" width="145" height="195"/>

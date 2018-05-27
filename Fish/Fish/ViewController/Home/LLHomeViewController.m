@@ -9,6 +9,7 @@
 #import "LLHomeViewController.h"
 #import <SDCycleScrollView.h>
 #import <YTKBatchRequest.h>
+#import "ZMAccountManager.h"
 #import "ZMHomeBodyBuildingKnowledageCell.h"
 #import "ZMMemberResultCell.h"
 #import "ZMExerciseResultCell.h"
@@ -76,18 +77,25 @@
 - (void)request {
     ZMNewsListRequest *newsListRequest = [[ZMNewsListRequest alloc] init];
     newsListRequest.type = @"1";
+    newsListRequest.userid = [ZMAccountManager shareManager].loginUser.id;
+
+    
     
     ZMNewsListRequest *newsListRequest1 = [[ZMNewsListRequest alloc] init];
-    newsListRequest.type = @"2";
+    newsListRequest1.userid = [ZMAccountManager shareManager].loginUser.id;
+    newsListRequest1.type = @"2";
     
     ZMNewsListRequest *newsListRequest2 = [[ZMNewsListRequest alloc] init];
-    newsListRequest.type = @"3";
+    newsListRequest2.userid = [ZMAccountManager shareManager].loginUser.id;
+    newsListRequest2.type = @"3";
     
     ZMNewsListRequest *newsListRequest3 = [[ZMNewsListRequest alloc] init];
-    newsListRequest.type = @"4";
+    newsListRequest3.userid = [ZMAccountManager shareManager].loginUser.id;
+    newsListRequest3.type = @"4";
     
     ZMNewsListRequest *newsListRequest4 = [[ZMNewsListRequest alloc] init];
-    newsListRequest.type = @"5";
+    newsListRequest4.userid = [ZMAccountManager shareManager].loginUser.id;
+    newsListRequest4.type = @"5";
     YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[newsListRequest,newsListRequest1,newsListRequest2,newsListRequest3,newsListRequest4]];
     [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest * _Nonnull batchRequest) {
         NSArray *requests = batchRequest.requestArray;
@@ -129,9 +137,12 @@
     [self.navigationController pushViewController:perferentialActivityVC animated:YES];
 }
 - (IBAction)pushToMarket:(id)sender {
-    ZMMarketTableViewController *marketVC = [ZMMarketTableViewController new];
-    marketVC.title = @"商城";
-    [self.navigationController pushViewController:marketVC animated:YES];
+    [UIAlertController alertWithTitle:@"提示" message:@"该功能暂未开放，敬请期待" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
+        
+    }];
+//    ZMMarketTableViewController *marketVC = [ZMMarketTableViewController new];
+//    marketVC.title = @"商城";
+//    [self.navigationController pushViewController:marketVC animated:YES];
     
 }
 - (IBAction)pushToNearmember:(id)sender {
@@ -173,7 +184,7 @@
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMMemberResultListController *memberResultListVC = [[ZMMemberResultListController alloc] init];
-            memberResultListVC.arrayList = self.resultNewList;
+            memberResultListVC.arrayList = self.teachNewList;
             memberResultListVC.title = @"会员成果";
             [self.navigationController pushViewController:memberResultListVC animated:YES];
         };        
@@ -183,7 +194,7 @@
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMExerciseResultListController *exciseResultListVC = [[ZMExerciseResultListController alloc] init];
-            exciseResultListVC.arrayList = self.teachNewList;
+            exciseResultListVC.arrayList = self.resultNewList;
              exciseResultListVC.title = @"训练技巧";
             [self.navigationController pushViewController:exciseResultListVC animated:YES];
         };
@@ -216,19 +227,32 @@
         if (!memberResultCell) {
             memberResultCell = [[ZMMemberResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([ZMMemberResultCell class])];
         }
-        memberResultCell.arrayList = self.resultNewList.list;
+        memberResultCell.arrayList = self.teachNewList.list;
         return memberResultCell;
     } else {
         ZMExerciseResultCell *exerciseResultCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMExerciseResultCell class])];;
         if (!exerciseResultCell) {
             exerciseResultCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMExerciseResultCell class]) owner:nil options:nil].firstObject;
         }
-        exerciseResultCell.item = self.teachNewList.list[indexPath.row];
+        exerciseResultCell.item = self.resultNewList.list[indexPath.row];
         return exerciseResultCell;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    ZMNewListItem *item;
+    if (indexPath.section == 0) {
+        item = self.knowledgeNewList.list[indexPath.row];
+        webVC.item = item;
+    } else if (indexPath.section == 1) {
+        
+    } else {
+        item = self.teachNewList.list[indexPath.row];
+        webVC.item = item;
+    }
+    [self.navigationController pushViewController:webVC animated:YES];
+
     
 }
 

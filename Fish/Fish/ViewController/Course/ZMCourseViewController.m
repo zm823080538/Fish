@@ -55,12 +55,12 @@
     NSMutableArray *viewControllers = @[].mutableCopy;
     for (int i = 0; i < 2; i ++) {
         ZMCourseListViewController *listVC = [[ZMCourseListViewController alloc] init];
-        listVC.view.backgroundColor = [UIColor whiteColor];
         if (i == 0) {
             listVC.yp_tabItemTitle =@"进行中";
         }  else {
             listVC.yp_tabItemTitle =@"已结束";
         }
+        listVC.view.backgroundColor = [UIColor whiteColor];
         [viewControllers addObject:listVC];
     }
     self.viewControllers = viewControllers;

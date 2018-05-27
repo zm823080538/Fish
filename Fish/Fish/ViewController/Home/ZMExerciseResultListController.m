@@ -8,6 +8,8 @@
 
 #import "ZMExerciseResultListController.h"
 #import "ZMExerciseResultCell.h"
+#import "ZMWebViewController.h"
+
 @interface ZMExerciseResultListController ()
 
 @end
@@ -31,8 +33,14 @@
         exerciseResultCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMExerciseResultCell class]) owner:nil options:nil].firstObject;
     }
     exerciseResultCell.item = self.arrayList.list[indexPath.row];
-    return exerciseResultCell;
-    
+    return exerciseResultCell;    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    ZMNewListItem *item = self.arrayList.list[indexPath.row];
+    webVC.item = item;
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 

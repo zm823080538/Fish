@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZMMemberModel.h"
+#import "ZMCourseListModel.h"
 @interface ZMNearMememberCell : UITableViewCell
 @property (nonatomic, strong) ZMMemberModel * model;
+@property (nonatomic, strong) ZMCourseListItem * item;
 
 @end

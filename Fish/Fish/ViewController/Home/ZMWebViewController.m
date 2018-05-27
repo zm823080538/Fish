@@ -29,12 +29,24 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
-    self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:[WKWebViewConfiguration new]];
+    
     [self.view addSubview:self.wkWebView];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.item.linkurl]];
     [self.wkWebView loadRequest:request];
     
     button.selected = self.item.favorite.boolValue;
+}
+
+- (WKWebView *)wkWebView {
+    if (!_wkWebView) {
+        _wkWebView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:[WKWebViewConfiguration new]];
+    }
+    return _wkWebView;
+}
+
+- (void)setUrlString:(NSString *)urlString {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+    [self.wkWebView loadRequest:request];
 }
 
 - (void)buttonClick:(UIButton *)sender {
