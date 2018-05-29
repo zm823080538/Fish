@@ -27,9 +27,9 @@
 //
 //    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"语言设置" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"隐私设置" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"隐私设置" destinClassName:@"ZMPrivacySettingTableViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"课程提醒设置" destinClassName:@"ZMLessonTimeSettingController" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"课程提醒设置" destinClassName:@"ZMGiveLessonController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
     self.dataSource = @[item03,item04];
     [self.tableView reloadData];

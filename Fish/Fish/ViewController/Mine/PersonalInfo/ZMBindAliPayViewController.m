@@ -17,10 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"添加支付宝帐号";
+    self.alipayInputTextFiedl.text = self.content;
 }
 
 - (IBAction)commit:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    if (self.block) {        
+        self.block(self.alipayInputTextFiedl.text);
+    }
 }
 
 

@@ -55,6 +55,8 @@
     for (UIButton *button in self.buttons) {
         [button setContentHorizontalCenterWithVerticalOffset:5];
     }
+    [self adapterUIForIOS11:self.tableView];
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"健身" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     self.tableView.tableHeaderView = self.headerView;
@@ -75,12 +77,11 @@
 }
 
 - (void)request {
+    [MBProgressHUD showActivityMessageInView:nil];
     ZMNewsListRequest *newsListRequest = [[ZMNewsListRequest alloc] init];
     newsListRequest.type = @"1";
     newsListRequest.userid = [ZMAccountManager shareManager].loginUser.id;
 
-    
-    
     ZMNewsListRequest *newsListRequest1 = [[ZMNewsListRequest alloc] init];
     newsListRequest1.userid = [ZMAccountManager shareManager].loginUser.id;
     newsListRequest1.type = @"2";
@@ -98,6 +99,8 @@
     newsListRequest4.type = @"5";
     YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:@[newsListRequest,newsListRequest1,newsListRequest2,newsListRequest3,newsListRequest4]];
     [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest * _Nonnull batchRequest) {
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showSuccessMessage:@"加载成功"];
         NSArray *requests = batchRequest.requestArray;
         ZMNewsListRequest *request = requests[0];
         self.activityNewList = [ZMNewList modelWithJSON:request.responseObject[@"data"]];
@@ -118,6 +121,8 @@
         self.bannerView.imageURLStringsGroup = muArr;
     } failure:^(YTKBatchRequest * _Nonnull batchRequest) {
         NSLog(@"failed");
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showErrorMessage:@"加载失败"];
     }];
 }
 

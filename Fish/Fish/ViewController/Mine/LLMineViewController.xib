@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -57,6 +58,7 @@
                 <constraint firstAttribute="bottom" secondItem="und-xy-ie3" secondAttribute="bottom" id="Odb-sc-gMb"/>
                 <constraint firstItem="und-xy-ie3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TTR-cc-LNy"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="5yO-qY-IrF"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Fav-DR-vnA">
             <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
@@ -116,6 +118,7 @@
                 <constraint firstItem="ZeP-GI-4go" firstAttribute="leading" secondItem="Fav-DR-vnA" secondAttribute="leading" id="kLh-uU-NSv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="IJJ-cJ-6jc"/>
             <point key="canvasLocation" x="-119" y="398"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tgv-T0-SIA">
@@ -241,6 +244,7 @@
                 <constraint firstItem="qmv-Pe-97T" firstAttribute="top" secondItem="tgv-T0-SIA" secondAttribute="top" id="v2g-iQ-7eb"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Qez-Wb-F0d"/>
             <point key="canvasLocation" x="38.5" y="772"/>
         </view>
         <tapGestureRecognizer id="hOv-DP-toh">

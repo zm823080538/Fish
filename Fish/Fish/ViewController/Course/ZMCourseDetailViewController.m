@@ -72,6 +72,7 @@
         }];
     }
     self.mapView = [[MAMapView alloc] initWithFrame:self.contentView.bounds];
+    self.mapView.zoomLevel = 11;
     self.mapView.showsUserLocation = YES;
     // 追踪用户位置
     self.mapView.userTrackingMode = MAUserTrackingModeFollow;
@@ -100,15 +101,15 @@
         lessonStatus = @"已预约";
     } else if ([self.course.status isEqualToString:@"11"]) {
         lessonStatus = @"进行中";
-    } else if ([self.course.status isEqualToString:@"11"]) {
+    } else if ([self.course.status isEqualToString:@"2"]) {
         lessonStatus = @"已结束";
-    } else if ([self.course.status isEqualToString:@"11"]) {
+    } else if ([self.course.status isEqualToString:@"3"]) {
         lessonStatus = @"已取消";
     }
     self.dateLabel.text = self.course.starttime;
     self.lessonStatusLabel.text = lessonStatus;
     self.addressLabel.text = [NSString stringWithFormat:@"训练地址：%@",self.course.address];
-    self.coordinate = CLLocationCoordinate2DMake(self.course.latitude.floatValue, self.course.latitude.floatValue);
+    self.coordinate = CLLocationCoordinate2DMake(self.course.latitude.floatValue, self.course.longtitude.floatValue);
 }
 - (IBAction)poilt:(UITapGestureRecognizer *)sender {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];

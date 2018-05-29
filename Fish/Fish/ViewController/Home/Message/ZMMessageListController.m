@@ -8,7 +8,10 @@
 
 #import "ZMMessageListController.h"
 #import "ZMNearMememberCell.h"
+#import "ZMMsgListRequest.h"
 @interface ZMMessageListController () <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) NSMutableArray * dataSource;
+
 
 @end
 
@@ -18,6 +21,19 @@
     [super viewDidLoad];
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
+    [self request];
+}
+
+- (void)request {
+    ZMMsgListRequest *requst = [[ZMMsgListRequest alloc] init];
+    requst.id = [ZMAccountManager shareManager].loginUser.id;
+    requst.pageNo = @"1";
+    [requst startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

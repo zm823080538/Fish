@@ -6,8 +6,8 @@
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZMBaseTableViewController.h"
 
-@interface ZMApplyListTableViewController : UITableViewController
+@interface ZMApplyListTableViewController : ZMBaseTableViewController
 @property (nonatomic, assign) NSInteger index;
 @end

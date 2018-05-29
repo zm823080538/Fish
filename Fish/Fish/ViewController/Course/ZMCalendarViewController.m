@@ -12,6 +12,7 @@
 #import "ZMNearMememberCell.h"
 #import "ZMAccountManager.h"
 #import "ZMCourseListRequest.h"
+#import "ZMCourseDetailViewController.h"
 
 @interface ZMCalendarViewController()<UITableViewDataSource,UITableViewDelegate,FSCalendarDataSource,FSCalendarDelegate>
 
@@ -136,6 +137,7 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 57)];
+    label.backgroundColor = UIColorFromRGB(0xF3F3F3);
     label.text = @"    课程";
     label.font = [UIFont systemFontOfSize:16];
     label.textColor = UIColorFromRGB(0x4A576A);
@@ -162,7 +164,8 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    
+    ZMCourseDetailViewController *courseDetailVC = [[ZMCourseDetailViewController alloc] init];
+    courseDetailVC.course = self.dataSource[indexPath.row];
 }
 
 - (void)previousClicked:(id)sender

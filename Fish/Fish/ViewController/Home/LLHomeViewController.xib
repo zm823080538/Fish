@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,7 +28,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="yDc-qo-fUD">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="9m3-9s-R9g"/>
                         <outlet property="delegate" destination="-1" id="PaR-bM-iSo"/>
@@ -41,6 +42,7 @@
                 <constraint firstAttribute="trailing" secondItem="yDc-qo-fUD" secondAttribute="trailing" id="EB0-RV-vi3"/>
                 <constraint firstAttribute="bottom" secondItem="yDc-qo-fUD" secondAttribute="bottom" id="djR-Cg-fI8"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="PbU-uh-f7p"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="5Ed-kf-svV">
             <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
@@ -137,12 +139,13 @@
                 <constraint firstAttribute="trailing" secondItem="NQB-CI-Ce0" secondAttribute="trailing" id="qRp-h8-pa9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="VsU-QM-QSs"/>
             <point key="canvasLocation" x="34.5" y="584"/>
         </view>
     </objects>
     <resources>
         <image name="Group 12" width="32" height="32"/>
-        <image name="Group 9" width="32" height="32"/>
+        <image name="Group 9" width="60" height="57"/>
         <image name="market" width="32" height="32"/>
     </resources>
 </document>

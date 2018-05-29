@@ -45,7 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = YES;
-    
+    self.tableView.sectionHeaderHeight = 5;
+    self.tableView.sectionFooterHeight = 10;
     UIImage *xiaoxi = [[UIImage imageNamed:@"xiaoxi"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:xiaoxi style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     rightBarbuttonItem.tintColor = [UIColor whiteColor];
@@ -53,7 +54,7 @@
     UIImage *setting3 = [UIImage imageNamed:@"setting3"];
     UIBarButtonItem *rightBarbuttonItem1 = [[UIBarButtonItem alloc] initWithImage:setting3 style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItem1Click)];
     rightBarbuttonItem1.tintColor = [UIColor whiteColor];
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
     [self loadData];
     [self adapterUIForIOS11:self.tableView];
@@ -122,18 +123,19 @@
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
-    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
+    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"服务时间设置" destinClassName:@"ZMLessonTimeSettingController"];
+    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
 
   
-    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
-    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
+    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
+    ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
 
 
 //
-     ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
-    ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
-    self.dataSource = @[@[item01,item02,item03,item04,item05,item06],@[item07,item08,item09],@[item10,item11]];
+     ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+    ZMMineModel  *item12 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+    self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09],@[item10,item11,item12]];
     [self.tableView reloadData];
 }
 

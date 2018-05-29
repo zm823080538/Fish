@@ -27,4 +27,12 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 #import <UIView+YYAdd.h>
 #import <ReactiveObjC.h>
+
+#define Height_NavContentBar 44.0f
+
+#define Height_StatusBar (iPhoneX?44.0f:20.0f)
+
+#define Height_NavBar (iPhoneX?88.0f:64.0f)
+
+#define Height_TabBar (iPhoneX?83.0f:49.0f)
 #endif /* LLRiseTabBarDemo_pch */

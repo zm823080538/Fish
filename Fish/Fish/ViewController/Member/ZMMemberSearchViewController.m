@@ -146,6 +146,8 @@
     [self.view addSubview:self.searchBar];
     
     _menu = [[ZspMenu alloc] initWithOrigin:CGPointMake(0, 50) andHeight:44];
+    _menu.selectedTextColor = UIColorFromRGB(0x4A576A);
+    _menu.indicatorColor = UIColorFromRGB(0x4A576A);
     _menu.delegate = self;
     _menu.dataSource = self;
     [self.view addSubview:_menu];

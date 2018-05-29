@@ -8,6 +8,8 @@
 
 #import "ZMBaseTableViewController.h"
 
+
 @interface ZMLessonDaySettingController : ZMBaseTableViewController
+@property (nonatomic, copy)void(^block)(NSArray *array);
 
 @end

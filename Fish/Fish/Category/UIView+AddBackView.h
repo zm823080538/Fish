@@ -13,4 +13,5 @@
 - (void)addbackButton:(void(^)(void))click;
 - (void)showToastString:(NSString *)string;
 - (void)showError:(NSString *)errorDesc;
+
 @end

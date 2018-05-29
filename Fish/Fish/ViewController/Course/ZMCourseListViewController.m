@@ -15,7 +15,9 @@
 #import "ZMCourseListModel.h"
 #import "ZMCourseDetailViewController.h"
 #import "UIViewController+YPTabBarController.h"
-@interface ZMCourseListViewController ()
+@interface ZMCourseListViewController () {
+    BOOL _firstLaunch;
+}
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (nonatomic, assign) NSInteger currentPage;
 
@@ -33,6 +35,7 @@
     self.tableView.tableFooterView = [UIView new];
     self.dataSource = @[].mutableCopy;
     self.currentPage = 1;
+    _firstLaunch = NO;
     if ([self.yp_tabItemTitle isEqualToString:@"已结束"]) {
         self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(request)];
     }
@@ -46,6 +49,9 @@
 }
 
 - (void)request {
+    if (_firstLaunch) {
+         [MBProgressHUD showActivityMessageInView:nil];
+    }
     ZMCourseListRequest *request = [[ZMCourseListRequest alloc] init];
         //        1关注2黑名单3已接单
         NSString *status = @"";
@@ -58,6 +64,10 @@
         request.tid = [ZMAccountManager shareManager].loginUser.id;
         request.status = status;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            if (_firstLaunch) {
+                [MBProgressHUD hideHUD];
+                [MBProgressHUD showSuccessMessage:@"加载成功"];
+            }
             NSArray *list = [NSArray modelArrayWithClass:[ZMCourseListItem class] json:request.responseObject[@"data"][@"list"]];
 
             if ([self.yp_tabItemTitle isEqualToString:@"已结束"]) {
@@ -70,14 +80,13 @@
             } else {
                 self.dataSource = list.mutableCopy;
             }
+            _firstLaunch = NO;
             [self.tableView reloadData];
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showErrorMessage:@"加载失败"];
         }];
 }
-
-
-
 
 - (void)searchViewClick {
     

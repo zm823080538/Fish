@@ -65,4 +65,10 @@
     return _collectionView;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ZMFieldModel *model = self.dataSource[indexPath.item];
+    model.status = [model.status isEqualToString:@"0"] ? @"1" : @"0";
+    [self.collectionView reloadData];
+}
+
 @end

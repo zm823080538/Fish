@@ -22,14 +22,40 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.openSwitch.transform = CGAffineTransformMakeScale( 0.7, 0.7);//缩放
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setModel:(ZMServiceTimeModel *)model {
+    if (model.starthour.integerValue > 12) {
+        self.label1.text = @"下午";
+    } else {
+        self.label1.text = @"上午";
+    }
+    if (model.endhour.integerValue > 12) {
+        self.label4.text = @"下午";
+    } else {
+        self.label4.text = @"上午";
+    }
+    self.label2.text = model.starttime;
+    self.label3.text = model.endtime;
+    NSMutableString *muString = @"".mutableCopy;
+    if (model.day1) {
+        [muString appendString:@"星期一、"];
+    } else if (model.day2) {
+        [muString appendString:@"星期二、"];
+    } else if (model.day3) {
+        [muString appendString:@"星期三、"];
+    } else if (model.day4) {
+        [muString appendString:@"星期四、"];
+    } else if (model.day5) {
+        [muString appendString:@"星期五、"];
+    } else if (model.day6) {
+        [muString appendString:@"星期六、"];
+    } else if (model.day7) {
+        [muString appendString:@"星期日、"];
+    }
+    [muString deleteCharactersInRange:NSMakeRange(muString.length - 1, 1)];
+    self.dateLabel.text = muString;
 }
 
 @end

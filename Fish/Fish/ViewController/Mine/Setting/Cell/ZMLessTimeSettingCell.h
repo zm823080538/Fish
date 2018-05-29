@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMServiceTimeModel.h"
 @interface ZMLessTimeSettingCell : UITableViewCell
+@property (nonatomic, strong) ZMServiceTimeModel *model;
 
 @end

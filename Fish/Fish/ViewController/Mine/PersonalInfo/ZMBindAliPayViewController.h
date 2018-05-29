@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMBindAliPayViewController : UIViewController
+@property(nonatomic,copy) void(^block)(NSString *inputString);
+@property (nonatomic, copy) NSString * content;
 
 @end

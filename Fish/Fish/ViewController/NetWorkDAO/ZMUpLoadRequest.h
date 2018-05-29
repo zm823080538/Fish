@@ -6,9 +6,9 @@
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "YTKBaseRequest.h"
+#import <YTKRequest.h>
 #import <UIKit/UIKit.h>
-@interface ZMUpLoadRequest : YTKBaseRequest
+@interface ZMUpLoadRequest : YTKRequest
 - (id)initWithImage:(UIImage *)image;
 - (NSString *)imageUrlString;
 @end

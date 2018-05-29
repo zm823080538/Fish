@@ -14,6 +14,7 @@
 
 @interface PersonalInfoCell ()
 @property (nonatomic, strong) UILabel *leftLabel;
+@property (nonatomic, strong) UIImageView *rightImageView1;
 
 @property (nonatomic, strong) UIImageView *rightArrow;
 @property (nonatomic, strong) UITextField *rightTextField;
@@ -34,8 +35,10 @@
     [self addSubview:self.leftLabel];
     [self addSubview:self.rightLabel];
     [self addSubview:self.rightImageView];
+    [self addSubview:self.rightImageView1];
     [self addSubview:self.rightArrow];
     [self addSubview:self.rightTextField];
+    
     [self updateFrame];
 }
 
@@ -67,6 +70,12 @@
         make.size.mas_equalTo(CGSizeMake(34, 34));
         make.centerY.equalTo(self);
     }];
+    
+    [self.rightImageView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.rightArrow.mas_left).mas_offset(-15);
+        make.size.mas_equalTo(CGSizeMake(25, 25));
+        make.centerY.equalTo(self);
+    }];
 
 }
 
@@ -75,18 +84,34 @@
     self.leftLabel.text = personalModel.title;
     if ([personalModel.image hasPrefix:@"http://"]) {
         [self.rightImageView setImageWithURL:[NSURL URLWithString:personalModel.image] placeholder:PlaceholderImage];
+        [self.rightImageView1 setImageWithURL:[NSURL URLWithString:personalModel.image] placeholder:PlaceholderImage];
     } else {
+        self.rightImageView1.image = [UIImage imageNamed:personalModel.image];
         self.rightImageView.image = [UIImage imageNamed:personalModel.image];
+//        if ([personalModel.title isEqualToString:@"我的二维码"]) {
+//            _rightImageView.layer.cornerRadius = 0;
+////            _rightImageView.size = CGSizeMake(25, 25);
+//            [self.rightImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.right.equalTo(self.rightArrow.mas_left).mas_offset(-15);
+//                make.size.mas_equalTo(CGSizeMake(34, 34));
+//                make.centerY.equalTo(self);
+//            }];
+//        } else {
+//            _rightImageView.layer.cornerRadius = 17;
+//            _rightImageView.layer.masksToBounds = YES;
+//        }
     }
     if ([personalModel isMemberOfClass:[ZMPersonalModel class]]) {
         self.rightLabel.text = personalModel.subTitle;
     }
+    
 }
 
 - (void)setStyle:(PersonalInfoCellStyle)style {
     _style = style;
     if (style == PersonalInfoCellStyleLabel) {
         self.rightImageView.hidden = YES;
+        self.rightImageView1.hidden = YES;
         self.rightTextField.hidden = YES;
         self.rightLabel.hidden = NO;
         self.rightArrow.hidden = YES;
@@ -99,19 +124,28 @@
         self.rightImageView.hidden = NO;
         self.rightTextField.hidden = YES;
         self.rightLabel.hidden = YES;
+        self.rightImageView1.hidden = YES;
     } else if (style == PersonalInfoCellStyleTextField) {
         self.rightImageView.hidden = YES;
         self.rightTextField.hidden = NO;
         self.rightLabel.hidden = YES;
+        self.rightImageView1.hidden = YES;
     } else if (style == PersonalInfoCellStyleArrow) {
         self.rightImageView.hidden = YES;
         self.rightTextField.hidden = YES;
         self.rightLabel.hidden = YES;
+        self.rightImageView1.hidden = YES;
     } else if (style == PersonalInfoCellStyleLabelArrow) {
         self.rightImageView.hidden = YES;
         self.rightTextField.hidden = YES;
         self.rightLabel.hidden = NO;
         self.rightArrow.hidden = NO;
+        self.rightImageView1.hidden = YES;
+    } else if (style == PersonalInfoCellStyleImage1) {
+        self.rightImageView.hidden = YES;
+        self.rightTextField.hidden = YES;
+        self.rightLabel.hidden = YES;
+        self.rightImageView1.hidden = NO;
     }
 }
 
@@ -145,6 +179,13 @@
         _rightImageView.layer.masksToBounds = YES;
     }
     return _rightImageView;
+}
+
+- (UIImageView *)rightImageView1 {
+    if (!_rightImageView1) {
+        _rightImageView1 = [[UIImageView alloc] init];
+    }
+    return _rightImageView1;
 }
 
 - (UIImageView *)rightArrow {

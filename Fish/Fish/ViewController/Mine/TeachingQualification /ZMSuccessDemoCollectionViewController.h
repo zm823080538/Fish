@@ -10,4 +10,8 @@
 
 @interface ZMSuccessDemoCollectionViewController : UIViewController
 
+@property (nonatomic, strong) NSArray * imgs;
+@property (nonatomic, copy) NSString * desc;
+
+
 @end

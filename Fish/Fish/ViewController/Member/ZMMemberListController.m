@@ -20,7 +20,9 @@
 #import "ZMAccountManager.h"
 #import "ZMMemberListRequest.h"
 #import "ZMMemberModel.h"
-@interface ZMMemberListController ()
+@interface ZMMemberListController () {
+    BOOL _firstLaunch;
+}
 @property (nonatomic, strong) SSSearchBar *searchBar;
 @property (nonatomic, strong) NSMutableArray * dataSource;
 @property (nonatomic, assign) NSInteger currentPage;
@@ -32,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _firstLaunch = YES;
     UIButton *searchBgButton = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBgButton.frame = CGRectMake(0, 0, SCREEN_WIDTH, 50);
     [searchBgButton addTarget:self action:@selector(searchClick) forControlEvents:UIControlEventTouchUpInside];
@@ -48,6 +51,11 @@
     if ([self.yp_tabItemTitle isEqualToString:@"附近会员"]) {
         self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(request)];
     }
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(request)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    [self request];
+
 }
 
 - (void)searchClick {
@@ -63,10 +71,19 @@
 }
 
 - (void)request {
+    if (_firstLaunch) {
+        [MBProgressHUD showActivityMessageInView:nil];
+    }
     if ([self.yp_tabItemTitle isEqualToString:@"附近会员"]) {
         ZMMemberSearchRequest *request = [[ZMMemberSearchRequest alloc] init];
         request.requestId = [ZMAccountManager shareManager].loginUser.id;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [self.tableView.mj_header endRefreshing];
+            if (_firstLaunch) {
+                [MBProgressHUD hideHUD];
+                [MBProgressHUD showSuccessMessage:@"加载成功"];
+            }
+            _firstLaunch = NO;
             NSArray *list = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"][@"list"]];
             NSInteger totalPage = [request.responseObject[@"data"][@"totalPage"] intValue];
                 [self.dataSource addObjectsFromArray:list];
@@ -76,7 +93,7 @@
                 [self.tableView.mj_footer endRefreshingWithNoMoreData];
             }
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
+            [self.tableView.mj_header endRefreshing];
         }];
     } else {
 //        1关注2黑名单3已接单
@@ -92,13 +109,16 @@
         request.requestId = [ZMAccountManager shareManager].loginUser.id;
         request.status = status;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [self.tableView.mj_header endRefreshing];
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showSuccessMessage:@"加载成功"];
             if (request.responseObject[@"data"]) {
                 self.dataSource = [NSArray modelArrayWithClass:[ZMMemberModel class] json:request.responseObject[@"data"]].mutableCopy;
                 [self.tableView reloadData];
             }
            
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-            
+            [self.tableView.mj_header endRefreshing];
         }];
     }
 }
@@ -111,7 +131,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self request];
+//    [self request];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -119,9 +139,6 @@
 //    [self.searchBar resignFirstResponder];
 }
 
-- (void)loadData:(NSArray *)data {
-    
-}
 
 
 

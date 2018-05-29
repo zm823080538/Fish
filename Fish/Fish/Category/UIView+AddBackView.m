@@ -26,12 +26,16 @@
     [topView addSubview:backButton];
 }
 
-- (void)showToastString:(NSString *)string {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
-    hud.label.text = string;
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:2.0f];
-}
+//- (void)showToastString:(NSString *)string {
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
+//    hud.label.text = string;
+//    hud.removeFromSuperViewOnHide = YES;
+//    [hud hideAnimated:YES afterDelay:2.0f];
+//}
+//
+//- (void)showSuccessToastString:(NSString *)toastString {
+//
+//}
 
 - (void)showError:(NSString *)errorDesc {
     

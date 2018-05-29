@@ -19,9 +19,11 @@
     [super viewDidLoad];
     
     ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"服务职责" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
-    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"服务流程" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"评论机制" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
-    self.dataSource = @[item01,item02,item03];
+    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"教练需知" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
+
+    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"服务流程" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
+    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"评论机制" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
+    self.dataSource = @[item01,item02,item03,item04];
     [self.tableView reloadData];
 
 }
@@ -53,11 +55,12 @@
     webVC.title = model.title;
     NSString *urlString;
     if (indexPath.row == 0) {
-        
         urlString = @"https://www.bjwork.xyz/h5/news/detail?id=zhize";
     } else if (indexPath.row == 1) {
-        urlString = @"https://www.bjwork.xyz/h5/news/detail?id=liucheng";
+        urlString = @"https://www.bjwork.xyz/h5/news/detail?id=xuzhi";
     } else if (indexPath.row == 2) {
+        urlString = @"https://www.bjwork.xyz/h5/news/detail?id=liucheng";
+    } else {
         urlString = @"https://www.bjwork.xyz/h5/news/detail?id=jizhi";
     }
     webVC.urlString = urlString;

@@ -17,7 +17,8 @@
 #import <YTKNetworkConfig.h>
 #import <RongCloudIMKit/RongIMKit/RongIMKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
-//#import <IQKeyboardManager.h>
+#import <IQKeyboardManager.h>
+#import "RCDataManager.h"
 
 //AMAP KEY
 
@@ -31,16 +32,17 @@
     // Override point for customization after application launch.
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://www.bjwork.xyz";
-     [[RCIM sharedRCIM] initWithAppKey:@"c9kqb3rdcopfj"];
+     [[RCIM sharedRCIM] initWithAppKey:@"pgyu6atqpezeu"];
+     [RCIM sharedRCIM].userInfoDataSource = [RCDataManager shareManager];
     [AMapServices sharedServices].apiKey = @"6f3819137dfef01b9150fd93b3d35328";
-
-//    [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_CYCLE;
-//    [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_CYCLE;
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES; // 控制点击背景是否收起键盘
+    [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_CYCLE;
+    [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_CYCLE;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
-    self.window.rootViewController = nav;
-//    [self changeRootVC];
+   
+    [self changeRootVC];
     
     
 //
@@ -82,31 +84,38 @@
 }
 
 - (void)changeRootVC {
-    LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
-    ZMMemberViewController *sameCityViewController = [[ZMMemberViewController alloc] init];
-    ZMCourseViewController *messageViewController = [[ZMCourseViewController alloc] init];
-    LLMineViewController *mineViewController = [[LLMineViewController alloc] init];
-    LLBaseNavViewController *nav1 = [[LLBaseNavViewController  alloc] initWithRootViewController:homeViewController];
-    LLBaseNavViewController  *nav2 = [[LLBaseNavViewController  alloc] initWithRootViewController:sameCityViewController];
-    LLBaseNavViewController  *nav3 = [[LLBaseNavViewController  alloc] initWithRootViewController:messageViewController];
-    LLBaseNavViewController  *nav4 = [[LLBaseNavViewController  alloc] initWithRootViewController:mineViewController];
-   
-    
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[nav1, nav2, nav3, nav4];
-    
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
-    LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
-    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                    @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-//                                    @{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
-                                    @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                    @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
-    tabBar.delegate = self;
-    [tabBarController.tabBar addSubview:tabBar];
-    self.window.rootViewController = tabBarController;
+    if (![ZMAccountManager shareManager].login) {
+        LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
+        self.window.rootViewController = nav;
+    } else {
+        LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
+        ZMMemberViewController *sameCityViewController = [[ZMMemberViewController alloc] init];
+        ZMCourseViewController *messageViewController = [[ZMCourseViewController alloc] init];
+        LLMineViewController *mineViewController = [[LLMineViewController alloc] init];
+        LLBaseNavViewController *nav1 = [[LLBaseNavViewController  alloc] initWithRootViewController:homeViewController];
+        LLBaseNavViewController  *nav2 = [[LLBaseNavViewController  alloc] initWithRootViewController:sameCityViewController];
+        LLBaseNavViewController  *nav3 = [[LLBaseNavViewController  alloc] initWithRootViewController:messageViewController];
+        LLBaseNavViewController  *nav4 = [[LLBaseNavViewController  alloc] initWithRootViewController:mineViewController];
+        
+        
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        tabBarController.viewControllers = @[nav1, nav2, nav3, nav4];
+        
+        [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+        [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+        
+        LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
+        tabBar.backgroundColor = [UIColor whiteColor];
+        tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                        @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                        //                                    @{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
+                                        @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                        @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
+        tabBar.delegate = self;
+        [tabBarController.tabBar addSubview:tabBar];
+        self.window.rootViewController = tabBarController;
+    }
+
     
 }
 

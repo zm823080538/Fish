@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上午" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AkK-W6-0dR">
@@ -43,13 +43,6 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VdL-oW-mB1">
-                        <rect key="frame" x="238" y="30.5" width="45" height="23"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="43" id="iXz-RD-YtS"/>
-                            <constraint firstAttribute="height" constant="23" id="noI-H5-2fL"/>
-                        </constraints>
-                    </switch>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back24" translatesAutoresizingMaskIntoConstraints="NO" id="lFi-hJ-D3V">
                         <rect key="frame" x="296" y="34.5" width="9" height="15"/>
                         <constraints>
@@ -76,14 +69,12 @@
                     <constraint firstItem="Zdm-7T-aiy" firstAttribute="leading" secondItem="wld-Qg-utF" secondAttribute="trailing" id="7om-V3-pce"/>
                     <constraint firstItem="1Nh-IJ-2pN" firstAttribute="bottom" secondItem="AkK-W6-0dR" secondAttribute="bottom" id="8Yv-Nb-1oz"/>
                     <constraint firstItem="lFi-hJ-D3V" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9Ky-QZ-x9X"/>
-                    <constraint firstItem="VdL-oW-mB1" firstAttribute="centerY" secondItem="lFi-hJ-D3V" secondAttribute="centerY" id="CGz-c3-Imd"/>
                     <constraint firstItem="Kqz-dl-jeb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="CUW-DZ-Pf9"/>
                     <constraint firstItem="AkK-W6-0dR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="D3Z-7O-8Ix"/>
                     <constraint firstItem="MST-vZ-lg2" firstAttribute="centerY" secondItem="1Nh-IJ-2pN" secondAttribute="centerY" id="J16-Fd-Xbg"/>
                     <constraint firstItem="AkK-W6-0dR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Nh3-8A-eZf"/>
                     <constraint firstItem="1Nh-IJ-2pN" firstAttribute="leading" secondItem="AkK-W6-0dR" secondAttribute="trailing" id="Q50-kD-eaf"/>
                     <constraint firstAttribute="trailing" secondItem="lFi-hJ-D3V" secondAttribute="trailing" constant="15" id="U5u-0T-bYI"/>
-                    <constraint firstItem="lFi-hJ-D3V" firstAttribute="leading" secondItem="VdL-oW-mB1" secondAttribute="trailing" constant="15" id="Uyc-nK-a0D"/>
                     <constraint firstItem="wld-Qg-utF" firstAttribute="leading" secondItem="MST-vZ-lg2" secondAttribute="trailing" constant="5" id="eZW-Hs-I5f"/>
                     <constraint firstItem="Zdm-7T-aiy" firstAttribute="bottom" secondItem="wld-Qg-utF" secondAttribute="bottom" id="eci-BW-naw"/>
                     <constraint firstItem="wld-Qg-utF" firstAttribute="centerY" secondItem="AkK-W6-0dR" secondAttribute="centerY" id="jbR-Mu-op7"/>
@@ -96,7 +87,6 @@
                 <outlet property="label2" destination="1Nh-IJ-2pN" id="Z7q-Wu-P87"/>
                 <outlet property="label3" destination="Zdm-7T-aiy" id="1KK-xb-5v3"/>
                 <outlet property="label4" destination="wld-Qg-utF" id="VnG-cA-dTl"/>
-                <outlet property="openSwitch" destination="VdL-oW-mB1" id="PgI-3q-3sF"/>
             </connections>
         </tableViewCell>
     </objects>

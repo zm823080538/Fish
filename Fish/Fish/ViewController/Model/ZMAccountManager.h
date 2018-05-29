@@ -15,5 +15,7 @@
 // 登陆后获取用户信息，如果未登录，则返回nil
 @property (nonatomic, strong) ZMAccount *loginUser;
 
+- (void)logOut;
+
 
 @end

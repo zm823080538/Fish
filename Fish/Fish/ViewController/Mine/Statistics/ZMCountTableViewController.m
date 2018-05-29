@@ -9,6 +9,7 @@
 #import "ZMCountTableViewController.h"
 #import "ZMPersonalModel.h"
 #import "PersonalInfoCell.h"
+#import "ZMCountRequest.h"
 
 @interface ZMCountTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic)  NSArray *dataSource;
@@ -20,13 +21,25 @@
     [super viewDidLoad];
     self.title = @"统计";
     self.tableView.rowHeight = 50;
-    ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"累计收入" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"￥240"];
-    
-    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"累计会员" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"24个"];
-    
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"累计课时" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:@"60课时"];
-    self.dataSource = @[item01,item02,item03];
     self.tableView.tableFooterView = [UIView new];
+    [self request];
+}
+
+- (void)request {
+    ZMCountRequest *request = [[ZMCountRequest alloc] init];
+    request.tid = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSDictionary *requestInfo = request.responseObject[@"data"];
+        ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"累计收入" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:requestInfo[@"money"]];
+        
+        ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"累计会员" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:requestInfo[@"member"]];
+        
+        ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc]  initWithImage:nil title:@"累计课时" destinClassName:@"" style:PersonalInfoCellStyleLabel subTitle:requestInfo[@"course"]];
+        self.dataSource = @[item01,item02,item03];
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

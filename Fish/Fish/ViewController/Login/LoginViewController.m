@@ -80,7 +80,7 @@
                 [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kZMUserInfo];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 // options是动画选项
-                [[RCIM sharedRCIM] connectWithToken:@"7b2rjsWPgNGhd9/qb2WVt8ieA2CePSbBRY7c964UMCuWibuwZdjQfSDOWRVh6He9ZGVnTWujLtqY8UNJWlu/gQ=="     success:^(NSString *userId) {
+                [[RCIM sharedRCIM] connectWithToken:account.token     success:^(NSString *userId) {
                     NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve animations:^{

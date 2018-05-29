@@ -49,7 +49,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Group 2"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
+    UIImage *image = [[UIImage imageNamed:@"Group 2"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
+    barButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem = barButtonItem;
     self.iconImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.iconImageView.layer.borderWidth = 3;
     self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, CGRectGetMaxY(self.detailDescView.frame));
@@ -143,8 +146,8 @@
     RCConversationViewController *chatVC = [[RCConversationViewController alloc] init];
     chatVC.conversationType = ConversationType_PRIVATE;
     //如果是单聊，不显示发送方昵称
-    chatVC.targetId = @"001";
-    chatVC.title = @"张三";
+    chatVC.targetId = self.member.id;
+    chatVC.title = self.member.nickname;
     [self.navigationController pushViewController:chatVC animated:YES];
 }
 
@@ -203,7 +206,6 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
     UIImageView *imageView = [[UIImageView alloc] init];
     [imageView setImageWithURL:[NSURL URLWithString:self.detailImgs[indexPath.row]] placeholder:PlaceholderImage];
     [cell addSubview:imageView];

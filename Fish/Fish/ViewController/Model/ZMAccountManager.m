@@ -31,4 +31,9 @@
 - (BOOL)isLogin {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kZMUserInfo] == nil ? NO : YES;
 }
+
+- (void)logOut {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:kZMUserInfo];
+    self.loginUser = nil;
+}
 @end

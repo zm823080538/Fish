@@ -46,8 +46,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             // TODO: show loading
             _hud = [MBProgressHUD showHUDAddedTo:self.animatingView animated:YES];
-            _hud.label.text = self.animatingText;
-            [_hud showAnimated:YES];
+            _hud.labelText = self.animatingText;
+//            _hud.label.text = self.animatingText;
+            [_hud show:YES];
             NSLog(@" loading start");
         });
     }
@@ -56,7 +57,7 @@
 - (void)requestWillStop:(id)request {
     if (_animatingView) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_hud hideAnimated:YES afterDelay:0.5f];
+            [_hud hide:YES afterDelay:0.5f];
             // TODO: hide loading
             //[YTKAlertUtils hideLoadingAlertView:_animatingView];
             NSLog(@" loading finished");

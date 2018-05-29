@@ -6,8 +6,8 @@
 //  Copyright © 2018 zhaoming. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZMBaseTableViewController.h"
 
-@interface ZMCourseListViewController : UITableViewController
+@interface ZMCourseListViewController : ZMBaseTableViewController
 
 @end

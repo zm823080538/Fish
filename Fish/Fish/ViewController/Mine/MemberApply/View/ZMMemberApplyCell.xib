@@ -83,6 +83,9 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iTU-dp-9rC"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BWN-TJ-Hsd">
                         <rect key="frame" x="257" y="45.5" width="48" height="20"/>
@@ -106,6 +109,9 @@
                                 <color key="value" red="0.29019607843137252" green="0.3411764705882353" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qhi-An-ST4"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -133,6 +139,7 @@
             <inset key="separatorInset" minX="500" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="ageButton" destination="dGX-dT-Q6E" id="4pU-5y-neA"/>
+                <outlet property="distanceLabel" destination="zpz-LJ-Coc" id="hqu-FZ-GVy"/>
                 <outlet property="iconImageView" destination="g00-QA-NYY" id="LzH-rH-W1L"/>
                 <outlet property="nameLabel" destination="QXx-Cw-0IY" id="eXn-KE-Y3i"/>
                 <outlet property="passButton" destination="xm8-1Q-EHh" id="Hpn-AR-Ooo"/>

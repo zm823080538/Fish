@@ -11,8 +11,7 @@
 #import "ZMCalendarViewController.h"
 #import "ZMMessageViewController.h"
 #import "ZMScanViewController.h"
-@interface ZMCourseViewController ()
-
+@interface ZMCourseViewController () 
 @end
 
 @implementation ZMCourseViewController

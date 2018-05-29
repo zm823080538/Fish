@@ -7,7 +7,8 @@
 //
 
 #import "ZMBaseTableViewController.h"
-
+#import "ZMServiceTimeModel.h"
 @interface ZMLessonDetailSetController : ZMBaseTableViewController
+@property (nonatomic, strong) ZMServiceTimeModel *model;
 
 @end

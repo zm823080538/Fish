@@ -24,7 +24,7 @@
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     if (iPhoneX) {
-        [self setTabBarFrame:CGRectMake(0,0, screenSize.width, 44)
+        [self setTabBarFrame:CGRectMake(0,Height_NavBar, screenSize.width, 44)
             contentViewFrame:CGRectMake(0, 88+44, screenSize.width, screenSize.height - 88 - bottom - 34)];
     } else {
         [self setTabBarFrame:CGRectMake(0, 0, screenSize.width, 44)
