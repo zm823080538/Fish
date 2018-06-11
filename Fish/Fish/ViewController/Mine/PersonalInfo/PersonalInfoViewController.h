@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString *const ZMUpdateUserInfoNotification;
+
 @interface PersonalInfoViewController : UIViewController
 
 @end

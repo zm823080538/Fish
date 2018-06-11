@@ -19,7 +19,8 @@
 
 - (id)requestArgument {
     return @{@"tid": _tid,
-             @"status" :_status
+             @"status" :_status,
+             @"starttime" :_starttime ?:@""
              };
 }
 @end

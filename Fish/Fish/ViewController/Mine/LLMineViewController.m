@@ -9,14 +9,16 @@
 #import "LLMineViewController.h"
 #import <UIImageView+YYWebImage.h>
 #import "ZMCertificationViewController.h"
+#import "TeachQAViewController.h"
 #import "UIAlertController+Set.h"
 #import "ZMAccountManager.h"
+#import "ZMGetUserRequest.h"
 #import "ZMMineModel.h"
 #import "ZMMineDefine.h"
 #import "ZMMineTableViewCell.h"
 #import <UIImage+YYAdd.h>
 #import "ZMGetAuthRequest.h"
-#import "ZMMessageViewController.h"
+#import "ZMPrivacyListViewController.h"
 #import "UINavigationBar+Awesome.h"
 #import <RongIMKit/RongIMKit.h>
 #import "ZMSettingTableViewController.h"
@@ -56,8 +58,14 @@
     rightBarbuttonItem1.tintColor = [UIColor whiteColor];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);
     self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
+    [self updateTableHeaderView];
     [self loadData];
+    [self updateUI];
     [self adapterUIForIOS11:self.tableView];
+    
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:ZMUpdateUserInfoNotification object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+        [self updateTableHeaderView];
+    }];
 }
 
 - (void)rightBarItem1Click {
@@ -68,7 +76,7 @@
 
 
 - (void)rightBarItemClick {
-    ZMMessageViewController *messageVC = [ZMMessageViewController new];
+    ZMPrivacyListViewController *messageVC = [ZMPrivacyListViewController new];
     messageVC.title = @"消息";
     [self.navigationController pushViewController:messageVC animated:YES];
 }
@@ -118,22 +126,43 @@
 }
 
 - (void)loadData {
+    ZMGetUserRequest *request = [[ZMGetUserRequest alloc] init];
+    request.id = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+
+        if ([request.responseObject[@"code"] integerValue] == 0) {
+            ZMAccount *account = [ZMAccount modelWithJSON:request.responseObject[@"data"]];
+            [ZMAccountManager shareManager].loginUser = account;
+            [self updateTableHeaderView];
+        } else {
+            [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
+        }
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+
+    }];
+
+
+}
+
+- (void)updateUI {
     ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
+    item01.rightTitle = @"审核中";
     ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
     ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
-    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"服务时间设置" destinClassName:@"ZMLessonTimeSettingController"];
+    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"工作时间设置" destinClassName:@"ZMLessonTimeSettingController"];
     ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
-
-  
+    
+    
     ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
     ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
-
-
-//
-     ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+    
+    
+    //
+    ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
     ZMMineModel  *item12 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
     self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09],@[item10,item11,item12]];
     [self.tableView reloadData];
@@ -160,7 +189,7 @@
     //去掉透明后导航栏下边的黑边
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 
-    [self updateTableHeaderView];
+    
     
 }
 
@@ -190,13 +219,15 @@
             NSLog(@"---");
         }];
     } else {
-        if ([item.title isEqualToString:@"我的客服"]) {
-            RCConversationViewController *chatVC = [[RCConversationViewController alloc] init];
-            chatVC.conversationType = ConversationType_CUSTOMERSERVICE;
-            //如果是单聊，不显示发送方昵称
-            chatVC.targetId = @"001";
-            chatVC.title = @"我的客服";
-            [self.navigationController pushViewController:chatVC animated:YES];
+        if ([item.title isEqualToString:@"教学资质"]) {
+            TeachQAViewController *teachQA = [TeachQAViewController new];
+            teachQA.status = @"审核中";
+//            RCConversationViewController *chatVC = [[RCConversationViewController alloc] init];
+//            chatVC.conversationType = ConversationType_CUSTOMERSERVICE;
+//            //如果是单聊，不显示发送方昵称
+//            chatVC.targetId = @"001";
+//            chatVC.title = @"我的客服";
+            [self.navigationController pushViewController:teachQA animated:YES];
         } else {
             Class class = NSClassFromString(item.destinClassName);
             UIViewController *vc = [class new];

@@ -10,9 +10,12 @@
 #import "ZMPersonalModel.h"
 #import "PersonalInfoCell.h"
 #import "ZMTQCerViewController.h"
+#import "ZMGetPromotionRequest.h"
+#import "ZMTQSaveRequest.h"
 #import "ZMExciseLanguageController.h"
 #import "ZMExercisePhotosViewController.h"
 #import "ZMSuccessDemoCollectionViewController.h"
+#import "ZMGoodAtFieldViewController.h"
 #import "LTHMonthYearPickerView.h"
 #import "ZMGetAuthRequest.h"
 #import "ZMAuthInfoModel.h"
@@ -20,6 +23,8 @@
 @interface TeachQAViewController ()   <UITableViewDelegate, UITableViewDataSource,LTHMonthYearPickerViewDelegate>
 @property (strong, nonatomic)  UITableView *tableView;
 @property (strong, nonatomic)  NSArray *dataSource;
+@property (nonatomic, strong) NSArray * goodAtFields;
+
 @property (nonatomic, strong) UIDatePicker * datePicker;
 @property (nonatomic, strong) PersonalInfoCell *dateCell;
 @property (nonatomic, strong) LTHMonthYearPickerView *monthYearPicker;
@@ -61,7 +66,14 @@
 }
 
 - (void)rightBarItem1Click {
+    ZMTQSaveRequest *request = [[ZMTQSaveRequest alloc] init];
+    request.userid = [ZMAccountManager shareManager].loginUser.id;
     
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (void)configDatePicker {
@@ -108,7 +120,7 @@
     ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"健身格言" destinClassName:@"ZMExciseLanguageController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
     ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"形象照" destinClassName:@"ZMExercisePhotosViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
-    ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"申请晋升" destinClassName:@"" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"申请晋升" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:@"审核中"];
     ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"简历口述" destinClassName:@"ZMExciseLanguageController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
     self.dataSource = @[item01,item02,item03,item04,item05,item06,item07,item08];
@@ -148,7 +160,15 @@
             successDemoVC.imgs = [self.infoModel.succaseimage componentsSeparatedByString:@","];
             successDemoVC.desc = self.infoModel.succase;
             [self.navigationController pushViewController:successDemoVC animated:YES];
-        } else {
+        } else if ([item.title isEqualToString:@"擅长领域"]) {
+            ZMGoodAtFieldViewController *goodAtField = [[ZMGoodAtFieldViewController alloc] init];
+            goodAtField.selectString = self.infoModel.skillname.mutableCopy;
+            goodAtField.block = ^(NSString *selectString) {
+                self.infoModel.skillname = selectString;
+            };
+            [self.navigationController pushViewController:goodAtField animated:YES];
+        }
+        else {
         Class class = NSClassFromString(item.destinClassName);
         UIViewController *vc = [class new];
         vc.title = item.title;

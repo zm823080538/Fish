@@ -7,7 +7,6 @@
 //
 
 #import "ZMAccountManager.h"
-#import "ZMConfig.h"
 #import <NSObject+YYModel.h>
 
 @implementation ZMAccountManager
@@ -18,6 +17,13 @@
         accountManager = [[ZMAccountManager alloc] init];
     });
     return accountManager;
+}
+
+- (void)updateUserInfoWithAccount:(ZMAccount *)account {
+    NSDictionary *dict = [account modelToJSONObject];
+    [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kZMUserInfo];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 - (ZMAccount *)loginUser {

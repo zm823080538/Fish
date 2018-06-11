@@ -7,6 +7,8 @@
 //
 
 #import "ZMPreferentialActivityController.h"
+#import "ZMWebViewController.h"
+#import "ZMPrivacyListViewController.h"
 #import <Masonry.h>
 #import "ZMNewList.h"
 #import <UIImageView+YYWebImage.h>
@@ -24,9 +26,10 @@
 }
 
 - (void)rightBarItemClick {
-    
+    ZMPrivacyListViewController *messageVC = [ZMPrivacyListViewController new];
+    messageVC.title = @"消息";
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
-
 
 #pragma mark - Table view data source
 
@@ -34,7 +37,12 @@
     return self.list.count;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMNewListItem *item = self.list[indexPath.row];
+    ZMWebViewController *webVc = [[ZMWebViewController alloc] init];
+    webVc.item = item;
+    [self.navigationController pushViewController:webVc animated:YES];
+}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

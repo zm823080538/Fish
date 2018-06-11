@@ -14,8 +14,7 @@
 #import "ZMCourseListRequest.h"
 #import "ZMCourseDetailViewController.h"
 
-@interface ZMCalendarViewController()<UITableViewDataSource,UITableViewDelegate,FSCalendarDataSource,FSCalendarDelegate>
-
+@interface ZMCalendarViewController()<UITableViewDataSource,UITableViewDelegate,FSCalendarDataSource,FSCalendarDelegate,DZNEmptyDataSetSource>
 @property (weak, nonatomic) FSCalendar *calendar;
 @property (nonatomic, strong) UITableView * tableView;
 
@@ -36,12 +35,6 @@
 
 @implementation ZMCalendarViewController
 
-//- (void)dealloc
-//{
-//    [self.calendar removeObserver:self forKeyPath:@"scope" context:_KVOContext];
-//    NSLog(@"%s",__FUNCTION__);
-//}
-
 - (instancetype)init
 {
     self = [super init];
@@ -54,13 +47,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColorFromRGB(0xF3F3F3);
+    self.view.backgroundColor = [UIColor whiteColor];
         self.dateFormatter = [[NSDateFormatter alloc] init];
         self.dateFormatter.dateFormat = @"yyyy-MM-dd";
-    self.datesWithEvent = @[@"2018-05-03",
-                            @"2018-05-06",
-                            @"2018-05-12",
-                            @"2018-05-25"];
         CGFloat height = 300;
         FSCalendar *calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, height)];
         calendar.dataSource = self;
@@ -68,14 +57,15 @@
         calendar.backgroundColor = [UIColor whiteColor];
         calendar.appearance.headerMinimumDissolvedAlpha = 0;
         calendar.appearance.caseOptions = FSCalendarCaseOptionsHeaderUsesUpperCase;
-        [self.view addSubview:calendar];
+//        [self.view addSubview:calendar];
         self.calendar = calendar;
-        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.calendar.frame), self.view.width, self.view.height - CGRectGetMaxY(self.calendar.frame)) style:UITableViewStylePlain];
+        self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 34, self.view.width, self.view.height - 34) style:UITableViewStylePlain];
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         self.tableView.rowHeight = 64;
         [self.view addSubview:self.tableView];
         self.tableView.tableFooterView = [UIView new];
+        self.tableView.tableHeaderView = self.calendar;
         
         UIButton *previousButton = [UIButton buttonWithType:UIButtonTypeCustom];
         previousButton.frame = CGRectMake(0, 5, 95, 34);
@@ -94,15 +84,36 @@
         [nextButton addTarget:self action:@selector(nextClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:nextButton];
         self.nextButton = nextButton;
-        
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(nextButton.mas_bottom);
+        make.left.bottom.right.equalTo(self.view);
+    }];
+    self.tableView.emptyDataSetSource = self;
         [self.calendar selectDate:[NSDate date] scrollToDate:YES];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"zanwushuju"];
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return 150;
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *title = @"暂无内容";
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont boldSystemFontOfSize:15],
+                                 NSForegroundColorAttributeName:UIColorFromRGB(0x999999)
+                                 };
+    return [[NSAttributedString alloc] initWithString:title attributes:attributes];
 }
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
 {
     NSLog(@"did select date %@",[self.dateFormatter stringFromDate:date]);
     ZMCourseListRequest *request = [[ZMCourseListRequest alloc] init];
-    //        1关注2黑名单3已接单
+    //1关注2黑名单3已接单
     NSString *status = @"1";
     request.tid = [ZMAccountManager shareManager].loginUser.id;
     request.status = status;

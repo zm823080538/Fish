@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMGoodAtFieldViewController : UIViewController
+@property (nonatomic, copy) NSMutableString * selectString;
+@property (nonatomic, copy) void(^block)(NSMutableString *selectArray);
 
 @end

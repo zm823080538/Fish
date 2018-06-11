@@ -10,7 +10,8 @@
 #import "ZMApplyListModel.h"
 typedef NS_ENUM(NSUInteger, ApplyStyle) {
     ApplyStyleStyle1 = 0,
-    ApplyStyleStyle2 = 1
+    ApplyStyleStyle2 = 1,
+    ApplyStyleStyle3 = 2
 };
 
 @protocol ZMMemberApplyCellDelegate <NSObject>

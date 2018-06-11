@@ -16,7 +16,7 @@ typedef enum : NSUInteger {
     LZPickerTypeSingle,
 } LZPickerType;
 
-typedef void(^lz_backBlock)(NSString *address, NSString *province,NSString *city,NSString *area);
+typedef void(^lz_backBlock)(NSString *address, NSString *province,NSString *city,NSString *area, NSString *areaCode);
 typedef void(^lz_actionBlock)();
 @interface LZCityPickerView : UIView
 
@@ -34,6 +34,8 @@ typedef void(^lz_actionBlock)();
 @property (strong, nonatomic)NSDictionary *textAttributes;
 /** 按钮标题字体属性,默认:蓝色,14号 */
 @property (strong, nonatomic)NSDictionary *titleAttributes;
+
+@property (copy, nonatomic) NSString *areaCode;
 /**
  *  @author LQQ, 16-08-30 11:08:49
  *

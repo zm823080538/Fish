@@ -39,10 +39,10 @@
     [self.view.layer addSublayer:self.maskLayer];
     
     __weak typeof(self)ws = self;
-    _cityPicker = [LZCityPickerView showInView:self.view didSelectWithBlock:^(NSString *address, NSString *province, NSString *city, NSString *area) {
+    _cityPicker = [LZCityPickerView showInView:self.view didSelectWithBlock:^(NSString *address, NSString *province, NSString *city, NSString *area,NSString *areaCode) {
         
         if (ws.backBlock) {
-            ws.backBlock(address, province, city, area);
+            ws.backBlock(address, province, city, area,areaCode);
         }
     } cancelBlock:^{
         

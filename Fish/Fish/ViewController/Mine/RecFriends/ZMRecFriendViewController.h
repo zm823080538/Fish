@@ -2,7 +2,7 @@
 //  ZMRecFriendViewController.h
 //  Fish
 //
-//  Created by sunny on 2018/4/26.
+//  Created by zhaoming on 2018/6/2.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 

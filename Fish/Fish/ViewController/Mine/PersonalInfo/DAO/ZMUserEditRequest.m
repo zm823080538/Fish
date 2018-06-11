@@ -10,6 +10,10 @@
 
 
 @implementation ZMUserEditRequest
+- (NSDictionary<NSString *,NSString *> *)requestHeaderFieldValueDictionary {
+    return @{@"Content-Type":@"application/x-www-form-urlencoded"};
+}
+
 - (NSString *)requestUrl {
     return @"api/user/edit";
 }
@@ -21,6 +25,11 @@
 - (id)requestArgument {
     return @{
              @"id": _id,
+             @"nickname": _nickname,
+             @"areacode": _areacode,
+             @"img": _img,
+             @"alipay":_alipay,
+             @"sex":_sex
              };
 }
 

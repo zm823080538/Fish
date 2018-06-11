@@ -135,25 +135,48 @@ static NSInteger const lz_buttonHeight = 30;
     
     NSLog(@"视图销毁了");
 }
+
++ (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    
+    if (jsonString == nil) {
+        
+        return nil;
+        
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSError *err;
+    
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                         
+                                                        options:NSJSONReadingMutableContainers
+                         
+                                                          error:&err];
+    
+    if(err) {
+        
+        NSLog(@"json解析失败：%@",err);
+        
+        return nil;
+        
+    }
+    
+    return dic;
+    
+}
+
 #pragma mark - /** 加载数据源 */
 - (void)loadData {
-    NSString *path = [[NSBundle mainBundle]pathForResource:@"Address" ofType:@"plist"];
+//    NSString *path = [[NSBundle mainBundle]pathForResource:@"Address" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"area" ofType:@"json"];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    NSArray *provinces = dic[@"data"];
     
-    NSDictionary *dic = [[NSDictionary alloc]initWithContentsOfFile:path];
-    
-    NSArray *provinces = [dic allKeys];
-    
-    for (NSString *tmp in provinces) {
+    for (NSDictionary *dict in provinces) {
         
-        LZProvince *province = [[LZProvince alloc]init];
-        province.name = tmp;
-        
-        NSArray *arr = [dic objectForKey:tmp];
-        
-        NSDictionary *cityDic = [arr firstObject];
-        
-        [province configWithDic:cityDic];
-        
+        LZProvince *province = [LZProvince modelWithJSON:dict];
         [self.dataSource addObject:province];
     }
     
@@ -162,11 +185,11 @@ static NSInteger const lz_buttonHeight = 30;
     
     __currentProvience = defPro;
     
-    LZCity *defCity = [defPro.cities firstObject];
+    LZCity *defCity = [defPro.childs firstObject];
     
     __currentCity = defCity;
     
-    __currentArea = [defCity.areas firstObject];
+    __currentArea = [defCity.childs firstObject];
 }
 
 #pragma mark - 懒加载子视图
@@ -284,8 +307,8 @@ static NSInteger const lz_buttonHeight = 30;
     // 选择结果回调
     if (self._selectBlock) {
         
-        NSString *address = [NSString stringWithFormat:@"%@-%@-%@",__currentArea.province,__currentArea.city,__currentArea.name];
-        self._selectBlock(address,__currentArea.province,__currentArea.city,__currentArea.name);
+        NSString *address = [NSString stringWithFormat:@"%@-%@-%@",__currentProvience.name,__currentCity.name,__currentArea.name];
+        self._selectBlock(address,__currentProvience.name,__currentCity.name,__currentArea.name,__currentArea.id);
     }
     
     __weak typeof(self)ws = self;
@@ -341,10 +364,10 @@ static NSInteger const lz_buttonHeight = 30;
         return self.dataSource.count;
     } else if (component == 1) {
         
-        return __currentProvience.cities.count;
+        return __currentProvience.childs.count;
     } else {
         
-        return __currentCity.areas.count;
+        return __currentCity.childs.count;
     }
 }
 
@@ -366,17 +389,17 @@ static NSInteger const lz_buttonHeight = 30;
         label.attributedText = attStr;
     } else if (component == 1) {
         
-        if (__currentProvience.cities.count > row) {
+        if (__currentProvience.childs.count > row) {
             
-            LZCity *city = [__currentProvience.cities objectAtIndex:row];
+            LZCity *city = [__currentProvience.childs objectAtIndex:row];
             NSAttributedString *attStr = [[NSAttributedString alloc]initWithString:city.name attributes:self.textAttributes];
             label.attributedText = attStr;
         }
     } else {
         
-        if (__currentCity.areas.count > row) {
+        if (__currentCity.childs.count > row) {
             
-            LZArea *area = [__currentCity.areas objectAtIndex:row];
+            LZArea *area = [__currentCity.childs objectAtIndex:row];
             NSAttributedString *attStr = [[NSAttributedString alloc]initWithString:area.name attributes:self.textAttributes];
             label.attributedText = attStr;
         }
@@ -392,10 +415,10 @@ static NSInteger const lz_buttonHeight = 30;
         LZProvince *province = [self.dataSource objectAtIndex:row];
         __currentProvience = province;
         
-        LZCity *city = [province.cities firstObject];
+        LZCity *city = [province.childs firstObject];
         __currentCity = city;
         
-        __currentArea = [city.areas firstObject];
+        __currentArea = [city.childs firstObject];
         
         if (self.type == LZPickerTypeCity) {
             [pickerView reloadComponent:1];
@@ -408,12 +431,12 @@ static NSInteger const lz_buttonHeight = 30;
         }
     } else if (component == 1) {
         
-        if (__currentProvience.cities.count > row) {
+        if (__currentProvience.childs.count > row) {
             
-            LZCity *city = [__currentProvience.cities objectAtIndex:row];
+            LZCity *city = [__currentProvience.childs objectAtIndex:row];
             __currentCity = city;
             
-            __currentArea = [city.areas firstObject];
+            __currentArea = [city.childs firstObject];
         }
         
         if (self.type == LZPickerTypeDefault) {
@@ -422,16 +445,16 @@ static NSInteger const lz_buttonHeight = 30;
         }
     } else if (component == 2) {
         
-        if (__currentCity.areas.count > row) {
-             __currentArea = [__currentCity.areas objectAtIndex:row];
+        if (__currentCity.childs.count > row) {
+             __currentArea = [__currentCity.childs objectAtIndex:row];
         }
     }
     
     // 选择结果回调
     if (__selectBlock && self.autoChange) {
         
-        NSString *address = [NSString stringWithFormat:@"%@-%@-%@",__currentArea.province,__currentArea.city,__currentArea.name];
-        __selectBlock(address,__currentArea.province,__currentArea.city,__currentArea.name);
+        NSString *address = [NSString stringWithFormat:@"%@-%@-%@",__currentProvience.name,__currentCity.name,__currentArea.name];
+        self._selectBlock(address,__currentProvience.name,__currentCity.name,__currentArea.name,__currentArea.id);
     }
 }
 

@@ -2,55 +2,107 @@
 //  ZMRecFriendViewController.m
 //  Fish
 //
-//  Created by sunny on 2018/4/26.
+//  Created by zhaoming on 2018/6/2.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
 #import "ZMRecFriendViewController.h"
-#import "ZMInputTextField.h"
+#import "ZMRecFriendCell.h"
 #import "ZMRecFriendRequest.h"
-#import "ZMAccountManager.h"
+#import "ZMRecFriendModel.h"
 
-@interface ZMRecFriendViewController ()
-@property (nonatomic, strong) ZMInputTextField *nameTextField;
-@property (nonatomic, strong) ZMInputTextField *phoneTextField;
+@interface ZMRecFriendViewController () <UITableViewDelegate, UITableViewDataSource,DZNEmptyDataSetSource>
+@property (nonatomic, strong) ZMRecFriendModel *recFriendModel;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+
 @end
 
 @implementation ZMRecFriendViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColorFromRGB(0xF5F5F5);
-    self.title = @"推荐好友信息";
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"提交" style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
-    for (int i = 0; i < 2; i ++) {
-        ZMInputTextField *inputTextField = [[ZMInputTextField alloc] initWithFrame:CGRectMake(0, 20 + 64 + 54 * i, SCREEN_WIDTH, 54)];
-        inputTextField.backgroundColor = [UIColor whiteColor];
-        inputTextField.textField.textAlignment = NSTextAlignmentRight;
-        if (i == 0) {
-            inputTextField.leftLabelText = @"推荐人姓名";
-            inputTextField.textField.placeholder = @"请输入推荐人姓名";
-            self.nameTextField = inputTextField;
-        } else {
-            inputTextField.leftLabelText = @"推荐人手机号";
-            inputTextField.textField.placeholder = @"请输入推荐人手机号";
-            self.phoneTextField = inputTextField;
-        }
-        [self.view addSubview:inputTextField];
+    [self.iconImageView setImageWithURL:[NSURL URLWithString:[ZMAccountManager shareManager].loginUser.img] placeholder:PlaceholderImage];
+    self.tableView.tableFooterView = [UIView new];
+    self.tableView.rowHeight = 75;
+    self.tableView.emptyDataSetSource = self;
+    [self request];
+}
+- (IBAction)paste {
+    UIPasteboard *pab = [UIPasteboard generalPasteboard];
+    
+    NSString *string = self.codeLabel.text;
+    
+    [pab setString:string];
+    
+    if (pab == nil) {
+        [MBProgressHUD showTipMessageInView:@"复制失败"];
+        
+    }else
+    {
+        [MBProgressHUD showTipMessageInView:@"已复制"];
+        
     }
+
 }
 
-- (void)rightBarItemClick {
-    ZMRecFriendRequest *recFriendRequest = [[ZMRecFriendRequest alloc] init];
-    recFriendRequest.userid = [ZMAccountManager shareManager].loginUser.id;
-    recFriendRequest.friendsname = self.nameTextField.textField.text;
-    recFriendRequest.friendsmoblie = self.phoneTextField.textField.text;
-    [recFriendRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-        [self.navigationController popViewControllerAnimated:YES];
+- (void)request {
+    [MBProgressHUD showActivityMessageInView:nil];
+    ZMRecFriendRequest *request = [[ZMRecFriendRequest alloc] init];
+    request.id = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        if ([request.responseObject[@"code"] integerValue] == 0) {
+            [MBProgressHUD hideHUD];
+            [MBProgressHUD showSuccessMessage:@"加载成功"];
+            
+            self.recFriendModel = [ZMRecFriendModel modelWithJSON:request.responseObject[@"data"]];
+            [self updateUI];
+            
+        } else {
+            [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
+        }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
+        [MBProgressHUD hideHUD];
+        [MBProgressHUD showErrorMessage:@"网编异常，请稍后再试"];
     }];
 }
+
+- (void)updateUI {
+    self.codeLabel.text = self.recFriendModel.invitecode;
+    self.moneyLabel.text = [NSString stringWithFormat:@"%@元",self.recFriendModel.invitemoney];
+    [self.tableView reloadData];
+}
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"zanwushuju"];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *title = @"暂无内容";
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont boldSystemFontOfSize:15],
+                                 NSForegroundColorAttributeName:UIColorFromRGB(0x999999)
+                                 };
+    return [[NSAttributedString alloc] initWithString:title attributes:attributes];
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.recFriendModel.list.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMRecFriendCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMRecFriendCell class])];
+    if (!cell) {
+        cell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMRecFriendCell class]) owner:nil options:nil].firstObject;
+    }
+    ZMAccount *account = self.recFriendModel.list[indexPath.row];
+    cell.friendModel = account;
+    return cell;
+}
+
 
 @end

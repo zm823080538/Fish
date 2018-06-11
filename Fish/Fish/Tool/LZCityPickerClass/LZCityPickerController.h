@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^__actionBlock)(NSString *address, NSString *province,NSString *city,NSString *area);
+typedef void(^__actionBlock)(NSString *address, NSString *province,NSString *city,NSString *area,NSString *areaCode);
 
 @interface LZCityPickerController : UIViewController
 

@@ -8,5 +8,6 @@
 
 #import "LLBaseViewController.h"
 @interface ForgetPasswordViewController : LLBaseViewController
+@property (nonatomic, assign) BOOL isChangePwd;
 
 @end

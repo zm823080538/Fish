@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSString * image;
 @property (nonatomic, copy) NSString * title;
 @property (nonatomic, copy) NSString * destinClassName;
+@property (nonatomic, copy) NSString * rightTitle;
 - (instancetype)initWithImage:(NSString *)image title:(NSString *)title destinClassName:(NSString *)className;
 @end
 

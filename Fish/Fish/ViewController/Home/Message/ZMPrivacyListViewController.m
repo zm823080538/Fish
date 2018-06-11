@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setDisplayConversationTypes:@[
-                                        @(ConversationType_PRIVATE)
+                                        @(ConversationType_PRIVATE),@(ConversationType_SYSTEM)
                                         ]];
     self.conversationListTableView.tableFooterView = [UIView new];
     // Do any additional setup after loading the view.

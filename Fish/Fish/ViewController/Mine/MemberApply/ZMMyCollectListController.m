@@ -12,6 +12,7 @@
 #import "ZMAccountManager.h"
 #import "ZMCollectRequest.h"
 #import "ZMNewList.h"
+#import "ZMWebViewController.h"
 #import "ZMCollectListRequest.h"
 @interface ZMMyCollectListController () <DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @property (nonatomic, strong) NSMutableArray * dataSource;
@@ -83,12 +84,18 @@
     return @"删除";
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    webVC.item = self.dataSource[indexPath.row];
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZMNewListItem *item = self.dataSource[indexPath.row];
     ZMCollectRequest *collectRequest = [[ZMCollectRequest alloc] init];
     collectRequest.id = item.id;
-    collectRequest.userid = item.userid;
+    collectRequest.userid = [ZMAccountManager shareManager].loginUser.id;
     collectRequest.action = @"0";
     [collectRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         // 从数据源中删除

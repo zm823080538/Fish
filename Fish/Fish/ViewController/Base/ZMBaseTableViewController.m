@@ -21,7 +21,7 @@
     self.tableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0);
     self.tableView.rowHeight = 50;
     self.tableView.tableFooterView = [UIView new];
-    [self adapterUIForIOS11:self.tableView];
+//    [self adapterUIForIOS11:self.tableView];
 }
 
 - (void)adapterUIForIOS11:(UIScrollView *)scrollView {

@@ -41,4 +41,5 @@
 @property (nonatomic , copy) NSString              * password;
 @property (nonatomic , copy) NSString              * token;
 @property (nonatomic , copy) NSString              * address;
+@property (nonatomic , copy) NSString              * alipay;
 @end

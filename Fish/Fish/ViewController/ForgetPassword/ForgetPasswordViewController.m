@@ -39,7 +39,9 @@
     self.registerUser.layer.borderColor = [UIColor colorWithHexString:@"#FFCD00" alpha:0.4].CGColor;
     self.registerUser.layer.borderWidth = 1.0f;
     self.backgroundView.backgroundColor = [UIColor colorWithRed:31/255.0 green:31/255.0 blue:31/255.0 alpha:0.95];
+
     [self.registerUser setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
+
 
     RAC(self.getCodeButton, enabled) = [RACSignal
                                         combineLatest:@[
@@ -74,15 +76,20 @@
     commitRequest.password = self.passwordTextField.text;
     commitRequest.code = self.verfiyCodeTextField.text;
     [commitRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        if ([request.responseObject[@"code"] integerValue] == 0) {
+            [MBProgressHUD showSuccessMessage:@"修改成功"];
+        } else {
+            [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
+        }
         NSLog(@"%@",request.responseString);
-        [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
 }
 - (IBAction)getCodeClick:(UIButton *)sender {
     self.getCodeButton.enabled = FALSE;
-    self.remainSeconds = 10;
+    self.remainSeconds = 60;
     self.startCheckTimer = 1;
     [self setTime];
     ZMVerfiyCodeRequest *verfiyCodeRequest = [[ZMVerfiyCodeRequest alloc] init];

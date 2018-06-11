@@ -46,7 +46,7 @@
 }
 
 - (void)initViewControllers {
-    NSArray *titleArray = @[@"体验课",@"私教课",@"申请记录"];
+    NSArray *titleArray = @[@"体验课",@"私教课",@"退课",@"申请记录"];
     NSMutableArray *viewControllers = @[].mutableCopy;
     for (int i = 0; i < titleArray.count; i ++) {
         ZMApplyListTableViewController *listVC = [[ZMApplyListTableViewController alloc] init];

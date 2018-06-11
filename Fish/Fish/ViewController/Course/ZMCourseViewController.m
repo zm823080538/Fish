@@ -9,7 +9,7 @@
 #import "ZMCourseViewController.h"
 #import "ZMCourseListViewController.h"
 #import "ZMCalendarViewController.h"
-#import "ZMMessageViewController.h"
+#import "ZMPrivacyListViewController.h"
 #import "ZMScanViewController.h"
 @interface ZMCourseViewController () 
 @end
@@ -77,7 +77,7 @@
 }
 
 - (void)rightBarItemClick {
-    ZMMessageViewController *messageVC = [ZMMessageViewController new];
+    ZMPrivacyListViewController *messageVC = [ZMPrivacyListViewController new];
     messageVC.title = @"消息";
     [self.navigationController pushViewController:messageVC animated:YES];
 }

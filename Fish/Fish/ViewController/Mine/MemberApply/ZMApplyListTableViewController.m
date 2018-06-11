@@ -91,6 +91,7 @@
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         if ([request.responseObject[@"code"] integerValue] == 0)  {
             [self request];
+            [MBProgressHUD showSuccessMessage:@"操作成功"];
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         

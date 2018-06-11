@@ -20,7 +20,14 @@
 - (id)requestArgument {
     return @{@"tid":_tid,
              @"starttime":_starttime,
-             @"endtime":_endtime
+             @"endtime":_endtime,
+             @"day1":_day1,
+             @"day2":_day2,
+             @"day3":_day3,
+             @"day4":_day4,
+             @"day5":_day5,
+             @"day6":_day6,
+             @"day7":_day7,
              };
 }
 @end

@@ -24,7 +24,13 @@ typedef NS_ENUM(NSUInteger, PersonalInfoCellStyle) {
 #import "ZMAccountManager.h"
 #import <Masonry.h>
 #import <MBProgressHUD+JDragon.h>
+#define kZMUserInfo   @"kZMUserInfo"
 
+
+//当前系统版本
+#define IOS11 ([[UIDevice currentDevice].systemVersion floatValue] >= 11.0 ? YES : NO)
+#define IOS10 ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0 ? YES : NO)
+#define IOS9 ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0 ? YES : NO)
 
 
 #endif /* ZMMineDefine_h */

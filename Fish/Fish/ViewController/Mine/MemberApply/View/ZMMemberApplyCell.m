@@ -22,11 +22,7 @@
 
 @implementation ZMMemberApplyCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
 
-    // Initialization code
-}
 - (IBAction)click:(UIButton *)sender {
     if (self.delegate && [self.delegate respondsToSelector:@selector(clickWithTitle:indexPath:)]) {
         [self.delegate clickWithTitle:sender.currentTitle indexPath:self.indexPath];
@@ -40,9 +36,13 @@
         self.passButton.hidden = self.refuseButton.hidden = NO;
         self.refuseButton.layer.borderColor = self.passButton.layer.borderColor = UIColorFromRGB(0x4A576A).CGColor;
         self.refuseButton.layer.borderWidth = self.passButton.layer.borderWidth = 1;
-    } else {
+    } else if (applyStyle == ApplyStyleStyle2){
         self.passStatusLabel.hidden = NO;
         self.passButton.hidden = self.refuseButton.hidden = YES;
+    } else {
+        self.passButton.hidden = NO;
+        self.refuseButton.hidden = YES;
+        self.passButton.frame = self.refuseButton.frame;
     }
 }
 

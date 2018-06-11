@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *openid; // 微信openid
 @property (nonatomic, copy) NSString *img; // 头像
 @property (nonatomic, copy) NSString *sex; // 值为1男性，值为2时是女性，值为0时是未知
+@property (nonatomic, copy) NSString *alipay;
 @property (nonatomic, copy) NSString *areacode; // areacode地区id
 @property (nonatomic, copy) NSString *deviceid; // 设备id
 @property (nonatomic, copy) NSString *longitude; // 经度

@@ -21,8 +21,9 @@
 #import "ZMPreferentialActivityController.h"
 #import "ZMMarketTableViewController.h"
 #import "ZMNearMemberViewController.h"
-#import "ZMMessageViewController.h"
+#import "ZMPrivacyListViewController.h"
 #import <NSObject+YYModel.h>
+#import "ZMLoginRequest.h"
 
 #import "ZMExerciseResultListController.h"
 #import "ZMMemberResultListController.h"
@@ -62,8 +63,6 @@
     self.tableView.tableHeaderView = self.headerView;
     self.bannerView.delegate = self;
     self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    
-
     
     [self request];
     
@@ -131,7 +130,7 @@
 }
 
 - (void)rightBarItemClick {
-    ZMMessageViewController *messageVC = [ZMMessageViewController new];
+    ZMPrivacyListViewController *messageVC = [ZMPrivacyListViewController new];
     messageVC.title = @"消息";
     [self.navigationController pushViewController:messageVC animated:YES];
 }
@@ -159,8 +158,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        return 114;
-    } else if (indexPath.section == 1) {
         return 271;
     } else {
         return 140;
@@ -173,34 +170,24 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     ZMHomeSectionView *sectionView = [[ZMHomeSectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
-    if (section == 0) {
-        sectionView.title = @"健身知识";
-        @weakify(self)
-        sectionView.arrowClick = ^{
-            @strongify(self)
-            ZMBodyBuildingKnowledageListController *bodyBuildingKnowledageListVC = [[ZMBodyBuildingKnowledageListController alloc] init];
-            bodyBuildingKnowledageListVC.arrayList = self.knowledgeNewList;
-            bodyBuildingKnowledageListVC.title = @"健身知识";
-            [self.navigationController pushViewController:bodyBuildingKnowledageListVC animated:YES];
-        };
-    } else if (section == 1) {
-        sectionView.title = @"会员成果";
+     if (section == 0) {
+        sectionView.title = @"铁友圈";
         @weakify(self)
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMMemberResultListController *memberResultListVC = [[ZMMemberResultListController alloc] init];
             memberResultListVC.arrayList = self.teachNewList;
-            memberResultListVC.title = @"会员成果";
+            memberResultListVC.title = @"铁友圈";
             [self.navigationController pushViewController:memberResultListVC animated:YES];
         };        
     } else {
-        sectionView.title = @"训练技巧";
+        sectionView.title = @"干货分享";
         @weakify(self)
         sectionView.arrowClick = ^{
             @strongify(self)
             ZMExerciseResultListController *exciseResultListVC = [[ZMExerciseResultListController alloc] init];
             exciseResultListVC.arrayList = self.resultNewList;
-             exciseResultListVC.title = @"训练技巧";
+             exciseResultListVC.title = @"干货分享";
             [self.navigationController pushViewController:exciseResultListVC animated:YES];
         };
       
@@ -209,25 +196,22 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 1) {
+    if (section == 0) {
         return 1;
+    } else {
+        if (self.resultNewList.list.count <= 3) {
+            return self.resultNewList.list.count;
+        }
+        return 3;
     }
-    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        ZMHomeBodyBuildingKnowledageCell *knowledageCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMHomeBodyBuildingKnowledageCell class])];
-        if (!knowledageCell) {
-            knowledageCell = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([ZMHomeBodyBuildingKnowledageCell class]) owner:nil options:nil].firstObject;
-        }
-        knowledageCell.item = self.knowledgeNewList.list[indexPath.row];
-        return knowledageCell;
-    } else if (indexPath.section == 1) {
         ZMMemberResultCell *memberResultCell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ZMMemberResultCell class])];;
         if (!memberResultCell) {
             memberResultCell = [[ZMMemberResultCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass([ZMMemberResultCell class])];
@@ -247,12 +231,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
     ZMNewListItem *item;
-    if (indexPath.section == 0) {
-        item = self.knowledgeNewList.list[indexPath.row];
-        webVC.item = item;
-    } else if (indexPath.section == 1) {
-        
-    } else {
+    if (indexPath.section == 1) {
         item = self.teachNewList.list[indexPath.row];
         webVC.item = item;
     }

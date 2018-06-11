@@ -62,6 +62,13 @@
 
 - (void)save {
     ZMServicetimeSaveRequest *saveRequest = [[ZMServicetimeSaveRequest alloc] init];
+    saveRequest.day1 = @"";
+    saveRequest.day2 = @"";
+    saveRequest.day3 = @"";
+    saveRequest.day4 = @"";
+    saveRequest.day5 = @"";
+    saveRequest.day6 = @"";
+    saveRequest.day7 = @"";
     if (self.model) {
         saveRequest.id = self.model.id;
     }
@@ -97,9 +104,14 @@
     saveRequest.tid = [ZMAccountManager shareManager].loginUser.id;
     
     [saveRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [MBProgressHUD showSuccessMessage:@"保存成功"];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshServiceTimeListNotification" object:nil];
-         [self.navigationController popViewControllerAnimated:YES];
+        if ([request.responseObject[@"code"] integerValue] == 0) {
+            [MBProgressHUD showSuccessMessage:@"保存成功"];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshServiceTimeListNotification" object:nil];
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
+        }
+       
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];

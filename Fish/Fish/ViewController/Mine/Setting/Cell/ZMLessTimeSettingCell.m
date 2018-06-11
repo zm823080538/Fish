@@ -39,19 +39,19 @@
     self.label2.text = model.starttime;
     self.label3.text = model.endtime;
     NSMutableString *muString = @"".mutableCopy;
-    if (model.day1) {
+    if (model.day1.length > 0) {
         [muString appendString:@"星期一、"];
-    } else if (model.day2) {
+    } else if (model.day2.length > 0) {
         [muString appendString:@"星期二、"];
-    } else if (model.day3) {
+    } else if (model.day3.length > 0) {
         [muString appendString:@"星期三、"];
-    } else if (model.day4) {
+    } else if (model.day4.length > 0) {
         [muString appendString:@"星期四、"];
-    } else if (model.day5) {
+    } else if (model.day5.length > 0) {
         [muString appendString:@"星期五、"];
-    } else if (model.day6) {
+    } else if (model.day6.length > 0) {
         [muString appendString:@"星期六、"];
-    } else if (model.day7) {
+    } else if (model.day7.length > 0) {
         [muString appendString:@"星期日、"];
     }
     [muString deleteCharactersInRange:NSMakeRange(muString.length - 1, 1)];

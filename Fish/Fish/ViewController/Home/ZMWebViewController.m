@@ -18,6 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.view addSubview:self.wkWebView];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.item.linkurl]];
+    [self.wkWebView loadRequest:request];
+    if (self.isMustRead) {
+        return;
+    }
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 60, 30);
     [button setTitle:@"收藏" forState:UIControlStateNormal];
@@ -29,12 +36,10 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
-    
-    [self.view addSubview:self.wkWebView];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.item.linkurl]];
-    [self.wkWebView loadRequest:request];
-    
     button.selected = self.item.favorite.boolValue;
+   
+    
+    
 }
 
 - (WKWebView *)wkWebView {
@@ -52,7 +57,7 @@
 - (void)buttonClick:(UIButton *)sender {
     ZMCollectRequest *collectRequest = [[ZMCollectRequest alloc] init];
     collectRequest.id = self.item.id;
-    collectRequest.userid = self.item.userid;
+    collectRequest.userid = [ZMAccountManager shareManager].loginUser.id;
     collectRequest.action = self.item.favorite;
     [collectRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         sender.selected = !sender.selected;

@@ -24,6 +24,8 @@
 #import "ZMUpLoadRequest.h"
 #import "ZMChangeMobileViewController.h"
 
+NSString *const ZMUpdateUserInfoNotification = @"kZMUpdateUserInfoNotification";
+
 @interface PersonalInfoViewController ()  <UINavigationControllerDelegate, UIGestureRecognizerDelegate,UITableViewDelegate, UITableViewDataSource,YTKChainRequestDelegate>
 @property (strong, nonatomic)  UITableView *tableView;
 @property (strong, nonatomic)  NSArray *dataSource;
@@ -80,14 +82,17 @@
         
         [image01 startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             NSLog(@"success");
-            self.headerImageUrl = [image01 imageUrlString];
-//            [self.imageUrlDict setValue:[image01 imageUrlString] forKey:@"idimgpath"];
-//            dispatch_semaphore_signal(semaphore);
-            [self updateUserInfo];
+            if ([request.responseObject[@"code"] integerValue] == 0) {
+                self.headerImageUrl = [image01 imageUrlString];
+                [self updateUserInfo];
+            } else {
+                [MBProgressHUD showErrorMessage:@"图片上传失败"];
+            }
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             [self.view showError:@"图片上传失败"];
         }];
     } else {
+        
         [self updateUserInfo];
     }
 }
@@ -97,13 +102,26 @@
     editRequest.img = self.headerImageUrl;
     editRequest.nickname = self.originAccountInfo.nickname;
     editRequest.sex = self.originAccountInfo.sex;
+    editRequest.alipay = self.originAccountInfo.alipay ?: @"";
+    editRequest.areacode = self.originAccountInfo.areacode;
     editRequest.id = [ZMAccountManager shareManager].loginUser.id;
     [editRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         if ([request.responseObject[@"code"] integerValue] == 0) {
             [MBProgressHUD showSuccessMessage:@"保存成功"];
             [MBProgressHUD hideHUD];
-//            [ZMAccountManager shareManager].loginUser.nickname = self.originAccountInfo.nickname;
+            [ZMAccountManager shareManager].loginUser.nickname = self.originAccountInfo.nickname;
+            if (self.headerImageUrl) {
+                [ZMAccountManager shareManager].loginUser.img = self.headerImageUrl;
+            }
+            [ZMAccountManager shareManager].loginUser.sex = self.originAccountInfo.sex;
+            [ZMAccountManager shareManager].loginUser.areacode = self.originAccountInfo.areacode;
+            [ZMAccountManager shareManager].loginUser.address = self.originAccountInfo.address;
+             [ZMAccountManager shareManager].loginUser.alipay = self.originAccountInfo.alipay;
+            [[ZMAccountManager shareManager] updateUserInfoWithAccount:self.originAccountInfo];
             [self.navigationController popViewControllerAnimated:YES];
+            [[NSNotificationCenter defaultCenter] postNotificationName:ZMUpdateUserInfoNotification object:nil];
+        } else {
+            [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
@@ -114,7 +132,7 @@
     [[ZMAccountManager shareManager] logOut];
     AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [[RCIMClient sharedRCIMClient] disconnect:YES];
-    [appdelegate changeRootVC];
+    [appdelegate logout];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -122,55 +140,13 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self.navigationController setNavigationBarHidden:NO animated:YES];
         });
-//    self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-//    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)[self.navigationController topViewController];
-}
-
-//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-//    if (gestureRecognizer == self.navigationController.interactivePopGestureRecognizer) {
-//        if ([self.originAccountInfo modelHash] != [[ZMAccountManager shareManager].loginUser modelHash]) {
-//            [self showAlert];
-//            return NO;
-//        }
-//        return YES;
-//    }
-//    return YES;
-//}
-
-- (void)showAlert {
-    [UIAlertController alertWithTitle:@"提示" message:@"是否保存修改" cancelTitle:@"取消" otherTitles:@[@"保存"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
-        [self commit];
-        
-    }];
-}
-
-
-- (void)commit {
-    ZMUserEditRequest *request = [[ZMUserEditRequest alloc] init];
-    request.nickname = self.originAccountInfo.nickname;
-    request.sex = self.originAccountInfo.sex;
-    request.img = self.originAccountInfo.img;
-    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self.view showToastString:@"保存成功"];
-        [self.navigationController popViewControllerAnimated:YES];
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-    }];
-}
-//- (BOOL)navigationShouldPopOnBackButton {
-//    if ([self.originAccountInfo modelHash] != [[ZMAccountManager shareManager].loginUser modelHash]) {
-//        [self showAlert];
-//        return NO;
-//    }
-//    return YES;
-//}
 
 - (void)loadData {
+    
     ZMAccount *account = [ZMAccountManager shareManager].loginUser;
+    self.headerImageUrl = account.img;
     ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:account.img title:@"头像" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:@""];
     ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.nickname];
     NSString *sex;
@@ -186,10 +162,10 @@
     ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"QR_Code" title:@"我的二维码" destinClassName:@"ZMMyQRCodeViewController" style:PersonalInfoCellStyleImage1 subTitle:nil];
     
     ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
-     ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定支付宝帐号" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
+     ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定支付宝帐号" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.alipay];
     ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"ZMChangeMobileViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
     
-     ZMPersonalModel   *item09 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"ZMChangePwdViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
+     ZMPersonalModel   *item09 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"ForgetPasswordViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
     self.dataSource = @[@[item01,item02,item03,item04,item05],@[item06,item07,item08,item09]];
     [self.tableView reloadData];
 }
@@ -222,7 +198,6 @@
         [YPImagePicker pickSingleImageWithTitle:@"修改头像" allowEditing:YES inViewController:self completionBlock:^(UIImage *image) {
             cell.rightImageView.image = image;
             self.headerImage = image;
-            
         }];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
         ZMBindAliPayViewController *vc = [[ZMBindAliPayViewController alloc] init];
@@ -239,15 +214,20 @@
         [UIAlertController alertWithTitle:@"性别" message:nil cancelTitle:@"取消" otherTitles:@[@"男",@"女"] preferredStyle:UIAlertControllerStyleActionSheet completion:^(NSInteger index) {
             if (index == 0) {
                 cell.rightLabel.text = @"男";
+                self.originAccountInfo.sex = @"1";
             } else if (index == 1) {
                 cell.rightLabel.text = @"女";
+                self.originAccountInfo.sex = @"2";
             }
+            
             item.subTitle = cell.rightLabel.text;
         }];
     } else if (indexPath.section == 0 && indexPath.row == 3) {
-        [LZCityPickerController showPickerInViewController:self selectBlock:^(NSString *address, NSString *province, NSString *city, NSString *area) {
+        [LZCityPickerController showPickerInViewController:self selectBlock:^(NSString *address, NSString *province, NSString *city, NSString *area,NSString *areaCode) {
             // 选择结果回调
             cell.rightLabel.text = address;
+            self.originAccountInfo.areacode = areaCode;
+            self.originAccountInfo.address = address;
             
         }];
     } else if (indexPath.section == 1 && indexPath.row == 1) {
@@ -255,6 +235,7 @@
         vc.content = cell.rightLabel.text;
         vc.block = ^(NSString *inputString) {
             cell.rightLabel.text = inputString;
+            self.originAccountInfo.alipay = inputString;
         };
         vc.title = @"绑定支付宝帐号";
         [self.navigationController pushViewController:vc animated:YES];

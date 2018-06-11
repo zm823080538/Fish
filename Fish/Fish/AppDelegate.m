@@ -19,6 +19,9 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <IQKeyboardManager.h>
 #import "RCDataManager.h"
+#import "ZMLoginRequest.h"
+#import <YTKNetworkAgent.h>
+#import "ZMAccountManager.h"
 
 //AMAP KEY
 
@@ -40,54 +43,25 @@
     [RCIM sharedRCIM].globalMessageAvatarStyle = RC_USER_AVATAR_CYCLE;
     [RCIM sharedRCIM].globalConversationAvatarStyle = RC_USER_AVATAR_CYCLE;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
-   
+    
+    [self.window makeKeyAndVisible];
     [self changeRootVC];
     
-    
-//
-//    [RCIM sharedRCIM].enablePersistentUserInfoCache = YES;
-   
-//    [RCIM sharedRCIM].enableTypingStatus = YES;
-//    //开启输入状态监听
-//    [RCIM sharedRCIM].enableTypingStatus = YES;
-//    //群成员数据源
-    
-   
-//    //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
-//    [RCIM sharedRCIM].enableMessageMentioned = YES;
-//
-//    //开启消息撤回功能
-//    [RCIM sharedRCIM].enableMessageRecall = YES;
-//
-//    //群成员数据源
-//    //开启消息@功能（只支持群聊和讨论组, App需要实现群成员数据源groupMemberDataSource）
-//    [RCIM sharedRCIM].enableMessageMentioned = YES;
-//
-//    //开启消息撤回功能
-//    [RCIM sharedRCIM].enableMessageRecall = YES;
-    [self.window makeKeyAndVisible];
-//    return YES;
-    
- 
-   
-    //    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-    //                                    @{kLLTabBarItemAttributeTitle : @"发布", kLLTabBarItemAttributeNormalImageName : @"post_normal", kLLTabBarItemAttributeSelectedImageName : @"post_normal", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
-    //                                    @{kLLTabBarItemAttributeTitle : @"消息", kLLTabBarItemAttributeNormalImageName : @"message_normal", kLLTabBarItemAttributeSelectedImageName : @"message_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
-    
-    //    tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"home_normal", kLLTabBarItemAttributeSelectedImageName : @"home_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-    //                                    @{kLLTabBarItemAttributeTitle : @"同城", kLLTabBarItemAttributeNormalImageName : @"mycity_normal", kLLTabBarItemAttributeSelectedImageName : @"mycity_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
-    
-   
-//    [[IQKeyboardManager sharedManager] setEnable:YES];
+    //开启输入状态监听
+    [RCIM sharedRCIM].enableTypingStatus = YES;
+
     return YES;
 }
 
+- (void)logout {
+    LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
+    self.window.rootViewController = nav;
+}
+
+
+
 - (void)changeRootVC {
-    if (![ZMAccountManager shareManager].login) {
-        LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
-        self.window.rootViewController = nav;
-    } else {
+    if ([ZMAccountManager shareManager].isLogin) {
         LLHomeViewController *homeViewController = [[LLHomeViewController alloc] init];
         ZMMemberViewController *sameCityViewController = [[ZMMemberViewController alloc] init];
         ZMCourseViewController *messageViewController = [[ZMCourseViewController alloc] init];
@@ -114,8 +88,10 @@
         tabBar.delegate = self;
         [tabBarController.tabBar addSubview:tabBar];
         self.window.rootViewController = tabBarController;
+    } else {
+        LLBaseNavViewController  *nav = [[LLBaseNavViewController  alloc] initWithRootViewController:[LoginViewController new]];
+        self.window.rootViewController = nav;
     }
-
     
 }
 

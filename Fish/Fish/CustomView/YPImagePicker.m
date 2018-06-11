@@ -10,11 +10,6 @@
 #import <objc/runtime.h>
 #import "UIAlertController+YPKit.h"
 #import "AppDelegate.h"
-#import "ZMConfig.h"
-//#import "YPKit.h"
-//#import "MGUIToolKits.h"
-//#import "QBImagePicker.h"
-//#import "UINavigationController+FDFullscreenPopGesture.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 

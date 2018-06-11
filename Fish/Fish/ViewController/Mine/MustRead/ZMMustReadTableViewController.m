@@ -51,6 +51,7 @@
 //    教练必读-评价机制 - /h5/news/detail?id=jizhi
     ZMPersonalModel *model = self.dataSource[indexPath.row];
     ZMWebViewController *webVC = [[ZMWebViewController alloc] init];
+    webVC.isMustRead = YES;
     webVC.view.backgroundColor = [UIColor whiteColor];
     webVC.title = model.title;
     NSString *urlString;

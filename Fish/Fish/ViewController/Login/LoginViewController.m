@@ -16,7 +16,6 @@
 #import "ForgetPasswordViewController.h"
 #import "ZMAccount.h"
 #import <NSObject+YYModel.h>
-#import "ZMConfig.h"
 #import "ZMAccountManager.h"
 #import <RongCloudIMKit/RongIMKit/RongIMKit.h>
 #import "ZMLoginRequest.h"
@@ -72,10 +71,9 @@
             NSDictionary *requestInfo = (NSDictionary *)request.responseJSONObject;
             NSLog(@"---%@",requestInfo[@"msg"]);
             NSString *code = requestInfo[@"code"];
-            if (code.integerValue == 100) {
-                
-            } else if (code.integerValue == 0) {
+           if (code.integerValue == 0) {
                 ZMAccount *account = [ZMAccount modelWithJSON:requestInfo[@"data"]];
+               [ZMAccountManager shareManager].loginUser = account;
                 NSDictionary *dict = [account modelToJSONObject];
                 [[NSUserDefaults standardUserDefaults] setObject:dict forKey:kZMUserInfo];
                 [[NSUserDefaults standardUserDefaults] synchronize];
@@ -90,6 +88,12 @@
                             [appDelegate changeRootVC];
                             [UIView setAnimationsEnabled:oldState];
                         } completion:^(BOOL finished) {
+                            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+                            
+                            [userDefault setObject:self.usernameTextField.text forKey:@"userName"];                            
+                            [userDefault setObject:self.passwordTextField.text forKey:@"password"];
+                            
+                            [userDefault synchronize];
                         }];
                         //
                     });
@@ -101,8 +105,8 @@
                     //如果没有设置token有效期却提示token错误，请检查您客户端和服务器的appkey是否匹配，还有检查您获取token的流程。
                     NSLog(@"token错误");
                 }];
-                
-               
+            } else {
+                [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
             }
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TeachQAViewController : UIViewController
+@property (nonatomic, copy) NSString * status;
 
 @end

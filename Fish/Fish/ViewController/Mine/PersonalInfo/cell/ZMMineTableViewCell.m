@@ -12,14 +12,21 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
-
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 @end
 
 @implementation ZMMineTableViewCell
 
+
 - (void)setModel:(ZMMineModel *)model {
     self.titleLabel.text = model.title;
     self.leftImageView.image = [UIImage imageNamed:model.image];
+    if (model.rightTitle) {
+        self.rightLabel.hidden = NO;
+        self.rightLabel.text = model.rightTitle;
+    } else {
+        self.rightLabel.hidden = YES;
+    }
 }
 
 //- (void)setPersonModel:(ZMMineModel *)model{
