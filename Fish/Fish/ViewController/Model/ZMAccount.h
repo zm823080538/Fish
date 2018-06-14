@@ -42,4 +42,6 @@
 @property (nonatomic , copy) NSString              * token;
 @property (nonatomic , copy) NSString              * address;
 @property (nonatomic , copy) NSString              * alipay;
+@property (nonatomic , copy) NSString              * privatemode;
+@property (nonatomic , copy) NSString              * remindme;
 @end

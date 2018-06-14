@@ -110,7 +110,7 @@
                   moduleName = "Fish"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhaoming/Desktop/Fish/Fish/Fish/Fish/ViewController/Mine/TeachingQualification%20/TeachQAViewController.m"
-                  timestampString = "550149283.6998219"
+                  timestampString = "550660137.042104"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -125,7 +125,7 @@
                   moduleName = "Fish"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhaoming/Desktop/Fish/Fish/Fish/Fish/ViewController/Mine/TeachingQualification%20/TeachQAViewController.m"
-                  timestampString = "550149283.705613"
+                  timestampString = "550660137.0448329"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -140,7 +140,7 @@
                   moduleName = "Fish"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhaoming/Desktop/Fish/Fish/Fish/Fish/ViewController/Mine/TeachingQualification%20/TeachQAViewController.m"
-                  timestampString = "550149283.710126"
+                  timestampString = "550660137.047766"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -157,60 +157,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fish/ViewController/Mine/TeachingQualification /ZMGoodAtFieldViewController.m"
-            timestampString = "550149349.855215"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fish/ViewController/Mine/TeachingQualification /ZMGoodAtFieldViewController.m"
             timestampString = "550149353.8866889"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
             landmarkName = "-viewWillDisappear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fish/ViewController/Mine/TeachingQualification /ZMGoodAtFieldViewController.m"
-            timestampString = "550149399.085036"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Fish/ViewController/Mine/TeachingQualification /ZMGoodAtFieldViewController.m"
-            timestampString = "550149399.791116"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

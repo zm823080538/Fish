@@ -24,6 +24,7 @@
 #import "ZMSettingTableViewController.h"
 #import "ZMCalendarViewController.h"
 #import "PersonalInfoViewController.h"
+#import "ZMOrderViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -146,9 +147,10 @@
 }
 
 - (void)updateUI {
+    
     ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
     item01.rightTitle = @"审核中";
-    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
+    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMOrderViewController"];
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
