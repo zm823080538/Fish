@@ -53,6 +53,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     for (UIButton *button in self.buttons) {
         [button setContentHorizontalCenterWithVerticalOffset:5];
     }
@@ -169,7 +171,10 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    ZMHomeSectionView *sectionView = [[ZMHomeSectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    ZMHomeSectionView *sectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ZMHomeSectionView"];
+    if (!sectionView) {
+        sectionView = [[ZMHomeSectionView alloc] initWithReuseIdentifier:@"ZMHomeSectionView"];
+    }
      if (section == 0) {
         sectionView.title = @"铁友圈";
         @weakify(self)
