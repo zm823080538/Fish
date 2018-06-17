@@ -35,13 +35,16 @@
     UISwitch *swit = [[UISwitch alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
     cell.accessoryView = swit;
     [swit addTarget:self action:@selector(switchChange:) forControlEvents:UIControlEventValueChanged];
+    swit.on = [[ZMAccountManager shareManager].loginUser.privatemode boolValue];
     return cell;
 }
 
 - (void)switchChange:(UISwitch *)swit {
     swit.selected = !swit.selected;
     if (swit.selected) {
-        
+        [ZMAccountManager shareManager].loginUser.privatemode = @"1";
+    } else {
+        [ZMAccountManager shareManager].loginUser.privatemode = @"0";
     }
 }
 
