@@ -16,6 +16,7 @@
 @property (nonatomic, strong) ZMAccount *loginUser;
 - (void)updateUserInfoWithAccount:(ZMAccount *)account;
 - (void)logOut;
+- (BOOL)isCoach; // 是否是教练
 
 
 @end

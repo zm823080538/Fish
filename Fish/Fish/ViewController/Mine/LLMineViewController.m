@@ -152,6 +152,8 @@
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
     ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
     ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+    ZMMineModel  *item13 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"课程定价" destinClassName:@"ZMLessonPriceTableViewController"];
+    
     ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
     ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"工作时间设置" destinClassName:@"ZMLessonTimeSettingController"];
     ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
@@ -164,7 +166,7 @@
     //
     ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
     ZMMineModel  *item12 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
-    self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09],@[item10,item11,item12]];
+    self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07,item13],@[item08,item09],@[item10,item11,item12]];
     [self.tableView reloadData];
 }
 
