@@ -16,6 +16,9 @@
 		5D0D9A5420D16F4400B571EC /* ZMHistoryOrderListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9A5320D16F4400B571EC /* ZMHistoryOrderListVC.m */; };
 		5D0D9A5720D1737B00B571EC /* ZMBodyRecordListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9A5620D1737B00B571EC /* ZMBodyRecordListVC.m */; };
 		5D0D9A5A20D173FD00B571EC /* ZMBodyRecordDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9A5920D173FD00B571EC /* ZMBodyRecordDetailVC.m */; };
+		5D0D9A6120D9483500B571EC /* ZMCourseAppointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9A5F20D9483500B571EC /* ZMCourseAppointController.m */; };
+		5D0D9A6620D9553F00B571EC /* ZMCourseAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9A6420D9553F00B571EC /* ZMCourseAddressController.m */; };
+		5D0D9A6720D9553F00B571EC /* ZMCourseAddressController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D0D9A6520D9553F00B571EC /* ZMCourseAddressController.xib */; };
 		5D2A652A20BE7422009CC388 /* ZMTQSaveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A652920BE7422009CC388 /* ZMTQSaveRequest.m */; };
 		5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */; };
 		5D2F7CA9209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CA7209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m */; };
@@ -254,6 +257,11 @@
 		5D0D9A5620D1737B00B571EC /* ZMBodyRecordListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBodyRecordListVC.m; sourceTree = "<group>"; };
 		5D0D9A5820D173FD00B571EC /* ZMBodyRecordDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBodyRecordDetailVC.h; sourceTree = "<group>"; };
 		5D0D9A5920D173FD00B571EC /* ZMBodyRecordDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBodyRecordDetailVC.m; sourceTree = "<group>"; };
+		5D0D9A5E20D9483500B571EC /* ZMCourseAppointController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseAppointController.h; sourceTree = "<group>"; };
+		5D0D9A5F20D9483500B571EC /* ZMCourseAppointController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseAppointController.m; sourceTree = "<group>"; };
+		5D0D9A6320D9553F00B571EC /* ZMCourseAddressController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCourseAddressController.h; sourceTree = "<group>"; };
+		5D0D9A6420D9553F00B571EC /* ZMCourseAddressController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCourseAddressController.m; sourceTree = "<group>"; };
+		5D0D9A6520D9553F00B571EC /* ZMCourseAddressController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMCourseAddressController.xib; sourceTree = "<group>"; };
 		5D2A652820BE7422009CC388 /* ZMTQSaveRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMTQSaveRequest.h; sourceTree = "<group>"; };
 		5D2A652920BE7422009CC388 /* ZMTQSaveRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMTQSaveRequest.m; sourceTree = "<group>"; };
 		5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
@@ -1590,6 +1598,11 @@
 				5DAD856520B1786300622DF4 /* ZMCourseDetailViewController.h */,
 				5DAD856620B1786300622DF4 /* ZMCourseDetailViewController.m */,
 				5DAD856720B1786300622DF4 /* ZMCourseDetailViewController.xib */,
+				5D0D9A5E20D9483500B571EC /* ZMCourseAppointController.h */,
+				5D0D9A5F20D9483500B571EC /* ZMCourseAppointController.m */,
+				5D0D9A6320D9553F00B571EC /* ZMCourseAddressController.h */,
+				5D0D9A6420D9553F00B571EC /* ZMCourseAddressController.m */,
+				5D0D9A6520D9553F00B571EC /* ZMCourseAddressController.xib */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -1786,6 +1799,7 @@
 				5DC5CBE12078523000F3C0D6 /* LLMineViewController.xib in Resources */,
 				5D2F7CAA209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.xib in Resources */,
 				5DAD857520B1B56E00622DF4 /* Address.plist in Resources */,
+				5D0D9A6720D9553F00B571EC /* ZMCourseAddressController.xib in Resources */,
 				5D5BB2DA20AC6EEF0067709B /* ZMLessTimeSettingCell.xib in Resources */,
 				5D8A472E209306BC00CE2723 /* MGSearchFeedbackCell.xib in Resources */,
 				5D0D9A5120D16B0B00B571EC /* ZMOrderSectionHeaderView.xib in Resources */,
@@ -2010,6 +2024,7 @@
 				5D0D9A4220D0164D00B571EC /* ZMLessonPriceTableViewController.m in Sources */,
 				5D5BB2242084F7090067709B /* UIViewController+CurrentViewController.m in Sources */,
 				5D67B58520B963D400241F4E /* LTSCalendarAppearance.m in Sources */,
+				5D0D9A6120D9483500B571EC /* ZMCourseAppointController.m in Sources */,
 				5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */,
 				5D0D9A5720D1737B00B571EC /* ZMBodyRecordListVC.m in Sources */,
 				5D2F7D12209EA3EC007B3812 /* ZMCourseListViewController.m in Sources */,
@@ -2040,6 +2055,7 @@
 				5D8A46DA2090298D00CE2723 /* ZMAnimatingRequestAccessory.m in Sources */,
 				5D67B58720B963D400241F4E /* LTSCalendarViewController.m in Sources */,
 				5DC5CBBB20784FA700F3C0D6 /* main.m in Sources */,
+				5D0D9A6620D9553F00B571EC /* ZMCourseAddressController.m in Sources */,
 				5D2F7CB3209C30C3007B3812 /* ZMMemberResultItemCell.m in Sources */,
 				5D8A46E5209078B300CE2723 /* YPImagePicker.m in Sources */,
 				5D2A652A20BE7422009CC388 /* ZMTQSaveRequest.m in Sources */,

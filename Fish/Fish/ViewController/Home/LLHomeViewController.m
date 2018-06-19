@@ -34,6 +34,8 @@
 
 #import "ZMNewList.h"
 
+#import "ZMCourseAppointController.h"
+
 @interface LLHomeViewController () <UITableViewDelegate, UITableViewDataSource,SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
@@ -141,9 +143,11 @@
     [self.navigationController pushViewController:perferentialActivityVC animated:YES];
 }
 - (IBAction)pushToMarket:(id)sender {
-    [UIAlertController alertWithTitle:@"提示" message:@"该功能暂未开放，敬请期待" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
-        
-    }];
+    ZMCourseAppointController *vc = [ZMCourseAppointController new];
+    [self.navigationController pushViewController:vc animated:YES];
+//    [UIAlertController alertWithTitle:@"提示" message:@"该功能暂未开放，敬请期待" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
+//
+//    }];
 //    ZMMarketTableViewController *marketVC = [ZMMarketTableViewController new];
 //    marketVC.title = @"商城";
 //    [self.navigationController pushViewController:marketVC animated:YES];
