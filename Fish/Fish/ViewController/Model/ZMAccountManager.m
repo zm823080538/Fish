@@ -34,6 +34,11 @@
     return _loginUser;
 }
 
+- (BOOL)isCoach {
+//    return [self.loginUser.role isEqualToString:@"0"];
+    return NO;
+}
+
 - (BOOL)isLogin {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kZMUserInfo] == nil ? NO : YES;
 }

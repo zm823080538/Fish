@@ -80,11 +80,16 @@
         
         LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
         tabBar.backgroundColor = [UIColor whiteColor];
-        tabBar.tabBarItemAttributes = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                        @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                        //                                    @{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)},
-                                        @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                        @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}];
+        NSMutableArray *tabbarItems = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                 @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                 
+                                 //
+                                 @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                        @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}].mutableCopy;
+        if (![[ZMAccountManager shareManager] isCoach]) {
+            [tabbarItems insertObject:@{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)} atIndex:2];
+        }
+        tabBar.tabBarItemAttributes = tabbarItems;
         tabBar.delegate = self;
         [tabBarController.tabBar addSubview:tabBar];
         self.window.rootViewController = tabBarController;
@@ -101,12 +106,12 @@
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UIViewController *viewController = tabBarController.selectedViewController;
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-                                                             delegate:self
-                                                    cancelButtonTitle:@"取消"
-                                               destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"拍照", @"从相册选取", @"淘宝一键转卖", nil];
-    [actionSheet showInView:viewController.view];
+//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+//                                                             delegate:self
+//                                                    cancelButtonTitle:@"取消"
+//                                               destructiveButtonTitle:nil
+//                                                    otherButtonTitles:@"拍照", @"从相册选取", @"淘宝一键转卖", nil];
+//    [actionSheet showInView:viewController.view];
 }
 
 #pragma mark - UIActionSheetDelegate

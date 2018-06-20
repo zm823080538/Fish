@@ -11,6 +11,7 @@
 #import "ZMCalendarViewController.h"
 #import "ZMPrivacyListViewController.h"
 #import "ZMScanViewController.h"
+#import "ZMHistoryOrderListVC.h"
 @interface ZMCourseViewController () 
 @end
 
@@ -52,17 +53,34 @@
 
 - (void)initViewControllers {
     NSMutableArray *viewControllers = @[].mutableCopy;
-    for (int i = 0; i < 2; i ++) {
-        ZMCourseListViewController *listVC = [[ZMCourseListViewController alloc] init];
-        if (i == 0) {
-            listVC.yp_tabItemTitle =@"进行中";
-        }  else {
-            listVC.yp_tabItemTitle =@"已结束";
+    if (![[ZMAccountManager shareManager] isCoach]) {
+        for (int i = 0; i < 2; i ++) {
+            UIViewController *listVC;
+            if (i == 0) {
+                listVC = [[ZMCourseListViewController alloc] init];
+                listVC.yp_tabItemTitle =@"进行中";
+            }  else {
+                listVC = [[ZMHistoryOrderListVC alloc] init];
+                listVC.yp_tabItemTitle =@"历史订单";
+            }
+            listVC.view.backgroundColor = [UIColor whiteColor];
+            [viewControllers addObject:listVC];
         }
-        listVC.view.backgroundColor = [UIColor whiteColor];
-        [viewControllers addObject:listVC];
+        self.viewControllers = viewControllers;
+
+    } else {
+        for (int i = 0; i < 2; i ++) {
+            ZMCourseListViewController *listVC = [[ZMCourseListViewController alloc] init];
+            if (i == 0) {
+                listVC.yp_tabItemTitle =@"进行中";
+            }  else {
+                listVC.yp_tabItemTitle =@"已结束";
+            }
+            listVC.view.backgroundColor = [UIColor whiteColor];
+            [viewControllers addObject:listVC];
+        }
+        self.viewControllers = viewControllers;
     }
-    self.viewControllers = viewControllers;
 }
 
 - (void)rightBarItem1Click {

@@ -146,7 +146,7 @@
 }
 
 - (void)updateUI {
-    if ([[ZMAccountManager shareManager] isLogin]) { //教练
+    if ([[ZMAccountManager shareManager] isCoach]) { //教练
         //Section0
         ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
         item01.rightTitle = @"审核中";
@@ -178,7 +178,6 @@
         ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
         self.dataSource = @[@[item01,item02],@[item03,item04,item05,item06],@[item07]];
     }
-    
     [self.tableView reloadData];
 }
 

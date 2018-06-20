@@ -8,6 +8,7 @@
 
 #import "ZMOrderListTableViewController.h"
 #import "ZMOrderTableViewCell.h"
+#import "ZMOrderDetailViewController.h"
 @interface ZMOrderListTableViewController ()
 
 @end
@@ -37,7 +38,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    ZMOrderDetailViewController *orderDetailVC = [[ZMOrderDetailViewController alloc] init];
+    [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
 
 @end

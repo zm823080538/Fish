@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZMLessonPriceDetailViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="普通课定价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMg-Yf-2V3">
+                    <rect key="frame" x="22" y="50" width="82" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.29019607843137252" green="0.3411764705882353" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiZ-Q6-ioI">
+                    <rect key="frame" x="307.5" y="50" width="45.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您当前的价格是范围是根据您所在的城市和范围决定的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8i-vE-Jcw">
+                    <rect key="frame" x="22" y="90.5" width="270" height="13.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.73725490196078436" green="0.78431372549019607" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="gd3-OU-RVD">
+                    <rect key="frame" x="20" y="256" width="335" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="M89-Qs-eMd"/>
+                    </constraints>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG4-bG-YJZ">
+                    <rect key="frame" x="22" y="310" width="38" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.73725490199999999" green="0.7843137255" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgR-at-8Bz">
+                    <rect key="frame" x="20" y="546" width="335" height="46"/>
+                    <color key="backgroundColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="OeO-ae-dX3"/>
+                    </constraints>
+                    <state key="normal" title="保存">
+                        <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥450" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gya-4Z-Zac">
+                    <rect key="frame" x="312.5" y="310" width="40.5" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.73725490199999999" green="0.7843137255" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jgR-at-8Bz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="13R-dS-E6E"/>
+                <constraint firstItem="aG4-bG-YJZ" firstAttribute="top" secondItem="gd3-OU-RVD" secondAttribute="bottom" constant="25" id="2iR-OA-Tok"/>
+                <constraint firstItem="BMg-Yf-2V3" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="22" id="3Lu-B2-YXN"/>
+                <constraint firstItem="Gya-4Z-Zac" firstAttribute="trailing" secondItem="gd3-OU-RVD" secondAttribute="trailing" id="8xb-UU-pW4"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="xiZ-Q6-ioI" secondAttribute="trailing" constant="22" id="Aeq-zh-kOK"/>
+                <constraint firstItem="BMg-Yf-2V3" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="F57-7E-6pR"/>
+                <constraint firstItem="aG4-bG-YJZ" firstAttribute="leading" secondItem="gd3-OU-RVD" secondAttribute="leading" id="Ihm-0Z-DWY"/>
+                <constraint firstItem="gd3-OU-RVD" firstAttribute="trailing" secondItem="xiZ-Q6-ioI" secondAttribute="trailing" id="J8j-TG-qzk"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="jgR-at-8Bz" secondAttribute="trailing" constant="20" id="Jhj-Jc-4Z0"/>
+                <constraint firstItem="xiZ-Q6-ioI" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="JmP-wp-dNO"/>
+                <constraint firstItem="g8i-vE-Jcw" firstAttribute="leading" secondItem="BMg-Yf-2V3" secondAttribute="leading" id="V6h-Vc-keE"/>
+                <constraint firstItem="Gya-4Z-Zac" firstAttribute="top" secondItem="gd3-OU-RVD" secondAttribute="bottom" constant="25" id="d7Y-TD-qLF"/>
+                <constraint firstItem="gd3-OU-RVD" firstAttribute="leading" secondItem="BMg-Yf-2V3" secondAttribute="leading" id="dnV-3j-Jpq"/>
+                <constraint firstItem="gd3-OU-RVD" firstAttribute="top" secondItem="g8i-vE-Jcw" secondAttribute="bottom" constant="152" id="gip-BZ-eix"/>
+                <constraint firstItem="g8i-vE-Jcw" firstAttribute="top" secondItem="BMg-Yf-2V3" secondAttribute="bottom" constant="21" id="jxg-MV-cE6"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="jgR-at-8Bz" secondAttribute="bottom" constant="75" id="nzF-cX-s6Z"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>
