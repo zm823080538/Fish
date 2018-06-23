@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZMAppointSuccVC">
+            <connections>
+                <outlet property="backButton" destination="Ldm-wb-lQR" id="mhD-ch-2g5"/>
+                <outlet property="returnHome" destination="RBS-bf-Hcb" id="Ga7-2N-hiw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Success" translatesAutoresizingMaskIntoConstraints="NO" id="ViA-eD-onD">
+                    <rect key="frame" x="162" y="59" width="51" height="51"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="51" id="5w0-wr-VyW"/>
+                        <constraint firstAttribute="height" constant="51" id="zZc-VN-wBq"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约申请成功" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BEH-1E-OBy">
+                    <rect key="frame" x="135.5" y="134" width="104" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBS-bf-Hcb">
+                    <rect key="frame" x="52.5" y="280" width="110" height="33"/>
+                    <color key="backgroundColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="GoU-0t-KRT"/>
+                        <constraint firstAttribute="width" constant="110" id="Sgs-EQ-TcW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="返回首页">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonClick:" destination="-1" eventType="touchUpInside" id="wDN-dc-UIL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldm-wb-lQR">
+                    <rect key="frame" x="192.5" y="280" width="110" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="返回上一步">
+                        <color key="titleColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonClick:" destination="-1" eventType="touchUpInside" id="evP-BW-fD1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RBS-bf-Hcb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-80" id="3NG-vO-gVr"/>
+                <constraint firstItem="RBS-bf-Hcb" firstAttribute="top" secondItem="BEH-1E-OBy" secondAttribute="bottom" constant="125" id="5lp-RE-Dal"/>
+                <constraint firstItem="Ldm-wb-lQR" firstAttribute="width" secondItem="RBS-bf-Hcb" secondAttribute="width" id="87k-X4-zbQ"/>
+                <constraint firstItem="Ldm-wb-lQR" firstAttribute="centerY" secondItem="RBS-bf-Hcb" secondAttribute="centerY" id="CJj-ms-VFb"/>
+                <constraint firstItem="ViA-eD-onD" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="39" id="Ff8-hG-Dnt"/>
+                <constraint firstItem="BEH-1E-OBy" firstAttribute="centerX" secondItem="ViA-eD-onD" secondAttribute="centerX" id="S8w-7Z-9nb"/>
+                <constraint firstItem="ViA-eD-onD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e4S-lV-vfw"/>
+                <constraint firstItem="BEH-1E-OBy" firstAttribute="top" secondItem="ViA-eD-onD" secondAttribute="bottom" constant="24" id="oNn-kO-XOl"/>
+                <constraint firstItem="Ldm-wb-lQR" firstAttribute="height" secondItem="RBS-bf-Hcb" secondAttribute="height" id="tmb-KV-3fI"/>
+                <constraint firstItem="Ldm-wb-lQR" firstAttribute="leading" secondItem="RBS-bf-Hcb" secondAttribute="trailing" constant="30" id="zZF-hM-YUc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Success" width="50" height="50"/>
+    </resources>
+</document>

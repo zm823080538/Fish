@@ -35,7 +35,8 @@
 }
 
 - (BOOL)isCoach {
-    return [self.loginUser.role isEqualToString:@"0"];
+//    return [self.loginUser.role isEqualToString:@"0"];
+    return NO;
 }
 
 - (BOOL)isLogin {

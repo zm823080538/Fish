@@ -35,6 +35,7 @@
 #import "ZMNewList.h"
 
 #import "ZMCourseAppointController.h"
+#import "ZMEvaluationVC.h"
 
 @interface LLHomeViewController () <UITableViewDelegate, UITableViewDataSource,SDCycleScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,6 +56,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     for (UIButton *button in self.buttons) {
         [button setContentHorizontalCenterWithVerticalOffset:5];
     }
@@ -143,7 +146,7 @@
     [self.navigationController pushViewController:perferentialActivityVC animated:YES];
 }
 - (IBAction)pushToMarket:(id)sender {
-    ZMCourseAppointController *vc = [ZMCourseAppointController new];
+    ZMEvaluationVC *vc = [ZMEvaluationVC new];
     [self.navigationController pushViewController:vc animated:YES];
 //    [UIAlertController alertWithTitle:@"提示" message:@"该功能暂未开放，敬请期待" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
 //
@@ -173,7 +176,10 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    ZMHomeSectionView *sectionView = [[ZMHomeSectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+    ZMHomeSectionView *sectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ZMHomeSectionView"];
+    if (!sectionView) {
+        sectionView = [[ZMHomeSectionView alloc] initWithReuseIdentifier:@"ZMHomeSectionView"];
+    }
      if (section == 0) {
         sectionView.title = @"铁友圈";
         @weakify(self)

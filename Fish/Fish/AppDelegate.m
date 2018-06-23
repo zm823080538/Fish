@@ -81,13 +81,13 @@
         LLTabBar *tabBar = [[LLTabBar alloc] initWithFrame:tabBarController.tabBar.bounds];
         tabBar.backgroundColor = [UIColor whiteColor];
         NSMutableArray *tabbarItems = @[@{kLLTabBarItemAttributeTitle : @"首页", kLLTabBarItemAttributeNormalImageName : @"room", kLLTabBarItemAttributeSelectedImageName : @"Shape", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
-                                 @{kLLTabBarItemAttributeTitle : @"会员", kLLTabBarItemAttributeNormalImageName : @"member2", kLLTabBarItemAttributeSelectedImageName : @"member", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
+                                        @{kLLTabBarItemAttributeTitle : [[ZMAccountManager shareManager] isCoach] ? @"会员" : @"教练" , kLLTabBarItemAttributeNormalImageName : [[ZMAccountManager shareManager] isCoach] ?  @"member2" : @"coach01", kLLTabBarItemAttributeSelectedImageName : [[ZMAccountManager shareManager] isCoach] ? @"member" : @"coach-Select", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
                                  
                                  //
                                  @{kLLTabBarItemAttributeTitle : @"课程", kLLTabBarItemAttributeNormalImageName : @"lesson2", kLLTabBarItemAttributeSelectedImageName : @"lesson", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)},
                                         @{kLLTabBarItemAttributeTitle : @"我的", kLLTabBarItemAttributeNormalImageName : @"member22", kLLTabBarItemAttributeSelectedImageName : @"memeber_highlight", kLLTabBarItemAttributeType : @(LLTabBarItemNormal)}].mutableCopy;
         if (![[ZMAccountManager shareManager] isCoach]) {
-            [tabbarItems insertObject:@{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 9", kLLTabBarItemAttributeSelectedImageName : @"Group 9", kLLTabBarItemAttributeType : @(LLTabBarItemRise)} atIndex:2];
+            [tabbarItems insertObject:@{kLLTabBarItemAttributeTitle : @"", kLLTabBarItemAttributeNormalImageName : @"Group 91", kLLTabBarItemAttributeSelectedImageName : @"Group 91", kLLTabBarItemAttributeType : @(LLTabBarItemRise)} atIndex:2];
         }
         tabBar.tabBarItemAttributes = tabbarItems;
         tabBar.delegate = self;

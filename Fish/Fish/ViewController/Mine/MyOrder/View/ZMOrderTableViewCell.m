@@ -19,22 +19,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *lessonCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *userAgeButton;
 @property (weak, nonatomic) IBOutlet UILabel *lessonTotalPriceLabel;
-@property (weak, nonatomic) IBOutlet UIButton *operationBtn1;
-@property (weak, nonatomic) IBOutlet UIButton *operationBtn2;
+
 
 @end
 
 @implementation ZMOrderTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (IBAction)click:(UIButton *)sender {
+    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 @end

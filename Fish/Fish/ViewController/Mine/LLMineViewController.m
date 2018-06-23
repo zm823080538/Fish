@@ -131,7 +131,6 @@
     request.id = [ZMAccountManager shareManager].loginUser.id;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
 
-
         if ([request.responseObject[@"code"] integerValue] == 0) {
             ZMAccount *account = [ZMAccount modelWithJSON:request.responseObject[@"data"]];
             [ZMAccountManager shareManager].loginUser = account;
@@ -147,28 +146,38 @@
 }
 
 - (void)updateUI {
-    
-    ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
-    item01.rightTitle = @"审核中";
-    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMOrderViewController"];
-    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
-    ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
-    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-    ZMMineModel  *item13 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"课程定价" destinClassName:@"ZMLessonPriceTableViewController"];
-    
-    ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
-    ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"工作时间设置" destinClassName:@"ZMLessonTimeSettingController"];
-    ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
-    
-    
-    ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
-    ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
-    
-    
-    //
-    ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
-    ZMMineModel  *item12 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
-    self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07,item13],@[item08,item09],@[item10,item11,item12]];
+    if ([[ZMAccountManager shareManager] isCoach]) { //教练
+        //Section0
+        ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
+        item01.rightTitle = @"审核中";
+        ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
+        ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
+        ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
+        ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+        ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+        ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"工作时间设置" destinClassName:@"ZMLessonTimeSettingController"];
+        
+        //Section1
+        ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
+        ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
+        
+        //Section2
+        ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
+        ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+        ZMMineModel  *item12 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+         self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09],@[item10,item11,item12]];
+    } else { // 会员
+        
+        ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"我的订单" destinClassName:@"ZMOrderViewController"];
+        ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"身体数据" destinClassName:@"ZMBodyBuildingKnowledageListController"];
+        ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"健身需求" destinClassName:@"ZMCalendarViewController"];
+        ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+        ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
+        ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+        
+        ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+        self.dataSource = @[@[item01,item02],@[item03,item04,item05,item06],@[item07]];
+    }
     [self.tableView reloadData];
 }
 
@@ -226,11 +235,6 @@
         if ([item.title isEqualToString:@"教学资质"]) {
             TeachQAViewController *teachQA = [TeachQAViewController new];
             teachQA.status = @"审核中";
-//            RCConversationViewController *chatVC = [[RCConversationViewController alloc] init];
-//            chatVC.conversationType = ConversationType_CUSTOMERSERVICE;
-//            //如果是单聊，不显示发送方昵称
-//            chatVC.targetId = @"001";
-//            chatVC.title = @"我的客服";
             [self.navigationController pushViewController:teachQA animated:YES];
         } else {
             Class class = NSClassFromString(item.destinClassName);

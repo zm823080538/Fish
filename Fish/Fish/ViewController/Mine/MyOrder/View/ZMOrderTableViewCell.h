@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMOrderTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIButton *refoundClick;
+@property (weak, nonatomic) IBOutlet UIButton *operationBtn1;
+@property (weak, nonatomic) IBOutlet UIButton *operationBtn2;
+- (IBAction)click:(UIButton *)sender;
 @end
