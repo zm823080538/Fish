@@ -110,7 +110,7 @@
                   moduleName = "Fish"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhaoming/Desktop/Fish/Fish/Fish/Fish/ViewController/Mine/TeachingQualification%20/TeachQAViewController.m"
-                  timestampString = "550927076.67686"
+                  timestampString = "551323799.685591"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -125,7 +125,7 @@
                   moduleName = "Fish"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhaoming/Desktop/Fish/Fish/Fish/Fish/ViewController/Mine/TeachingQualification%20/TeachQAViewController.m"
-                  timestampString = "550927076.680902"
+                  timestampString = "551323799.691716"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -140,7 +140,7 @@
                   moduleName = "Fish"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zhaoming/Desktop/Fish/Fish/Fish/Fish/ViewController/Mine/TeachingQualification%20/TeachQAViewController.m"
-                  timestampString = "550927076.6846091"
+                  timestampString = "551323799.695489"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -164,6 +164,67 @@
             endingLineNumber = "56"
             landmarkName = "-viewWillDisappear:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fish/ViewController/Member/ZMMemberListController.m"
+            timestampString = "551323799.250693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-request"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Fish/ViewController/Member/ZMMemberListController.m"
+            timestampString = "551323799.271258"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "-request"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            symbolName = "UIApplicationMain"
+            moduleName = "">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "expr (Class)NSClassFromString(@&quot;IBARevealLoader&quot;) == nil ? (void *)dlopen(&quot;/Applications/Reveal.app/Contents/SharedSupport/iOS-Libraries/libReveal.dylib&quot;, 0x2) : ((void*)0)">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UIApplicationMain"
+                  moduleName = "UIKit"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
