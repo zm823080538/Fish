@@ -15,6 +15,7 @@
 #import <UIView+YYAdd.h>
 #import <NSObject+YYModel.h>
 #import "ZMMemberSearchViewController.h"
+#import "ZMCoachDetailViewController.h"
 #import "ZMMemberDetailViewController.h"
 #import "ZMMemberSearchRequest.h"
 #import "ZMAccountManager.h"
@@ -161,9 +162,16 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZMMemberDetailViewController *memberDetailVC = [ZMMemberDetailViewController new];
-    memberDetailVC.member = self.dataSource[indexPath.row];
-    [self.navigationController pushViewController:memberDetailVC animated:YES];
+    if (IS_COACH) {
+        ZMMemberDetailViewController *memberDetailVC = [ZMMemberDetailViewController new];
+        memberDetailVC.member = self.dataSource[indexPath.row];
+        [self.navigationController pushViewController:memberDetailVC animated:YES];         
+    } else {
+        ZMCoachDetailViewController *memberDetailVC = [ZMCoachDetailViewController new];
+        memberDetailVC.member = self.dataSource[indexPath.row];
+        [self.navigationController pushViewController:memberDetailVC animated:YES];
+    }
+   
 }
 
 @end

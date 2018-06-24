@@ -34,7 +34,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
-    config.baseUrl = @"https://www.bjwork.xyz";
+    config.baseUrl = @"https://www.cdmuscle.com";
      [[RCIM sharedRCIM] initWithAppKey:@"pgyu6atqpezeu"];
      [RCIM sharedRCIM].userInfoDataSource = [RCDataManager shareManager];
     [AMapServices sharedServices].apiKey = @"6f3819137dfef01b9150fd93b3d35328";

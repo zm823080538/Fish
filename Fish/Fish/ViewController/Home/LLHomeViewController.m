@@ -60,6 +60,11 @@
     
     for (UIButton *button in self.buttons) {
         [button setContentHorizontalCenterWithVerticalOffset:5];
+        if (!IS_COACH) {
+            if ([button.currentTitle isEqualToString:@"附近会员"]) {
+                [button setTitle:@"附近教练" forState:UIControlStateNormal];
+            }
+        }
     }
     [self adapterUIForIOS11:self.tableView];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0);

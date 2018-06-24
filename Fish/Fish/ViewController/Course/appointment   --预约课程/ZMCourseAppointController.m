@@ -23,7 +23,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"课程类型" destinClassName:@"TeachQAViewController"];
     item01.rightTitle = @"审核中";
-    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"预约世界" destinClassName:@"ZMOrderViewController"];
+    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"预约时间" destinClassName:@"ZMOrderViewController"];
     ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"地点" destinClassName:@"ZMCalendarViewController"];
     self.dataSource = @[item01, item02, item03];
     self.tableView.delegate = self;

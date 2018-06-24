@@ -90,7 +90,7 @@
                 <outlet property="statusLabel" destination="WDY-Af-vWg" id="G1B-Qu-oVR"/>
                 <outlet property="userIconImageView" destination="hLj-q4-XOT" id="n5j-dk-5fe"/>
             </connections>
-            <point key="canvasLocation" x="-52" y="131"/>
+            <point key="canvasLocation" x="-216" y="83"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MKn-pY-uVS" customClass="ZMNearMememberCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
@@ -179,7 +179,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Bitmap" width="145" height="195"/>
+        <image name="Bitmap" width="375" height="667"/>
         <image name="nv" width="9" height="9"/>
     </resources>
 </document>

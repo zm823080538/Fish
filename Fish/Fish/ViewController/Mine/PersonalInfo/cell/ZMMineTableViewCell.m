@@ -21,6 +21,18 @@
 - (void)setModel:(ZMMineModel *)model {
     self.titleLabel.text = model.title;
     self.leftImageView.image = [UIImage imageNamed:model.image];
+    self.leftImageView.hidden = model.image ? YES : NO;
+    if (!model.image) {
+        [self.leftImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeZero);
+            make.left.mas_equalTo(5);
+        }];
+    } else {
+        [self.leftImageView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(20, 20));
+            make.left.mas_equalTo(21);
+        }];
+    }
     if (model.rightTitle) {
         self.rightLabel.hidden = NO;
         self.rightLabel.text = model.rightTitle;

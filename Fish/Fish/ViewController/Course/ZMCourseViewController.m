@@ -53,7 +53,7 @@
 
 - (void)initViewControllers {
     NSMutableArray *viewControllers = @[].mutableCopy;
-    if (![[ZMAccountManager shareManager] isCoach]) {
+    if (!IS_COACH) {
         for (int i = 0; i < 2; i ++) {
             UIViewController *listVC;
             if (i == 0) {

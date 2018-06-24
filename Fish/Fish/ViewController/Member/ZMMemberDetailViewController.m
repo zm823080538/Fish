@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *collectBtn;
 
+@property (weak, nonatomic) IBOutlet UIView *descView;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -37,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *weiduLabel;
 
 @property (weak, nonatomic) IBOutlet UIView *detailDescView;
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
 
 @property (nonatomic, strong) ZMMemberDetailIModel * detailModel;
 @property (nonatomic, strong) NSArray * detailImgs;
@@ -49,6 +51,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.member.id) {
+        self.descView.hidden = self.detailDescView.hidden = self.bottomView.hidden = YES;
+        UIButton *blackListButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [blackListButton setTitle:@"从黑名单中删除" forState:UIControlStateNormal];
+        blackListButton.backgroundColor = ThemeColor;
+        [[blackListButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            
+        }];
+        [self.view addSubview:blackListButton];
+        [blackListButton mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.top.equalTo(self.view);
+            make.height.mas_equalTo(49);
+        }];
+    }
     UIImage *image = [[UIImage imageNamed:@"Group 2"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     barButtonItem.tintColor = [UIColor whiteColor];

@@ -13,6 +13,7 @@
 #import <MAMapKit/MAMapKit.h>
 #import "UIButton+YPKit.h"
 #import "ZMCourseDetailRequest.h"
+#import "ZMComplainVC.h"
 #import "UINavigationBar+Awesome.h"
 
 @interface ZMCourseDetailViewController ()
@@ -157,6 +158,12 @@
 }
 
 - (void)rightBarItemClick {
+    if (IS_COACH) {
+        [UIAlertController alertWithTitle:nil message:nil cancelTitle:@"取消" otherTitles:@[@"取消预约"] preferredStyle:0 completion:^(NSInteger index) {
+            ZMComplainVC *complainVC = [ZMComplainVC new];
+            [self.navigationController pushViewController:complainVC animated:YES];
+        }];
+    }
     
 }
 - (IBAction)cancelClick {

@@ -13,9 +13,11 @@
             <connections>
                 <outlet property="addressLabel" destination="yL4-KB-nLU" id="UMn-ae-Hxu"/>
                 <outlet property="ageLabel" destination="Gsw-Qk-mBg" id="j3a-xr-f8t"/>
+                <outlet property="bottomView" destination="qrZ-CH-bWW" id="4ww-ue-Fga"/>
                 <outlet property="collectBtn" destination="lr7-Bt-hYA" id="LcY-7D-Z0h"/>
                 <outlet property="collectionView" destination="az3-Zx-FDf" id="Nni-dZ-LbS"/>
                 <outlet property="daixieLabel" destination="lGe-eE-mZq" id="ZYz-ws-4oB"/>
+                <outlet property="descView" destination="dr5-zK-irh" id="EIt-d1-S5n"/>
                 <outlet property="detailDescView" destination="6wv-PA-KhF" id="v7Z-yh-wDi"/>
                 <outlet property="detailDescriptionLabel" destination="6aU-ps-E42" id="erl-rc-ulq"/>
                 <outlet property="iconImageView" destination="QEb-p8-vzN" id="Rhl-zw-Wey"/>
