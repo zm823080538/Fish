@@ -22,6 +22,7 @@
 #import "ZMLoginRequest.h"
 #import <YTKNetworkAgent.h>
 #import "ZMAccountManager.h"
+#import "ZMPublishViewController.h"
 
 //AMAP KEY
 
@@ -104,8 +105,8 @@
 
 - (void)tabBarDidSelectedRiseButton {
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UIViewController *viewController = tabBarController.selectedViewController;
-    
+    ZMPublishViewController *vc = [ZMPublishViewController new];
+    [tabBarController.selectedViewController pushViewController:vc animated:YES];
 //    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
 //                                                             delegate:self
 //                                                    cancelButtonTitle:@"取消"
@@ -114,11 +115,8 @@
 //    [actionSheet showInView:viewController.view];
 }
 
-#pragma mark - UIActionSheetDelegate
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    NSLog(@"buttonIndex = %ld", buttonIndex);
-}
+
 
 #pragma mark -
 

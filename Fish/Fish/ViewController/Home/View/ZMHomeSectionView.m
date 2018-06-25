@@ -13,7 +13,7 @@
 @interface ZMHomeSectionView ()
 
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *arrowButton;
+
 
 @end
 

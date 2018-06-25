@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMHomeSectionView : UITableViewHeaderFooterView
+@property (nonatomic, strong) UIButton *arrowButton;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) void (^arrowClick)(void);
 @end
