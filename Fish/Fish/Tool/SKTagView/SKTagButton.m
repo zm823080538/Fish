@@ -5,6 +5,7 @@
 
 #import "SKTagButton.h"
 #import "SKTag.h"
+#import <ReactiveObjC.h>
 
 @implementation SKTagButton
 
@@ -16,8 +17,12 @@
 	} else {
 		[btn setTitle: tag.text forState:UIControlStateNormal];
 		[btn setTitleColor: tag.textColor forState: UIControlStateNormal];
+        [btn setTitleColor:tag.selectColor forState:UIControlStateSelected];
 		btn.titleLabel.font = tag.font ?: [UIFont systemFontOfSize: tag.fontSize];
 	}
+    
+    
+    
 	
 	btn.backgroundColor = tag.bgColor;
 	btn.contentEdgeInsets = tag.padding;

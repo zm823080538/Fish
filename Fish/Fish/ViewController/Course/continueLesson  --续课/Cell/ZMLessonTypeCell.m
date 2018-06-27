@@ -7,11 +7,11 @@
 //
 
 #import "ZMLessonTypeCell.h"
-#import "SKTagView.h"
+
 
 @interface ZMLessonTypeCell ()
 @property (nonatomic) UILabel *nameLabel;
-@property (nonatomic) SKTagView  * tagView;
+
 
 @end
 

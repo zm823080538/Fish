@@ -8,10 +8,11 @@
 
 #import "ZMPublishViewController.h"
 #import "ZMHomeSectionView.h"
-#import "ZMMineTableViewCell.h"
+#import "ZMSettingCell.h"
 #import "UITextView+MGPlaceholder.h"
 #import "SKTagView.h"
 #import "ZMPersonalModel.h"
+#import "ZMBaseActionSheetView.h"
 @interface ZMPublishViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray * sectionTitles;
@@ -26,8 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.tableView];
-    
+    [self.view addSubview:self.tableView];    
     self.cTypes = @[@"增肌", @"减脂" , @"塑形", @"康复", @"拉伸", @"其他"];
     self.sectionTitles = @[@"类型", @"详细描述", @"意向购买节数"];
     ZMPersonalModel *model = [[ZMPersonalModel alloc] initWithImage:nil title:@"购买节数" destinClassName:nil style:PersonalInfoCellStyleArrow subTitle:@"10"];
@@ -98,16 +98,19 @@
         return cell;
     } else {
         static NSString *ID = @"ZMMineTableViewCell";
-        ZMMineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
         if (cell == nil) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
         }
-        ZMMineModel  *item = self.details[indexPath.row];
+        ZMSettingItem  *item = self.details[indexPath.row];
         [cell setModel:item];
         return cell;
     }
    
     
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 

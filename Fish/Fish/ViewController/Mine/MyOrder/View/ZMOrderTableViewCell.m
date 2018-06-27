@@ -25,9 +25,12 @@
 
 @implementation ZMOrderTableViewCell
 
-- (IBAction)click:(UIButton *)sender {
-    
+- (IBAction)refoundBtnClick {
+    [self.subject sendNext:nil];
+    NSLog(@"refound");
 }
 
+- (IBAction)click:(id)sender {
+}
 
 @end

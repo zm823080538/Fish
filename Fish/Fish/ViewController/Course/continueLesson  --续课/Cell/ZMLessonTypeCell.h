@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SKTagView.h"
 typedef NS_ENUM(NSUInteger, LessonType) {
     LessonTypeDaLei = 0,
     LessonTypeXiaoLei = 1
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, LessonType) {
 
 @interface ZMLessonTypeCell : UITableViewCell
 @property (nonatomic, assign) LessonType lessonType;
-
+@property (nonatomic, strong) SKTagView  * tagView;
 @property (nonatomic, strong) NSArray * tagList;
 @property (nonatomic, copy) NSString * title;
 

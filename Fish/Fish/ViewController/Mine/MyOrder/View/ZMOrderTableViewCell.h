@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *refoundClick;
 @property (weak, nonatomic) IBOutlet UIButton *operationBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *operationBtn2;
-- (IBAction)click:(UIButton *)sender;
+@property (nonatomic, strong) RACSubject *subject;
+
 @end

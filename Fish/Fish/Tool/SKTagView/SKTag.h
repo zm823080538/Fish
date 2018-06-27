@@ -11,6 +11,7 @@
 @property (copy, nonatomic, nullable) NSString *text;
 @property (copy, nonatomic, nullable) NSAttributedString *attributedText;
 @property (strong, nonatomic, nullable) UIColor *textColor;
+@property (strong, nonatomic, nullable) UIColor *selectColor;
 ///backgound color
 @property (strong, nonatomic, nullable) UIColor *bgColor;
 @property (strong, nonatomic, nullable) UIColor *highlightedBgColor;

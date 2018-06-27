@@ -7,9 +7,9 @@
 //
 
 #import "PersonalInfoViewController.h"
-#import "PersonalInfoCell.h"
+#import "ZMSettingCell.h"
 #import <NSObject+YYModel.h>
-#import "ZMPersonalModel.h"
+#import "ZMSettingItem.h"
 #import "ZMAccountManager.h"
 #import "UIAlertController+Set.h"
 #import "LZCityPickerController.h"
@@ -147,8 +147,11 @@ NSString *const ZMUpdateUserInfoNotification = @"kZMUpdateUserInfoNotification";
     
     ZMAccount *account = [ZMAccountManager shareManager].loginUser;
     self.headerImageUrl = account.img;
-    ZMPersonalModel   *item01 = [[ZMPersonalModel   alloc]  initWithImage:account.img title:@"头像" destinClassName:@"" style:PersonalInfoCellStyleImage subTitle:@""];
-    ZMPersonalModel   *item02 = [[ZMPersonalModel   alloc] initWithImage:nil title:@"昵称" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.nickname];
+    ZMSettingItem *item01 = [[ZMSettingItem alloc] initWithImage:account.img title:@"头像" destinClassName:nil];
+    item01.style = ZMSettingItemStyleRightImage;
+    ZMSettingItem *item02 = [[ZMSettingItem alloc] initWithImage:nil title:@"昵称" destinClassName:nil];
+    item02.style = ZMSettingItemStyleLabelArrow;
+    
     NSString *sex;
     if ([account.sex isEqualToString:@"1"]) {
         sex = @"男";
@@ -157,15 +160,24 @@ NSString *const ZMUpdateUserInfoNotification = @"kZMUpdateUserInfoNotification";
     } else {
         sex = @"未知";
     }
-    ZMPersonalModel   *item03 = [[ZMPersonalModel   alloc] initWithImage:@"order" title:@"性别" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:sex];
-    ZMPersonalModel   *item04 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"地址" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.address];
-    ZMPersonalModel   *item05 = [[ZMPersonalModel   alloc] initWithImage:@"QR_Code" title:@"我的二维码" destinClassName:@"ZMMyQRCodeViewController" style:PersonalInfoCellStyleImage1 subTitle:nil];
-    
-    ZMPersonalModel   *item06 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定微信号" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:nil];
-     ZMPersonalModel   *item07 = [[ZMPersonalModel   alloc] initWithImage:@"" title:@"绑定支付宝帐号" destinClassName:@"" style:PersonalInfoCellStyleLabelArrow subTitle:account.alipay];
-    ZMPersonalModel   *item08 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改手机号" destinClassName:@"ZMChangeMobileViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
-    
-     ZMPersonalModel   *item09 = [[ZMPersonalModel   alloc] initWithImage:@"share2" title:@"修改登录密码" destinClassName:@"ForgetPasswordViewController" style:PersonalInfoCellStyleArrow subTitle:nil];
+    ZMSettingItem *item03 = [[ZMSettingItem alloc] initWithImage:nil title:@"性别" destinClassName:nil];
+    item03.style = ZMSettingItemStyleLabelArrow;
+    item03.rightTitle = sex;
+    ZMSettingItem *item04 = [[ZMSettingItem alloc] initWithImage:nil title:@"地址" destinClassName:nil];
+    item04.style = ZMSettingItemStyleLabelArrow;
+    item04.rightTitle = account.address;
+    ZMSettingItem *item05 = [[ZMSettingItem alloc] initWithImage:@"QR_Code" title:@"我的二维码" destinClassName:nil];
+    item05.style = ZMSettingItemStyleRightImage;
+    ZMSettingItem *item06 = [[ZMSettingItem alloc] initWithImage:nil title:@"绑定微信号" destinClassName:nil];
+    item06.rightTitle = @"我的微信号";
+    item06.style = ZMSettingItemStyleLabelArrow;
+    ZMSettingItem *item07 = [[ZMSettingItem alloc] initWithImage:nil title:@"绑定支付宝帐号" destinClassName:nil];
+    item07.style = ZMSettingItemStyleLabelArrow;
+    item07.rightTitle = account.alipay;
+    ZMSettingItem *item08 = [[ZMSettingItem alloc] initWithImage:nil title:@"修改手机号" destinClassName:nil];
+    item08.style = ZMSettingItemStyleArrow;
+    ZMSettingItem *item09 = [[ZMSettingItem alloc] initWithImage:nil title:@"修改登录密码" destinClassName:nil];
+    item09.style = ZMSettingItemStyleArrow;
     self.dataSource = @[@[item01,item02,item03,item04,item05],@[item06,item07,item08,item09]];
     [self.tableView reloadData];
 }
@@ -181,22 +193,21 @@ NSString *const ZMUpdateUserInfoNotification = @"kZMUpdateUserInfoNotification";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"cell";
-    PersonalInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[PersonalInfoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
     }
-    ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
-    [cell setPersonalModel:item];
-    cell.style = item.style;
+    ZMSettingItem  *item = self.dataSource[indexPath.section][indexPath.row];
+    [cell setModel:item];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PersonalInfoCell *cell = (PersonalInfoCell *)[tableView cellForRowAtIndexPath:indexPath];
-    ZMPersonalModel  *item = self.dataSource[indexPath.section][indexPath.row];
+    ZMSettingCell *cell = (ZMSettingCell *)[tableView cellForRowAtIndexPath:indexPath];
+    ZMSettingItem  *item = self.dataSource[indexPath.section][indexPath.row];
     if (indexPath.section == 0 && indexPath.row == 0) {
         [YPImagePicker pickSingleImageWithTitle:@"修改头像" allowEditing:YES inViewController:self completionBlock:^(UIImage *image) {
-            cell.rightImageView.image = image;
+            cell.leftImageView.image = image;
             self.headerImage = image;
         }];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
@@ -220,7 +231,7 @@ NSString *const ZMUpdateUserInfoNotification = @"kZMUpdateUserInfoNotification";
                 self.originAccountInfo.sex = @"2";
             }
             
-            item.subTitle = cell.rightLabel.text;
+            item.rightTitle = cell.rightLabel.text;
         }];
     } else if (indexPath.section == 0 && indexPath.row == 3) {
         [LZCityPickerController showPickerInViewController:self selectBlock:^(NSString *address, NSString *province, NSString *city, NSString *area,NSString *areaCode) {

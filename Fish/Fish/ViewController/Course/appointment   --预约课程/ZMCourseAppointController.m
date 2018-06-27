@@ -8,10 +8,18 @@
 
 #import "ZMCourseAppointController.h"
 #import "ZMNearMememberCell.h"
-#import "ZMMineTableViewCell.h"
+#import "ZMSettingCell.h"
+#import "ZMBaseActionSheetView.h"
 #import "ZMCourseAddressController.h"
-@interface ZMCourseAppointController () <UITableViewDataSource, UITableViewDelegate>
+@interface ZMCourseAppointController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
+    ZMBaseActionSheetView *_actionSheetView;
+}
 @property (nonatomic, strong) NSArray * dataSource;
+@property (weak, nonatomic) IBOutlet UILabel *currentDateLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UIView *alertView;
+@property (nonatomic, strong) NSArray * dateArray;
+
 
 @end
 
@@ -21,10 +29,12 @@
     [super viewDidLoad];
     self.title = @"预约课程";
     self.view.backgroundColor = [UIColor whiteColor];
-    ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"课程类型" destinClassName:@"TeachQAViewController"];
+    ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"result" title:@"课程类型" destinClassName:@"TeachQAViewController"];
     item01.rightTitle = @"审核中";
-    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"预约时间" destinClassName:@"ZMOrderViewController"];
-    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"地点" destinClassName:@"ZMCalendarViewController"];
+    ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:@"member_addUser" title:@"预约时间" destinClassName:nil];
+    item02.style = ZMSettingItemStyleLabelArrow;
+    item02.rightTitle = @"请提前一个小时预约";
+    ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地点" destinClassName:nil];
     self.dataSource = @[item01, item02, item03];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -84,7 +94,7 @@
         cell.textLabel.textColor = UIColorFromRGB(0xcccccc);
         return cell;
     } else  {
-        ZMMineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMMineTableViewCell"];
+        ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMMineTableViewCell"];
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
         }
@@ -99,13 +109,42 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 3) {
-        
+    if (indexPath.row == 2) {
+        self.alertView = [[NSBundle mainBundle] loadNibNamed:@"ZMAppointTimeAlertView" owner:self options:nil].firstObject;
+        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];
+       _actionSheetView = [ZMBaseActionSheetView alertWithContainerView:self.alertView type:ZMAlertViewTypeAlert];
+        [_actionSheetView show];
     } else if (indexPath.row == 4) {
         ZMCourseAddressController *addressVC = [ZMCourseAddressController new];
         [self.navigationController pushViewController:addressVC animated:YES];
     }
 }
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 40;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell" forIndexPath:indexPath];
+    cell.layer.borderColor = ThemeColor.CGColor;
+    cell.layer.borderWidth = 1;
+    UILabel *label = [[UILabel alloc] init];
+    label.textColor = ThemeColor;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont systemFontOfSize:11];
+    label.text = @"09:00-09:30";
+    [cell addSubview:label];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cell);
+    }];
+    return cell;
+}
+- (IBAction)next:(id)sender {
+}
+
+- (IBAction)previous:(id)sender {
+}
+- (IBAction)commit:(id)sender {
+    [_actionSheetView hidden];
+}
 
 @end

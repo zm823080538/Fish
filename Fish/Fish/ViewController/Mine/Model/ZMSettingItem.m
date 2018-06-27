@@ -6,9 +6,9 @@
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "ZMMineModel.h"
+#import "ZMSettingItem.h"
 
-@implementation ZMMineModel
+@implementation ZMSettingItem
 - (instancetype)initWithImage:(NSString *)image title:(NSString *)title destinClassName:(NSString *)className {
     if (self = [super init]) {
         self.image = image;

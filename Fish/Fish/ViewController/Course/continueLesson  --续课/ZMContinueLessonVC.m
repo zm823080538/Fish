@@ -9,9 +9,11 @@
 #import "ZMContinueLessonVC.h"
 #import "ZMNearMememberCell.h"
 #import "ZMLessonTypeCell.h"
-#import "ZMMineModel.h"
-#import "ZMMineTableViewCell.h"
+#import "ZMSettingItem.h"
+#import "ZMSettingCell.h"
 #import "ZMAppointSuccVC.h"
+#import "PPNumberButton.h"
+#import "SKTagView.h"
 @interface ZMContinueLessonVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray * dataSource;
@@ -46,12 +48,17 @@
         make.bottom.equalTo(commitButton.mas_top);
     }];
     
-    ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"address_normal" title:@"地址" destinClassName:@"TeachQAViewController"];
-    item01.rightTitle = @"审核中";
-    ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:nil title:@"常规课系统" destinClassName:@"ZMMemberApplyViewController"];
-    ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:nil title:@"购买节数" destinClassName:@"ZMCalendarViewController"];
-    ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
-    ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:nil title:@"总价" destinClassName:@"ZMMyCollectListController"];
+    ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地址" destinClassName:@"TeachQAViewController"];
+    item01.style = ZMSettingItemStyleLabelArrow;
+    item01.rightTitle = @"成都双流区";
+    ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"常规课系统" destinClassName:@"ZMMemberApplyViewController"];
+    item02.rightTitle = @"￥150";
+    ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:@"ZMCalendarViewController"];
+    item03.style = ZMSettingItemStyleCountNum;
+    ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
+    item04.rightTitle = @"￥150";
+    ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:nil title:@"总价" destinClassName:@"ZMMyCollectListController"];
+    item05.rightTitle = @"￥150";
     self.dataSource = @[item01,item02,item03,item04,item05];
     [self.tableView reloadData];
     
@@ -87,18 +94,29 @@
         if (indexPath.row == 1) {
             cell.tagList = @[@"常规课",@"特色课",@"专业课"];
             cell.title = @"课程类型";
+            cell.tagView.didTapTagAtIndex = ^(NSUInteger index) {
+                
+                
+            };
         } else {
             cell.tagList = @[@"常规课",@"特色课",@"专业课"];
             cell.title = @"课程小类";
+            cell.tagView.didTapTagAtIndex = ^(NSUInteger index) {
+                
+            };
         }
+       
         return cell;
     } else {
         static NSString *ID = @"ZMMineTableViewCell";
-        ZMMineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+        ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
         if (cell == nil) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
         }
         [cell setModel:self.dataSource[indexPath.row - 3]];
+        cell.numberButton.resultBlock = ^(PPNumberButton *ppBtn, CGFloat number, BOOL increaseStatus) {
+            
+        };
         return  cell;
     }
 }

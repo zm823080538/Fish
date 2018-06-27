@@ -6,12 +6,12 @@
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "ZMMineModel.h"
+#import "ZMSettingItem.h"
 #import "ZMMineDefine.h"
 
 typedef void(^ClickBlock)(void);
 
-@interface ZMPersonalModel : ZMMineModel 
+@interface ZMPersonalModel : ZMSettingItem 
 @property (nonatomic, copy) NSString *subTitle;
 @property (nonatomic, assign) PersonalInfoCellStyle style;
 @property (nonatomic, copy) ClickBlock clickBlock;

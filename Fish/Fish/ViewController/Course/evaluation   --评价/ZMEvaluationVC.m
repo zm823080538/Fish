@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet SKTagView *tagView;
 @property (weak, nonatomic) IBOutlet WSStarRatingView *starView;
 @property (weak, nonatomic) IBOutlet UILabel *commentNumLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagViewHeightConstraint;
 
 @end
 
@@ -38,6 +39,7 @@
         tag.padding = UIEdgeInsetsMake(10, 15, 10, 15);
         [self.tagView addTag:tag];
     }
+    self.tagViewHeightConstraint.constant = self.tagView.intrinsicContentSize.height;
     int  maxLength = 200;
     @weakify(self)
     RAC(self.commentNumLabel,text) = [self.commentTextView.rac_textSignal  map:^id(NSString *value) {
@@ -59,15 +61,5 @@
 }
 - (IBAction)satisfiedclick:(UIButton *)sender {
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

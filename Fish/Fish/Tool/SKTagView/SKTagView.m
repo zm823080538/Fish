@@ -155,6 +155,7 @@
 #pragma mark - IBActions
 
 - (void)onTag: (UIButton *)btn {
+    btn.selected = !btn.selected;
     if (self.didTapTagAtIndex) {
         self.didTapTagAtIndex([self.subviews indexOfObject: btn]);
     }
@@ -166,6 +167,15 @@
     NSParameterAssert(tag);
     SKTagButton *btn = [SKTagButton buttonWithTag: tag];
     [btn addTarget: self action: @selector(onTag:) forControlEvents: UIControlEventTouchUpInside];
+    [RACObserve(btn, selected) subscribeNext:^(id  _Nullable x) {
+        if ([x boolValue]) {
+            [btn setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+            btn.layer.borderColor = [UIColor yellowColor].CGColor;
+        } else {
+            [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
+            btn.layer.borderColor = ThemeColor.CGColor;
+        }
+    }];
     [self addSubview: btn];
     [self.tags addObject: tag];
     

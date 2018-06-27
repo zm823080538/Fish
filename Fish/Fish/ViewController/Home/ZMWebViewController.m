@@ -9,6 +9,7 @@
 #import "ZMWebViewController.h"
 #import <WebKit/WebKit.h>
 #import "ZMCollectRequest.h"
+#import "ZMBodyBuildingKnowledageListController.h"
 
 @interface ZMWebViewController ()
 @property (nonatomic, strong) WKWebView *wkWebView;
@@ -18,8 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.view addSubview:self.wkWebView];
+    if ([self.title isEqualToString:@"身体数据"]) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+        [self.wkWebView loadRequest:request];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(bodyRecord)];
+    } else {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.item.linkurl]];
     [self.wkWebView loadRequest:request];
     if (self.isMustRead) {
@@ -37,9 +42,12 @@
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
     button.selected = self.item.favorite.boolValue;
-   
-    
-    
+    }  
+}
+
+- (void)bodyRecord {
+    ZMBodyBuildingKnowledageListController *vc = [ZMBodyBuildingKnowledageListController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (WKWebView *)wkWebView {

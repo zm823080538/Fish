@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,8 +104,9 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAY-Rf-Lvm">
-                            <rect key="frame" x="301" y="18" width="64" height="22"/>
-                            <state key="normal" title="请选择" image="Arrow1">
+                            <rect key="frame" x="305" y="15" width="40" height="28"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="请选择">
                                 <color key="titleColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
@@ -124,17 +125,26 @@
                             <color key="textColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back24" translatesAutoresizingMaskIntoConstraints="NO" id="3w7-AD-JXD">
+                            <rect key="frame" x="356" y="21.5" width="9" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="cgn-yj-mfn"/>
+                                <constraint firstAttribute="width" constant="9" id="q4n-Su-Mkv"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="JAY-Rf-Lvm" secondAttribute="trailing" constant="10" id="BN2-Uc-rTQ"/>
+                        <constraint firstAttribute="trailing" secondItem="JAY-Rf-Lvm" secondAttribute="trailing" constant="30" id="BN2-Uc-rTQ"/>
                         <constraint firstItem="oAn-OR-M8D" firstAttribute="leading" secondItem="8pj-iY-2iU" secondAttribute="leading" constant="14" id="LDq-9H-zh0"/>
                         <constraint firstAttribute="bottom" secondItem="oAn-OR-M8D" secondAttribute="bottom" constant="21" id="MX7-jB-gl8"/>
+                        <constraint firstItem="3w7-AD-JXD" firstAttribute="centerY" secondItem="10L-Mb-zoU" secondAttribute="centerY" id="McH-j3-2Yh"/>
                         <constraint firstItem="10L-Mb-zoU" firstAttribute="leading" secondItem="8pj-iY-2iU" secondAttribute="leading" constant="14" id="NeS-dt-M1k"/>
                         <constraint firstItem="JAY-Rf-Lvm" firstAttribute="centerY" secondItem="10L-Mb-zoU" secondAttribute="centerY" id="Pfh-Id-wnU"/>
                         <constraint firstAttribute="height" constant="98" id="h9P-oU-S2a"/>
                         <constraint firstItem="5Kt-F8-fbX" firstAttribute="leading" secondItem="oAn-OR-M8D" secondAttribute="trailing" constant="8" id="tdH-c7-Zop"/>
                         <constraint firstItem="5Kt-F8-fbX" firstAttribute="centerY" secondItem="oAn-OR-M8D" secondAttribute="centerY" id="toq-TY-X2i"/>
+                        <constraint firstAttribute="trailing" secondItem="3w7-AD-JXD" secondAttribute="trailing" constant="10" id="vz5-bQ-0XQ"/>
                         <constraint firstItem="10L-Mb-zoU" firstAttribute="top" secondItem="8pj-iY-2iU" secondAttribute="top" constant="21" id="z0U-uw-wCl"/>
                     </constraints>
                 </view>
@@ -150,7 +160,6 @@
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bo1-sx-Rnc">
                             <rect key="frame" x="79" y="21" width="286" height="109"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <userDefinedRuntimeAttributes>
@@ -202,8 +211,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Arrow1" width="8" height="13"/>
         <image name="Bitmap" width="375" height="667"/>
+        <image name="back24" width="9" height="15"/>
         <image name="nv" width="9" height="9"/>
     </resources>
 </document>

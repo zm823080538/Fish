@@ -13,9 +13,9 @@
 #import "UIAlertController+Set.h"
 #import "ZMAccountManager.h"
 #import "ZMGetUserRequest.h"
-#import "ZMMineModel.h"
+#import "ZMSettingItem.h"
 #import "ZMMineDefine.h"
-#import "ZMMineTableViewCell.h"
+#import "ZMSettingCell.h"
 #import <UIImage+YYAdd.h>
 #import "ZMGetAuthRequest.h"
 #import "ZMPrivacyListViewController.h"
@@ -148,34 +148,51 @@
 - (void)updateUI {
     if ([[ZMAccountManager shareManager] isCoach]) { //教练
         //Section0
-        ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
+        ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"result" title:@"教学资质" destinClassName:@"TeachQAViewController"];
+        item01.style = ZMSettingItemStyleLabelArrow;
         item01.rightTitle = @"审核中";
-        ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
-        ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
-        ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
-        ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-        ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
-        ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"servicetime" title:@"工作时间设置" destinClassName:@"ZMLessonTimeSettingController"];
-        
+        ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:@"member_addUser" title:@"会员申请" destinClassName:@"ZMMemberApplyViewController"];
+        item02.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:@"order" title:@"我的日程" destinClassName:@"ZMCalendarViewController"];
+        item03.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:@"tongji" title:@"统计" destinClassName:@"ZMCountTableViewController"];
+        item04.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+        item05.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item06 = [[ZMSettingItem  alloc] initWithImage:@"Recommend" title:@"推荐好友" destinClassName:@"ZMRecFriendViewController"];
+        item06.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item07 = [[ZMSettingItem  alloc] initWithImage:@"servicetime" title:@"工作时间设置" destinClassName:@"ZMLessonTimeSettingController"];
+        item07.style = ZMSettingItemStyleArrow;
         //Section1
-        ZMMineModel  *item08 = [[ZMMineModel  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
-        ZMMineModel  *item09 = [[ZMMineModel  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
-        
+        ZMSettingItem  *item08 = [[ZMSettingItem  alloc] initWithImage:@"yajin" title:@"押金" destinClassName:@""];
+        item08.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item09 = [[ZMSettingItem  alloc] initWithImage:@"Mustread" title:@"教练必读" destinClassName:@"ZMMustReadTableViewController"];
+        item09.style = ZMSettingItemStyleArrow;
         //Section2
-        ZMMineModel  *item10 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
-        ZMMineModel  *item11 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
-        ZMMineModel  *item12 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+        ZMSettingItem  *item10 = [[ZMSettingItem  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
+        item10.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item11 = [[ZMSettingItem  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+        item11.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item12 = [[ZMSettingItem  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+        item12.style = ZMSettingItemStyleArrow;
          self.dataSource = @[@[item01,item02,item03,item04,item05,item06,item07],@[item08,item09],@[item10,item11,item12]];
     } else { // 会员
         
-        ZMMineModel  *item01 = [[ZMMineModel  alloc] initWithImage:@"result" title:@"我的订单" destinClassName:@"ZMOrderViewController"];
-        ZMMineModel  *item02 = [[ZMMineModel  alloc] initWithImage:@"member_addUser" title:@"身体数据" destinClassName:@"ZMBodyBuildingKnowledageListController"];
-        ZMMineModel  *item03 = [[ZMMineModel  alloc] initWithImage:@"order" title:@"健身需求" destinClassName:@"ZMCalendarViewController"];
-        ZMMineModel  *item04 = [[ZMMineModel  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
-        ZMMineModel  *item05 = [[ZMMineModel  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
-        ZMMineModel  *item06 = [[ZMMineModel  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
-        
-        ZMMineModel  *item07 = [[ZMMineModel  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+        ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"result" title:@"我的订单" destinClassName:@"ZMOrderViewController"];
+        item01.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:@"member_addUser" title:@"身体数据" destinClassName:@"ZMWebViewController"];
+//        ZMBodyBuildingKnowledageListController
+        item02.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:@"order" title:@"健身需求" destinClassName:@"ZMCalendarViewController"];
+        item03.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:@"shoucang" title:@"我的收藏" destinClassName:@"ZMMyCollectListController"];
+        item04.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:@"share2" title:@"分享给朋友" destinClassName:@""];
+        item05.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item06 = [[ZMSettingItem  alloc] initWithImage:@"feedback" title:@"意见反馈" destinClassName:@"ZMFeedbackViewController"];
+        item06.style = ZMSettingItemStyleArrow;
+        ZMSettingItem  *item07 = [[ZMSettingItem  alloc] initWithImage:@"about_us" title:@"关于我们" destinClassName:@""];
+        item07.style = ZMSettingItemStyleArrow;
         self.dataSource = @[@[item01,item02],@[item03,item04,item05,item06],@[item07]];
     }
     [self.tableView reloadData];
@@ -216,17 +233,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *ID = @"cell";
-    ZMMineTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
     }
-    ZMMineModel  *item = self.dataSource[indexPath.section][indexPath.row];
+    ZMSettingItem  *item = self.dataSource[indexPath.section][indexPath.row];
     [cell setModel:item];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ZMMineModel  *item = self.dataSource[indexPath.section][indexPath.row];
+    ZMSettingItem  *item = self.dataSource[indexPath.section][indexPath.row];
     if ([item.title isEqualToString:@"押金"]) {
         [UIAlertController alertWithTitle:@"提示" message:@"您暂未交押金！" cancelTitle:@"取消" otherTitles:@[@"交押金"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
             NSLog(@"---");
