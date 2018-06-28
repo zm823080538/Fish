@@ -10,7 +10,10 @@
 
 @implementation ZMMemberDetailRequest
 - (NSString *)requestUrl {
-    return @"/api/contact/studentDetail";
+    if (IS_COACH) {
+        return @"/api/contact/studentDetail";
+    }
+    return @"api/contact/teacherDetail";
 }
 
 - (YTKRequestMethod)requestMethod {

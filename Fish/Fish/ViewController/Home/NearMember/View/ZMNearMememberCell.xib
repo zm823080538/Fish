@@ -88,9 +88,9 @@
                 <outlet property="distanceLabel" destination="Q2u-Gx-zmf" id="lXp-5o-HWf"/>
                 <outlet property="nameLabel" destination="svV-8P-0Rd" id="NMa-V7-da7"/>
                 <outlet property="statusLabel" destination="WDY-Af-vWg" id="G1B-Qu-oVR"/>
-                <outlet property="userIconImageView" destination="hLj-q4-XOT" id="n5j-dk-5fe"/>
+                <outlet property="userIconImageView" destination="ZZG-MR-TNw" id="Ixu-zy-gb4"/>
             </connections>
-            <point key="canvasLocation" x="-216" y="83"/>
+            <point key="canvasLocation" x="-905" y="106"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MKn-pY-uVS" customClass="ZMNearMememberCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
@@ -152,34 +152,59 @@
                         <color key="textColor" red="0.73725490199999999" green="0.7843137255" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDT-0W-B74">
+                        <rect key="frame" x="42" y="47" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="AAh-rY-FQN"/>
+                            <constraint firstAttribute="width" constant="13" id="XKh-6j-aQX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="7"/>
+                        <state key="normal" title="pt1" backgroundImage="Grade-bg">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8g-Pj-KQT">
+                        <rect key="frame" x="227" y="50" width="29" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.73725490199999999" green="0.7843137255" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="5Cj-8j-aLJ" firstAttribute="top" secondItem="y3T-v3-asI" secondAttribute="top" constant="24" id="3c9-d4-hju"/>
                     <constraint firstAttribute="trailing" secondItem="f6q-7d-IKi" secondAttribute="trailing" constant="12" id="8bH-Nf-iri"/>
+                    <constraint firstItem="X8g-Pj-KQT" firstAttribute="centerY" secondItem="f6q-7d-IKi" secondAttribute="centerY" id="BNU-Db-g3N"/>
+                    <constraint firstItem="f6q-7d-IKi" firstAttribute="leading" secondItem="X8g-Pj-KQT" secondAttribute="trailing" constant="24" id="J6O-fE-GUD"/>
                     <constraint firstItem="ZZG-MR-TNw" firstAttribute="centerY" secondItem="y3T-v3-asI" secondAttribute="centerY" id="OiI-Sb-zec"/>
                     <constraint firstItem="npc-0K-MAK" firstAttribute="centerY" secondItem="rW7-5i-QrN" secondAttribute="centerY" id="R2g-RL-GJK"/>
                     <constraint firstItem="rW7-5i-QrN" firstAttribute="top" secondItem="ZZG-MR-TNw" secondAttribute="top" id="Z86-H4-SXI"/>
                     <constraint firstItem="rW7-5i-QrN" firstAttribute="leading" secondItem="ZZG-MR-TNw" secondAttribute="trailing" constant="15" id="lhj-Vz-hks"/>
                     <constraint firstItem="aFj-gJ-BPa" firstAttribute="leading" secondItem="rW7-5i-QrN" secondAttribute="leading" id="o8D-zV-zzB"/>
                     <constraint firstItem="aFj-gJ-BPa" firstAttribute="top" secondItem="rW7-5i-QrN" secondAttribute="bottom" constant="10" id="ofb-rx-mnf"/>
+                    <constraint firstItem="iDT-0W-B74" firstAttribute="trailing" secondItem="ZZG-MR-TNw" secondAttribute="trailing" id="pyn-rm-9He"/>
                     <constraint firstItem="f6q-7d-IKi" firstAttribute="centerY" secondItem="aFj-gJ-BPa" secondAttribute="centerY" id="u8S-oU-anh"/>
                     <constraint firstItem="npc-0K-MAK" firstAttribute="leading" secondItem="rW7-5i-QrN" secondAttribute="trailing" constant="7.5" id="unh-dW-I9w"/>
                     <constraint firstAttribute="trailing" secondItem="5Cj-8j-aLJ" secondAttribute="trailing" constant="15" id="utC-Tz-lAN"/>
                     <constraint firstItem="ZZG-MR-TNw" firstAttribute="leading" secondItem="y3T-v3-asI" secondAttribute="leading" constant="15" id="yJQ-Vj-oYW"/>
+                    <constraint firstItem="iDT-0W-B74" firstAttribute="bottom" secondItem="ZZG-MR-TNw" secondAttribute="bottom" id="z6e-pM-kNe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="sUo-gy-MnG"/>
             <connections>
                 <outlet property="ageButton" destination="npc-0K-MAK" id="guX-mi-V29"/>
+                <outlet property="distanceLabel" destination="f6q-7d-IKi" id="xlQ-SL-X3j"/>
                 <outlet property="nameLabel" destination="rW7-5i-QrN" id="nd4-Av-Tad"/>
+                <outlet property="starLabel" destination="X8g-Pj-KQT" id="bHS-W3-YpH"/>
                 <outlet property="statusLabel" destination="aFj-gJ-BPa" id="qo9-sl-wQV"/>
                 <outlet property="userIconImageView" destination="ZZG-MR-TNw" id="VOB-1R-vUs"/>
+                <outlet property="versionBtn" destination="iDT-0W-B74" id="iVc-Em-dCy"/>
             </connections>
-            <point key="canvasLocation" x="-31" y="325"/>
+            <point key="canvasLocation" x="-842" y="255"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Bitmap" width="375" height="667"/>
+        <image name="Bitmap" width="145" height="195"/>
+        <image name="Grade-bg" width="13" height="13"/>
         <image name="nv" width="9" height="9"/>
     </resources>
 </document>

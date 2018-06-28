@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMLessonTimeCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end

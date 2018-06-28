@@ -39,7 +39,7 @@
         tag.padding = UIEdgeInsetsMake(10, 15, 10, 15);
         [self.tagView addTag:tag];
     }
-    self.tagViewHeightConstraint.constant = self.tagView.intrinsicContentSize.height;
+    self.tagViewHeightConstraint.constant = self.tagView.intrinsicContentSize.height +  50;
     int  maxLength = 200;
     @weakify(self)
     RAC(self.commentNumLabel,text) = [self.commentTextView.rac_textSignal  map:^id(NSString *value) {

@@ -15,7 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *ageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *userIconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UILabel *courseNumLabel;
+@property (weak, nonatomic) IBOutlet UIButton *versionBtn;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @end
 
@@ -33,6 +35,13 @@
     } else {
          [self.ageButton setImage:[UIImage imageNamed:@"nv"] forState:UIControlStateNormal];
         [self.ageButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
+    }
+    
+    self.starLabel.text = [NSString stringWithFormat:@"评分%@",model.score];
+    [self.versionBtn setTitle:model.degree forState:UIControlStateNormal];
+    if (IS_COACH) {
+        self.courseNumLabel.textColor = UIColorFromRGB(0xFD506D);
+        self.courseNumLabel.text = [NSString stringWithFormat:@"￥%@",model.courseprice];
     }
 }
 

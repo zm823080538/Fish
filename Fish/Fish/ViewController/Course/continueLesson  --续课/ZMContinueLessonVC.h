@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMCoachDetailModel.h"
 @interface ZMContinueLessonVC : UIViewController
+@property (nonatomic, strong) ZMCoachDetailModel * coachDetailModel;
 
 @end

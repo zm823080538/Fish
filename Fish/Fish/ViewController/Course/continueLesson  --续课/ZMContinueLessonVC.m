@@ -14,9 +14,13 @@
 #import "ZMAppointSuccVC.h"
 #import "PPNumberButton.h"
 #import "SKTagView.h"
+#import "ZMGetCourseInfoRequest.h"
+#import "ZMContinueLessonModel.h"
 @interface ZMContinueLessonVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray * dataSource;
+@property (nonatomic, strong) NSArray * infoArray;
+
 
 
 @end
@@ -50,9 +54,9 @@
     
     ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地址" destinClassName:@"TeachQAViewController"];
     item01.style = ZMSettingItemStyleLabelArrow;
-    item01.rightTitle = @"成都双流区";
+    item01.rightTitle = self.coachDetailModel.userinfo.address;
     ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"常规课系统" destinClassName:@"ZMMemberApplyViewController"];
-    item02.rightTitle = @"￥150";
+    item02.rightTitle = self.coachDetailModel.userinfo.courseprice;
     ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:@"ZMCalendarViewController"];
     item03.style = ZMSettingItemStyleCountNum;
     ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
@@ -61,8 +65,27 @@
     item05.rightTitle = @"￥150";
     self.dataSource = @[item01,item02,item03,item04,item05];
     [self.tableView reloadData];
-    
+    [self requst];
     // Do any additional setup after loading the view.
+}
+
+- (void)requst {
+    [MBProgressHUD showActivityMessageInView:nil];
+    ZMGetCourseInfoRequest *request = [[ZMGetCourseInfoRequest alloc] init];
+    request.tid =  self.coachDetailModel.userinfo.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD showSuccessMessage:@"加载成功"];
+        self.infoArray = [NSArray modelArrayWithClass:[ZMContinueLessonModel class] json:request.responseObject[@"data"]];
+        
+//        self.detailModel = [ZMCoachDetailModel modelWithJSON:request.responseObject[@"data"]];
+        [self updateUI];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+}
+
+- (void)updateUI {
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,6 +108,10 @@
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"ZMNearMememberCell" owner:nil options:nil].firstObject;
         }
+        
+        NSDictionary *dict = [self.coachDetailModel.userinfo modelToJSONObject];
+        ZMMemberModel *model = [ZMMemberModel modelWithJSON:dict];
+        cell.model = model;
         return cell;
     } else if (indexPath.row == 1 || indexPath.row == 2) {
         ZMLessonTypeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMLessonTypeCell"];
@@ -92,11 +119,11 @@
             cell = [[ZMLessonTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ZMLessonTypeCell"];
         }
         if (indexPath.row == 1) {
+//            NSArray *tagStrings = self.infoArray arr
             cell.tagList = @[@"常规课",@"特色课",@"专业课"];
             cell.title = @"课程类型";
             cell.tagView.didTapTagAtIndex = ^(NSUInteger index) {
-                
-                
+    
             };
         } else {
             cell.tagList = @[@"常规课",@"特色课",@"专业课"];

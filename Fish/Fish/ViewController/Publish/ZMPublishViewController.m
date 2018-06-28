@@ -12,6 +12,7 @@
 #import "UITextView+MGPlaceholder.h"
 #import "SKTagView.h"
 #import "ZMPersonalModel.h"
+#import "ZMPickPhotoCollectionView.h"
 #import "ZMBaseActionSheetView.h"
 @interface ZMPublishViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -27,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"发布需求";
     [self.view addSubview:self.tableView];    
     self.cTypes = @[@"增肌", @"减脂" , @"塑形", @"康复", @"拉伸", @"其他"];
     self.sectionTitles = @[@"类型", @"详细描述", @"意向购买节数"];
@@ -41,12 +43,30 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     ZMHomeSectionView *sectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ZMHomeSectionView"];
-    sectionView.arrowButton.hidden = YES;
     if (!sectionView) {
         sectionView = [[ZMHomeSectionView alloc] initWithReuseIdentifier:@"ZMHomeSectionView"];
     }
+    sectionView.arrowButton.hidden = YES;
     sectionView.title = self.sectionTitles[section];
     return sectionView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    if (section == 1) {
+        ZMPickPhotoCollectionView *pickerView = [[ZMPickPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 130)];
+        return pickerView;
+    } else {
+        return nil;
+    }
+   
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section == 1) {
+        return 130;
+    }
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
