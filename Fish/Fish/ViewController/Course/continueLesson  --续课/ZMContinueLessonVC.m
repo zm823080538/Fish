@@ -111,7 +111,7 @@
         static NSString *ID = @"ZMMineTableViewCell";
         ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
         if (cell == nil) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
+            cell = [[ZMSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         }
         [cell setModel:self.dataSource[indexPath.row - 3]];
         cell.numberButton.resultBlock = ^(PPNumberButton *ppBtn, CGFloat number, BOOL increaseStatus) {

@@ -9,7 +9,7 @@
 #import "ZMWebViewController.h"
 #import <WebKit/WebKit.h>
 #import "ZMCollectRequest.h"
-#import "ZMBodyBuildingKnowledageListController.h"
+#import "ZMBodyRecordListVC.h"
 
 @interface ZMWebViewController ()
 @property (nonatomic, strong) WKWebView *wkWebView;
@@ -46,7 +46,7 @@
 }
 
 - (void)bodyRecord {
-    ZMBodyBuildingKnowledageListController *vc = [ZMBodyBuildingKnowledageListController new];
+    ZMBodyRecordListVC *vc = [ZMBodyRecordListVC new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

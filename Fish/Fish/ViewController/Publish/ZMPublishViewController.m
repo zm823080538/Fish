@@ -100,7 +100,7 @@
         static NSString *ID = @"ZMMineTableViewCell";
         ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
         if (cell == nil) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
+             cell = [[ZMSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ZMMineTableViewCell"];
         }
         ZMSettingItem  *item = self.details[indexPath.row];
         [cell setModel:item];

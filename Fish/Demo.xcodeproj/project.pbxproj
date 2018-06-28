@@ -40,9 +40,12 @@
 		5D0D9AA220DE8CDF00B571EC /* ZMContinueLessonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9AA120DE8CDF00B571EC /* ZMContinueLessonVC.m */; };
 		5D0D9AA620DE8F3700B571EC /* ZMLessonTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9AA520DE8F3700B571EC /* ZMLessonTypeCell.m */; };
 		5D1ABCDE20E23E32003FFB7D /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1ABCDD20E23E31003FFB7D /* PPNumberButton.m */; };
-		5D1ABCE020E2449A003FFB7D /* ZMMineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCDF20E2449A003FFB7D /* ZMMineTableViewCell.xib */; };
 		5D1ABCE220E3787F003FFB7D /* ZMRefoundReasonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCE120E3787F003FFB7D /* ZMRefoundReasonView.xib */; };
 		5D1ABCE420E37F8C003FFB7D /* ZMAppointTimeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCE320E37F8C003FFB7D /* ZMAppointTimeAlertView.xib */; };
+		5D1ABCF120E4CB59003FFB7D /* ZMRecordDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1ABCEF20E4CB59003FFB7D /* ZMRecordDetailCell.m */; };
+		5D1ABCF220E4CB59003FFB7D /* ZMRecordDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCF020E4CB59003FFB7D /* ZMRecordDetailCell.xib */; };
+		5D1ABCF520E4E475003FFB7D /* ZMAddBodyRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1ABCF420E4E475003FFB7D /* ZMAddBodyRecordVC.m */; };
+		5D1ABCF720E4E53D003FFB7D /* ZMSearchFilterAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCF620E4E53D003FFB7D /* ZMSearchFilterAlertView.xib */; };
 		5D2A652A20BE7422009CC388 /* ZMTQSaveRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2A652920BE7422009CC388 /* ZMTQSaveRequest.m */; };
 		5D2F7C9E2096A66D007B3812 /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7C9D2096A66D007B3812 /* UIViewController+BackButtonHandler.m */; };
 		5D2F7CA9209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2F7CA7209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m */; };
@@ -328,9 +331,14 @@
 		5D0D9AA520DE8F3700B571EC /* ZMLessonTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMLessonTypeCell.m; sourceTree = "<group>"; };
 		5D1ABCDC20E23E31003FFB7D /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		5D1ABCDD20E23E31003FFB7D /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
-		5D1ABCDF20E2449A003FFB7D /* ZMMineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZMMineTableViewCell.xib; sourceTree = "<group>"; };
 		5D1ABCE120E3787F003FFB7D /* ZMRefoundReasonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMRefoundReasonView.xib; sourceTree = "<group>"; };
 		5D1ABCE320E37F8C003FFB7D /* ZMAppointTimeAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMAppointTimeAlertView.xib; sourceTree = "<group>"; };
+		5D1ABCEE20E4CB59003FFB7D /* ZMRecordDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRecordDetailCell.h; sourceTree = "<group>"; };
+		5D1ABCEF20E4CB59003FFB7D /* ZMRecordDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRecordDetailCell.m; sourceTree = "<group>"; };
+		5D1ABCF020E4CB59003FFB7D /* ZMRecordDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMRecordDetailCell.xib; sourceTree = "<group>"; };
+		5D1ABCF320E4E475003FFB7D /* ZMAddBodyRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMAddBodyRecordVC.h; sourceTree = "<group>"; };
+		5D1ABCF420E4E475003FFB7D /* ZMAddBodyRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMAddBodyRecordVC.m; sourceTree = "<group>"; };
+		5D1ABCF620E4E53D003FFB7D /* ZMSearchFilterAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMSearchFilterAlertView.xib; sourceTree = "<group>"; };
 		5D2A652820BE7422009CC388 /* ZMTQSaveRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMTQSaveRequest.h; sourceTree = "<group>"; };
 		5D2A652920BE7422009CC388 /* ZMTQSaveRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMTQSaveRequest.m; sourceTree = "<group>"; };
 		5D2F7C9C2096A66D007B3812 /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
@@ -900,6 +908,16 @@
 			path = PPNumberButton;
 			sourceTree = "<group>";
 		};
+		5D1ABCED20E4CB3E003FFB7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D1ABCEE20E4CB59003FFB7D /* ZMRecordDetailCell.h */,
+				5D1ABCEF20E4CB59003FFB7D /* ZMRecordDetailCell.m */,
+				5D1ABCF020E4CB59003FFB7D /* ZMRecordDetailCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5D2F7CA5209C2FA1007B3812 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1176,7 +1194,6 @@
 		5D5BB2292088E7CD0067709B /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				5D1ABCDF20E2449A003FFB7D /* ZMMineTableViewCell.xib */,
 				5D5BB22A2088E7E70067709B /* PersonalInfoCell.h */,
 				5D5BB22B2088E7E70067709B /* PersonalInfoCell.m */,
 				5D5BB2CC20AC5BDB0067709B /* ZMSettingCell.h */,
@@ -1295,9 +1312,16 @@
 		5D5BB2B620A7E7820067709B /* Statistics */ = {
 			isa = PBXGroup;
 			children = (
+				5D1ABCED20E4CB3E003FFB7D /* View */,
 				5DAFBA5E20BBE72600AA259F /* DAO */,
 				5D5BB2B720A7E7CE0067709B /* ZMCountTableViewController.h */,
 				5D5BB2B820A7E7CE0067709B /* ZMCountTableViewController.m */,
+				5D0D9A5520D1737B00B571EC /* ZMBodyRecordListVC.h */,
+				5D0D9A5620D1737B00B571EC /* ZMBodyRecordListVC.m */,
+				5D0D9A5820D173FD00B571EC /* ZMBodyRecordDetailVC.h */,
+				5D0D9A5920D173FD00B571EC /* ZMBodyRecordDetailVC.m */,
+				5D1ABCF320E4E475003FFB7D /* ZMAddBodyRecordVC.h */,
+				5D1ABCF420E4E475003FFB7D /* ZMAddBodyRecordVC.m */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -1735,10 +1759,6 @@
 				5DC5CBCA2078523000F3C0D6 /* Course */,
 				5DC5CBCE2078523000F3C0D6 /* Mine */,
 				5DC5CBD22078523000F3C0D6 /* Base */,
-				5D0D9A5520D1737B00B571EC /* ZMBodyRecordListVC.h */,
-				5D0D9A5620D1737B00B571EC /* ZMBodyRecordListVC.m */,
-				5D0D9A5820D173FD00B571EC /* ZMBodyRecordDetailVC.h */,
-				5D0D9A5920D173FD00B571EC /* ZMBodyRecordDetailVC.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1871,6 +1891,7 @@
 				5D5BB26520921AA70067709B /* ZMInputTextField.m */,
 				5D1ABCE120E3787F003FFB7D /* ZMRefoundReasonView.xib */,
 				5D1ABCE320E37F8C003FFB7D /* ZMAppointTimeAlertView.xib */,
+				5D1ABCF620E4E53D003FFB7D /* ZMSearchFilterAlertView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -2025,7 +2046,6 @@
 				5D8A472A209301E900CE2723 /* ZMFeedbackViewController.xib in Resources */,
 				5DC5CBB820784FA700F3C0D6 /* LaunchScreen.storyboard in Resources */,
 				5D0D9A8520DBF9EA00B571EC /* star_gray@2x.png in Resources */,
-				5D1ABCE020E2449A003FFB7D /* ZMMineTableViewCell.xib in Resources */,
 				5D2F7CB4209C30C3007B3812 /* ZMMemberResultItemCell.xib in Resources */,
 				5D0D9A8420DBF9EA00B571EC /* star_gray.png in Resources */,
 				5D0D9A7620DAA76100B571EC /* ZMRefoundLessonController.xib in Resources */,
@@ -2037,6 +2057,7 @@
 				5D5BB2B520A7E6440067709B /* ZMCollectionCell.xib in Resources */,
 				5D0D9A4F20D16A2000B571EC /* ZMOrderCell.xib in Resources */,
 				5D1ABCE420E37F8C003FFB7D /* ZMAppointTimeAlertView.xib in Resources */,
+				5D1ABCF220E4CB59003FFB7D /* ZMRecordDetailCell.xib in Resources */,
 				5D0D9A7C20DBF17700B571EC /* ZMEvaluationVC.xib in Resources */,
 				5DAD856920B1786300622DF4 /* ZMCourseDetailViewController.xib in Resources */,
 				5D343F8A207BC345006F8616 /* ChooseRoleViewController.xib in Resources */,
@@ -2047,6 +2068,7 @@
 				5D0D9A4720D1633100B571EC /* ZMLessonPriceDetailViewController.xib in Resources */,
 				5DAFBA3520BAA42F00AA259F /* ZMCourseCancelView.xib in Resources */,
 				5D0D9A8E20DBFDE600B571EC /* ZMAppointSuccVC.xib in Resources */,
+				5D1ABCF720E4E53D003FFB7D /* ZMSearchFilterAlertView.xib in Resources */,
 				5D2F7CAF209C3079007B3812 /* ZMExerciseResultCell.xib in Resources */,
 				5DAD85E420B3247200622DF4 /* ZMSuccessDemoSectionFooterView.xib in Resources */,
 				5D5BB2CB20A847880067709B /* ZMMemberDetailViewController.xib in Resources */,
@@ -2129,6 +2151,7 @@
 				5D4805EE20D2542D0031AF81 /* ZMOrderListTableViewController.m in Sources */,
 				5DC5CBE22078523000F3C0D6 /* LLMineViewController.m in Sources */,
 				5D0D9A9E20DE306400B571EC /* ZMOrderSectionHeaderView.m in Sources */,
+				5D1ABCF120E4CB59003FFB7D /* ZMRecordDetailCell.m in Sources */,
 				5DAD85E920B3247200622DF4 /* ZMExercisePhotosViewController.m in Sources */,
 				5D5BB2B020A7E62E0067709B /* ZMMyCollectListController.m in Sources */,
 				5D5BB2B920A7E7CE0067709B /* ZMCountTableViewController.m in Sources */,
@@ -2229,6 +2252,7 @@
 				5D5BB2212084F3B30067709B /* UIAlertController+Set.m in Sources */,
 				5D67B50B20B53E5600241F4E /* ZMMemberListRequest.m in Sources */,
 				5D8A47122090845B00CE2723 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				5D1ABCF520E4E475003FFB7D /* ZMAddBodyRecordVC.m in Sources */,
 				5D8A46E22090755B00CE2723 /* NSDictionary+ZMSet.m in Sources */,
 				5D5BB2C020A7EA710067709B /* ZMBaseTableViewController.m in Sources */,
 				5DAD857820B1B56E00622DF4 /* LZPickerModel.m in Sources */,

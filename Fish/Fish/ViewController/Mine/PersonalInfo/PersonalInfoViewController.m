@@ -195,7 +195,7 @@ NSString *const ZMUpdateUserInfoNotification = @"kZMUpdateUserInfoNotification";
     static NSString *ID = @"cell";
     ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
+        cell = [[ZMSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     ZMSettingItem  *item = self.dataSource[indexPath.section][indexPath.row];
     [cell setModel:item];

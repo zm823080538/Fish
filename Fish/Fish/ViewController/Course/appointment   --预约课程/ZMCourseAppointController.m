@@ -96,7 +96,7 @@
     } else  {
         ZMSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMMineTableViewCell"];
         if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"ZMMineTableViewCell" owner:nil options:nil].firstObject;
+            cell = [[ZMSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ZMMineTableViewCell"];
         }
         if (indexPath.row == 4) {
             cell.model = self.dataSource.lastObject;

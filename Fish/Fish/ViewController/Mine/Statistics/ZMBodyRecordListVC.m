@@ -1,55 +1,58 @@
 //
-//  ZMBodyRecordDetailVC.m
+//  ZMBodyRecordListVC.m
 //  Fish
 //
 //  Created by sunny on 2018/6/13.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
+#import "ZMBodyRecordListVC.h"
 #import "ZMBodyRecordDetailVC.h"
-
-@interface ZMBodyRecordDetailVC ()
+#import "ZMAddBodyRecordVC.h"
+@interface ZMBodyRecordListVC ()
 
 @end
 
-@implementation ZMBodyRecordDetailVC
+@implementation ZMBodyRecordListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.title = @"身体数据记录";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(addRecord)];
+    self.tableView.rowHeight = 65;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addRecord {
+    ZMAddBodyRecordVC *addRecordVC = [ZMAddBodyRecordVC new];
+    [self.navigationController pushViewController:addRecordVC animated:YES];
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 10;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    static NSString *ID = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    cell.textLabel.text = @"2018.05.12 14:00";
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
+    cell.textLabel.textColor = ThemeColor;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ZMBodyRecordDetailVC *detailVC = [ZMBodyRecordDetailVC new];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
