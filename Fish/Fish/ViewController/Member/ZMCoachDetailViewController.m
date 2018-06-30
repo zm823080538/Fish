@@ -34,6 +34,8 @@
 @property (nonatomic, strong) NSArray * currentTimeList;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *dateButtons;
+@property (nonatomic, strong) UIButton *currentDateButton;
+
 
 @end
 
@@ -44,6 +46,12 @@
     UIImage *image = [[UIImage imageNamed:@"Group 2"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     barButtonItem.tintColor = [UIColor whiteColor];
+    
+    self.currentDateButton = self.dateButtons.firstObject;
+    self.currentDateButton.backgroundColor = ThemeColor;
+    self.currentDateButton.layer.cornerRadius = 22;
+    self.currentDateButton.layer.masksToBounds = YES;
+    
     self.navigationItem.rightBarButtonItem = barButtonItem;
     self.iconImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     self.iconImageView.layer.borderWidth = 3;
@@ -72,8 +80,14 @@
 
 - (void)request {
     ZMMemberDetailRequest *request = [[ZMMemberDetailRequest alloc] init];
-    request.tid = [ZMAccountManager shareManager].loginUser.id;
-    request.uid = self.member.id;
+    if (IS_COACH) {
+        request.tid = [ZMAccountManager shareManager].loginUser.id;
+        request.uid = self.member.id;
+    } else {
+        request.uid = [ZMAccountManager shareManager].loginUser.id;
+        request.tid = self.member.id;
+    }
+    
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         self.detailModel = [ZMCoachDetailModel modelWithJSON:request.responseObject[@"data"]];
         [self updateUI];
@@ -103,7 +117,7 @@
     }
     [self.ageLabel setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     
-    self.periodLabel.text = self.detailModel.need.coursetypenames;
+    self.periodLabel.text = self.detailModel.userinfo.skillname;
     self.addressLabel.text = self.detailModel.userinfo.address;
     
     for (int i = 0; i < self.detailModel.workdatelist.count; i ++) {
@@ -132,6 +146,11 @@
 
 
 - (IBAction)dateButtonClick:(UIButton *)sender {
+    self.currentDateButton.backgroundColor = [UIColor whiteColor];
+    sender.backgroundColor = ThemeColor;
+    sender.layer.cornerRadius = 22;
+    sender.layer.masksToBounds = YES;
+    self.currentDateButton = sender;
     NSInteger index = sender.tag - 100;
     self.currentTimeList = self.detailModel.workdatelist[index].timelist;
     [self.tableView reloadData];

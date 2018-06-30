@@ -16,7 +16,9 @@
 #import "SKTagView.h"
 #import "ZMGetCourseInfoRequest.h"
 #import "ZMContinueLessonModel.h"
-@interface ZMContinueLessonVC () <UITableViewDelegate, UITableViewDataSource>
+@interface ZMContinueLessonVC () <UITableViewDelegate, UITableViewDataSource> {
+    NSInteger _cTypeIndex;
+}
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray * dataSource;
 @property (nonatomic, strong) NSArray * infoArray;
@@ -29,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _cTypeIndex = 0;
     self.title = @"购买私教课";
     [self.view addSubview:self.tableView];
     UIButton *commitButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -52,19 +55,7 @@
         make.bottom.equalTo(commitButton.mas_top);
     }];
     
-    ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地址" destinClassName:@"TeachQAViewController"];
-    item01.style = ZMSettingItemStyleLabelArrow;
-    item01.rightTitle = self.coachDetailModel.userinfo.address;
-    ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"常规课系统" destinClassName:@"ZMMemberApplyViewController"];
-    item02.rightTitle = self.coachDetailModel.userinfo.courseprice;
-    ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:@"ZMCalendarViewController"];
-    item03.style = ZMSettingItemStyleCountNum;
-    ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
-    item04.rightTitle = @"￥150";
-    ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:nil title:@"总价" destinClassName:@"ZMMyCollectListController"];
-    item05.rightTitle = @"￥150";
-    self.dataSource = @[item01,item02,item03,item04,item05];
-    [self.tableView reloadData];
+
     [self requst];
     // Do any additional setup after loading the view.
 }
@@ -75,9 +66,8 @@
     request.tid =  self.coachDetailModel.userinfo.id;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD showSuccessMessage:@"加载成功"];
+        [MBProgressHUD hideHUD];
         self.infoArray = [NSArray modelArrayWithClass:[ZMContinueLessonModel class] json:request.responseObject[@"data"]];
-        
-//        self.detailModel = [ZMCoachDetailModel modelWithJSON:request.responseObject[@"data"]];
         [self updateUI];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
@@ -85,7 +75,26 @@
 }
 
 - (void)updateUI {
-    
+    ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地址" destinClassName:@"TeachQAViewController"];
+    item01.style = ZMSettingItemStyleLabelArrow;
+    item01.rightTitle = self.coachDetailModel.userinfo.address;
+    ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"常规课系统" destinClassName:@"ZMMemberApplyViewController"];
+    item02.rightTitle = [NSString stringWithFormat:@"￥%@",self.coachDetailModel.userinfo.courseprice];
+    ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:@"ZMCalendarViewController"];
+    item03.style = ZMSettingItemStyleCountNum;
+    ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
+    item04.rightTitle = @"￥150";
+    ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:nil title:@"总价" destinClassName:@"ZMMyCollectListController"];
+    item05.rightTitle = @"￥150";
+    self.dataSource = @[item01,item02,item03,item04,item05];
+    [self.tableView reloadData];
+}
+
+- (void)updateDetailInfo {
+    ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
+    item04.rightTitle = @"￥150";
+    ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:nil title:@"总价" destinClassName:@"ZMMyCollectListController"];
+    item05.rightTitle = @"￥150";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,14 +128,27 @@
             cell = [[ZMLessonTypeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ZMLessonTypeCell"];
         }
         if (indexPath.row == 1) {
-//            NSArray *tagStrings = self.infoArray arr
-            cell.tagList = @[@"常规课",@"特色课",@"专业课"];
+            NSMutableArray *tagStrings = @[].mutableCopy;
+            [self.infoArray enumerateObjectsUsingBlock:^(ZMContinueLessonModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [tagStrings addObject:obj.name];
+            }];
+            cell.tagList = tagStrings;
             cell.title = @"课程类型";
             cell.tagView.didTapTagAtIndex = ^(NSUInteger index) {
-    
+                _cTypeIndex = index;
+                [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathWithIndex:2]] withRowAnimation:UITableViewRowAnimationNone];
             };
         } else {
-            cell.tagList = @[@"常规课",@"特色课",@"专业课"];
+            NSMutableArray *tagStrings = @[].mutableCopy;
+            [self.infoArray enumerateObjectsUsingBlock:^(ZMContinueLessonModel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [tagStrings addObject:obj.name];
+                if (idx == _cTypeIndex) {
+                    [obj.list enumerateObjectsUsingBlock:^(List * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        [tagStrings addObject:obj.name];
+                    }];
+                }
+            }];
+            cell.tagList = tagStrings;
             cell.title = @"课程小类";
             cell.tagView.didTapTagAtIndex = ^(NSUInteger index) {
                 
@@ -140,7 +162,14 @@
         if (cell == nil) {
             cell = [[ZMSettingCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
         }
-        [cell setModel:self.dataSource[indexPath.row - 3]];
+        ZMSettingItem *item = self.dataSource[indexPath.row - 3];
+        if ([item.title isEqualToString:@"优惠"]) {
+            item.rightTitle = [NSString stringWithFormat:@"-%@",item.rightTitle];
+            cell.rightLabel.textColor = ThemeColor;
+        } else {
+            cell.rightLabel.textColor = ThemeRedColor;
+        }
+        [cell setModel:item];
         cell.numberButton.resultBlock = ^(PPNumberButton *ppBtn, CGFloat number, BOOL increaseStatus) {
             
         };

@@ -42,7 +42,7 @@
             ZMCourseAppointController *appointVC =  [ZMCourseAppointController new];
             [self.navigationController pushViewController:appointVC animated:YES];
         } else {
-            ZMContinueLessonVC *continueLessonVC = [ZMContinueLessonVC new];
+            ZMContinueLessonVC *continueLessonVC = [ZMContinueLessonVC new];            
             [self.navigationController pushViewController:continueLessonVC animated:YES];
         }
     }];

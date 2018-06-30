@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -83,7 +83,6 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="ageButton" destination="FSK-cd-h3E" id="evi-rG-gVx"/>
-                <outlet property="courseNumLabel" destination="5Cj-8j-aLJ" id="mQO-x8-ZIQ"/>
                 <outlet property="dateLabel" destination="f6q-7d-IKi" id="al6-kO-HC4"/>
                 <outlet property="distanceLabel" destination="Q2u-Gx-zmf" id="lXp-5o-HWf"/>
                 <outlet property="nameLabel" destination="svV-8P-0Rd" id="NMa-V7-da7"/>
@@ -118,8 +117,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="增肌 减肥 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-gJ-BPa">
-                        <rect key="frame" x="70" y="49.5" width="60.5" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="增肌 减肥 13213123123123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-gJ-BPa">
+                        <rect key="frame" x="70" y="49.5" width="147.5" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.53725490200000003" green="0.58823529409999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -163,8 +162,8 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8g-Pj-KQT">
-                        <rect key="frame" x="227" y="50" width="29" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8g-Pj-KQT">
+                        <rect key="frame" x="227.5" y="51" width="28.5" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" red="0.73725490199999999" green="0.7843137255" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -172,6 +171,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="5Cj-8j-aLJ" firstAttribute="top" secondItem="y3T-v3-asI" secondAttribute="top" constant="24" id="3c9-d4-hju"/>
+                    <constraint firstItem="X8g-Pj-KQT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aFj-gJ-BPa" secondAttribute="trailing" constant="10" id="6J3-XW-Dp4"/>
                     <constraint firstAttribute="trailing" secondItem="f6q-7d-IKi" secondAttribute="trailing" constant="12" id="8bH-Nf-iri"/>
                     <constraint firstItem="X8g-Pj-KQT" firstAttribute="centerY" secondItem="f6q-7d-IKi" secondAttribute="centerY" id="BNU-Db-g3N"/>
                     <constraint firstItem="f6q-7d-IKi" firstAttribute="leading" secondItem="X8g-Pj-KQT" secondAttribute="trailing" constant="24" id="J6O-fE-GUD"/>
@@ -192,6 +192,7 @@
             <viewLayoutGuide key="safeArea" id="sUo-gy-MnG"/>
             <connections>
                 <outlet property="ageButton" destination="npc-0K-MAK" id="guX-mi-V29"/>
+                <outlet property="courseNumLabel" destination="5Cj-8j-aLJ" id="3T7-IV-xxl"/>
                 <outlet property="distanceLabel" destination="f6q-7d-IKi" id="xlQ-SL-X3j"/>
                 <outlet property="nameLabel" destination="rW7-5i-QrN" id="nd4-Av-Tad"/>
                 <outlet property="starLabel" destination="X8g-Pj-KQT" id="bHS-W3-YpH"/>

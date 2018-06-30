@@ -75,7 +75,7 @@
     if (_firstLaunch) {
         [MBProgressHUD showActivityMessageInView:nil];
     }
-    if ([self.yp_tabItemTitle isEqualToString:@"附近会员"]) {
+    if ([self.yp_tabItemTitle isEqualToString:@"附近会员"] || [self.yp_tabItemTitle isEqualToString:@"附近教练"]) {
         ZMMemberSearchRequest *request = [[ZMMemberSearchRequest alloc] init];
         request.requestId = [ZMAccountManager shareManager].loginUser.id;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -99,7 +99,7 @@
     } else {
 //        1关注2黑名单3已接单
         NSString *status = @"";
-        if ([self.yp_tabItemTitle isEqualToString:@"我的会员"]) {
+        if ([self.yp_tabItemTitle isEqualToString:@"我的会员"] || [self.yp_tabItemTitle isEqualToString:@"我的教练"]) {
             status = @"3";
         } else if ([self.yp_tabItemTitle isEqualToString:@"我的关注"]) {
             status = @"1";

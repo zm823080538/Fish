@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"会员" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:IS_COACH ? @"会员" : @"教练" style:UIBarButtonItemStylePlain target:self action:@selector(leftBarItemClick)];
     UIBarButtonItem *rightBarbuttonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"xiaoxi"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItemClick)];
     UIBarButtonItem *rightBarbuttonItem1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"saoyisao"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarItem1Click)];
     self.navigationItem.rightBarButtonItems = @[rightBarbuttonItem,rightBarbuttonItem1];
@@ -79,9 +79,9 @@
     for (int i = 0; i < 4; i ++) {
         ZMMemberListController *listVC = [[ZMMemberListController alloc] init];
         if (i == 0) {
-            listVC.yp_tabItemTitle =@"附近会员";
+            listVC.yp_tabItemTitle = IS_COACH ? @"附近会员" : @"附近教练";
         } else if (i == 1){
-            listVC.yp_tabItemTitle =@"我的会员";
+            listVC.yp_tabItemTitle =IS_COACH ? @"我的会员" : @"我的教练";
         } else if (i == 2) {
             listVC.yp_tabItemTitle =@"我的关注";
         } else {
