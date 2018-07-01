@@ -18,12 +18,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UILabel *courseNumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *versionBtn;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @end
 
 @implementation ZMNearMememberCell
 
 - (void)setModel:(ZMMemberModel *)model {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self.userIconImageView setImageWithURL:[NSURL URLWithString:model.img] placeholder:PlaceholderImage];
     self.distanceLabel.text = model.distancefmt;
     self.nameLabel.text = model.nickname;
@@ -36,6 +38,7 @@
          [self.ageButton setImage:[UIImage imageNamed:@"nv"] forState:UIControlStateNormal];
         [self.ageButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
     }
+    self.priceLabel.text = [NSString stringWithFormat:@"￥%@",model.courseprice];
     
     self.starLabel.text = [NSString stringWithFormat:@"评分%@",model.score];
     [self.versionBtn setTitle:model.degree forState:UIControlStateNormal];
@@ -46,6 +49,7 @@
 }
 
 - (void)setItem:(ZMCourseListItem *)item {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self.userIconImageView setImageWithURL:[NSURL URLWithString:item.img] placeholder:PlaceholderImage];
     self.distanceLabel.text = [NSString stringWithFormat:@"下次预约:%@",item.updateDate];
     self.nameLabel.text = item.nickname;

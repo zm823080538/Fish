@@ -12,8 +12,9 @@
 #import "ZMOrderSectionHeaderView.h"
 #import "ZMCourseAppointController.h"
 #import "ZMOrderDetailViewController.h"
+#import "ZMHistoryOrderListRequest.h"
 @interface ZMHistoryOrderListVC ()
-
+@property (nonatomic, strong) NSArray *dataSource;
 @end
 
 @implementation ZMHistoryOrderListVC
@@ -23,6 +24,17 @@
     self.tableView.sectionHeaderHeight = 150;
     self.tableView.rowHeight = 52;
     self.tableView.tableFooterView = [UIView new];
+    [self request];
+}
+
+- (void)request {
+    ZMHistoryOrderListRequest *request = [[ZMHistoryOrderListRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 

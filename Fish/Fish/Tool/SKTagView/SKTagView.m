@@ -73,6 +73,21 @@
     return CGSizeMake(intrinsicWidth, intrinsicHeight);
 }
 
+- (void)setSelectIndex:(NSInteger)selectIndex {
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[SKTagButton class]]) {
+            SKTagButton *btn = (SKTagButton *)obj;
+            if (idx == selectIndex) {
+                btn.selected = YES;
+            } else {
+                btn.selected = NO;
+            }
+        }
+       
+    }];
+    
+}
+
 - (void)layoutSubviews {
     if (!self.singleLine) {
         self.preferredMaxLayoutWidth = self.frame.size.width;
@@ -169,10 +184,11 @@
     [btn addTarget: self action: @selector(onTag:) forControlEvents: UIControlEventTouchUpInside];
     [RACObserve(btn, selected) subscribeNext:^(id  _Nullable x) {
         if ([x boolValue]) {
-            [btn setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-            btn.layer.borderColor = [UIColor yellowColor].CGColor;
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            btn.backgroundColor = ThemeColor;
         } else {
             [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
+            btn.backgroundColor = [UIColor whiteColor];
             btn.layer.borderColor = ThemeColor.CGColor;
         }
     }];

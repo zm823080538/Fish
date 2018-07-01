@@ -20,6 +20,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self conifgUI];
+        _selectIndex = -1;
     }
     return self;
 }
@@ -31,6 +32,7 @@
 
 - (void)setTagList:(NSArray *)tagList {
     _tagList = tagList;
+    [self.tagView removeAllTags];
     for (NSString *tagString in tagList) {
         SKTag *tag = [[SKTag alloc] initWithText:tagString];
         if (self.lessonType == LessonTypeXiaoLei) {
@@ -47,12 +49,18 @@
     }
 }
 
+- (void)setSelectIndex:(NSInteger)selectIndex {
+    _selectIndex = selectIndex;
+    self.tagView.selectIndex = selectIndex;
+}
+
 - (void)setLessonType:(LessonType)lessonType {
    
 }
 
 
 - (void)conifgUI {
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     [self.contentView addSubview:self.nameLabel];
     [self.contentView addSubview:self.tagView];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -63,8 +71,9 @@
         make.top.equalTo(self.nameLabel.mas_bottom).mas_offset(25);
         make.left.equalTo(self.nameLabel);
         make.right.equalTo(self.contentView.mas_right).mas_equalTo(-21);
-        make.height.mas_equalTo(30);
+        make.bottom.equalTo(self.contentView).mas_offset(-5);
     }];
+    [self.contentView setClipsToBounds:YES];
 }
 
 - (UILabel *)nameLabel {

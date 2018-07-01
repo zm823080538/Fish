@@ -25,6 +25,7 @@
 #import "ZMCalendarViewController.h"
 #import "PersonalInfoViewController.h"
 #import "ZMOrderViewController.h"
+#import "ZMWebViewController.h"
 
 @interface LLMineViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -248,12 +249,19 @@
         [UIAlertController alertWithTitle:@"提示" message:@"您暂未交押金！" cancelTitle:@"取消" otherTitles:@[@"交押金"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
             NSLog(@"---");
         }];
-    } else {
+    }
+    else {
         if ([item.title isEqualToString:@"教学资质"]) {
             TeachQAViewController *teachQA = [TeachQAViewController new];
             teachQA.status = @"审核中";
             [self.navigationController pushViewController:teachQA animated:YES];
-        } else {
+        } else if ([item.title isEqualToString:@"关于我们"]) {
+            ZMWebViewController *webVC = [ZMWebViewController new];
+            webVC.title = @"关于我们";
+            webVC.urlString = @"https://www.bjwork.xyz/h5/news/detail?id=about";            
+            [self.navigationController pushViewController:webVC animated:YES];
+        }
+        else {
             Class class = NSClassFromString(item.destinClassName);
             UIViewController *vc = [class new];
             vc.title = item.title;

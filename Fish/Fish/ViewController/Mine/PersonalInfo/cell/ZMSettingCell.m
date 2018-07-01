@@ -16,8 +16,11 @@
 @implementation ZMSettingCell
 
 - (void)updateUI {
+   self.selectionStyle = UITableViewCellSelectionStyleNone;
+
     [self.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (_model.image) {
+        
         [self.contentView addSubview:self.leftImageView];
         if (_model.style == ZMSettingItemStyleRightImage) {
             [self.leftImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -58,7 +61,7 @@
     }
     if (_model.style == ZMSettingItemStyleCountNum) {
         [self.contentView addSubview:self.numberButton];
-        self.numberButton.currentNumber = 10;
+        self.numberButton.currentNumber = 1;
         self.numberButton.inputFieldFont = 13;
         self.numberButton.borderColor = ThemeColor;
     }
