@@ -39,6 +39,9 @@
 		5D0D9A9E20DE306400B571EC /* ZMOrderSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9A9D20DE306400B571EC /* ZMOrderSectionHeaderView.m */; };
 		5D0D9AA220DE8CDF00B571EC /* ZMContinueLessonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9AA120DE8CDF00B571EC /* ZMContinueLessonVC.m */; };
 		5D0D9AA620DE8F3700B571EC /* ZMLessonTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0D9AA520DE8F3700B571EC /* ZMLessonTypeCell.m */; };
+		5D0F15FF20EBC12C00F8AB82 /* ZMHisOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F15FE20EBC12C00F8AB82 /* ZMHisOrderModel.m */; };
+		5D0F160220EBCFA000F8AB82 /* ZMSubscribeLessonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F160120EBCFA000F8AB82 /* ZMSubscribeLessonRequest.m */; };
+		5D0F160520EBD05F00F8AB82 /* ZMSubscribeLessonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0F160420EBD05F00F8AB82 /* ZMSubscribeLessonModel.m */; };
 		5D1ABCDE20E23E32003FFB7D /* PPNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D1ABCDD20E23E31003FFB7D /* PPNumberButton.m */; };
 		5D1ABCE220E3787F003FFB7D /* ZMRefoundReasonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCE120E3787F003FFB7D /* ZMRefoundReasonView.xib */; };
 		5D1ABCE420E37F8C003FFB7D /* ZMAppointTimeAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D1ABCE320E37F8C003FFB7D /* ZMAppointTimeAlertView.xib */; };
@@ -343,6 +346,12 @@
 		5D0D9AA120DE8CDF00B571EC /* ZMContinueLessonVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMContinueLessonVC.m; sourceTree = "<group>"; };
 		5D0D9AA420DE8F3700B571EC /* ZMLessonTypeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMLessonTypeCell.h; sourceTree = "<group>"; };
 		5D0D9AA520DE8F3700B571EC /* ZMLessonTypeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMLessonTypeCell.m; sourceTree = "<group>"; };
+		5D0F15FD20EBC12C00F8AB82 /* ZMHisOrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMHisOrderModel.h; sourceTree = "<group>"; };
+		5D0F15FE20EBC12C00F8AB82 /* ZMHisOrderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMHisOrderModel.m; sourceTree = "<group>"; };
+		5D0F160020EBCFA000F8AB82 /* ZMSubscribeLessonRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMSubscribeLessonRequest.h; sourceTree = "<group>"; };
+		5D0F160120EBCFA000F8AB82 /* ZMSubscribeLessonRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMSubscribeLessonRequest.m; sourceTree = "<group>"; };
+		5D0F160320EBD05F00F8AB82 /* ZMSubscribeLessonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMSubscribeLessonModel.h; sourceTree = "<group>"; };
+		5D0F160420EBD05F00F8AB82 /* ZMSubscribeLessonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMSubscribeLessonModel.m; sourceTree = "<group>"; };
 		5D1ABCDC20E23E31003FFB7D /* PPNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNumberButton.h; sourceTree = "<group>"; };
 		5D1ABCDD20E23E31003FFB7D /* PPNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNumberButton.m; sourceTree = "<group>"; };
 		5D1ABCE120E3787F003FFB7D /* ZMRefoundReasonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMRefoundReasonView.xib; sourceTree = "<group>"; };
@@ -832,6 +841,7 @@
 		5D0D9A4920D169A700B571EC /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				5D0F15FC20EBC11100F8AB82 /* Model */,
 				5D0D9A4A20D169B200B571EC /* Cell */,
 				5D0D9A5220D16F4400B571EC /* ZMHistoryOrderListVC.h */,
 				5D0D9A5320D16F4400B571EC /* ZMHistoryOrderListVC.m */,
@@ -941,6 +951,15 @@
 				5D0D9AA520DE8F3700B571EC /* ZMLessonTypeCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		5D0F15FC20EBC11100F8AB82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D0F15FD20EBC12C00F8AB82 /* ZMHisOrderModel.h */,
+				5D0F15FE20EBC12C00F8AB82 /* ZMHisOrderModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5D1ABCDB20E23E31003FFB7D /* PPNumberButton */ = {
@@ -1467,6 +1486,8 @@
 			children = (
 				5D67B56920B8665A00241F4E /* ZMCourseListModel.h */,
 				5D67B56A20B8665A00241F4E /* ZMCourseListModel.m */,
+				5D0F160320EBD05F00F8AB82 /* ZMSubscribeLessonModel.h */,
+				5D0F160420EBD05F00F8AB82 /* ZMSubscribeLessonModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1482,6 +1503,8 @@
 				5DAFBA3720BAACB400AA259F /* ZMCourseCancelRequest.m */,
 				5D3B1D2020E786FE005DAEE2 /* ZMHistoryOrderListRequest.h */,
 				5D3B1D2120E786FE005DAEE2 /* ZMHistoryOrderListRequest.m */,
+				5D0F160020EBCFA000F8AB82 /* ZMSubscribeLessonRequest.h */,
+				5D0F160120EBCFA000F8AB82 /* ZMSubscribeLessonRequest.m */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -2265,6 +2288,7 @@
 				5D1ABCF120E4CB59003FFB7D /* ZMRecordDetailCell.m in Sources */,
 				5DAD85E920B3247200622DF4 /* ZMExercisePhotosViewController.m in Sources */,
 				5D5BB2B020A7E62E0067709B /* ZMMyCollectListController.m in Sources */,
+				5D0F160220EBCFA000F8AB82 /* ZMSubscribeLessonRequest.m in Sources */,
 				5D5BB2B920A7E7CE0067709B /* ZMCountTableViewController.m in Sources */,
 				5DC5CBE42078523000F3C0D6 /* LLTabBarItem.m in Sources */,
 				5DAD856820B1786300622DF4 /* ZMCourseDetailViewController.m in Sources */,
@@ -2320,6 +2344,7 @@
 				5D48058C20C2DB010031AF81 /* ZMRecFriendCell.m in Sources */,
 				5DA0E1BA20BC64ED0071A781 /* ZMServicetimeSaveRequest.m in Sources */,
 				5DA0E1CB20BCF3040071A781 /* ZMGetUserInfoRequest.m in Sources */,
+				5D0F15FF20EBC12C00F8AB82 /* ZMHisOrderModel.m in Sources */,
 				5D5BB21E2084ECC70067709B /* UIView+AddBackView.m in Sources */,
 				5D343F7D207BB93F006F8616 /* RegisterViewController.m in Sources */,
 				5DA07E4520AFE7F8007C94C8 /* ZMExerciseResultListController.m in Sources */,
@@ -2348,6 +2373,7 @@
 				5D0D9AA620DE8F3700B571EC /* ZMLessonTypeCell.m in Sources */,
 				5DAD858120B2F42600622DF4 /* ZMChangePwdViewController.m in Sources */,
 				5D5BB2AC20A705D60067709B /* ZMMemberApplyCell.m in Sources */,
+				5D0F160520EBD05F00F8AB82 /* ZMSubscribeLessonModel.m in Sources */,
 				5D67B58420B963D400241F4E /* LTSCircleView.m in Sources */,
 				5D5BB2D320AC6E3A0067709B /* ZMLessonTimeSettingController.m in Sources */,
 				5D2F7CF6209D9411007B3812 /* YPTabItem.m in Sources */,

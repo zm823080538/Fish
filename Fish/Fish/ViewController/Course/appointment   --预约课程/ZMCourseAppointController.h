@@ -7,7 +7,8 @@
 //
 
 #import "ZMBaseTableViewController.h"
-
+#import "ZMHisOrderModel.h"
 @interface ZMCourseAppointController : UITableViewController
+@property (nonatomic, strong) HistoryList * historyList;
 
 @end

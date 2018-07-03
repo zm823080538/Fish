@@ -8,17 +8,19 @@
 
 #import "ZMOrderCell.h"
 
+@interface ZMOrderCell()
+@property (weak, nonatomic) IBOutlet UILabel *leftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *centerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
+
+@end
+
 @implementation ZMOrderCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setOrderList:(Orderlist *)orderList {
+    self.leftLabel.text = orderList.createDate;
+    self.centerLabel.text = [NSString stringWithFormat:@"(%@/%@)",orderList.cuse,orderList.csum];
+    self.rightLabel.text = [NSString stringWithFormat:@"%@元",orderList.cprice];
 }
 
 @end

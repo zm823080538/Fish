@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMHisOrderModel.h"
 @interface ZMOrderSectionHeaderView : UIView
 @property (nonatomic, strong) RACSubject * handleSubject;
+@property (nonatomic, strong) HistoryList * historyList;
 
 @end

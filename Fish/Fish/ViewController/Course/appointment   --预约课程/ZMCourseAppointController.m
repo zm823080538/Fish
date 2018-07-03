@@ -10,6 +10,7 @@
 #import "ZMNearMememberCell.h"
 #import "ZMSettingCell.h"
 #import "ZMBaseActionSheetView.h"
+#import "ZMSubscribeLessonRequest.h"
 #import "ZMCourseAddressController.h"
 @interface ZMCourseAppointController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
     ZMBaseActionSheetView *_actionSheetView;
@@ -29,13 +30,8 @@
     [super viewDidLoad];
     self.title = @"预约课程";
     self.view.backgroundColor = [UIColor whiteColor];
-    ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"result" title:@"课程类型" destinClassName:@"TeachQAViewController"];
-    item01.rightTitle = @"审核中";
-    ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:@"member_addUser" title:@"预约时间" destinClassName:nil];
-    item02.style = ZMSettingItemStyleLabelArrow;
-    item02.rightTitle = @"请提前一个小时预约";
-    ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地点" destinClassName:nil];
-    self.dataSource = @[item01, item02, item03];
+    [self request];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -57,6 +53,28 @@
     }];
     
    
+}
+
+- (void)request {
+    ZMSubscribeLessonRequest *request = [[ZMSubscribeLessonRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    request.cardid = self.historyList.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self updateUI];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+}
+
+- (void)updateUI {
+    ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"result" title:@"课程类型" destinClassName:@"TeachQAViewController"];
+//        item01.rightTitle = ;
+    ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:@"member_addUser" title:@"预约时间" destinClassName:nil];
+    item02.style = ZMSettingItemStyleLabelArrow;
+    item02.rightTitle = @"请提前一个小时预约";
+    ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地点" destinClassName:nil];
+    self.dataSource = @[item01, item02, item03];
+    [self.tableView reloadData];
 }
 
 - (void)commit {

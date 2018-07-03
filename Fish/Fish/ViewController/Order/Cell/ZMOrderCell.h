@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ZMHisOrderModel.h"
 @interface ZMOrderCell : UITableViewCell
+@property (nonatomic, strong) Orderlist * orderList;
 
 @end
