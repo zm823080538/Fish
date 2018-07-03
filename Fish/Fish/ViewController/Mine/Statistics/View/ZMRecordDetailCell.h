@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMRecordDetailCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *leftLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unitLabel;
+@property (weak, nonatomic) IBOutlet UITextField *rightTextField;
 
 @end

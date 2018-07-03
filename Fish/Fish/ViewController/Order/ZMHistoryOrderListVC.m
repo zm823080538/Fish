@@ -7,13 +7,15 @@
 //
 
 #import "ZMHistoryOrderListVC.h"
+#import <MJRefresh.h>
 #import "ZMOrderCell.h"
 #import "ZMContinueLessonVC.h"
 #import "ZMOrderSectionHeaderView.h"
 #import "ZMCourseAppointController.h"
 #import "ZMOrderDetailViewController.h"
+#import "ZMHistoryOrderListRequest.h"
 @interface ZMHistoryOrderListVC ()
-
+@property (nonatomic, strong) NSArray *dataSource;
 @end
 
 @implementation ZMHistoryOrderListVC
@@ -23,6 +25,21 @@
     self.tableView.sectionHeaderHeight = 150;
     self.tableView.rowHeight = 52;
     self.tableView.tableFooterView = [UIView new];
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(request)];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    self.tableView.mj_header = header;
+    [self request];
+}
+
+- (void)request {
+    ZMHistoryOrderListRequest *request = [[ZMHistoryOrderListRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 

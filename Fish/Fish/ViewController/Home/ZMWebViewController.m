@@ -21,7 +21,8 @@
     [super viewDidLoad];
     [self.view addSubview:self.wkWebView];
     if ([self.title isEqualToString:@"身体数据"]) {
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.bjwork.xyz/h5/bodydata/detail"]];
+
         [self.wkWebView loadRequest:request];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(bodyRecord)];
     } else {

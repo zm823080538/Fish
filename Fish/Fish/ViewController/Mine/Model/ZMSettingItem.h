@@ -46,6 +46,11 @@ typedef NS_ENUM(NSUInteger, ZMSettingItemStyle) {
  */
 @property (nonatomic, copy) NSString * rightImage;
 
+/**
+ 描述内容
+ */
+@property (nonatomic, copy) NSString * descTitle;
+
 @property (nonatomic, assign) ZMSettingItemStyle style;
 
 @property (nonatomic, copy) ExcuteBlock block;

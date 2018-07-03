@@ -9,8 +9,10 @@
 #import "ZMBodyRecordListVC.h"
 #import "ZMBodyRecordDetailVC.h"
 #import "ZMAddBodyRecordVC.h"
+#import "ZMBodyDataListRequest.h"
+#import "ZMBodyDataModel.h"
 @interface ZMBodyRecordListVC ()
-
+@property (nonatomic, strong) ZMBodyDataModel *dataModel;
 @end
 
 @implementation ZMBodyRecordListVC
@@ -20,18 +22,36 @@
     self.title = @"身体数据记录";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"添加" style:UIBarButtonItemStylePlain target:self action:@selector(addRecord)];
     self.tableView.rowHeight = 65;
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"ZMRefreshBodyRecordListNotification" object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+        [self request];
+    }];
+    [self request];
+}
+
+- (void)request {
+    [MBProgressHUD showActivityMessageInView:@"加载中..."];
+    ZMBodyDataListRequest *request = [[ZMBodyDataListRequest alloc] init];
+    request.userid = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUD];
+        self.dataModel = [ZMBodyDataModel modelWithJSON:request.responseObject[@"data"]];
+        [self.tableView reloadData];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (void)addRecord {
-    ZMAddBodyRecordVC *addRecordVC = [ZMAddBodyRecordVC new];
-    [self.navigationController pushViewController:addRecordVC animated:YES];
+    ZMBodyRecordDetailVC *detailVC = [ZMBodyRecordDetailVC new];
+    detailVC.title = @"添加数据";
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataModel.list.count;
 }
 
 
@@ -41,7 +61,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
-    cell.textLabel.text = @"2018.05.12 14:00";
+    BodyList *model = self.dataModel.list[indexPath.row];
+    cell.textLabel.text = model.writedate;
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     cell.textLabel.textColor = ThemeColor;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -49,53 +70,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    BodyList *model = self.dataModel.list[indexPath.row];
     ZMBodyRecordDetailVC *detailVC = [ZMBodyRecordDetailVC new];
+    detailVC.title = model.writedate;
+    detailVC.model = self.dataModel.list[indexPath.row];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

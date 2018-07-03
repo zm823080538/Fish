@@ -1,14 +1,14 @@
 //
-//  ZMBodyRecordDetailVC.h
+//  ZMWeiduTableViewController.h
 //  Fish
 //
-//  Created by sunny on 2018/6/13.
+//  Created by zhaoming on 2018/7/1.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
 #import "ZMBaseTableViewController.h"
 #import "ZMBodyDataModel.h"
-@interface ZMBodyRecordDetailVC : ZMBaseTableViewController
+@interface ZMWeiduTableViewController : ZMBaseTableViewController
 @property (nonatomic, strong) BodyList *model;
-
+@property (nonatomic, strong) RACSubject * subject;
 @end

@@ -107,12 +107,6 @@
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     ZMPublishViewController *vc = [ZMPublishViewController new];
     [tabBarController.selectedViewController pushViewController:vc animated:YES];
-//    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
-//                                                             delegate:self
-//                                                    cancelButtonTitle:@"取消"
-//                                               destructiveButtonTitle:nil
-//                                                    otherButtonTitles:@"拍照", @"从相册选取", @"淘宝一键转卖", nil];
-//    [actionSheet showInView:viewController.view];
 }
 
 

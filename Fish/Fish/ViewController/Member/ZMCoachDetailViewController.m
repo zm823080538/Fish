@@ -120,9 +120,7 @@
     self.periodLabel.text = self.detailModel.userinfo.skillname;
     self.addressLabel.text = self.detailModel.userinfo.address;
     
-    for (int i = 0; i < self.detailModel.workdatelist.count; i ++) {
-        
-    }
+    
     NSString *month = self.detailModel.workdatelist.firstObject.month;
     NSString *year = self.detailModel.workdatelist.firstObject.year;
     self.dateLabel.text = [NSString stringWithFormat:@"%@月 %@",month,year];

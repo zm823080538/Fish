@@ -19,6 +19,7 @@
 
 @interface ZMPickPhotoCollectionView : UIView
 @property (nonatomic, weak) id <PickPhotoCollectionViewDelegate> delegate;
+@property (nonatomic, strong) NSArray * photoUrls;
 
 @property (nonatomic, strong, readonly) NSMutableArray *photos;
 

@@ -38,6 +38,11 @@
     [self addSubview:self.collectionView];
 }
 
+- (void)setPhotoUrls:(NSArray *)photoUrls {
+    _photoUrls = photoUrls;
+    [self.collectionView reloadData];
+}
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionFooter]) {
         UICollectionReusableView* view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"collettionSectionHeader" forIndexPath:indexPath];
@@ -48,6 +53,9 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    if (self.photoUrls) {
+        return self.photoUrls.count + 1;
+    }
     return self.photos.count + 1;
 }
 
@@ -59,7 +67,11 @@
         [cell.contentView addSubview:[self configFooterView]];
     } else {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.bounds];
-        imageView.image = self.photos[indexPath.item - 1];
+        if (self.photoUrls) {
+            [imageView setImageWithURL:[NSURL URLWithString:self.photoUrls[indexPath.item - 1]] placeholder:PlaceholderImage];
+        } else {
+            imageView.image = self.photos[indexPath.item - 1];
+        }
         [cell.contentView addSubview:imageView];
     }
     return cell;

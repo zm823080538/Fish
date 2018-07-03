@@ -73,6 +73,32 @@
     return CGSizeMake(intrinsicWidth, intrinsicHeight);
 }
 
+- (void)setSelectIndex:(NSInteger)selectIndex {
+    [self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[SKTagButton class]]) {
+            SKTagButton *btn = (SKTagButton *)obj;
+            if (idx == selectIndex) {
+                btn.selected = YES;
+            } else {
+                btn.selected = NO;
+            }
+        }
+       
+    }];
+    
+}
+
+- (void)setSelectIndexs:(NSMutableArray *)selectIndexs {
+    _selectIndexs = selectIndexs;
+    [selectIndexs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        SKTagButton *btn = self.AllTags[idx];
+        btn.selected = YES;
+    }];
+//    [selectIndexs enumerateObjectsUsingBlock:^(SKTagButton  *_Nonnull obj, BOOL * _Nonnull stop) {
+//        obj.selected = YES;
+//    }];
+}
+
 - (void)layoutSubviews {
     if (!self.singleLine) {
         self.preferredMaxLayoutWidth = self.frame.size.width;
@@ -90,6 +116,13 @@
         _tags = [NSMutableArray array];
     }
     return _tags;
+}
+
+- (NSMutableArray *)AllTags {
+    if (!_AllTags) {
+        _AllTags = [NSMutableArray array];
+    }
+    return _AllTags;
 }
 
 - (void)setPreferredMaxLayoutWidth: (CGFloat)preferredMaxLayoutWidth {
@@ -169,16 +202,17 @@
     [btn addTarget: self action: @selector(onTag:) forControlEvents: UIControlEventTouchUpInside];
     [RACObserve(btn, selected) subscribeNext:^(id  _Nullable x) {
         if ([x boolValue]) {
-            [btn setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-            btn.layer.borderColor = [UIColor yellowColor].CGColor;
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            btn.backgroundColor = ThemeColor;
         } else {
             [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
+            btn.backgroundColor = [UIColor whiteColor];
             btn.layer.borderColor = ThemeColor.CGColor;
         }
     }];
     [self addSubview: btn];
     [self.tags addObject: tag];
-    
+    [self.AllTags addObject:btn];
     self.didSetup = NO;
     [self invalidateIntrinsicContentSize];
 }
@@ -237,5 +271,7 @@
     self.didSetup = NO;
     [self invalidateIntrinsicContentSize];
 }
+
+
 
 @end

@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, LessonType) {
 @property (nonatomic, strong) SKTagView  * tagView;
 @property (nonatomic, strong) NSArray * tagList;
 @property (nonatomic, copy) NSString * title;
+@property (nonatomic, assign) NSInteger selectIndex;
+
 
 
 @end

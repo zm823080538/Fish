@@ -15,6 +15,11 @@
 @property (assign, nonatomic) CGFloat interitemSpacing;
 @property (assign, nonatomic) CGFloat preferredMaxLayoutWidth;
 @property (assign, nonatomic) BOOL singleLine;
+@property (nonatomic, assign) NSInteger selectIndex;
+@property (nonatomic, strong) NSMutableArray * selectIndexs;
+@property (nonatomic, strong) NSMutableArray * AllTags;
+
+
 @property (copy, nonatomic, nullable) void (^didTapTagAtIndex)(NSUInteger index);
 
 - (void)addTag: (nonnull SKTag *)tag;
