@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Fish/ViewController/Publish/ZMPublishViewController.m"
-            timestampString = "552304495.624275"
+            timestampString = "552391542.6491849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -89,13 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Fish/ViewController/Order/ZMHistoryOrderListVC.m"
-            timestampString = "552304523.513285"
+            filePath = "Fish/ViewController/Course/appointment   --&#x9884;&#x7ea6;&#x8bfe;&#x7a0b;/ZMCourseAppointController.m"
+            timestampString = "552391542.649354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-request"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-next:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

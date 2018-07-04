@@ -12,14 +12,23 @@
 #import "ZMBaseActionSheetView.h"
 #import "ZMSubscribeLessonRequest.h"
 #import "ZMCourseAddressController.h"
+#import "ZMSubscribeModel.h"
+
+
 @interface ZMCourseAppointController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
     ZMBaseActionSheetView *_actionSheetView;
+    NSUInteger _currentIndex;
 }
+
+@property (nonatomic, strong) ZMSubscribeModel * model;
+
 @property (nonatomic, strong) NSArray * dataSource;
 @property (weak, nonatomic) IBOutlet UILabel *currentDateLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIView *alertView;
 @property (nonatomic, strong) NSArray * dateArray;
+
+
 
 
 @end
@@ -60,6 +69,7 @@
     request.uid = [ZMAccountManager shareManager].loginUser.id;
     request.cardid = self.historyList.id;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        self.model = [ZMSubscribeModel modelWithJSON:request.responseObject[@"data"]];
         [self updateUI];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
@@ -68,13 +78,17 @@
 
 - (void)updateUI {
     ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"result" title:@"课程类型" destinClassName:@"TeachQAViewController"];
-//        item01.rightTitle = ;
+        item01.rightTitle = [NSString stringWithFormat:@"%@(%@)",self.model.ctypename,self.model.coursetypenames];
     ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:@"member_addUser" title:@"预约时间" destinClassName:nil];
     item02.style = ZMSettingItemStyleLabelArrow;
     item02.rightTitle = @"请提前一个小时预约";
     ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地点" destinClassName:nil];
+    item03.style = ZMSettingItemStyleLabelArrow;
+    item03.rightTitle = self.model.address;
     self.dataSource = @[item01, item02, item03];
     [self.tableView reloadData];
+    
+
 }
 
 - (void)commit {
@@ -129,8 +143,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
         self.alertView = [[NSBundle mainBundle] loadNibNamed:@"ZMAppointTimeAlertView" owner:self options:nil].firstObject;
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];
-       _actionSheetView = [ZMBaseActionSheetView alertWithContainerView:self.alertView type:ZMAlertViewTypeAlert];
+        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];        
+        _actionSheetView = [ZMBaseActionSheetView alertWithContainerView:self.alertView type:ZMAlertViewTypeAlert];
+        [self.collectionView reloadData];
         [_actionSheetView show];
     } else if (indexPath.row == 4) {
         ZMCourseAddressController *addressVC = [ZMCourseAddressController new];
@@ -138,28 +153,49 @@
     }
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 40;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.model.timelist.count;
 }
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    Datelist *list = self.model.timelist[section];
+    return list.timelist.count;
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionViewCell" forIndexPath:indexPath];
     cell.layer.borderColor = ThemeColor.CGColor;
     cell.layer.borderWidth = 1;
+    [cell.contentView removeAllSubviews];
     UILabel *label = [[UILabel alloc] init];
     label.textColor = ThemeColor;
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont systemFontOfSize:11];
-    label.text = @"09:00-09:30";
-    [cell addSubview:label];
+     Datelist *list = self.model.timelist[indexPath.section];
+    Timelist *timeList = list.timelist[indexPath.item];
+    label.text = timeList.time;
+
+    [cell.contentView addSubview:label];
     [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cell);
     }];
     return cell;
 }
 - (IBAction)next:(id)sender {
+    if (_currentIndex > self.model.timelist.count - 2) {
+        return;
+    }
+    CGFloat offSetX = self.collectionView.contentOffset.x + self.collectionView.width;
+    [self.collectionView setContentOffset:CGPointMake(offSetX, 0) animated:YES];
 }
 
 - (IBAction)previous:(id)sender {
+    if (_currentIndex == 0) {
+        return;
+    }
+//    _currentIndex -= 1;
+    CGFloat offSetX = self.collectionView.contentOffset.x - self.collectionView.width;
+    [self.collectionView setContentOffset:CGPointMake(offSetX, 0) animated:YES];
 }
 - (IBAction)commit:(id)sender {
     [_actionSheetView hidden];

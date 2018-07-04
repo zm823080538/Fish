@@ -1,12 +1,12 @@
 //
-//  ZMSubscribeLessonModel.m
+//  ZMSubscribeModel.m
 //  Fish
 //
-//  Created by sunny on 2018/7/3.
+//  Created by zhaoming on 2018/7/4.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "ZMSubscribeLessonModel.h"
+#import "ZMSubscribeModel.h"
 
 @implementation Datelist
 + (NSDictionary *)modelContainerPropertyGenericClass {
@@ -14,10 +14,12 @@
              };
 }
 @end
+
 @implementation Timelist
 
 @end
-@implementation ZMSubscribeLessonModel
+
+@implementation ZMSubscribeModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"timelist" : [Datelist class],
              };

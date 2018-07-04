@@ -1,12 +1,12 @@
 //
-//  ZMSubscribeLessonModel.h
+//  ZMSubscribeModel.h
 //  Fish
 //
-//  Created by sunny on 2018/7/3.
+//  Created by zhaoming on 2018/7/4.
 //  Copyright © 2018年 zhaoming. All rights reserved.
 //
 
-#import "YTKRequest.h"
+#import <Foundation/Foundation.h>
 
 @interface Timelist :NSObject
 @property (nonatomic , copy) NSString              * zone;
@@ -34,7 +34,7 @@
 
 @end
 
-@interface ZMSubscribeLessonModel :NSObject
+@interface ZMSubscribeModel :NSObject
 @property (nonatomic , copy) NSString              * isNewRecord;
 @property (nonatomic , copy) NSString              * uid;
 @property (nonatomic , copy) NSString              * gymname;
