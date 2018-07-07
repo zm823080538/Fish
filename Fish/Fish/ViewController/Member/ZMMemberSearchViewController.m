@@ -48,66 +48,128 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"会员搜索";
-    self.typeArray = @[
-                       @{
-                           @"id": @"",
-                           @"name": @"不限"
-                           },@{
-        @"id": @"a01",
-        @"name": @"增肌"
-    }, @{
-        @"id": @"a02",
-        @"name": @"减脂"
-    }, @{
-        @"id": @"a03",
-        @"name": @"塑形"
-    }, @{
-        @"id": @"b01",
-        @"name": @"功能性"
-    }, @{
-        @"id": @"b02",
-        @"name": @"康复"
-    }, @{
-        @"id": @"b03",
-        @"name": @"体态修正"
-    }, @{
-        @"id": @"b04",
-        @"name": @"拉伸"
-    }, @{
-        @"id": @"b05",
-        @"name": @"搏击"
-    }, @{
-        @"id": @"c01",
-        @"name": @"竞技健美"
-    }];
-    self.distanceArray = @[@{@"id": @"",
-                             @"name": @"不限"
-                             },
-                           @{@"distance": @"1000",
-                            @"name": @"1km"
-                            },
-                           @{@"distance": @"2000",
-                            @"name": @"2km"
-                            },
-                           @{@"distance": @"3000",
-                             @"name": @"3km"
-                             },
-                           @{@"distance": @"5000",
-                            @"name": @"5km"
+    self.title = IS_COACH ? @"会员搜索" : @"教练搜索";
+    if (IS_COACH) {
+        self.typeArray = @[
+                           @{
+                               @"id": @"",
+                               @"name": @"不限"
+                               },@{
+                               @"id": @"a01",
+                               @"name": @"增肌"
+                               }, @{
+                               @"id": @"a02",
+                               @"name": @"减脂"
+                               }, @{
+                               @"id": @"a03",
+                               @"name": @"塑形"
+                               }, @{
+                               @"id": @"b01",
+                               @"name": @"功能性"
+                               }, @{
+                               @"id": @"b02",
+                               @"name": @"康复"
+                               }, @{
+                               @"id": @"b03",
+                               @"name": @"体态修正"
+                               }, @{
+                               @"id": @"b04",
+                               @"name": @"拉伸"
+                               }, @{
+                               @"id": @"b05",
+                               @"name": @"搏击"
+                               }, @{
+                               @"id": @"c01",
+                               @"name": @"竞技健美"
+                               }];
+        self.distanceArray = @[@{@"id": @"",
+                                 @"name": @"不限"
+                                 },
+                               @{@"distance": @"1000",
+                                 @"name": @"1km"
+                                 },
+                               @{@"distance": @"2000",
+                                 @"name": @"2km"
+                                 },
+                               @{@"distance": @"3000",
+                                 @"name": @"3km"
+                                 },
+                               @{@"distance": @"5000",
+                                 @"name": @"5km"
                                  }
-                           ,@{@"distance": @"10000",
-                              @"name": @"10km"
-                                     }];
-    self.sexArray = @[@{@"id": @"",
-                          @"name": @"不限"
-                          }
-                      ,@{@"id": @"1",
-                         @"name": @"男"
-                         },
-                      @{@"id": @"2",
-                        @"name": @"女"
-                             }];
+                               ,@{@"distance": @"10000",
+                                  @"name": @"10km"
+                                  }];
+        self.sexArray = @[@{@"id": @"",
+                            @"name": @"不限"
+                            }
+                          ,@{@"id": @"1",
+                             @"name": @"男"
+                             },
+                          @{@"id": @"2",
+                            @"name": @"女"
+                            }];
+    } else {
+        self.typeArray = @[
+                           @{
+                               @"name":@"综合"
+                               },@{
+                               @"id": @"a01",
+                               @"name": @"增肌"
+                               }, @{
+                               @"id": @"a02",
+                               @"name": @"减脂"
+                               }, @{
+                               @"id": @"a03",
+                               @"name": @"塑形"
+                               }, @{
+                               @"id": @"b01",
+                               @"name": @"功能性"
+                               }, @{
+                               @"id": @"b02",
+                               @"name": @"康复"
+                               }, @{
+                               @"id": @"b03",
+                               @"name": @"体态修正"
+                               }, @{
+                               @"id": @"b04",
+                               @"name": @"拉伸"
+                               }, @{
+                               @"id": @"b05",
+                               @"name": @"搏击"
+                               }, @{
+                               @"id": @"c01",
+                               @"name": @"竞技健美"
+                               }];
+        self.distanceArray = @[@{@"id": @"",
+                                 @"name": @"不限"
+                                 },
+                               @{@"distance": @"1000",
+                                 @"name": @"1km"
+                                 },
+                               @{@"distance": @"2000",
+                                 @"name": @"2km"
+                                 },
+                               @{@"distance": @"3000",
+                                 @"name": @"3km"
+                                 },
+                               @{@"distance": @"5000",
+                                 @"name": @"5km"
+                                 }
+                               ,@{@"distance": @"10000",
+                                  @"name": @"10km"
+                                  }];
+        self.sexArray = @[@{@"id": @"",
+                            @"name": @"不限"
+                            }
+                          ,@{@"id": @"1",
+                             @"name": @"男"
+                             },
+                          @{@"id": @"2",
+                            @"name": @"女"
+                            }];
+    }
+   
     self.tableView.rowHeight = 82;
     self.tableView.tableFooterView = [UIView new];
     [self setupUI];

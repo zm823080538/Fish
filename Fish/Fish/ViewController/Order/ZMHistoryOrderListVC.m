@@ -65,7 +65,8 @@
             appointVC.historyList = self.hisOrderModel.list[section];
             [self.navigationController pushViewController:appointVC animated:YES];
         } else {
-            ZMContinueLessonVC *continueLessonVC = [ZMContinueLessonVC new];            
+            ZMContinueLessonVC *continueLessonVC = [ZMContinueLessonVC new];
+            
             [self.navigationController pushViewController:continueLessonVC animated:YES];
         }
     }];

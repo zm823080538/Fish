@@ -66,7 +66,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="72r-77-4IV">
-                    <rect key="frame" x="0.0" y="50" width="300" height="235"/>
+                    <rect key="frame" x="5" y="50" width="290" height="235"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="19" minimumInteritemSpacing="5" id="V9L-OQ-Dhk">
                         <size key="itemSize" width="77" height="26"/>
@@ -100,10 +100,10 @@
                 <constraint firstItem="5cm-BV-77P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="EJ7-DQ-1CV"/>
                 <constraint firstItem="72r-77-4IV" firstAttribute="top" secondItem="5cm-BV-77P" secondAttribute="bottom" constant="10" id="Isg-7c-pJ3"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Soh-Hm-X1z" secondAttribute="bottom" constant="31" id="OOq-0x-zaO"/>
-                <constraint firstItem="72r-77-4IV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VNn-DF-Atq"/>
+                <constraint firstItem="72r-77-4IV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="VNn-DF-Atq"/>
                 <constraint firstItem="Soh-Hm-X1z" firstAttribute="top" secondItem="72r-77-4IV" secondAttribute="bottom" constant="30" id="ccJ-pI-TAa"/>
                 <constraint firstItem="5cm-BV-77P" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="eSf-H2-kFL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="72r-77-4IV" secondAttribute="trailing" id="mRO-rd-imm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="72r-77-4IV" secondAttribute="trailing" constant="5" id="mRO-rd-imm"/>
                 <constraint firstItem="Soh-Hm-X1z" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="38" id="sra-M6-mmM"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Soh-Hm-X1z" secondAttribute="trailing" constant="38" id="zUV-Xh-Yec"/>
             </constraints>

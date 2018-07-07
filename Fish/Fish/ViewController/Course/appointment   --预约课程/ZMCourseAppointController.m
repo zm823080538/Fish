@@ -13,11 +13,11 @@
 #import "ZMSubscribeLessonRequest.h"
 #import "ZMCourseAddressController.h"
 #import "ZMSubscribeModel.h"
+#import <UIImage+YYAdd.h>
 
 
 @interface ZMCourseAppointController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
     ZMBaseActionSheetView *_actionSheetView;
-    NSUInteger _currentIndex;
 }
 
 @property (nonatomic, strong) ZMSubscribeModel * model;
@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet UIView *alertView;
 @property (nonatomic, strong) NSArray * dateArray;
+@property (nonatomic, assign) NSInteger currentIndex;
 
 
 
@@ -60,6 +61,13 @@
         make.bottom.equalTo(footerView.mas_bottom).mas_offset(-43);
         make.height.mas_equalTo(44);
     }];
+    
+    RACSignal *signal = [RACObserve(self, currentIndex) map:^id _Nullable(id  _Nullable value) {
+        NSInteger index = [value integerValue];
+        Datelist *dateModel = self.model.timelist[index];
+        return [NSString stringWithFormat:@"周%@ %@",dateModel.weekindex,dateModel.date];
+    }];
+    RAC(self.currentDateLabel,text) = signal;
     
    
 }
@@ -167,16 +175,19 @@
     cell.layer.borderColor = ThemeColor.CGColor;
     cell.layer.borderWidth = 1;
     [cell.contentView removeAllSubviews];
-    UILabel *label = [[UILabel alloc] init];
-    label.textColor = ThemeColor;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont systemFontOfSize:11];
+    UIButton *btn = [[UIButton alloc] init];
+//    btn.textColor = ThemeColor;
+    [btn setTitle:ThemeColor forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    [btn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageWithColor:ThemeColor] forState:UIControlStateSelected];
+    btn.titleLabel.font = [UIFont systemFontOfSize:11];
      Datelist *list = self.model.timelist[indexPath.section];
     Timelist *timeList = list.timelist[indexPath.item];
-    label.text = timeList.time;
+    [btn setTitle:timeList.time forState:UIControlStateNormal];
 
-    [cell.contentView addSubview:label];
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+    [cell.contentView addSubview:btn];
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cell);
     }];
     return cell;
@@ -185,15 +196,17 @@
     if (_currentIndex > self.model.timelist.count - 2) {
         return;
     }
+    _currentIndex ++;
     CGFloat offSetX = self.collectionView.contentOffset.x + self.collectionView.width;
     [self.collectionView setContentOffset:CGPointMake(offSetX, 0) animated:YES];
+    
 }
 
 - (IBAction)previous:(id)sender {
     if (_currentIndex == 0) {
         return;
     }
-//    _currentIndex -= 1;
+    self.currentIndex --;
     CGFloat offSetX = self.collectionView.contentOffset.x - self.collectionView.width;
     [self.collectionView setContentOffset:CGPointMake(offSetX, 0) animated:YES];
 }
