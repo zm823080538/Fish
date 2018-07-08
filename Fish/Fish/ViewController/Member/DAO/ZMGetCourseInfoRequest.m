@@ -18,6 +18,9 @@
 }
 
 - (id)requestArgument {
+    if (self.cardid) {
+        return @{@"cardid": _cardid};
+    }
     return @{@"tid": _tid};
 }
 @end

@@ -10,5 +10,7 @@
 #import "ZMCoachDetailModel.h"
 @interface ZMContinueLessonVC : UIViewController
 @property (nonatomic, strong) ZMCoachDetailModel * coachDetailModel;
+@property (nonatomic, copy) NSString *cardid;
+
 
 @end

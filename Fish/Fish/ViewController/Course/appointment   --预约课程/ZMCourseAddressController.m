@@ -19,9 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"地址";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
     // Do any additional setup after loading the view from its nib.
 }
+
+- (void)save {
+    NSDictionary *addressInfo = @{@"address":self.addressTextField.text};
+    [self.subject sendNext:addressInfo];
+}
+
 - (IBAction)cancel {
+}
+
+- (RACSubject *)subject {
+    if (!_subject) {
+        _subject = [[RACSubject alloc] init];
+        
+    }
+    return _subject;
 }
 
 - (void)didReceiveMemoryWarning {

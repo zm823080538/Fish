@@ -46,6 +46,7 @@
             make.centerY.equalTo(self.contentView);
         }];
     }
+   
     if (_model.style == ZMSettingItemStyleArrow || _model.style == ZMSettingItemStyleLabelArrow) {
         [self.contentView addSubview:self.arrowImageView];
         [self.arrowImageView mas_makeConstraints:^(MASConstraintMaker *make) {

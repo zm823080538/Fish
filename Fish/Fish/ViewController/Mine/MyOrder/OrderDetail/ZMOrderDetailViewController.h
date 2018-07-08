@@ -9,5 +9,6 @@
 #import "ZMBaseTableViewController.h"
 
 @interface ZMOrderDetailViewController : ZMBaseTableViewController
+@property (nonatomic, copy) NSString *orderId;
 
 @end

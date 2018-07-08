@@ -10,5 +10,6 @@
 
 @interface ZMGetCourseInfoRequest : YTKRequest
 @property (nonatomic, copy) NSString * tid;
+@property (nonatomic, copy) NSString *cardid;
 
 @end

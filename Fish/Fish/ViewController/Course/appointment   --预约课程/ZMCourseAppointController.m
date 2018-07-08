@@ -14,10 +14,15 @@
 #import "ZMCourseAddressController.h"
 #import "ZMSubscribeModel.h"
 #import <UIImage+YYAdd.h>
+#import "ELCVFlowLayout.h"
+#import "ZMSubscribeSaveRequest.h"
 
 
 @interface ZMCourseAppointController () <UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource> {
     ZMBaseActionSheetView *_actionSheetView;
+    NSInteger _btnIndex;
+    NSInteger _brotherBtnIndex;
+    NSInteger _currentSection;
 }
 
 @property (nonatomic, strong) ZMSubscribeModel * model;
@@ -28,6 +33,8 @@
 @property (strong, nonatomic) IBOutlet UIView *alertView;
 @property (nonatomic, strong) NSArray * dateArray;
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, copy) NSString *address;
+
 
 
 
@@ -38,6 +45,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _brotherBtnIndex = -1;
+    _btnIndex = -1;
+    _currentSection = -1;
     self.title = @"预约课程";
     self.view.backgroundColor = [UIColor whiteColor];
     [self request];
@@ -61,13 +71,6 @@
         make.bottom.equalTo(footerView.mas_bottom).mas_offset(-43);
         make.height.mas_equalTo(44);
     }];
-    
-    RACSignal *signal = [RACObserve(self, currentIndex) map:^id _Nullable(id  _Nullable value) {
-        NSInteger index = [value integerValue];
-        Datelist *dateModel = self.model.timelist[index];
-        return [NSString stringWithFormat:@"周%@ %@",dateModel.weekindex,dateModel.date];
-    }];
-    RAC(self.currentDateLabel,text) = signal;
     
    
 }
@@ -100,7 +103,20 @@
 }
 
 - (void)commit {
-    
+    ZMSubscribeSaveRequest *request = [[ZMSubscribeSaveRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    request.cardid = self.historyList.id;
+    Datelist *dateList = self.model.timelist[_currentSection];
+    request.startdate = dateList.date;
+    Timelist *time1 = dateList.timelist[_btnIndex];
+    Timelist *time2 = dateList.timelist[_brotherBtnIndex];
+    request.starttime = [NSString stringWithFormat:@"%@,%@",time1.starttime,time2.starttime];
+    request.address = _address;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -151,9 +167,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 2) {
         self.alertView = [[NSBundle mainBundle] loadNibNamed:@"ZMAppointTimeAlertView" owner:self options:nil].firstObject;
-        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];        
+        ELCVFlowLayout *layout = [[ELCVFlowLayout alloc] init];
+        layout.minimumInteritemSpacing = 19;
+        layout.minimumLineSpacing = 19;
+        layout.itemSize = CGSizeMake((self.collectionView.width - 12) / 3, 26);
+
+        [self.collectionView setCollectionViewLayout:layout];
+//        layout.itemSize = CGSizeMake(77, 26);
+       
+//        layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
+        [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];
+       
         _actionSheetView = [ZMBaseActionSheetView alertWithContainerView:self.alertView type:ZMAlertViewTypeAlert];
         [self.collectionView reloadData];
+//        [[_actionSheetView rac_signalForSelector:@selector(hidden)] subscribeNext:^(RACTuple * _Nullable x) {
+//            _btnIndex = -1;
+//            _brotherBtnIndex = -1;
+//            _currentSection = -1;
+//        }];
+        Datelist *dateModel = self.model.timelist[indexPath.section];
+        self.currentDateLabel.text = [NSString stringWithFormat:@"周%@ %@",dateModel.weekindex,dateModel.date];
         [_actionSheetView show];
     } else if (indexPath.row == 4) {
         ZMCourseAddressController *addressVC = [ZMCourseAddressController new];
@@ -176,8 +209,7 @@
     cell.layer.borderWidth = 1;
     [cell.contentView removeAllSubviews];
     UIButton *btn = [[UIButton alloc] init];
-//    btn.textColor = ThemeColor;
-    [btn setTitle:ThemeColor forState:UIControlStateNormal];
+    [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
     [btn setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
     [btn setBackgroundImage:[UIImage imageWithColor:ThemeColor] forState:UIControlStateSelected];
@@ -185,7 +217,28 @@
      Datelist *list = self.model.timelist[indexPath.section];
     Timelist *timeList = list.timelist[indexPath.item];
     [btn setTitle:timeList.time forState:UIControlStateNormal];
-
+    
+    if ((indexPath.section == _currentSection) && (_brotherBtnIndex == indexPath.item || _btnIndex == indexPath.item)) {
+        btn.selected = YES;
+    } else {
+        btn.selected = NO;
+    }
+   
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        [list.timelist enumerateObjectsUsingBlock:^(Timelist * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            _currentSection = -1;
+            _btnIndex = -1;
+            _brotherBtnIndex = -1;
+            _btnIndex = indexPath.item;
+            if ([obj.time isEqualToString:timeList.brothertime]) {
+                _brotherBtnIndex = idx;
+                *stop = YES;
+                
+            }
+            _currentSection = indexPath.section;
+        }];
+        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]];
+    }];
     [cell.contentView addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(cell);
@@ -197,6 +250,8 @@
         return;
     }
     _currentIndex ++;
+    Datelist *dateModel = self.model.timelist[self.currentIndex];
+    self.currentDateLabel.text = [NSString stringWithFormat:@"周%@ %@",dateModel.weekindex,dateModel.date];
     CGFloat offSetX = self.collectionView.contentOffset.x + self.collectionView.width;
     [self.collectionView setContentOffset:CGPointMake(offSetX, 0) animated:YES];
     
@@ -206,12 +261,16 @@
     if (_currentIndex == 0) {
         return;
     }
+    
     self.currentIndex --;
+    Datelist *dateModel = self.model.timelist[self.currentIndex];
+    self.currentDateLabel.text = [NSString stringWithFormat:@"周%@ %@",dateModel.weekindex,dateModel.date];
     CGFloat offSetX = self.collectionView.contentOffset.x - self.collectionView.width;
     [self.collectionView setContentOffset:CGPointMake(offSetX, 0) animated:YES];
 }
 - (IBAction)commit:(id)sender {
     [_actionSheetView hidden];
+   
 }
 
 @end

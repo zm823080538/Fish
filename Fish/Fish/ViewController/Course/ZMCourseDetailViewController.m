@@ -15,6 +15,7 @@
 #import "ZMCourseDetailRequest.h"
 #import "ZMComplainVC.h"
 #import "UINavigationBar+Awesome.h"
+#import "ZMEvaluationVC.h"
 
 @interface ZMCourseDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIView *cancelView;
@@ -88,7 +89,7 @@
     request.id = [ZMAccountManager shareManager].loginUser.id;
     request.tid = self.course.id;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-//        [self updateUI];
+        [self updateUI];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -160,8 +161,16 @@
 - (void)rightBarItemClick {
     if (IS_COACH) {
         [UIAlertController alertWithTitle:nil message:nil cancelTitle:@"取消" otherTitles:@[@"取消预约"] preferredStyle:0 completion:^(NSInteger index) {
-            ZMComplainVC *complainVC = [ZMComplainVC new];
-            [self.navigationController pushViewController:complainVC animated:YES];
+            [self showCancel];
+        }];
+    } else {
+        [UIAlertController alertWithTitle:nil message:nil cancelTitle:@"取消" otherTitles:@[@"投诉",@"取消预约"] preferredStyle:0 completion:^(NSInteger index) {
+            if (index == 0) {
+                ZMComplainVC *complainVC = [ZMComplainVC new];
+                [self.navigationController pushViewController:complainVC animated:YES];
+            } else {
+                [self showCancel];
+            }
         }];
     }
     
@@ -172,13 +181,9 @@
     request.id = self.course.id;
     request.cancelreason = self.cancelTextView.text;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self.view showError:@"取消课程成功"];
-        [self.cancelView removeFromSuperview];
-        self.cancelView = nil;
+        [MBProgressHUD showSuccessMessage:request.responseObject[@"msg"]];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [self.view showError:@"取消课程失败"];
-        [self.cancelView removeFromSuperview];
-        self.cancelView = nil;
+        [MBProgressHUD showErrorMessage:request.responseObject[@"msg"]];
     }];
     
 }
@@ -189,13 +194,7 @@
 
 - (void)bottomButtonClick:(UIButton *)button {
     if ([button.currentTitle isEqualToString:@"取消预约"]) {
-        self.cancelView = [[NSBundle mainBundle] loadNibNamed:@"ZMCourseCancelView" owner:self options:nil].firstObject;
-        self.cancelView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-        self.cancelView.frame = [UIScreen mainScreen].bounds;
-        [self.view addSubview:self.cancelView];
-        self.cancelTextView.layer.cornerRadius = 6;
-        self.cancelTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        self.cancelTextView.layer.borderWidth = 1;
+        [self showCancel];
     } else {
         RCConversationViewController *chatVC = [[RCConversationViewController alloc] init];
         chatVC.conversationType = ConversationType_PRIVATE;
@@ -205,6 +204,16 @@
         [self.navigationController pushViewController:chatVC animated:YES];
     }
     
+}
+
+- (void)showCancel {
+    self.cancelView = [[NSBundle mainBundle] loadNibNamed:@"ZMCourseCancelView" owner:self options:nil].firstObject;
+    self.cancelView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    self.cancelView.frame = [UIScreen mainScreen].bounds;
+    [self.view addSubview:self.cancelView];
+    self.cancelTextView.layer.cornerRadius = 6;
+    self.cancelTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.cancelTextView.layer.borderWidth = 1;
 }
 
 - (IBAction)callPhone {

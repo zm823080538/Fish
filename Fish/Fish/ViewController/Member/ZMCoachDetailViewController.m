@@ -14,6 +14,7 @@
 #import "ZMMemberDetailRequest.h"
 #import "ZMCoachDetailModel.h"
 #import "ZMMemberHandleRequest.h"
+#import "ZMStudentSave1Request.h"
 #import "ZMContinueLessonVC.h"
 @interface ZMCoachDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -32,6 +33,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 @property (nonatomic, strong) ZMCoachDetailModel * detailModel;
 @property (nonatomic, strong) NSArray * currentTimeList;
+@property (weak, nonatomic) IBOutlet UIButton *focusButton;
+@property (weak, nonatomic) IBOutlet UIButton *privacyTalkButton;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *dateButtons;
 @property (nonatomic, strong) UIButton *currentDateButton;
@@ -71,6 +74,7 @@
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.detailModel.relation.status = [self.detailModel.relation.status isEqualToString:@"2"] ? @"0" : @"2";
+                [self updateUI];
             });
         } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
             
@@ -97,6 +101,20 @@
 }
 
 - (void)updateUI {
+    if ([self.detailModel.relation.status isEqualToString:@"0"]) {
+        ;
+        self.focusButton.hidden = NO;
+        self.privacyTalkBtn.hidden = NO;
+        self.focusButton.selected = NO;
+    } else if ([self.detailModel.relation.status isEqualToString:@"1"]) {
+        self.focusButton.hidden = NO;
+        self.privacyTalkBtn.hidden = NO;
+        self.focusButton.selected = YES;
+    }  else if ([self.detailModel.relation.status isEqualToString:@"2"]) {
+        self.focusButton.hidden = YES;
+        self.privacyTalkBtn.hidden = YES;
+    }
+    
     self.currentTimeList = self.detailModel.workdatelist.firstObject.timelist;
     self.tableViewHeightConstraint.constant = self.currentTimeList.count * 44;
     
@@ -137,11 +155,38 @@
 }
 - (IBAction)appoint {
     [UIAlertController alertWithTitle:nil message:@"是否要预约体验课？" cancelTitle:@"取消" otherTitles:@[@"确定"] preferredStyle:UIAlertControllerStyleAlert completion:^(NSInteger index) {
-        NSLog(@"sure");
+        ZMStudentSave1Request *request = [[ZMStudentSave1Request alloc] init];
+        request.tid = self.member.id;
+        request.uid = [ZMAccountManager shareManager].loginUser.id;
+        request.tryflag = @"1";
+        [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [MBProgressHUD showSuccessMessage:@"申请体验课成功"];
+        } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+            
+        }];
     }];
     
 }
 
+- (IBAction)focusClick:(UIButton *)sender {
+    ZMMemberHandleRequest *handleRequest = [[ZMMemberHandleRequest alloc] init];
+    handleRequest.id = [ZMAccountManager shareManager].loginUser.id;
+    handleRequest.fid = self.member.id;
+    if (self.focusButton.selected) {
+        handleRequest.status = @"0";
+    } else {
+        handleRequest.status = @"1";
+    }
+    [handleRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        self.detailModel.relation.status = [NSString stringWithFormat:@"%@",request.responseObject[@"status"]];
+        [self updateUI];
+        [MBProgressHUD showSuccessMessage:request.responseObject[@"msg"]];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
+    
+}
 
 - (IBAction)dateButtonClick:(UIButton *)sender {
     self.currentDateButton.backgroundColor = [UIColor whiteColor];

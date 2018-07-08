@@ -65,8 +65,13 @@
             appointVC.historyList = self.hisOrderModel.list[section];
             [self.navigationController pushViewController:appointVC animated:YES];
         } else {
+            ZMCoachDetailModel *detailModel = [[ZMCoachDetailModel alloc] init];
+            NSDictionary *info = [self.hisOrderModel.list[section] modelToJSONObject];
+            detailModel.userinfo = [Userinfo modelWithJSON:info];
+            detailModel.userinfo.skillname = [info valueForKey:@"coursetypenames"];
             ZMContinueLessonVC *continueLessonVC = [ZMContinueLessonVC new];
-            
+            continueLessonVC.coachDetailModel = detailModel;
+            continueLessonVC.cardid = self.hisOrderModel.list[section].id;
             [self.navigationController pushViewController:continueLessonVC animated:YES];
         }
     }];
@@ -94,7 +99,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HistoryList *list = self.hisOrderModel.list[indexPath.section];
+    Orderlist *order = list.orderlist[indexPath.row];
     ZMOrderDetailViewController *detailVC = [ZMOrderDetailViewController new];
+    detailVC.orderId = order.id;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

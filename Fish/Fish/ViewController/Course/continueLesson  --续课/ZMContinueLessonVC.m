@@ -17,12 +17,16 @@
 #import "ZMGetCourseInfoRequest.h"
 #import "ZMContinueLessonModel.h"
 #import "ZMStudentSaveRequest.h"
+#import "ZMCourseAddressController.h"
+
 @interface ZMContinueLessonVC () <UITableViewDelegate, UITableViewDataSource> {
     NSInteger _cTypeIndex;
     CGFloat _youhui; //优惠
     CGFloat _total; //总价
     NSUInteger _number; //数量
     NSString *_address; //地址
+    NSString *_clongtitude;
+    NSString *_clatitude;
 }
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray * dataSource;
@@ -92,6 +96,8 @@
     request.coursetypeids = muString;
     request.csum = [NSString stringWithFormat:@"%ld",_number];
     request.address = _address;
+    request.clatitude = _clatitude;
+    request.clongtitude = _clongtitude;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD showSuccessMessage:@"申请成功"];
         [self.navigationController popViewControllerAnimated:YES];
@@ -104,7 +110,11 @@
 - (void)requst {
     [MBProgressHUD showActivityMessageInView:nil];
     ZMGetCourseInfoRequest *request = [[ZMGetCourseInfoRequest alloc] init];
-    request.tid =  self.coachDetailModel.userinfo.id;
+    if (self.cardid) {
+        request.cardid = self.cardid;
+    } else {
+        request.tid =  self.coachDetailModel.userinfo.id;
+    }
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD showSuccessMessage:@"加载成功"];
         [MBProgressHUD hideHUD];
@@ -118,17 +128,19 @@
 - (void)updateUI {
     ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:@"address_normal" title:@"地址" destinClassName:@"TeachQAViewController"];
     item01.style = ZMSettingItemStyleLabelArrow;
-    item01.rightTitle = self.coachDetailModel.userinfo.address;
-    _address = self.coachDetailModel.userinfo.address;
+    item01.rightTitle = @"";
+//    _address = self.coachDetailModel.userinfo.address;
     ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"课程单价" destinClassName:@"ZMMemberApplyViewController"];
-    item02.rightTitle = [NSString stringWithFormat:@"￥%@",self.coachDetailModel.userinfo.courseprice];
+     ZMContinueLessonModel *selectModel = self.infoArray[_cTypeIndex];
+    item02.rightTitle = [NSString stringWithFormat:@"￥%@",selectModel.price];
     ZMSettingItem  *item03 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:@"ZMCalendarViewController"];
     item03.style = ZMSettingItemStyleCountNum;
     ZMSettingItem  *item04 = [[ZMSettingItem  alloc] initWithImage:nil title:@"优惠" destinClassName:@"ZMCountTableViewController"];
-    item04.rightTitle = @"￥150";
+//    item04.rightTitle = selectModel.;
     ZMSettingItem  *item05 = [[ZMSettingItem  alloc] initWithImage:nil title:@"总价" destinClassName:@"ZMMyCollectListController"];
     item05.rightTitle = @"￥150";
     self.dataSource = @[item01,item02,item03,item04,item05].mutableCopy;
+    [self updateDetailInfo];
     [self.tableView reloadData];
 }
 
@@ -175,7 +187,7 @@
     if (indexPath.row == 0) {
         ZMNearMememberCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ZMNearMememberCell"];
         if (!cell) {
-            cell = [[NSBundle mainBundle] loadNibNamed:@"ZMNearMememberCell" owner:nil options:nil][1];
+            cell = [[NSBundle mainBundle] loadNibNamed:@"ZMNearMememberCell" owner:nil options:nil].firstObject;
         }
         
         NSDictionary *dict = [self.coachDetailModel.userinfo modelToJSONObject];
@@ -252,6 +264,18 @@
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:6 inSection:0],[NSIndexPath indexPathForRow:7 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         };
         return  cell;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 3) {
+        ZMCourseAddressController *addressVC = [ZMCourseAddressController new];
+        [addressVC.subject subscribeNext:^(NSDictionary  *_Nullable addressInfo) {
+            _address = addressInfo[@"address"];
+            _clongtitude = addressInfo[@"longtitude"];
+            _clatitude  = addressInfo[@"latitude"];
+        }];
+        [self.navigationController pushViewController:addressVC animated:YES];
     }
 }
 

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMCourseAddressController : UIViewController
+@property (nonatomic, strong) RACSubject *subject;
 
 @end

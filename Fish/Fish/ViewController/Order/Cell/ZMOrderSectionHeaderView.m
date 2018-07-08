@@ -32,7 +32,6 @@
     [self.iconImageView setImageWithURL:[NSURL URLWithString:historyList.img] placeholder:PlaceholderImage];
     self.IDNumLabel.text = [NSString stringWithFormat:@"ID：%@",historyList.no];
     [self.ageButton setTitle:historyList.age forState:UIControlStateNormal];
-    [self.ageButton setTitle:historyList.age forState:UIControlStateNormal];
     if ([historyList.sex isEqualToString:@"1"]) {
         [self.ageButton setImage:[UIImage imageNamed:@"nan"] forState:UIControlStateNormal];
         [self.ageButton setBackgroundColor:UIColorFromRGB(0x82C9F9)];

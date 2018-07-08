@@ -40,7 +40,7 @@
     }
     self.priceLabel.text = [NSString stringWithFormat:@"￥%@",model.courseprice];
     
-    self.starLabel.text = [NSString stringWithFormat:@"评分%@",model.score];
+//    self.starLabel.text = [NSString stringWithFormat:@"评分%@",model.score];
     [self.versionBtn setTitle:model.degree forState:UIControlStateNormal];
     if (!IS_COACH) {
         self.courseNumLabel.textColor = UIColorFromRGB(0xFD506D);

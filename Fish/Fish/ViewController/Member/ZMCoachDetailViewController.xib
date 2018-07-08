@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,10 +18,12 @@
                 <outlet property="ageLabel" destination="UKr-Ld-Mhq" id="1AR-Ts-dPk"/>
                 <outlet property="calendarView" destination="kbW-bh-HHO" id="pcj-3b-ugt"/>
                 <outlet property="dateLabel" destination="u8U-90-eH0" id="XeV-ob-NgL"/>
+                <outlet property="focusButton" destination="CaE-xO-9Gp" id="Tit-jA-ONm"/>
                 <outlet property="iconImageView" destination="2B2-CU-NSO" id="go2-pg-xwQ"/>
                 <outlet property="nameLabel" destination="eIY-DD-qUM" id="DXi-cH-eIS"/>
                 <outlet property="periodLabel" destination="c5L-FT-ea7" id="dFs-I8-Hwm"/>
                 <outlet property="privacyTalkBtn" destination="46R-8I-NHu" id="cRf-vG-EYg"/>
+                <outlet property="privacyTalkButton" destination="46R-8I-NHu" id="Enz-L4-jCp"/>
                 <outlet property="scrollView" destination="KM8-N5-1mC" id="SLp-tG-0Za"/>
                 <outlet property="tableView" destination="wGG-Ic-ZJn" id="TLh-Na-NNL"/>
                 <outlet property="tableViewHeightConstraint" destination="0JF-kq-aCf" id="GWs-n9-Ns4"/>
@@ -129,8 +131,12 @@
                                                 <constraint firstAttribute="width" constant="73" id="Sbq-PZ-Jjp"/>
                                                 <constraint firstAttribute="height" constant="30" id="hIO-hU-xpt"/>
                                             </constraints>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <state key="normal" title="关注">
                                                 <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <state key="selected" title="已关注">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -139,6 +145,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
+                                                <action selector="focusClick:" destination="-1" eventType="touchUpInside" id="4gz-8E-0wa"/>
                                                 <action selector="fouse:" destination="-1" eventType="touchUpInside" id="SFy-mv-CrI"/>
                                             </connections>
                                         </button>
@@ -501,7 +508,7 @@
                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
                             <color key="backgroundColor" red="0.2901960784" green="0.3411764706" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="购买私教课" image="guanzhu"/>
+                            <state key="normal" title="购买私教课"/>
                             <state key="selected" title="已关注" image="yiguanzhu"/>
                             <connections>
                                 <action selector="buy:" destination="-1" eventType="touchUpInside" id="xR0-3C-Xum"/>
@@ -549,7 +556,6 @@
     </objects>
     <resources>
         <image name="Bitmap2" width="145" height="195"/>
-        <image name="guanzhu" width="14" height="13"/>
         <image name="message" width="16" height="16"/>
         <image name="nv" width="9" height="9"/>
         <image name="yiguanzhu" width="14" height="13"/>
