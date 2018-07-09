@@ -20,12 +20,19 @@
 #import "ZMPublishModel.h"
 #import "LZCityPickerController.h"
 #import "ZMPublishSaveRequest.h"
-@interface ZMPublishViewController () <UITableViewDelegate, UITableViewDataSource> {
+#import "HXPhotoManager.h"
+#import "HXPhotoView.h"
+
+@interface ZMPublishViewController () <UITableViewDelegate, UITableViewDataSource,HXPhotoViewDelegate> {
     NSInteger _number;
     NSString *_detail;
     NSString *_areaCode;
     NSString *_detailImgs;
+    CGFloat _sectionHeight;
 }
+@property (nonatomic, strong) HXPhotoManager *manager;
+@property (nonatomic, weak) HXPhotoView *photoView;
+
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray * sectionTitles;
 @property (nonatomic, strong) NSArray * cTypes;
@@ -42,6 +49,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _sectionHeight = 50;
     self.title = @"发布需求";
     self.selectCTypes = @[].mutableCopy;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
@@ -94,12 +102,15 @@
                 _detail = self.publishModel.detail;
                 _detailImgs = self.publishModel.detailimg;
                 _areaCode = self.publishModel.areacode;
+//                NSMutableArray *array = [NSMutableArray arrayWithObjects:@"http://oss-cn-hangzhou.aliyuncs.com/tsnrhapp/shop/photos/857980fd0acd3caf9e258e42788e38f5_0.gif",@"http://tsnrhapp.oss-cn-hangzhou.aliyuncs.com/0034821a-6815-4d64-b0f2-09103d62630d.jpg",@"http://tsnrhapp.oss-cn-hangzhou.aliyuncs.com/0be5118d-f550-403e-8e5c-6d0badb53648.jpg",@"http://tsnrhapp.oss-cn-hangzhou.aliyuncs.com/1466408576222.jpg", nil];
+                NSArray *array = [_detailImgs componentsSeparatedByString:@","];
+                [self.manager addNetworkingImageToAlbum:array selected:YES];
+                [self.photoView refreshView];
                 ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:nil];
                 item01.style = ZMSettingItemStyleCountNum;
                 ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"地址" destinClassName:nil];
                 item02.style = ZMSettingItemStyleLabelArrow;
-                item02.rightTitle = self.publishModel.areaname;
-                
+                item02.rightTitle = self.publishModel.areaname;                
                 self.details = @[item01,item02];
                 [self.tableView reloadData];
             } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -125,10 +136,13 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section == 1) {
-        ZMPickPhotoCollectionView *pickerView = [[ZMPickPhotoCollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 130)];
-        NSArray *imgs = [self.publishModel.detailimg componentsSeparatedByString:@","];
-        [pickerView setPhotoUrls:imgs];
-        return pickerView;
+        HXPhotoView *photoView = [HXPhotoView photoManager:self.manager];
+        photoView.frame = CGRectMake(10, 10, SCREEN_WIDTH - 20, 100);
+        photoView.lineCount = 5;
+        photoView.delegate = self;
+        photoView.backgroundColor = [UIColor whiteColor];
+        self.photoView = photoView;
+        return photoView;
     } else {
         return nil;
     }
@@ -138,7 +152,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     if (section == 1) {
-        return 130;
+        return _sectionHeight;
     }
     return 0;
 }
@@ -228,6 +242,32 @@
         }];
     }
    
+}
+
+- (HXPhotoManager *)manager { // 懒加载管理类
+    if (!_manager) { // 设置一些配置信息
+        _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
+        //        _manager.openCamera = NO;
+        _manager.configuration.showDeleteNetworkPhotoAlert = NO;
+        _manager.configuration.saveSystemAblum = YES;
+        _manager.configuration.photoMaxNum = 6;
+        _manager.configuration.maxNum = 6;
+        // 可以这个赋值也可以像下面那样
+
+    }
+    return _manager;
+}
+
+- (void)photoView:(HXPhotoView *)photoView deleteNetworkPhoto:(NSString *)networkPhotoUrl {
+    NSSLog(@"%@",networkPhotoUrl);
+}
+
+- (void)photoView:(HXPhotoView *)photoView updateFrame:(CGRect)frame
+{
+    NSSLog(@"%@",NSStringFromCGRect(frame));
+    _sectionHeight = CGRectGetMaxY(frame) + 10;
+    [self.tableView reloadData];
+//    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, CGRectGetMaxY(frame) + 10);
 }
 
 

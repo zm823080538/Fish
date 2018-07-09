@@ -138,6 +138,7 @@
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"ZMNearMememberCell" owner:nil options:nil].firstObject;
         }
+        cell.model = self.model;
         return cell;
     } else if (indexPath.row == 3) {
         static NSString *ID = @"cell";
@@ -174,17 +175,11 @@
 
         [self.collectionView setCollectionViewLayout:layout];
 //        layout.itemSize = CGSizeMake(77, 26);
-       
 //        layout.sectionInset = UIEdgeInsetsMake(5, 10, 5, 10);
         [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"collectionViewCell"];
        
         _actionSheetView = [ZMBaseActionSheetView alertWithContainerView:self.alertView type:ZMAlertViewTypeAlert];
         [self.collectionView reloadData];
-//        [[_actionSheetView rac_signalForSelector:@selector(hidden)] subscribeNext:^(RACTuple * _Nullable x) {
-//            _btnIndex = -1;
-//            _brotherBtnIndex = -1;
-//            _currentSection = -1;
-//        }];
         Datelist *dateModel = self.model.timelist[indexPath.section];
         self.currentDateLabel.text = [NSString stringWithFormat:@"周%@ %@",dateModel.weekindex,dateModel.date];
         [_actionSheetView show];
@@ -233,11 +228,12 @@
             if ([obj.time isEqualToString:timeList.brothertime]) {
                 _brotherBtnIndex = idx;
                 *stop = YES;
-                
             }
             _currentSection = indexPath.section;
         }];
-        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]];
+        [UIView performWithoutAnimation:^{
+            [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]];
+        }];
     }];
     [cell.contentView addSubview:btn];
     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
