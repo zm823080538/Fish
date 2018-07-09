@@ -232,6 +232,7 @@
 		5D8A472F209306BC00CE2723 /* MGSearchFeedbackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A472D209306BC00CE2723 /* MGSearchFeedbackCell.m */; };
 		5D8A4732209408D800CE2723 /* UITextView+MGPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4731209408D700CE2723 /* UITextView+MGPlaceholder.m */; };
 		5D8A4736209419FB00CE2723 /* ZMPickPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A4735209419FB00CE2723 /* ZMPickPhotoCollectionView.m */; };
+		5D991F4720F3B7B3003AE308 /* ZMEvaluationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F4620F3B7B3003AE308 /* ZMEvaluationRequest.m */; };
 		5DA07E4220AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4120AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m */; };
 		5DA07E4520AFE7F8007C94C8 /* ZMExerciseResultListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4420AFE7F8007C94C8 /* ZMExerciseResultListController.m */; };
 		5DA07E4820AFE808007C94C8 /* ZMMemberResultListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4720AFE808007C94C8 /* ZMMemberResultListController.m */; };
@@ -753,6 +754,8 @@
 		5D8A4731209408D700CE2723 /* UITextView+MGPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+MGPlaceholder.m"; sourceTree = "<group>"; };
 		5D8A4734209419FB00CE2723 /* ZMPickPhotoCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMPickPhotoCollectionView.h; sourceTree = "<group>"; };
 		5D8A4735209419FB00CE2723 /* ZMPickPhotoCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMPickPhotoCollectionView.m; sourceTree = "<group>"; };
+		5D991F4520F3B7B3003AE308 /* ZMEvaluationRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMEvaluationRequest.h; sourceTree = "<group>"; };
+		5D991F4620F3B7B3003AE308 /* ZMEvaluationRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMEvaluationRequest.m; sourceTree = "<group>"; };
 		5DA07E4020AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBodyBuildingKnowledageListController.h; sourceTree = "<group>"; };
 		5DA07E4120AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBodyBuildingKnowledageListController.m; sourceTree = "<group>"; };
 		5DA07E4320AFE7F8007C94C8 /* ZMExerciseResultListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMExerciseResultListController.h; sourceTree = "<group>"; };
@@ -1095,6 +1098,7 @@
 		5D0D9A7720DBF11600B571EC /* evaluation   --评价 */ = {
 			isa = PBXGroup;
 			children = (
+				5D991F4420F3B79D003AE308 /* DAO */,
 				5D0D9A7820DBF17700B571EC /* ZMEvaluationVC.h */,
 				5D0D9A7920DBF17700B571EC /* ZMEvaluationVC.m */,
 				5D0D9A7A20DBF17700B571EC /* ZMEvaluationVC.xib */,
@@ -1838,6 +1842,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5D991F4420F3B79D003AE308 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				5D991F4520F3B7B3003AE308 /* ZMEvaluationRequest.h */,
+				5D991F4620F3B7B3003AE308 /* ZMEvaluationRequest.m */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
 		5DA07EA320B01C8A007C94C8 /* LTHMonthYearPickerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2563,6 +2576,7 @@
 				5D67B58B20B963D400241F4E /* LTSCalendarWeekDayView.m in Sources */,
 				5D0D9A9120DC01D200B571EC /* ZMBaseActionSheetView.m in Sources */,
 				5D2F7CA9209C3058007B3812 /* ZMHomeBodyBuildingKnowledageCell.m in Sources */,
+				5D991F4720F3B7B3003AE308 /* ZMEvaluationRequest.m in Sources */,
 				5D67B58A20B963D400241F4E /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				5D0640A020F35ADD00FF155C /* HXDatePhotoToolManager.m in Sources */,
 				5DC5CBEB2078752800F3C0D6 /* LoginViewController.m in Sources */,

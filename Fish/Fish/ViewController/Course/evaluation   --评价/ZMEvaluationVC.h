@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMEvaluationVC : UIViewController
+@property (nonatomic, copy) NSString * courseid;
+@property (nonatomic, copy) NSString * tid;
+
 
 @end

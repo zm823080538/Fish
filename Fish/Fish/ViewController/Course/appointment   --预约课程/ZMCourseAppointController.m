@@ -138,7 +138,7 @@
         if (!cell) {
             cell = [[NSBundle mainBundle] loadNibNamed:@"ZMNearMememberCell" owner:nil options:nil].firstObject;
         }
-        cell.model = self.model;
+//        cell.model = self.model;
         return cell;
     } else if (indexPath.row == 3) {
         static NSString *ID = @"cell";

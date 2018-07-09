@@ -123,6 +123,8 @@
 - (void)btnClick:(UIButton *)button {
     if ([button.currentTitle isEqualToString:@"评价"]) {
         ZMEvaluationVC *evaluationVC = [[ZMEvaluationVC alloc] init];
+        evaluationVC.courseid = self.detailModel.cardid;
+        evaluationVC.tid = self.detailModel.tid;
         [self.navigationController pushViewController:evaluationVC animated:YES];
     } else {
         

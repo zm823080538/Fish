@@ -25,11 +25,8 @@
 
 @implementation ZMNearMememberCell
 
-- (void)setModel:(id)model {
-//- (void)setModel:(ZMMemberModel *)model {
+- (void)setModel:(ZMMemberModel *)model {
     
-    if ([model isKindOfClass:[ZMMemberModel class]]) {
-        ZMMemberModel *model = model;
         [self.userIconImageView setImageWithURL:[NSURL URLWithString:model.img] placeholder:PlaceholderImage];
         self.distanceLabel.text = model.distancefmt;
         self.nameLabel.text = model.nickname;
@@ -50,29 +47,7 @@
             self.courseNumLabel.textColor = UIColorFromRGB(0xFD506D);
             self.courseNumLabel.text = [NSString stringWithFormat:@"￥%@",model.courseprice];
         }
-    } else if ([model isKindOfClass:[ZMSubscribeModel class]]) {
-        ZMSubscribeModel *model = model;
-        [self.userIconImageView setImageWithURL:[NSURL URLWithString:model.img] placeholder:PlaceholderImage];
-//        self.distanceLabel.text = model.distancefmt;
-        self.nameLabel.text = model.nickname;
-//        self.statusLabel.text = model.skillname;
-//        [self.ageButton setTitle:model.age forState:UIControlStateNormal];
-        if ([model.sex isEqualToString:@"1"]) {
-            [self.ageButton setImage:[UIImage imageNamed:@"nan"] forState:UIControlStateNormal];
-            [self.ageButton setBackgroundColor:UIColorFromRGB(0x82C9F9)];
-        } else {
-            [self.ageButton setImage:[UIImage imageNamed:@"nv"] forState:UIControlStateNormal];
-            [self.ageButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
-        }
-//        self.priceLabel.text = [NSString stringWithFormat:@"￥%@",model.courseprice];
-        
-        //    self.starLabel.text = [NSString stringWithFormat:@"评分%@",model.score];
-//        [self.versionBtn setTitle:model.degree forState:UIControlStateNormal];
-//        if (!IS_COACH) {
-//            self.courseNumLabel.textColor = UIColorFromRGB(0xFD506D);
-//            self.courseNumLabel.text = [NSString stringWithFormat:@"￥%@",model.courseprice];
-//        }
-    }
+    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 
 }
