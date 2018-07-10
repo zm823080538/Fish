@@ -11,6 +11,8 @@
 #import "SKTagButton.h"
 #import "ZMEvaluationRequest.h"
 #import "WSStarRatingView.h"
+#import "ZMGetTagsRequest.h"
+
 @interface ZMEvaluationVC () <StarRatingViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *commentTextView;
 @property (weak, nonatomic) IBOutlet SKTagView *tagView;
@@ -27,28 +29,12 @@
     [super viewDidLoad];
     self.title = @"评价";
     self.tagView.lineSpacing = 18;
+    [self.starView setScore:0 withAnimation:NO];
     self.tagView.interitemSpacing = 13;
     self.starView.delegate = self;
     self.selectTags = @[].mutableCopy;
     self.tagView.padding = UIEdgeInsetsMake(10, 0, 10, 0);
-    NSArray *array = @[@"达到预期", @"教练有过迟到", @"任职认真", @"非正常接触"];
-    for (NSString *string in array) {
-        SKTag *tag = [SKTag tagWithText:string];
-        tag.borderColor = ThemeColor;
-        tag.textColor = ThemeColor;
-        tag.font = [UIFont systemFontOfSize:11];
-        tag.borderWidth = 1;
-        tag.padding = UIEdgeInsetsMake(10, 15, 10, 15);
-        [self.tagView addTag:tag];
-    }
-    self.tagView.didTapTagAtIndex = ^(NSUInteger index) {
-        if ([self.selectTags containsObject:array[index]]) {
-            [self.selectTags removeObject:array[index]];
-        } else {
-            [self.selectTags addObject:array[index]];
-        }
-    };
-    self.tagViewHeightConstraint.constant = self.tagView.intrinsicContentSize.height +  50;
+
     int  maxLength = 200;
     @weakify(self)
     RAC(self.commentNumLabel,text) = [self.commentTextView.rac_textSignal  map:^id(NSString *value) {
@@ -59,6 +45,34 @@
         }
         self.commentNumLabel.textColor = (value.length == maxLength) ? [UIColor redColor] : UIColorFromRGB(0x999999);
         return [NSString stringWithFormat:@"%ld/200",value.length];
+    }];
+    [self request];
+}
+
+- (void)request {
+    ZMGetTagsRequest *request = [[ZMGetTagsRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSArray *array = request.responseObject[@"data"];
+        for (NSString *string in array) {
+            SKTag *tag = [SKTag tagWithText:string];
+            tag.borderColor = ThemeColor;
+            tag.textColor = ThemeColor;
+            tag.font = [UIFont systemFontOfSize:11];
+            tag.borderWidth = 1;
+            tag.padding = UIEdgeInsetsMake(10, 15, 10, 15);
+            [self.tagView addTag:tag];
+        }
+        self.tagView.didTapTagAtIndex = ^(NSUInteger index) {
+            if ([self.selectTags containsObject:array[index]]) {
+                [self.selectTags removeObject:array[index]];
+            } else {
+                [self.selectTags addObject:array[index]];
+            }
+        };
+        self.tagViewHeightConstraint.constant = self.tagView.intrinsicContentSize.height +  50;
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
     }];
 }
 

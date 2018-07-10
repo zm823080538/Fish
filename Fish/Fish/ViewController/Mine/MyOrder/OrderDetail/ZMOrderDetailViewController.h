@@ -8,7 +8,12 @@
 
 #import "ZMBaseTableViewController.h"
 
+//typedef NS_ENUM(NSUInteger, OrderStatust) {
+//    OrderStatust
+//};
+
 @interface ZMOrderDetailViewController : ZMBaseTableViewController
 @property (nonatomic, copy) NSString *orderId;
+@property (nonatomic, copy) NSString * orderStatus;
 
 @end

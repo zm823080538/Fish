@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ZMHistoryOrderListVC : UITableViewController
+@property (nonatomic, copy) NSString * status;
 
 @end

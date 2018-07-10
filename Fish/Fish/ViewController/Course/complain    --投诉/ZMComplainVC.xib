@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZMComplainVC">
             <connections>
-                <outlet property="pickView" destination="gTj-eg-CzX" id="YHa-WM-Jrr"/>
+                <outlet property="photoView" destination="gTj-eg-CzX" id="DN9-8d-sr1"/>
                 <outlet property="resonTextView" destination="23x-6C-vPb" id="sI2-m6-fRz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="23x-6C-vPb">
-                    <rect key="frame" x="21" y="49" width="333" height="150"/>
+                    <rect key="frame" x="10" y="49" width="355" height="150"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="dwL-GK-4xN"/>
@@ -34,11 +34,11 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="投诉原因"/>
                     </userDefinedRuntimeAttributes>
                 </textView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTj-eg-CzX" customClass="ZMPickPhotoCollectionView">
-                    <rect key="frame" x="21" y="236" width="333" height="107"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTj-eg-CzX">
+                    <rect key="frame" x="10" y="236" width="355" height="170"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="107" id="1tx-Cr-PF2"/>
+                        <constraint firstAttribute="height" constant="170" id="1tx-Cr-PF2"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHx-rg-ubb">
@@ -58,9 +58,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="AHx-rg-ubb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="1NK-aC-krO"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="23x-6C-vPb" secondAttribute="trailing" constant="21" id="49U-iL-OLS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="23x-6C-vPb" secondAttribute="trailing" constant="10" id="49U-iL-OLS"/>
                 <constraint firstItem="gTj-eg-CzX" firstAttribute="leading" secondItem="23x-6C-vPb" secondAttribute="leading" id="FC7-3S-eNH"/>
-                <constraint firstItem="23x-6C-vPb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="21" id="TmL-A3-jO0"/>
+                <constraint firstItem="23x-6C-vPb" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="TmL-A3-jO0"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="AHx-rg-ubb" secondAttribute="trailing" constant="20" id="UvX-rM-YEW"/>
                 <constraint firstItem="gTj-eg-CzX" firstAttribute="trailing" secondItem="23x-6C-vPb" secondAttribute="trailing" id="XoN-QW-Z0g"/>
                 <constraint firstItem="23x-6C-vPb" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="29" id="ao1-JI-ftA"/>

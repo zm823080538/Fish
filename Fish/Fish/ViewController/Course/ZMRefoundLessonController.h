@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZMOrderDetailModel.h"
 
 @interface ZMRefoundLessonController : UIViewController
+@property (nonatomic, strong) ZMOrderDetailModel * detailModel;
 
 @end

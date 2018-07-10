@@ -41,10 +41,12 @@
 
 - (void)initViewControllers {
     NSMutableArray *viewControllers = @[].mutableCopy;
-    NSArray *titleArray = @[@"全部",@"待接单",@"待付款",@"完成"];
+    NSArray *titleArray = @[@"全部",@"待接单",@"待付款",@"已完成",@"退款中",@"已退款"];
+    NSArray *statusArray = @[@"all",@"a1",@"b2",@"b3",@"b55",@"b56"];
     for (int i = 0; i < titleArray.count; i ++) {
             ZMOrderListTableViewController *listVC = [[ZMOrderListTableViewController alloc] init];
             listVC.yp_tabItemTitle = titleArray[i];
+            listVC.status = statusArray[i];
             listVC.view.backgroundColor = [UIColor whiteColor];
             [viewControllers addObject:listVC];
         

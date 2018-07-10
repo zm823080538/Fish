@@ -20,17 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.wkWebView];
-    if ([self.title isEqualToString:@"身体数据"]) {
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.bjwork.xyz/h5/bodydata/detail"]];
-
-        [self.wkWebView loadRequest:request];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(bodyRecord)];
-    } else {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.item.linkurl]];
-    [self.wkWebView loadRequest:request];
-    if (self.isMustRead) {
-        return;
-    }
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 60, 30);
     [button setTitle:@"收藏" forState:UIControlStateNormal];
@@ -42,7 +31,19 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     self.navigationItem.rightBarButtonItem = barButtonItem;
-    button.selected = self.item.favorite.boolValue;
+    if ([self.title isEqualToString:@"身体数据"]) {
+        NSString *urlString = [NSString stringWithFormat:@"https://www.bjwork.xyz/h5/bodydata/detail?userid=%@",[ZMAccountManager shareManager].loginUser.id];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+        button.hidden = YES;
+        [self.wkWebView loadRequest:request];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"记录" style:UIBarButtonItemStylePlain target:self action:@selector(bodyRecord)];
+    } else {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.item.linkurl]];
+        [self.wkWebView loadRequest:request];
+        if (self.isMustRead) {
+            return;
+        }
+        button.selected = self.item.favorite.boolValue;
     }  
 }
 

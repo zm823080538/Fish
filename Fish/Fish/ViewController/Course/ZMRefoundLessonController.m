@@ -1,3 +1,5 @@
+
+
 //
 //  ZMRefoundLessonController.m
 //  Fish
@@ -34,6 +36,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.iconImageView setImageWithURL:[NSURL URLWithString:self.detailModel.img] options:YYWebImageOptionProgressive];
+    self.nameLabel.text = self.detailModel.nickname;
+    [self.ageButton setTitle:self.detailModel.age forState:UIControlStateNormal];
+    if ([self.detailModel.sex isEqualToString:@"1"]) {
+        [self.ageButton setImage:[UIImage imageNamed:@"nan"] forState:UIControlStateNormal];
+        [self.ageButton setBackgroundColor:UIColorFromRGB(0x82C9F9)];
+    } else {
+        [self.ageButton setImage:[UIImage imageNamed:@"nv"] forState:UIControlStateNormal];
+        [self.ageButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
+    }
+    self.IDNumLabel.text = self.detailModel.no;
     self.title = @"我要退课";
     _selectIndex = -1;
     self.dataSource = @[@"地址变更/太远了",@"不想上了",@"教练不负责",@"其他原因"];

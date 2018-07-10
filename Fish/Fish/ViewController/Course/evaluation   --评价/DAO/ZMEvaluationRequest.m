@@ -10,7 +10,7 @@
 
 @implementation ZMEvaluationRequest
 - (NSString *)requestUrl {
-    return @"/api/order/studentsave";
+    return @"/api/course/appraiseSave";
 }
 
 - (YTKRequestMethod)requestMethod {

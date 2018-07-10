@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ZMOrderDetailModel.h"
 @interface ZMOrderTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIButton *refoundClick;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *operationBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *operationBtn2;
 @property (nonatomic, strong) RACSubject *subject;
 @property (nonatomic, strong) ZMOrderDetailModel *detailModel;
+
 
 @end

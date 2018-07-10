@@ -9,5 +9,6 @@
 #import "ZMBaseTableViewController.h"
 
 @interface ZMOrderListTableViewController : ZMBaseTableViewController
+@property (nonatomic, copy) NSString * status;
 
 @end

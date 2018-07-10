@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lessonTotalPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *resultLessonLabel;
 @property (weak, nonatomic) IBOutlet UILabel *IDLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ID1Label;
 
 
 @end
@@ -30,6 +31,12 @@
 - (IBAction)refoundBtnClick {
     [self.subject sendNext:nil];
     NSLog(@"refound");
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.operationBtn1.layer.borderColor = ThemeGrayColor.CGColor;
+    self.operationBtn1.layer.borderWidth = 1;
 }
 
 - (void)setDetailModel:(ZMOrderDetailModel *)detailModel {
@@ -44,13 +51,60 @@
         [self.userAgeButton setBackgroundColor:UIColorFromRGB(0xF497B6)];
     }
     self.IDLabel.text = detailModel.no;
-    self.orderPriceLabel.text = [NSString stringWithFormat:@"￥%@",detailModel.cprice];
+    self.orderPriceLabel.textColor = ThemeRedColor;
+    self.orderPriceLabel.text = [NSString stringWithFormat:@"￥%.2lf",[detailModel.ctotalprice floatValue] / 100];
+    self.lessonCountLabel.text = [NSString stringWithFormat:@"共%@节课",detailModel.csum];
     self.resultLessonLabel.text = [NSString stringWithFormat:@"剩余课时(%@ / %@)",detailModel.cuse,detailModel.csum];
-    self.orderStatusLabel.text = [NSString stringWithFormat:@"%@(%@)",detailModel.ctypename,detailModel.coursetypenames];
-//    self.orderCountLabel.text = [NSString stringWithFormat:@"x%@",detailModel.]
+    
+    //订单列表
+    self.lessonTotalPriceLabel.text = [NSString stringWithFormat:@"￥%.2lf",[detailModel.ctotalprice floatValue] / 100];
+    self.lessonTotalPriceLabel.text = [NSString stringWithFormat:@"共%@节课",detailModel.csum];
+    self.orderDescLabel.text = [NSString stringWithFormat:@"%@(%@)",detailModel.ctypename,detailModel.coursetypenames];
+    [self configStatus:detailModel.status];
 }
 
-- (IBAction)click:(id)sender {
+- (void)configStatus:(NSString *)status {
+    self.bottomConstraint.constant = 45;
+    if ([status isEqualToString:@"a1"]) {
+        self.orderStatusLabel.text = @"待接单";
+        self.operationBtn2.hidden = YES;
+        [self.operationBtn1 setTitle:@"取消订单" forState:UIControlStateNormal];
+    } else if ([status isEqualToString:@"b2"]) {
+        self.orderStatusLabel.text = @"待付款";
+        [self.operationBtn1 setTitle:@"取消订单" forState:UIControlStateNormal];
+        [self.operationBtn2 setTitle:@"立即支付" forState:UIControlStateNormal];
+    } else if ([status isEqualToString:@"b3"]) {
+        self.orderStatusLabel.text = @"已完成";
+        self.operationBtn2.hidden = YES;
+        [self.operationBtn1 setTitle:@"退课" forState:UIControlStateNormal];
+    } else if ([status isEqualToString:@"c70"] || [status isEqualToString:@"b4"] || [status isEqualToString:@"b56"]) {
+        if ([status isEqualToString:@"b56"]) {
+            self.orderStatusLabel.text = @"已退款";
+        } else if ([status isEqualToString:@"b4"]) {
+            self.orderStatusLabel.text = @"未通过";
+        }
+        self.bottomConstraint.constant = 10;
+        self.operationBtn2.hidden = YES;
+        self.operationBtn1.hidden = YES;
+    } else if ([status isEqualToString:@"b55"]) {
+        self.orderStatusLabel.text = @"退款中";
+        self.operationBtn2.hidden = YES;
+        [self.operationBtn1 setTitle:@"取消退课" forState:UIControlStateNormal];
+    }
+    
+}
+
+- (RACSubject *)subject {
+    if (!_subject) {
+        _subject = [[RACSubject alloc] init];
+        
+    }
+    return _subject;
+}
+
+- (IBAction)click:(UIButton *)sender {
+    [self.subject sendNext:sender.currentTitle];
+    
 }
 
 @end

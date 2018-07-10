@@ -16,6 +16,7 @@
 #import "ZMOrderDetailRequest.h"
 #import "ZMOrderDetailModel.h"
 #import "ZMSettingCell.h"
+#import "ZMHomeSectionView.h"
 
 @interface ZMOrderDetailViewController ()
 
@@ -30,33 +31,19 @@
     
     self.title = @"订单详情";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 49)];
-    self.tableView.tableFooterView = footerView;
-    CGFloat btnW = 85;
-    CGFloat btnH = 27;
-    CGFloat btnSpacing = 17;
-    NSArray *titleArr = @[@"删除订单",@"评价"];
-    for (NSInteger i = titleArr.count; i > 0 ; i --) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(SCREEN_WIDTH - 10 - (btnW + btnSpacing) * i, 0, btnW, btnH);
-        [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
-        btn.centerY = footerView.height / 2;
-        [btn setTitle:titleArr[i - 1] forState:UIControlStateNormal];
-        btn.layer.cornerRadius = 13;
-        btn.layer.borderColor = ThemeGrayColor.CGColor;
-        btn.layer.borderWidth = 1;
-        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [footerView addSubview:btn];
-    }
+   
     [self request];
     self.tableView.sectionFooterHeight = 10;
+    
 }
 
 - (void)request {
+    [MBProgressHUD showActivityMessageInView:@"加载中..."];
     ZMOrderDetailRequest *request = [[ZMOrderDetailRequest alloc] init];
     request.id = self.orderId;
     request.uid = [ZMAccountManager shareManager].loginUser.id;
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD hideHUD];
         self.detailModel = [ZMOrderDetailModel modelWithJSON:request.responseObject[@"data"]];
         [self updateUI];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -65,21 +52,22 @@
 }
 
 - (void)updateUI {
-    
+    CGFloat realPrice = [self.detailModel.crealprice floatValue] / 100;
+    CGFloat totalPrice = [self.detailModel.ctotalprice floatValue] / 100;
     ZMSettingItem *item01 = [[ZMSettingItem alloc] init];
     item01.title = @"优惠";
     item01.style = ZMSettingItemStyleLabel;
-    item01.rightTitle = [NSString stringWithFormat:@"-%@",self.detailModel.cprice];
+    item01.rightTitle = [NSString stringWithFormat:@"-%.2lf",totalPrice - realPrice];
     
     ZMSettingItem *item02 = [[ZMSettingItem alloc] init];
     item02.title = @"总价";
     item02.style = ZMSettingItemStyleLabel;
-    item02.rightTitle = [NSString stringWithFormat:@"￥%@",self.detailModel.ctotalprice];
+    item02.rightTitle = [NSString stringWithFormat:@"￥%.2lf",totalPrice];
     
     ZMSettingItem *item03 = [[ZMSettingItem alloc] init];
     item03.title = @"实付款";
     item03.style = ZMSettingItemStyleLabel;
-    item03.rightTitle = [NSString stringWithFormat:@"￥%@",self.detailModel.crealprice];
+    item03.rightTitle = [NSString stringWithFormat:@"￥%.2lf",realPrice];
     
     ZMSettingItem *item04 = [[ZMSettingItem alloc] init];
     item04.title = [NSString stringWithFormat:@"订单号:%@",self.detailModel.payno];
@@ -116,6 +104,35 @@
     
     self.dataSource = @[@[item01,item02,item03],@[item04,item05,item06,item07,item08]];
     
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 49)];
+    self.tableView.tableFooterView = footerView;
+    footerView.backgroundColor = [UIColor whiteColor];
+    CGFloat btnW = 85;
+    CGFloat btnH = 27;
+    CGFloat btnSpacing = 17;
+    NSArray *titleArray;
+    //a1提交b2通过b3已付款,b4不通过,b55退款中,b56已退款,c70取消订单
+    if ([self.detailModel.status isEqualToString:@"a1"]) {
+        titleArray = @[@"取消订单"];
+    } else if ([self.detailModel.status isEqualToString:@"b2"]) {
+        titleArray = @[@"取消订单"];
+    } else if ([self.detailModel.status isEqualToString:@"b3"]) {
+        titleArray = @[@"退款"];
+    } else if ([self.detailModel.status isEqualToString:@"b55"]) {
+        titleArray = @[@"取消退款"];
+    }
+    for (NSInteger i = titleArray.count; i > 0 ; i --) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake(SCREEN_WIDTH - 10 - (btnW + btnSpacing) * i, 0, btnW, btnH);
+        [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
+        btn.centerY = footerView.height / 2;
+        [btn setTitle:titleArray[i - 1] forState:UIControlStateNormal];
+        btn.layer.cornerRadius = 13;
+        btn.layer.borderColor = ThemeGrayColor.CGColor;
+        btn.layer.borderWidth = 1;
+        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [footerView addSubview:btn];
+    }
     
     [self.tableView reloadData];
 }
@@ -135,10 +152,25 @@
     return 3;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 10;
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 2) {
+        ZMHomeSectionView *sectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ZMHomeSectionView"];
+        if (!sectionView) {
+            sectionView = [[ZMHomeSectionView alloc] initWithReuseIdentifier:@"ZMHomeSectionView"];
+        }
+        sectionView.title = @"订单信息";
+        sectionView.arrowButton.hidden = YES;
+        return sectionView;
+    }
+    return nil;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 2) {
+        return 45;
+    }
+    return 0.01;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -146,7 +178,7 @@
     } else if (indexPath.section == 1) {
         return indexPath.row ? 50 : 141;
     } else {
-        return 50;
+        return 35;
     }
 }
 
@@ -178,13 +210,12 @@
             if (cell == nil) {
                 cell = [[NSBundle mainBundle] loadNibNamed:@"ZMOrderTableViewCell" owner:nil options:nil].lastObject;
             }
-            cell.refoundClick.hidden = YES;
-            cell.subject = [RACSubject subject];
-            @weakify(self)
-            [cell.subject subscribeNext:^(id  _Nullable x) {
-                @strongify(self)
-                ZMRefoundLessonController *refoundVC = [ZMRefoundLessonController new];                                                [self.navigationController pushViewController:refoundVC animated:YES];
-            }];
+//            cell.subject = [RACSubject subject];
+//            @weakify(self)
+//            [cell.subject subscribeNext:^(id  _Nullable x) {
+//                @strongify(self)
+//                ZMRefoundLessonController *refoundVC = [ZMRefoundLessonController new];                                                [self.navigationController pushViewController:refoundVC animated:YES];
+//            }];
             cell.detailModel = self.detailModel;
             return cell;
         } else {
