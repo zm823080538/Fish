@@ -22,12 +22,15 @@
 #import "ZMPublishSaveRequest.h"
 #import "HXPhotoManager.h"
 #import "HXPhotoView.h"
+#import "ZMUpLoadRequest.h"
+#import <YTKBatchRequest.h>
 
 @interface ZMPublishViewController () <UITableViewDelegate, UITableViewDataSource,HXPhotoViewDelegate> {
     NSInteger _number;
     NSString *_detail;
     NSString *_areaCode;
-    NSString *_detailImgs;
+    NSMutableArray *_detailImgs;
+    NSMutableArray *_localImgs;
     CGFloat _sectionHeight;
 }
 @property (nonatomic, strong) HXPhotoManager *manager;
@@ -49,15 +52,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _sectionHeight = 50;
     self.title = @"发布需求";
+    _localImgs = @[].mutableCopy;
     self.selectCTypes = @[].mutableCopy;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(uploadImage)];
     [self.view addSubview:self.tableView];
     [self request];
-   
     self.sectionTitles = @[@"类型", @"详细描述", @"意向购买节数"];
  
+}
+
+- (void)uploadImage {
+    NSMutableArray *uploadArray = @[].mutableCopy;
+    for (UIImage *photoImage in _localImgs) {
+        ZMUpLoadRequest *a = [[ZMUpLoadRequest alloc] initWithImage:photoImage];
+        [uploadArray addObject:a];
+    }
+
+    YTKBatchRequest *batchRequest = [[YTKBatchRequest alloc] initWithRequestArray:uploadArray];
+    [batchRequest startWithCompletionBlockWithSuccess:^(YTKBatchRequest *batchRequest) {
+        NSLog(@"succeed");
+        NSArray *requests = batchRequest.requestArray;
+        for (ZMUpLoadRequest *request in requests) {
+            [_detailImgs addObject:[request imageUrlString]];
+        }
+        [self save];
+    } failure:^(YTKBatchRequest *batchRequest) {
+        NSLog(@"failed");
+    }];
 }
 
 - (void)save {
@@ -68,7 +90,7 @@
     request.csum = [NSString stringWithFormat:@"%ld",_number];
     request.areacode = _areaCode;
     request.detail = _detail;
-    request.detailimg = _detailImgs;
+    request.detailimg = [_detailImgs componentsJoinedByString:@","];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         [MBProgressHUD showSuccessMessage:@"发布需求成功"];
         [self.navigationController popViewControllerAnimated:YES];
@@ -100,17 +122,15 @@
                 self.publishModel = [ZMPublishModel modelWithJSON:request.responseObject[@"data"]];
                 self.selectCTypes = [self.publishModel.coursetypeids componentsSeparatedByString:@","].mutableCopy;
                 _detail = self.publishModel.detail;
-                _detailImgs = self.publishModel.detailimg;
+                _detailImgs = [self.publishModel.detailimg componentsSeparatedByString:@","].mutableCopy;
                 _areaCode = self.publishModel.areacode;
-//                NSMutableArray *array = [NSMutableArray arrayWithObjects:@"http://oss-cn-hangzhou.aliyuncs.com/tsnrhapp/shop/photos/857980fd0acd3caf9e258e42788e38f5_0.gif",@"http://tsnrhapp.oss-cn-hangzhou.aliyuncs.com/0034821a-6815-4d64-b0f2-09103d62630d.jpg",@"http://tsnrhapp.oss-cn-hangzhou.aliyuncs.com/0be5118d-f550-403e-8e5c-6d0badb53648.jpg",@"http://tsnrhapp.oss-cn-hangzhou.aliyuncs.com/1466408576222.jpg", nil];
-                NSArray *array = [_detailImgs componentsSeparatedByString:@","];
-                [self.manager addNetworkingImageToAlbum:array selected:YES];
+                [self.manager addNetworkingImageToAlbum:_detailImgs selected:YES];
                 [self.photoView refreshView];
                 ZMSettingItem  *item01 = [[ZMSettingItem  alloc] initWithImage:nil title:@"购买节数" destinClassName:nil];
                 item01.style = ZMSettingItemStyleCountNum;
                 ZMSettingItem  *item02 = [[ZMSettingItem  alloc] initWithImage:nil title:@"地址" destinClassName:nil];
                 item02.style = ZMSettingItemStyleLabelArrow;
-                item02.rightTitle = self.publishModel.areaname;                
+                item02.rightTitle = self.publishModel.areaname;
                 self.details = @[item01,item02];
                 [self.tableView reloadData];
             } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
@@ -136,13 +156,16 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     if (section == 1) {
-        HXPhotoView *photoView = [HXPhotoView photoManager:self.manager];
-        photoView.frame = CGRectMake(10, 10, SCREEN_WIDTH - 20, 100);
-        photoView.lineCount = 5;
-        photoView.delegate = self;
-        photoView.backgroundColor = [UIColor whiteColor];
-        self.photoView = photoView;
-        return photoView;
+//        if (!self.photoView) {
+            HXPhotoView *photoView = [HXPhotoView photoManager:self.manager];
+            photoView.frame = CGRectMake(10, 10, SCREEN_WIDTH - 20, 170);
+            photoView.lineCount = 5;
+            photoView.spacing = 10;
+            photoView.delegate = self;
+            photoView.backgroundColor = [UIColor whiteColor];
+            self.photoView = photoView;
+//        }
+        return self.photoView;
     } else {
         return nil;
     }
@@ -152,7 +175,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     if (section == 1) {
-        return _sectionHeight;
+        return 170;
     }
     return 0;
 }
@@ -228,8 +251,6 @@
         }
         return cell;
     }
-   
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -247,7 +268,6 @@
 - (HXPhotoManager *)manager { // 懒加载管理类
     if (!_manager) { // 设置一些配置信息
         _manager = [[HXPhotoManager alloc] initWithType:HXPhotoManagerSelectedTypePhoto];
-        //        _manager.openCamera = NO;
         _manager.configuration.showDeleteNetworkPhotoAlert = NO;
         _manager.configuration.saveSystemAblum = YES;
         _manager.configuration.photoMaxNum = 6;
@@ -259,16 +279,23 @@
 }
 
 - (void)photoView:(HXPhotoView *)photoView deleteNetworkPhoto:(NSString *)networkPhotoUrl {
+    
     NSSLog(@"%@",networkPhotoUrl);
 }
 
-- (void)photoView:(HXPhotoView *)photoView updateFrame:(CGRect)frame
-{
-    NSSLog(@"%@",NSStringFromCGRect(frame));
-    _sectionHeight = CGRectGetMaxY(frame) + 10;
-    [self.tableView reloadData];
-//    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, CGRectGetMaxY(frame) + 10);
+- (void)photoView:(HXPhotoView *)photoView changeComplete:(NSArray<HXPhotoModel *> *)allList photos:(NSArray<HXPhotoModel *> *)photos videos:(NSArray<HXPhotoModel *> *)videos original:(BOOL)isOriginal {
+    [_detailImgs removeAllObjects];
+    [_localImgs removeAllObjects];
+    [photos enumerateObjectsUsingBlock:^(HXPhotoModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.networkPhotoUrl) {
+            [_detailImgs addObject:obj.networkPhotoUrl];
+        } else if (obj.thumbPhoto) {
+            [_localImgs addObject:obj.thumbPhoto];
+        }
+    }];
+
 }
+
 
 
 - (UITableView *)tableView {

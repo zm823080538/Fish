@@ -29,7 +29,7 @@
     [super viewDidLoad];
     
     self.title = @"订单详情";
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 49)];
     self.tableView.tableFooterView = footerView;
     CGFloat btnW = 85;
