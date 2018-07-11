@@ -236,6 +236,8 @@
 		5D991F4A20F4E921003AE308 /* ZMGetTagsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F4920F4E921003AE308 /* ZMGetTagsRequest.m */; };
 		5D991F4D20F50463003AE308 /* ZMOrderListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F4C20F50463003AE308 /* ZMOrderListRequest.m */; };
 		5D991F5120F505B6003AE308 /* ZMOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5020F505B6003AE308 /* ZMOrderListModel.m */; };
+		5D991F5420F65749003AE308 /* ZMCancelOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5320F65749003AE308 /* ZMCancelOrderRequest.m */; };
+		5D991F5720F65C87003AE308 /* ZMRefoundLessonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5620F65C87003AE308 /* ZMRefoundLessonRequest.m */; };
 		5DA07E4220AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4120AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m */; };
 		5DA07E4520AFE7F8007C94C8 /* ZMExerciseResultListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4420AFE7F8007C94C8 /* ZMExerciseResultListController.m */; };
 		5DA07E4820AFE808007C94C8 /* ZMMemberResultListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4720AFE808007C94C8 /* ZMMemberResultListController.m */; };
@@ -765,6 +767,10 @@
 		5D991F4C20F50463003AE308 /* ZMOrderListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMOrderListRequest.m; sourceTree = "<group>"; };
 		5D991F4F20F505B6003AE308 /* ZMOrderListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMOrderListModel.h; sourceTree = "<group>"; };
 		5D991F5020F505B6003AE308 /* ZMOrderListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMOrderListModel.m; sourceTree = "<group>"; };
+		5D991F5220F65749003AE308 /* ZMCancelOrderRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMCancelOrderRequest.h; sourceTree = "<group>"; };
+		5D991F5320F65749003AE308 /* ZMCancelOrderRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCancelOrderRequest.m; sourceTree = "<group>"; };
+		5D991F5520F65C87003AE308 /* ZMRefoundLessonRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRefoundLessonRequest.h; sourceTree = "<group>"; };
+		5D991F5620F65C87003AE308 /* ZMRefoundLessonRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRefoundLessonRequest.m; sourceTree = "<group>"; };
 		5DA07E4020AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBodyBuildingKnowledageListController.h; sourceTree = "<group>"; };
 		5DA07E4120AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBodyBuildingKnowledageListController.m; sourceTree = "<group>"; };
 		5DA07E4320AFE7F8007C94C8 /* ZMExerciseResultListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMExerciseResultListController.h; sourceTree = "<group>"; };
@@ -1960,6 +1966,10 @@
 				5DACE61520F21D9C006EFC24 /* ZMOrderDetailRequest.m */,
 				5D991F4B20F50463003AE308 /* ZMOrderListRequest.h */,
 				5D991F4C20F50463003AE308 /* ZMOrderListRequest.m */,
+				5D991F5220F65749003AE308 /* ZMCancelOrderRequest.h */,
+				5D991F5320F65749003AE308 /* ZMCancelOrderRequest.m */,
+				5D991F5520F65C87003AE308 /* ZMRefoundLessonRequest.h */,
+				5D991F5620F65C87003AE308 /* ZMRefoundLessonRequest.m */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -2584,6 +2594,7 @@
 				5DAD858B20B2F9F900622DF4 /* ZMNewsListRequest.m in Sources */,
 				5D48060920D3AF4E0031AF81 /* ZMOrderDescCell.m in Sources */,
 				5D4805F320D254480031AF81 /* ZMOrderTableViewCell.m in Sources */,
+				5D991F5420F65749003AE308 /* ZMCancelOrderRequest.m in Sources */,
 				5DC5CBDD2078523000F3C0D6 /* ZMMemberViewController.m in Sources */,
 				5DA7D9DE20B45D1600E0181B /* ZMMemberSearchRequest.m in Sources */,
 				5DAD859820B319EC00622DF4 /* ZMWebViewController.m in Sources */,
@@ -2665,6 +2676,7 @@
 				5D48058220C2AE4B0031AF81 /* ZMGetUserRequest.m in Sources */,
 				5D2F7CB8209C30DF007B3812 /* ZMMemberResultCell.m in Sources */,
 				5DAFBA4320BAD6B700AA259F /* ZMChangeMobileViewController.m in Sources */,
+				5D991F5720F65C87003AE308 /* ZMRefoundLessonRequest.m in Sources */,
 				5D67B58320B963D400241F4E /* LTSCalendarManager.m in Sources */,
 				5DAD857720B1B56E00622DF4 /* LZCityPickerView.m in Sources */,
 				5DAFBA3820BAACB400AA259F /* ZMCourseCancelRequest.m in Sources */,

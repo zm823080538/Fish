@@ -57,7 +57,8 @@
     if (_model.rightTitle) {
         [self.contentView addSubview:self.rightLabel];
         [self.rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.contentView);            make.right.equalTo(self.contentView.mas_right).mas_offset(-30);
+            make.centerY.equalTo(self.contentView);           make.right.equalTo(self.contentView.mas_right).mas_offset(-30);
+            make.left.equalTo(self.titleLabel.mas_right).mas_offset(10);
         }];
     }
     if (_model.style == ZMSettingItemStyleCountNum) {
@@ -87,6 +88,7 @@
 - (UILabel *)rightLabel {
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc] init];
+        _rightLabel.textAlignment = NSTextAlignmentRight;
         _rightLabel.font = [UIFont systemFontOfSize:13];
         _rightLabel.textColor = UIColorFromRGB(0x333333);
     }

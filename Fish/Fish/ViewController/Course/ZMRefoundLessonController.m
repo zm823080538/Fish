@@ -10,7 +10,7 @@
 
 #import "ZMRefoundLessonController.h"
 #import "ZMBaseActionSheetView.h"
-//#import "<#header#>"
+#import "ZMRefoundLessonRequest.h"
 @interface ZMRefoundLessonController () <UITableViewDelegate, UITableViewDataSource>{
     ZMBaseActionSheetView *_actionSheetView;
     NSInteger _selectIndex;
@@ -91,7 +91,18 @@
 }
 
 - (IBAction)commit {
-   
+    ZMRefoundLessonRequest *request = [[ZMRefoundLessonRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    request.id = self.detailModel.id;
+    request.status = @"b55";
+    request.refundtype = self.dataSource[_selectIndex];
+    request.refunddetail = self.reasonTextView.text;
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD showSuccessMessage:@"退课申请成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (IBAction)chooseReasonClick:(id)sender {    

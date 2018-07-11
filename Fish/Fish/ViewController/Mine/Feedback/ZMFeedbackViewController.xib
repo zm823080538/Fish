@@ -79,7 +79,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBM-Uj-hRN">
-                    <rect key="frame" x="0.0" y="201" width="360" height="177"/>
+                    <rect key="frame" x="0.0" y="201" width="360" height="227"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请提供相关问题的截图或照片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPz-L4-bpX">
                             <rect key="frame" x="15" y="15" width="186" height="17"/>
@@ -87,8 +87,8 @@
                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycw-eZ-67I" customClass="ZMPickPhotoCollectionView">
-                            <rect key="frame" x="21" y="53" width="339" height="107"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycw-eZ-67I">
+                            <rect key="frame" x="21" y="53" width="339" height="157"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
@@ -99,7 +99,7 @@
                         <constraint firstAttribute="trailing" secondItem="ycw-eZ-67I" secondAttribute="trailing" id="G13-Cb-2dH"/>
                         <constraint firstItem="ycw-eZ-67I" firstAttribute="leading" secondItem="eBM-Uj-hRN" secondAttribute="leading" constant="21" id="QPB-IP-igt"/>
                         <constraint firstAttribute="bottom" secondItem="ycw-eZ-67I" secondAttribute="bottom" constant="17" id="aKq-oF-GLg"/>
-                        <constraint firstAttribute="height" constant="177" id="pb0-4w-k6d"/>
+                        <constraint firstAttribute="height" constant="227" id="pb0-4w-k6d"/>
                         <constraint firstItem="ycw-eZ-67I" firstAttribute="top" secondItem="nPz-L4-bpX" secondAttribute="bottom" constant="21" id="vYQ-T5-eYs"/>
                     </constraints>
                 </view>
@@ -116,7 +116,7 @@
                 <constraint firstItem="gQ3-MK-gxY" firstAttribute="top" secondItem="xde-Bb-Nf1" secondAttribute="top" id="vBK-sK-hHK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-244" y="-448.5"/>
+            <point key="canvasLocation" x="-661" y="-502"/>
         </view>
     </objects>
 </document>

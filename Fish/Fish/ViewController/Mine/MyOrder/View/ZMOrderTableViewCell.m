@@ -58,7 +58,7 @@
     
     //订单列表
     self.lessonTotalPriceLabel.text = [NSString stringWithFormat:@"￥%.2lf",[detailModel.ctotalprice floatValue] / 100];
-    self.lessonTotalPriceLabel.text = [NSString stringWithFormat:@"共%@节课",detailModel.csum];
+    self.lessonCountLabel.text = [NSString stringWithFormat:@"共%@节课",detailModel.csum];
     self.orderDescLabel.text = [NSString stringWithFormat:@"%@(%@)",detailModel.ctypename,detailModel.coursetypenames];
     [self configStatus:detailModel.status];
 }

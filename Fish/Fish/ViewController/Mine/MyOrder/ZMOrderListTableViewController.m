@@ -34,8 +34,11 @@
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(request)];
     header.lastUpdatedTimeLabel.hidden = YES;
     self.tableView.mj_header = header;
-    self.tableView.mj_footer = [MJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
     [self request];
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:@"refreshOrderListNotificatin" object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+        [self request];
+    }];
 }
 
 - (void)loadMore {
@@ -51,9 +54,7 @@
     request.pageNo = [NSString stringWithFormat:@"%ld",_pageNo];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {\
         
-        if (_pageNo == self.model.totalPage.integerValue) {
-            [self.tableView.mj_footer endRefreshingWithNoMoreData];
-        }
+       
         if (_isLoadMore) {
             NSArray *array = [NSArray modelArrayWithClass:[ZMOrderDetailModel class] json:request.responseObject[@"data"][@"list"]];
             NSMutableArray *muArray = self.model.list.mutableCopy;
@@ -64,6 +65,9 @@
         } else {
             [self.tableView.mj_header endRefreshing];
             self.model = [ZMOrderListModel modelWithJSON:request.responseObject[@"data"]];
+        }
+        if (_pageNo == self.model.totalPage.integerValue) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
         }
         [self.tableView reloadData];
         
@@ -100,6 +104,8 @@
             
         } else if ([currentTitle isEqualToString:@"取消订单"]) {
             
+        } else if ([currentTitle isEqualToString:@""]) {
+            
         }
     }];
     return cell;
@@ -108,6 +114,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ZMOrderDetailViewController *orderDetailVC = [[ZMOrderDetailViewController alloc] init];
+    orderDetailVC.orderId = self.model.list[indexPath.row].id;
     [self.navigationController pushViewController:orderDetailVC animated:YES];
 }
 

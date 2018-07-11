@@ -17,6 +17,8 @@
 #import "ZMOrderDetailModel.h"
 #import "ZMSettingCell.h"
 #import "ZMHomeSectionView.h"
+#import "ZMCancelOrderRequest.h"
+#import "ZMRefoundLessonRequest.h"
 
 @interface ZMOrderDetailViewController ()
 
@@ -46,6 +48,20 @@
         [MBProgressHUD hideHUD];
         self.detailModel = [ZMOrderDetailModel modelWithJSON:request.responseObject[@"data"]];
         [self updateUI];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+}
+
+- (void)cancelOrder {
+    ZMCancelOrderRequest *request = [[ZMCancelOrderRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    request.id = self.orderId;
+    request.status = @"c70";
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD showSuccessMessage:@"取消订单成功"];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshOrderListNotificatin" object:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -115,17 +131,18 @@
     if ([self.detailModel.status isEqualToString:@"a1"]) {
         titleArray = @[@"取消订单"];
     } else if ([self.detailModel.status isEqualToString:@"b2"]) {
-        titleArray = @[@"取消订单"];
+        titleArray = @[@"取消订单",@"立即支付"];
     } else if ([self.detailModel.status isEqualToString:@"b3"]) {
-        titleArray = @[@"退款"];
+        titleArray = @[@"退课"];
     } else if ([self.detailModel.status isEqualToString:@"b55"]) {
-        titleArray = @[@"取消退款"];
+        titleArray = @[@"取消退课"];
     }
     for (NSInteger i = titleArray.count; i > 0 ; i --) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake(SCREEN_WIDTH - 10 - (btnW + btnSpacing) * i, 0, btnW, btnH);
         [btn setTitleColor:ThemeColor forState:UIControlStateNormal];
         btn.centerY = footerView.height / 2;
+        btn.titleLabel.font = [UIFont systemFontOfSize:13];
         [btn setTitle:titleArray[i - 1] forState:UIControlStateNormal];
         btn.layer.cornerRadius = 13;
         btn.layer.borderColor = ThemeGrayColor.CGColor;
@@ -143,9 +160,32 @@
         evaluationVC.courseid = self.detailModel.cardid;
         evaluationVC.tid = self.detailModel.tid;
         [self.navigationController pushViewController:evaluationVC animated:YES];
-    } else {
-        
+    } else if ([button.currentTitle isEqualToString:@"取消订单"]){
+        [self cancelOrder];
+    } else if ([button.currentTitle isEqualToString:@"立即支付"]){
+        NSLog(@"去支付");
+    } else if ([button.currentTitle isEqualToString:@"退课"]){
+//        NSLog(@"去支付");
+        ZMRefoundLessonController *refoundLessonVC = [[ZMRefoundLessonController alloc] init];
+        refoundLessonVC.detailModel = self.detailModel;
+        [self.navigationController pushViewController:refoundLessonVC animated:YES];
+    } else if ([button.currentTitle isEqualToString:@"取消退课"]){
+        NSLog(@"去支付");
+        [self cancelRefoundLesson];
     }
+}
+
+- (void)cancelRefoundLesson {
+    ZMRefoundLessonRequest *request = [[ZMRefoundLessonRequest alloc] init];
+    request.uid = [ZMAccountManager shareManager].loginUser.id;
+    request.id = self.orderId;
+    request.status = @"b3";
+    [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        [MBProgressHUD showSuccessMessage:@"取消退课申请成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

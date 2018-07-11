@@ -111,10 +111,11 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAy-jw-PPr">
-                        <rect key="frame" x="229" y="186.5" width="80" height="30"/>
+                        <rect key="frame" x="229" y="188.5" width="80" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="K8l-RY-XpM"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="待付款">
                             <color key="titleColor" red="0.53725490200000003" green="0.58823529409999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -129,10 +130,11 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ6-7l-QpJ">
-                        <rect key="frame" x="139" y="186" width="80" height="30"/>
+                        <rect key="frame" x="139" y="188" width="80" height="28"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="z7B-Zg-v1l"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="取消订单">
                             <color key="titleColor" red="0.53725490200000003" green="0.58823529409999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -218,7 +220,7 @@
                 <outlet property="userIconImageView" destination="0rL-DV-2C5" id="qwt-66-69P"/>
                 <outlet property="usernameLabel" destination="nPS-Mz-wGt" id="Gca-fJ-3Y8"/>
             </connections>
-            <point key="canvasLocation" x="-903" y="-152"/>
+            <point key="canvasLocation" x="-1060" y="-145"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="141" id="JX8-rA-xcC" customClass="ZMOrderTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="141"/>
