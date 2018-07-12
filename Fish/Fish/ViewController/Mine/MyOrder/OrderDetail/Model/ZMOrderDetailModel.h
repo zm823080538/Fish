@@ -56,6 +56,7 @@
 @property (nonatomic , copy) NSString              * payno;
 @property (nonatomic , copy) NSString              * ctotalprice;
 @property (nonatomic , copy) NSString              * latitude;
+@property (nonatomic , copy) NSString              * cancelreason;
 
 @end
 

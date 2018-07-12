@@ -96,6 +96,8 @@
 }
 
 - (void)updateUI {
+
+    [self.userIconImageView setImageWithURL:[NSURL URLWithString:self.course.img] options:YYWebImageOptionProgressive];
     self.nameLabel.text = self.course.nickname;
     self.lessonTypeLabel.text = [NSString stringWithFormat:@"%@(%@)",self.course.ctypename,self.course.coursetypenames];
     NSString *lessonStatus = @"";

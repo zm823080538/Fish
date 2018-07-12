@@ -115,7 +115,11 @@
     ZMCourseListRequest *request = [[ZMCourseListRequest alloc] init];
     //1关注2黑名单3已接单
     NSString *status = @"1";
-    request.tid = [ZMAccountManager shareManager].loginUser.id;
+    if (IS_COACH) {
+        request.tid = [ZMAccountManager shareManager].loginUser.id;
+    } else {
+        request.uid = [ZMAccountManager shareManager].loginUser.id;
+    }
     request.status = status;
     request.starttime = [self.dateFormatter stringFromDate:date];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {

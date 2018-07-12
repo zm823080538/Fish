@@ -10,8 +10,11 @@
 
 @interface ZMCourseListRequest : YTKRequest
 @property (nonatomic, copy) NSString * tid;
+@property (nonatomic, copy) NSString * uid;
 @property (nonatomic, copy) NSString * status;
 @property (nonatomic, copy) NSString * pageNo;
 @property (nonatomic, copy) NSString * starttime;
+@property (nonatomic, copy) NSString * orderid;
+
 
 @end

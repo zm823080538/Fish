@@ -18,7 +18,9 @@
 #import "ZMSettingCell.h"
 #import "ZMHomeSectionView.h"
 #import "ZMCancelOrderRequest.h"
+#import "ZMRefoundLessonDetailVC.h"
 #import "ZMRefoundLessonRequest.h"
+#import "ZMLessonRecordVC.h"
 
 @interface ZMOrderDetailViewController ()
 
@@ -126,16 +128,21 @@
     CGFloat btnW = 85;
     CGFloat btnH = 27;
     CGFloat btnSpacing = 17;
-    NSArray *titleArray;
+    NSMutableArray *titleArray;
     //a1提交b2通过b3已付款,b4不通过,b55退款中,b56已退款,c70取消订单
     if ([self.detailModel.status isEqualToString:@"a1"]) {
-        titleArray = @[@"取消订单"];
+        titleArray = @[@"取消订单"].mutableCopy;
     } else if ([self.detailModel.status isEqualToString:@"b2"]) {
-        titleArray = @[@"取消订单",@"立即支付"];
+        titleArray = @[@"取消订单",@"立即支付"].mutableCopy;
     } else if ([self.detailModel.status isEqualToString:@"b3"]) {
-        titleArray = @[@"退课"];
+        titleArray = @[@"退课"].mutableCopy;
     } else if ([self.detailModel.status isEqualToString:@"b55"]) {
-        titleArray = @[@"取消退课"];
+        titleArray = @[@"取消退课",@"退课详情"].mutableCopy;
+    } else if ([self.detailModel.status isEqualToString:@"b56"]) {
+        titleArray = @[@"退课详情"].mutableCopy;
+    }
+    if (self.detailModel.cuse.integerValue > 0) {
+        [titleArray addObject:@"上课记录"];
     }
     for (NSInteger i = titleArray.count; i > 0 ; i --) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -172,6 +179,16 @@
     } else if ([button.currentTitle isEqualToString:@"取消退课"]){
         NSLog(@"去支付");
         [self cancelRefoundLesson];
+    } else if ([button.currentTitle isEqualToString:@"退课详情"]) {
+        ZMRefoundLessonDetailVC *refoundLessonDetailVC = [[ZMRefoundLessonDetailVC alloc] init];
+        refoundLessonDetailVC.detailModel = self.detailModel;
+        refoundLessonDetailVC.title = @"退课详情";
+        [self.navigationController pushViewController:refoundLessonDetailVC animated:YES];
+    } else if ([button.currentTitle isEqualToString:@"上课记录"]) {
+        ZMLessonRecordVC *recordVC = [[ZMLessonRecordVC alloc] init];
+        recordVC.title = @"上课记录";
+        recordVC.orderid = self.detailModel.id;
+        [self.navigationController pushViewController:recordVC animated:YES];
     }
 }
 
@@ -194,9 +211,9 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     if (section == 2) {
-        ZMHomeSectionView *sectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"ZMHomeSectionView"];
+        ZMHomeSectionView *sectionView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"homeSectionView"];
         if (!sectionView) {
-            sectionView = [[ZMHomeSectionView alloc] initWithReuseIdentifier:@"ZMHomeSectionView"];
+            sectionView = [[ZMHomeSectionView alloc] initWithReuseIdentifier:@"homeSectionView"];
         }
         sectionView.title = @"订单信息";
         sectionView.arrowButton.hidden = YES;

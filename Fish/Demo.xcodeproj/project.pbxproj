@@ -238,6 +238,10 @@
 		5D991F5120F505B6003AE308 /* ZMOrderListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5020F505B6003AE308 /* ZMOrderListModel.m */; };
 		5D991F5420F65749003AE308 /* ZMCancelOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5320F65749003AE308 /* ZMCancelOrderRequest.m */; };
 		5D991F5720F65C87003AE308 /* ZMRefoundLessonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5620F65C87003AE308 /* ZMRefoundLessonRequest.m */; };
+		5D991F5A20F79999003AE308 /* ZMRefoundLessonDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5920F79999003AE308 /* ZMRefoundLessonDetailVC.m */; };
+		5D991F5D20F7A074003AE308 /* ZMLessonRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5C20F7A074003AE308 /* ZMLessonRecordVC.m */; };
+		5D991F6120F7A31F003AE308 /* ZMRefoundProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D991F5F20F7A31F003AE308 /* ZMRefoundProgressCell.m */; };
+		5D991F6220F7A31F003AE308 /* ZMRefoundProgressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D991F6020F7A31F003AE308 /* ZMRefoundProgressCell.xib */; };
 		5DA07E4220AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4120AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m */; };
 		5DA07E4520AFE7F8007C94C8 /* ZMExerciseResultListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4420AFE7F8007C94C8 /* ZMExerciseResultListController.m */; };
 		5DA07E4820AFE808007C94C8 /* ZMMemberResultListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07E4720AFE808007C94C8 /* ZMMemberResultListController.m */; };
@@ -771,6 +775,13 @@
 		5D991F5320F65749003AE308 /* ZMCancelOrderRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMCancelOrderRequest.m; sourceTree = "<group>"; };
 		5D991F5520F65C87003AE308 /* ZMRefoundLessonRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRefoundLessonRequest.h; sourceTree = "<group>"; };
 		5D991F5620F65C87003AE308 /* ZMRefoundLessonRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRefoundLessonRequest.m; sourceTree = "<group>"; };
+		5D991F5820F79999003AE308 /* ZMRefoundLessonDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRefoundLessonDetailVC.h; sourceTree = "<group>"; };
+		5D991F5920F79999003AE308 /* ZMRefoundLessonDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRefoundLessonDetailVC.m; sourceTree = "<group>"; };
+		5D991F5B20F7A074003AE308 /* ZMLessonRecordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMLessonRecordVC.h; sourceTree = "<group>"; };
+		5D991F5C20F7A074003AE308 /* ZMLessonRecordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMLessonRecordVC.m; sourceTree = "<group>"; };
+		5D991F5E20F7A31F003AE308 /* ZMRefoundProgressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMRefoundProgressCell.h; sourceTree = "<group>"; };
+		5D991F5F20F7A31F003AE308 /* ZMRefoundProgressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMRefoundProgressCell.m; sourceTree = "<group>"; };
+		5D991F6020F7A31F003AE308 /* ZMRefoundProgressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZMRefoundProgressCell.xib; sourceTree = "<group>"; };
 		5DA07E4020AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMBodyBuildingKnowledageListController.h; sourceTree = "<group>"; };
 		5DA07E4120AFE7DA007C94C8 /* ZMBodyBuildingKnowledageListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZMBodyBuildingKnowledageListController.m; sourceTree = "<group>"; };
 		5DA07E4320AFE7F8007C94C8 /* ZMExerciseResultListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZMExerciseResultListController.h; sourceTree = "<group>"; };
@@ -2088,6 +2099,9 @@
 			isa = PBXGroup;
 			children = (
 				5DAFBA3420BAA42F00AA259F /* ZMCourseCancelView.xib */,
+				5D991F5E20F7A31F003AE308 /* ZMRefoundProgressCell.h */,
+				5D991F5F20F7A31F003AE308 /* ZMRefoundProgressCell.m */,
+				5D991F6020F7A31F003AE308 /* ZMRefoundProgressCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2257,6 +2271,10 @@
 				5D0D9A7220DAA76100B571EC /* ZMRefoundLessonController.h */,
 				5D0D9A7320DAA76100B571EC /* ZMRefoundLessonController.m */,
 				5D0D9A7420DAA76100B571EC /* ZMRefoundLessonController.xib */,
+				5D991F5820F79999003AE308 /* ZMRefoundLessonDetailVC.h */,
+				5D991F5920F79999003AE308 /* ZMRefoundLessonDetailVC.m */,
+				5D991F5B20F7A074003AE308 /* ZMLessonRecordVC.h */,
+				5D991F5C20F7A074003AE308 /* ZMLessonRecordVC.m */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -2500,6 +2518,7 @@
 				5D5BB2CB20A847880067709B /* ZMMemberDetailViewController.xib in Resources */,
 				5D5BB23C208AF8B90067709B /* ZMCertificationViewController.xib in Resources */,
 				5D48061D20DB90AB0031AF81 /* ZMCoachDetailViewController.xib in Resources */,
+				5D991F6220F7A31F003AE308 /* ZMRefoundProgressCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2702,6 +2721,7 @@
 				5D29BBBF20EA144400A85039 /* ZMGetNeedRequest.m in Sources */,
 				5D5BB2B420A7E6440067709B /* ZMCollectionCell.m in Sources */,
 				5D06408520F35ADD00FF155C /* UIFont+HXExtension.m in Sources */,
+				5D991F5D20F7A074003AE308 /* ZMLessonRecordVC.m in Sources */,
 				5D5BB2E320AC79A00067709B /* ZMLessonDetailSetController.m in Sources */,
 				5D2F7CC0209D7CDE007B3812 /* ZMPreferentialActivityController.m in Sources */,
 				5DA0E1C520BCF0350071A781 /* ZMUserInfoSource.m in Sources */,
@@ -2728,6 +2748,7 @@
 				5DAFBA4E20BADF2000AA259F /* ZMAuthInfoModel.m in Sources */,
 				5D8A4729209301E900CE2723 /* ZMFeedbackViewController.m in Sources */,
 				5D8A470E20907D5100CE2723 /* UIAlertController+YPKit.m in Sources */,
+				5D991F5A20F79999003AE308 /* ZMRefoundLessonDetailVC.m in Sources */,
 				5DAD85E620B3247200622DF4 /* ZMExciseLanguageController.m in Sources */,
 				5D5C197E20A2E019005422E5 /* UIImage+Tool.m in Sources */,
 				5DA0E1D120BD39DA0071A781 /* ZMPrivacySettingTableViewController.m in Sources */,
@@ -2780,6 +2801,7 @@
 				5D0D9A8820DBF9EA00B571EC /* WSStarRatingView.m in Sources */,
 				5D2F7CE0209D845A007B3812 /* ZMNearMemberViewController.m in Sources */,
 				5D343F84207BC21F006F8616 /* ForgetPasswordViewController.m in Sources */,
+				5D991F6120F7A31F003AE308 /* ZMRefoundProgressCell.m in Sources */,
 				5D0D9A7520DAA76100B571EC /* ZMRefoundLessonController.m in Sources */,
 				5DAD858F20B2FE6E00622DF4 /* ZMNewList.m in Sources */,
 				5D3B3C1920E909850019E893 /* ZMBodyDataListRequest.m in Sources */,

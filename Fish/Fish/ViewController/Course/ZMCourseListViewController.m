@@ -61,7 +61,11 @@
             status = @"2";
             request.pageNo = [NSString stringWithFormat:@"%ld",self.currentPage];
         }
+    if (IS_COACH) {
         request.tid = [ZMAccountManager shareManager].loginUser.id;
+    } else {
+        request.uid = [ZMAccountManager shareManager].loginUser.id;
+    }
         request.status = status;
         [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
             if (_firstLaunch) {

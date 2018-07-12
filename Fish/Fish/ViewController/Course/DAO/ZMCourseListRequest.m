@@ -18,9 +18,17 @@
 }
 
 - (id)requestArgument {
-    return @{@"tid": _tid,
+    if (IS_COACH) {
+        return @{@"tid": _tid,
+                 @"status" :_status,
+                  @"starttime" :_starttime ?:@""
+                 };
+    } else {
+    return @{@"uid": _uid,
              @"status" :_status,
-             @"starttime" :_starttime ?:@""
+             @"orderid" :_orderid ?: @"",
+              @"starttime" :_starttime ?:@""
              };
+    }
 }
 @end

@@ -85,11 +85,12 @@
                 <outlet property="ageButton" destination="FSK-cd-h3E" id="evi-rG-gVx"/>
                 <outlet property="dateLabel" destination="f6q-7d-IKi" id="al6-kO-HC4"/>
                 <outlet property="distanceLabel" destination="Q2u-Gx-zmf" id="lXp-5o-HWf"/>
+                <outlet property="lessonUserIconImageView" destination="hLj-q4-XOT" id="OrG-6b-eD5"/>
                 <outlet property="nameLabel" destination="svV-8P-0Rd" id="NMa-V7-da7"/>
                 <outlet property="statusLabel" destination="WDY-Af-vWg" id="G1B-Qu-oVR"/>
                 <outlet property="userIconImageView" destination="ZZG-MR-TNw" id="Ixu-zy-gb4"/>
             </connections>
-            <point key="canvasLocation" x="-905" y="106"/>
+            <point key="canvasLocation" x="-1151" y="-8"/>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MKn-pY-uVS" customClass="ZMNearMememberCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
@@ -191,11 +192,11 @@
                 <outlet property="userIconImageView" destination="ZZG-MR-TNw" id="VOB-1R-vUs"/>
                 <outlet property="versionBtn" destination="iDT-0W-B74" id="iVc-Em-dCy"/>
             </connections>
-            <point key="canvasLocation" x="-991" y="196"/>
+            <point key="canvasLocation" x="-1072" y="176"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Bitmap" width="145" height="195"/>
+        <image name="Bitmap" width="375" height="667"/>
         <image name="Grade-bg" width="13" height="13"/>
         <image name="nv" width="9" height="9"/>
     </resources>

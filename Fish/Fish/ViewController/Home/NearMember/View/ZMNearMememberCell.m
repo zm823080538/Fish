@@ -12,10 +12,11 @@
 #import "ZMSubscribeModel.h"
 @interface ZMNearMememberCell()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UIButton *ageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *userIconImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *lessonUserIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *starLabel;
 @property (weak, nonatomic) IBOutlet UILabel *courseNumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *versionBtn;
@@ -54,7 +55,7 @@
 
 - (void)setItem:(ZMCourseListItem *)item {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self.userIconImageView setImageWithURL:[NSURL URLWithString:item.img] placeholder:PlaceholderImage];
+    [self.lessonUserIconImageView setImageWithURL:[NSURL URLWithString:item.img] placeholder:PlaceholderImage];
     self.distanceLabel.text = [NSString stringWithFormat:@"下次预约:%@",item.updateDate];
     self.nameLabel.text = item.nickname;
     self.statusLabel.text = item.coursetypenames;

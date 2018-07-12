@@ -38,7 +38,7 @@
     [super viewDidLoad];
    
     [self.usernameTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
-    self.usernameTextField.text = @"18202820092";
+    self.usernameTextField.text = @"18613222350";
     [self.passwordTextField setValue:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.5] forKeyPath:@"_placeholderLabel.textColor"];
     self.passwordTextField.text = @"12345678";
     self.usernameTextField.textColor = [UIColor colorWithHexString:@"#FFFFFF" alpha:0.5];

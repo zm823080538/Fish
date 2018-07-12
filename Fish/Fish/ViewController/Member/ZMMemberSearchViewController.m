@@ -29,6 +29,8 @@
 @property (nonatomic, strong) NSArray * typeArray;
 @property (nonatomic, strong) NSArray * distanceArray;
 @property (nonatomic, strong) NSArray * sexArray;
+@property (nonatomic, strong) NSArray * levelArray;
+@property (nonatomic, strong) NSArray * evaluationArray;
 
 
 @end
@@ -112,35 +114,49 @@
     } else {
         self.typeArray = @[
                            @{
-                               @"name":@"综合"
+                               @"name":@"项目"
                                },@{
                                @"id": @"a01",
-                               @"name": @"增肌"
+                               @"name": @"瑜伽"
                                }, @{
                                @"id": @"a02",
-                               @"name": @"减脂"
+                               @"name": @"拳击"
                                }, @{
                                @"id": @"a03",
                                @"name": @"塑形"
-                               }, @{
-                               @"id": @"b01",
-                               @"name": @"功能性"
-                               }, @{
-                               @"id": @"b02",
-                               @"name": @"康复"
-                               }, @{
-                               @"id": @"b03",
-                               @"name": @"体态修正"
-                               }, @{
-                               @"id": @"b04",
-                               @"name": @"拉伸"
-                               }, @{
-                               @"id": @"b05",
-                               @"name": @"搏击"
-                               }, @{
-                               @"id": @"c01",
-                               @"name": @"竞技健美"
                                }];
+        self.sexArray = @[@{@"id": @"",
+                            @"name": @"不限"
+                            }
+                          ,@{@"id": @"1",
+                             @"name": @"男"
+                             },
+                          @{@"id": @"2",
+                            @"name": @"女"
+                            }];
+        self.evaluationArray = @[@{
+                                 @"name": @"评价"
+                                 },
+                               @{
+                                 @"name": @"高"
+                                 },
+                               @{
+                                 @"name": @"中"
+                                 },
+                               @{
+                                 @"name": @"低"
+                                 }];
+        
+        self.levelArray = @[@{
+                            @"name": @"等级"
+                            }
+                          ,@{
+                             @"name": @"v1-v5"
+                             },
+                          @{@"name": @"v5-v10"
+                            },
+                          @{@"name": @"v10以上"
+                            }];
         self.distanceArray = @[@{@"id": @"",
                                  @"name": @"不限"
                                  },
@@ -159,15 +175,6 @@
                                ,@{@"distance": @"10000",
                                   @"name": @"10km"
                                   }];
-        self.sexArray = @[@{@"id": @"",
-                            @"name": @"不限"
-                            }
-                          ,@{@"id": @"1",
-                             @"name": @"男"
-                             },
-                          @{@"id": @"2",
-                            @"name": @"女"
-                            }];
     }
    
     self.tableView.rowHeight = 82;
@@ -241,30 +248,65 @@
 }
 
 - (NSInteger)numberOfColumnsInMenu:(ZspMenu *)menu {
-    return 3;
+    if(IS_COACH) {
+        return 3;
+    } else {
+        return 5;
+    }
+    
 }
 
 //每个column有多少行
 - (NSInteger)menu:(ZspMenu *)menu numberOfRowsInColumn:(NSInteger)column {
-    if (column == 0) {
-        return self.distanceArray.count;
-    }else if(column == 1) {
-        return self.sexArray.count;
-    }else {
-        return self.typeArray.count;
+    if (IS_COACH) {
+        if (column == 0) {
+            return self.distanceArray.count;
+        }else if(column == 1) {
+            return self.sexArray.count;
+        }else {
+            return self.typeArray.count;
+        }
+    } else {
+        if (column == 0) {
+            return self.distanceArray.count;
+        }else if(column == 1) {
+            return self.sexArray.count;
+        }else if (column == 2){
+            return self.typeArray.count;
+        } else if (column == 3){
+            return self.levelArray.count;
+        } else {
+             return self.evaluationArray.count;
+        }
     }
+    
 }
 
 
 //每个column中每行的title
 - (NSString *)menu:(ZspMenu *)menu titleForRowAtIndexPath:(ZspIndexPath *)indexPath {
-    if (indexPath.column == 0) {
-        return self.distanceArray[indexPath.row][@"name"];
-    }else if(indexPath.column == 1) {
-        return self.sexArray[indexPath.row][@"name"];
-    }else {
-        return self.typeArray[indexPath.row][@"name"];
+    if (IS_COACH) {
+        if (indexPath.column == 0) {
+            return self.distanceArray[indexPath.row][@"name"];
+        }else if(indexPath.column == 1) {
+            return self.sexArray[indexPath.row][@"name"];
+        }else {
+            return self.typeArray[indexPath.row][@"name"];
+        }
+    } else {
+        if (indexPath.column == 0) {
+            return self.distanceArray[indexPath.row][@"name"];
+        }else if(indexPath.column == 1) {
+            return self.sexArray[indexPath.row][@"name"];
+        }else if (indexPath.column == 2){
+            return self.typeArray[indexPath.row][@"name"];
+        } else if (indexPath.column == 3){
+            return self.levelArray[indexPath.row][@"name"];
+        } else {
+            return self.evaluationArray[indexPath.row][@"name"];
+        }
     }
+   
 }
 
 - (void)menu:(ZspMenu *)menu didSelectRowAtIndexPath:(ZspIndexPath *)indexPath {

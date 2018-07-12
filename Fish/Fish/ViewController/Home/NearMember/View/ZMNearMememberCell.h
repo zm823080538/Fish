@@ -10,7 +10,8 @@
 #import "ZMMemberModel.h"
 #import "ZMCourseListModel.h"
 @interface ZMNearMememberCell : UITableViewCell
-@property (nonatomic, strong) id  model;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (nonatomic, strong) ZMMemberModel  *model;
 @property (nonatomic, strong) ZMCourseListItem * item;
 
 @end

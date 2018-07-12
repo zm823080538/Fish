@@ -40,6 +40,7 @@
 }
 
 - (void)setDetailModel:(ZMOrderDetailModel *)detailModel {
+    self.orderNoLabel.text = [NSString stringWithFormat:@"订单号:%@",detailModel.payno];
     [self.userIconImageView setImageWithURL:[NSURL URLWithString:detailModel.img] options:YYWebImageOptionProgressive];
     self.usernameLabel.text = detailModel.nickname;
     [self.userAgeButton setTitle:detailModel.age forState:UIControlStateNormal];
